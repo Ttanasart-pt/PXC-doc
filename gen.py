@@ -22,19 +22,19 @@ def generateFile(path, sidebar):
         content = f.read()
 
     path      = pathStrip(path)
-    outPath   = f"docs/{path.replace(root, '')}"
+    outPath   = f"docs/{path.replace(root, '').lower()}"
     fileName  = os.path.basename(path)
 
     sideContent = ""
     for s in sidebar:
         if s[0] == fileName :
-            sideContent += f'<li><a class="active" href="{s[0]}">{s[1]}</a></li>\n'
+            sideContent += f'<li><a class="active" href="{s[0].lower()}">{s[1]}</a></li>\n'
         else :
-            sideContent += f'<li><a href="{s[0]}">{s[1]}</a></li>\n'
+            sideContent += f'<li><a href="{s[0].lower()}">{s[1]}</a></li>\n'
 
     data = template.replace("{{content}}", content)
     data = data.replace("{{sidebar}}", sideContent)
-
+    
     with open(outPath, "w") as f:
         f.write(data)
 
