@@ -22,7 +22,7 @@ def generateFile(path, sidebar):
         content = f.read()
 
     path      = pathStrip(path)
-    outPath   = f"doc/{path.replace(root, '')}"
+    outPath   = f"docs/{path.replace(root, '')}"
     fileName  = os.path.basename(path)
 
     sideContent = ""
@@ -41,7 +41,9 @@ def generateFile(path, sidebar):
 def generateFolder(path):
     files = os.listdir(path)
     
-    os.mkdir(f"doc/{path.replace(root, '')}")
+    dirPath = f"docs/{path.replace(root, '')}"
+    if not os.path.exists(dirPath):
+        os.mkdir(dirPath)
 
     sidebar = []
     for f in files:
@@ -62,8 +64,5 @@ def generateFolder(path):
             generateFolder(fullPath)
         elif fullPath.endswith(".html"):
             generateFile(fullPath, sidebar)
-
-if os.path.exists("doc"):
-    shutil.rmtree("doc")
 
 generateFolder(root)
