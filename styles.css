@@ -98,7 +98,7 @@ a {
     margin: 0 16px;
 }
 
-.main .sidebar {
+.sidebar {
     width: 320px;
     padding: 0;
     margin: auto;
@@ -110,7 +110,19 @@ a {
     justify-content: flex-start;
 }
 
-.main .content {
+.sidebar li {
+    height: 1.75rem;
+
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.sidebar a.active {
+    color: var(--accent);
+}
+
+.content {
     width: calc(100% - 320px);
     float: right;
 
