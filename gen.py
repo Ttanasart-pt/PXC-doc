@@ -34,7 +34,7 @@ def generateFile(path, sidebar):
 
     data = template.replace("{{content}}", content)
     data = data.replace("{{sidebar}}", sideContent)
-    
+
     with open(outPath, "w") as f:
         f.write(data)
 
@@ -66,3 +66,5 @@ def generateFolder(path):
             generateFile(fullPath, sidebar)
 
 generateFolder(root)
+
+shutil.copy("styles.css", "docs/styles.css")

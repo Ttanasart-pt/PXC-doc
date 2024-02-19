@@ -1,0 +1,130 @@
+:root {
+    --main_dkblack:	#191925;
+    --main_mdblack:	#1e1e2c;
+    --main_black:	#272736;
+    --main_dkgrey:	#3b3b4e;
+    --main_grey:	#6d6d81;
+    --main_ltgrey:	#7e7e8f;
+    --main_white:	#d6d6e8;
+
+    --accent: #ff9166;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@500;600;700&display=swap');
+
+body {
+    background-color: var(--main_mdblack);
+    background-image: url("/src/bg.png");
+
+    margin: 0;
+}
+
+h1 {
+    font-family: 'Noto Sans', sans-serif;
+    font-weight: 700;
+    font-size: 2.5rem;
+    color: var(--accent);
+    margin: 0;
+}
+
+h2 {
+    font-family: 'Noto Sans', sans-serif;
+    font-weight: 700;
+    font-size: 1.75rem;
+    color: var(--accent);
+    margin: 0;
+}
+
+p {
+    font-family: 'Noto Sans', sans-serif;
+    font-weight: 400;
+    font-size: 1rem;
+    color: var(--main_white);
+    margin: 0;
+}
+
+p.subtitle {
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--main_ltgrey);
+
+    margin: 8px 0 32px 0;
+}
+
+a {
+    font-family: 'Noto Sans', sans-serif;
+    font-weight: 700;
+    font-size: 1rem;
+    color: var(--main_ltgrey);
+    margin: 0;
+
+    text-decoration: none;
+}
+
+.main {
+    width:   min(80%, 1000px);
+    padding: 96px 0 0 0;
+    margin:  auto;
+}
+
+.header {
+    width: 100%;
+    height: 48px;
+
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    background-color: var(--main_dkblack);
+}
+
+.header-title {
+    margin: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+}
+
+.header-title h2 {
+    font-weight: 700;
+    font-size: 1.1rem;
+    color: var(--main_ltgrey);
+}
+
+.header a {
+    margin: 0 16px;
+}
+
+.sidebar {
+    width: 320px;
+    padding: 0;
+    margin: auto;
+    float: left;
+
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+
+.sidebar li {
+    height: 1.75rem;
+
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.sidebar a.active {
+    color: var(--accent);
+}
+
+.content {
+    width: calc(100% - 320px);
+    float: right;
+
+    margin: auto;
+}
