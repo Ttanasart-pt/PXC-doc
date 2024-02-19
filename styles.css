@@ -14,7 +14,7 @@
 
 body {
     background-color: var(--main_mdblack);
-    background-image: url("./src/bg.png");
+    background-image: url("/src/bg.png");
 
     margin: 0;
 }
