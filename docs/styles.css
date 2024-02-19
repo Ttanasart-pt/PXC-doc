@@ -102,6 +102,7 @@ a {
     width: 320px;
     padding: 0;
     margin: auto;
+    margin-top: 3.5rem;
     float: left;
 
     display: flex;

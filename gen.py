@@ -68,4 +68,3 @@ def generateFolder(path):
 generateFolder(root)
 
 shutil.copy("styles.css", "docs/styles.css")
-shutil.copy("src", "docs/src")
