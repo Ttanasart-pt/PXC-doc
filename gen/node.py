@@ -3,7 +3,7 @@ import shutil
 import re
 
 scriptDir = "D:\\Project\\MakhamDev\\LTS-PixelComposer\\PixelComposer\\scripts"
-regPath = scriptDir + "node_registry\\node_registry.gml"
+regPath = scriptDir + "\\node_registry\\node_registry.gml"
 
 content = ""
 with open(regPath, "r") as file:
@@ -35,7 +35,7 @@ def writeNodeFile(cat, node):
     txt = f"""<h1>{nodeName}</h1>
 <p class="subtitle">{className}</p>"""
 
-    filePath = f"content/nodes/{cat}/{className.replace('Node_', '')}.html"
+    filePath = f"content/nodes/{cat}/{className.replace('Node_', '')}.html".lower()
     
     with open(filePath, "w") as file:
         file.write(txt)
@@ -44,7 +44,7 @@ for line in nodeListRaw.split("\n"):
     line = line.strip()
 
     if line.startswith("addNodeCatagory("):
-        cat = line.split("\"")[1]
+        cat = line.split("\"")[1].lower()
         nodes[cat] = []
     elif line.startswith("addNodeObject("):
         nodeClass = line.split(",")[3].strip().strip("\"")

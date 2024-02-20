@@ -106,7 +106,7 @@ def generateFolder(path, parent = ""):
 
     for f in files:
         fullPath = os.path.join(path, f)
-        if f.startWith("_"):
+        if f.startswith("_"):
             continue
 
         if os.path.isdir(fullPath):
