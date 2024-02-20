@@ -2,8 +2,8 @@ import os
 import shutil
 import re
 
-regPath = "D:\\Project\\MakhamDev\\LTS-PixelComposer\\PixelComposer\\scripts\\node_registry\\node_registry.gml"
-nodeDir = "D:\\Project\\MakhamDev\\LTS-PixelComposer\\PixelComposer\\scripts"
+scriptDir = "D:\\Project\\MakhamDev\\LTS-PixelComposer\\PixelComposer\\scripts"
+regPath = scriptDir + "node_registry\\node_registry.gml"
 
 content = ""
 with open(regPath, "r") as file:
@@ -16,7 +16,7 @@ cat   = ""
 nodes = {}
 
 def writeNodeFile(cat, node):
-    path = f"{nodeDir}\\{node}\\{node}.gml"
+    path = f"{scriptDir}\\{node}\\{node}.gml"
 
     if not os.path.exists(path):
         print(f"File not found: {path}")
