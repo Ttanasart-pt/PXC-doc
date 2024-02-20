@@ -35,8 +35,17 @@ def writeNodeFile(cat, node):
     txt = f"""<h1>{nodeName}</h1>
 <p class="subtitle">{className}</p>"""
 
-    filePath = f"content/nodes/{cat}/{className.replace('Node_', '')}.html".lower()
-    
+    fileName = className.replace('Node_', '').lower()
+
+    manFilePath = f"content/_nodes/{fileName}.html"
+    if os.path.exists(manFilePath):
+        with open(manFilePath, "r") as file:
+            txt += file.read()
+    else:
+        with open(manFilePath, "w") as file:
+            file.write("")
+
+    filePath = f"content/nodes/{cat}/{fileName}.html"
     with open(filePath, "w") as file:
         file.write(txt)
 
@@ -47,7 +56,9 @@ for line in nodeListRaw.split("\n"):
         cat = line.split("\"")[1].lower()
         nodes[cat] = []
     elif line.startswith("addNodeObject("):
-        nodeClass = line.split(",")[3].strip().strip("\"")
+        args = line.split(",")[1:]
+
+        nodeClass = args[2].strip().strip("\"")
         nodes[cat].append(nodeClass)
 
 for cat in nodes:
