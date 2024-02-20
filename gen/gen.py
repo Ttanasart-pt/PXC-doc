@@ -9,8 +9,8 @@ class FileType(Enum):
     BACK = 2
 
 root = "content"
-templatePath = "template.html"
 
+templatePath = "templates/page.html"
 with open(templatePath, "r") as f:
     template = f.read()
 
