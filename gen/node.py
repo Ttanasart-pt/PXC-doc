@@ -1,11 +1,13 @@
 import os
 import shutil
 import re
+from tqdm import tqdm
 
 import junc
 
 scriptDir = "D:\\Project\\MakhamDev\\LTS-PixelComposer\\PixelComposer\\scripts"
-regPath = scriptDir + "\\node_registry\\node_registry.gml"
+regPath   = scriptDir + "\\node_registry\\node_registry.gml"
+dirname   = "3_nodes"
 
 templatePath = "templates/node.html"
 with open(templatePath, "r") as f:
@@ -108,7 +110,7 @@ def writeNodeFile(cat, node, line):
         with open(manFilePath, "w") as file:
             file.write("")
 
-    filePath = f"content/nodes/{cat}/{fileName}.html"
+    filePath = f"content/{dirname}/{cat}/{fileName}.html"
     with open(filePath, "w") as file:
         file.write(txt)
 
@@ -124,13 +126,13 @@ for line in nodeListRaw.split("\n"):
         nodeClass = args[3].strip().strip("\"")
         nodes[cat].append((nodeClass, line))
 
-for cat in nodes:
-    catPath = f"content/nodes/{cat}"
+for cat in tqdm(nodes, leave = False):
+    catPath = f"content/{dirname}/{cat}"
     if not os.path.exists(catPath):
         os.makedirs(catPath)
 
     txt = f"""<h1>{cat}</h1>"""
-    filePath = f"content/nodes/{cat}/0_index.html"
+    filePath = f"content/{dirname}/{cat}/0_index.html"
     with open(filePath, "w") as file:
         file.write(txt)
 

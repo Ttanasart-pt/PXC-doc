@@ -2,6 +2,7 @@ import os
 import shutil
 from re import sub
 from enum import Enum
+from tqdm import tqdm
 
 class FileType(Enum):
     FILE = 0
@@ -20,7 +21,7 @@ def space(s): # Replace _ with space and capitalize the first letter in each wor
 
 def pathStrip(path):
     name = os.path.basename(path)
-    if name[0].isdigit():
+    if name.split("_")[0].isdigit():
         name = name[name.find('_') + 1:]
     return os.path.join(os.path.dirname(path), name)
 
@@ -89,6 +90,9 @@ def generateFolder(path, parent = ""):
         os.mkdir(dirPath)
 
     for f in files:
+        if f.startswith("_"):
+            continue
+        
         fullPath = os.path.join(path, f)
         f = pathStrip(f)
 
@@ -105,10 +109,11 @@ def generateFolder(path, parent = ""):
             sidebar.append((FileType.FILE, f.lower(), title))
 
     for f in files:
-        fullPath = os.path.join(path, f)
         if f.startswith("_"):
             continue
 
+        fullPath = os.path.join(path, f)
+        
         if os.path.isdir(fullPath):
             generateFolder(fullPath, path)
         elif fullPath.endswith(".html"):

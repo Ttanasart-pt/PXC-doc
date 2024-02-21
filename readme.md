@@ -6,7 +6,9 @@ Github page: https://docs.pixel-composer.com
 
 ## Generate node data
 
-`gen/node.py` script generates documentation based on PXC source code. Before running it, modify `scriptDir` to point to your script directory.
+`gen/node.py` script generates documentation based on PXC source code to `content/nodes`. Before running it, modify `scriptDir` to point to your script directory.
+
+Static content should be added to `content/_nodes` which will be inserted after the generated page for each node.
 
 ## Generate static pages
 
