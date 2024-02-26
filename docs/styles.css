@@ -74,7 +74,7 @@ a {
 
 ul {
     list-style-image: url("/src/svg/bullet.svg");
-    margin: -0.5rem 0px 0px 4rem;
+    margin: -0.5rem 0px 0px 2rem;
     padding: 0;
 }
 

@@ -9,8 +9,6 @@ class FileType(Enum):
     DIR  = 1
     BACK = 2
 
-root = "content"
-
 templatePath = "templates/page.html"
 with open(templatePath, "r") as f:
     template = f.read()
@@ -19,7 +17,7 @@ def space(s): # Replace _ with space and capitalize the first letter in each wor
     s = s.replace('_', ' ')
     return s.title()
 
-def pathStrip(path):
+def pathStrip(path): # Strip out the custom ordering n_ at the start of the file
     name = os.path.basename(path)
     if name.split("_")[0].isdigit():
         name = name[name.find('_') + 1:]
@@ -32,20 +30,16 @@ def loadFile(path):
 svg_home = loadFile("src/svg/home.svg")
 svg_dir = loadFile("src/svg/dir.svg")
 
-def generateFile(path, sidebar):
-    with open(path, "r") as f:
+def generateFile(dirOut, pathIn, sidebar):
+    with open(pathIn, "r") as f:
         content = f.read()
 
-    path      = pathStrip(path)
-    outPath   = f"docs/{path.replace(root, '').lower()}"
-    fileName  = os.path.basename(path).lower()
+    pathIn    = pathStrip(pathIn)
+    fileName  = os.path.basename(pathIn)
+    outPath   = f"{dirOut}\\{fileName}"
 
     sideContent = ""
-    for s in sidebar:
-        fType = s[0]
-        fName = s[1]
-        title = s[2]
-
+    for fType, _, fName, title in sidebar:
         aClass  = ""
         liClass = ""
         icon    = ""
@@ -73,52 +67,48 @@ def generateFile(path, sidebar):
     with open(outPath, "w") as f:
         f.write(data)
 
-def generateFolder(path, parent = ""):
-    files = os.listdir(path)
+def generateFolder(dirIn, dirOut):
+    files = os.listdir(dirIn)
     sidebar = []
 
-    if parent == "":
+    if dirIn == "content":
         groupTitle = "Home"
-        sidebar.append((FileType.BACK, "", ""))
+        sidebar.append((FileType.BACK, "", "", ""))
     else:
-        groupTitle = os.path.basename(path)
-        groupTitle = pathStrip(space(groupTitle))
-        sidebar.append((FileType.BACK, "../", "Back"))
+        groupTitle = os.path.basename(dirIn)
+        groupTitle = space(pathStrip(groupTitle))
+        sidebar.append((FileType.BACK, "../", "../", "Back"))
     
-    dirPath = f"docs/{path.replace(root, '')}"
-    if not os.path.exists(dirPath):
-        os.mkdir(dirPath)
+    if not os.path.exists(dirOut):
+        os.mkdir(dirOut)
 
     for f in files:
         if f.startswith("_"):
             continue
         
-        fullPath = os.path.join(path, f)
-        f = pathStrip(f)
-
+        fullPath = os.path.join(dirIn, f)
+        fs = pathStrip(f)
+        title = space(fs)
+        
         if os.path.isdir(fullPath):
-            title = space(f)
-            sidebar.append((FileType.DIR, f.lower(), title))
+            sidebar.append((FileType.DIR, f, fs, title))
 
         elif fullPath.endswith(".html"):
-            title = f.replace('.html', '')
-            title = space(title)
+            title = title.replace('.Html', '')
             if title == "Index":
                 title = groupTitle
 
-            sidebar.append((FileType.FILE, f.lower(), title))
+            sidebar.append((FileType.FILE, f, fs, title))
 
-    for f in files:
-        if f.startswith("_"):
-            continue
+    for t, f, fs, _ in sidebar[1:]:
+        fDirIn = os.path.join(dirIn, f)
+        fDirOut = os.path.join(dirOut, fs)
 
-        fullPath = os.path.join(path, f)
-        
-        if os.path.isdir(fullPath):
-            generateFolder(fullPath, path)
-        elif fullPath.endswith(".html"):
-            generateFile(fullPath, sidebar)
+        if t == FileType.DIR:
+            generateFolder(fDirIn, fDirOut)
+        elif t == FileType.FILE:
+            generateFile(dirOut, fDirIn, sidebar)
 
-generateFolder(root)
+generateFolder("content", "docs")
 
 shutil.copy("styles.css", "docs/styles.css")

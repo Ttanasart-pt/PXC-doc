@@ -74,7 +74,7 @@ a {
 
 ul {
     list-style-image: url("/src/svg/bullet.svg");
-    margin: -0.5rem 0px 0px 4rem;
+    margin: -0.5rem 0px 0px 3rem;
     padding: 0;
 }
 
@@ -83,11 +83,16 @@ ul li {
     line-height: 0.8;
 }
 
+ul li::marker {
+    font-size: 2rem;
+    line-height: 0.8;
+}
+
 ul.list-links {
     list-style-image: url("/src/svg/bullet_link.svg");
 }
 
-ul.list-links li {
+ul.list-links li::marker {
     font-size: 2rem;
 }
 
