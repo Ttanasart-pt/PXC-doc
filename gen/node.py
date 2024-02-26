@@ -1,7 +1,6 @@
 import os
 import shutil
 import re
-from tqdm import tqdm
 
 import junc
 
@@ -126,12 +125,12 @@ for line in nodeListRaw.split("\n"):
         nodeClass = args[3].strip().strip("\"")
         nodes[cat].append((nodeClass, line))
 
-for cat in tqdm(nodes, leave = False):
+for cat in nodes:
     catPath = f"content/{dirname}/{cat}"
     if not os.path.exists(catPath):
         os.makedirs(catPath)
 
-    txt = f"""<h1>{cat}</h1>"""
+    txt = f"""<h1>{cat.title()}</h1>"""
     filePath = f"content/{dirname}/{cat}/0_index.html"
     with open(filePath, "w") as file:
         file.write(txt)

@@ -6,6 +6,7 @@
     <title>PXC Documentation</title>
 
     <link rel="stylesheet" href="/styles.css">
+    <link rel="stylesheet" href="./styles.css">
 </head>
 <body>
     <div class = "header">
@@ -28,6 +29,11 @@
 <path class="st0" d="M4,21V9l8-6l8,6v12h-6v-6h-4v6H4z"/>
 </svg>
 <a class="" href="index.html">Interfaces</a></li>
+<ul class="submenu">
+<li><a href="#Panels">Panels</a></li>
+<li><a href="#Dialogs">Dialogs</a></li>
+<li><a href="#Workspaces">Workspaces</a></li>
+</ul>
 <li class=""><a class="" href="animation_panel.html">Animation Panel</a></li>
 <li class=""><a class="" href="collection_panel.html">Collection Panel</a></li>
 <li class="icon "><?xml version="1.0" encoding="utf-8"?>
@@ -41,6 +47,7 @@
 <li class=""><a class="" href="inspector_panel.html">Inspector Panel</a></li>
 <li class=""><a class="" href="nodes_panel.html">Nodes Panel</a></li>
 <li class=""><a class="" href="preview_panel.html">Preview Panel</a></li>
+<li class=""><a class="" href="preview_panel_3D.html">Preview Panel 3D</a></li>
 <li class=""><a class="" href="tunnels_panel.html">Tunnels Panel</a></li>
 
                 <div style="height: 96px;"></div>
@@ -55,8 +62,8 @@
 <br>
 <p>Pixel Composer interfaces are separated into two types: panels and dialogs. Panels are interface area 
 that embed directly to the main windows. Dialogs are floating area that can be move around freely and overlap with other dialogs.</p>
-<br>
-<h2>Panels</h2>
+<br><br>
+<h2><a class='anchor' id='Panels'></a>Panels</h2>
 <br>
 <img src="/src/images/2_interfaces/panels.png" alt="">
 <br>
@@ -65,17 +72,23 @@ that embed directly to the main windows. Dialogs are floating area that can be m
 <p>When hovering on the edge of the active panel, the edge will be highlighted. This means that panel can be manipulated as below:</p>
 <br>
 <ul>
-    <li><p>Resize: Click and drag the edge to resize the panel.</p></li>
-    <li><p>Move: Double click and drag the edge to move the panel somewhere else.</p></li>
-    <li><p>Detach: Hold shift + Double click to detach the panel, transforming it to dialog.</p></li>
-    <li><p>Close: Right click on the edeg and select "close"</p>.</li>
+    <li><p><span class="bold">Resize</span> Click and drag the edge to resize the panel.</p></li>
+    <li><p><span class="bold">Move</span> Double click and drag the edge to move the panel somewhere else.</p></li>
+    <li><p><span class="bold">Detach</span> Hold shift + Double click to detach the panel, transforming it to dialog.</p></li>
+    <li><p><span class="bold">Close</span> Right click on the edeg and select "close"</p>.</li>
 </ul>
 <br>
 <p>Right clicking on the edge while hovering will also bring up context menu with option to move, detach and close the panel as well.</p>
 <br>
 <img src="/src/images/2_interfaces/panels_context.png" alt="">
 <br>
-<h2>Dialogs</h2>
+<h3>Tabbed Panel</h3>
+<br>
+<p>You can put panel on top of each other to create tabbed panel. Tabbed panel works the same way as normal panel and can be 
+move around by click and drag on the tab itself.
+</p>
+<br><br>
+<h2><a class='anchor' id='Dialogs'></a>Dialogs</h2>
 <br>
 <img src="/src/images/2_interfaces/dialogs.png" alt="">
 <br>
@@ -84,6 +97,11 @@ of the dialog will also highlighted the edge which allows for dialog manipulatio
 <br>
 <img src="/src/images/2_interfaces/dialogs_context.png" alt="">
 <br>
+<br>
+<h2><a class='anchor' id='Workspaces'></a>Workspaces</h2>
+<br>
+<p>You can save your current panels layout as a workspace. Open workspace dialog in <span class="inline-code">Panels > Workspaces</span> 
+then select the "+" button to create new workspace.</p>
         </div>
     </div>
 

@@ -40,11 +40,11 @@ h3 {
     font-family: 'Noto Sans', sans-serif;
     font-weight: 700;
     font-size: 1.5rem;
-    color: var(--main_grey);
+    color: var(--main_ltgrey);
     margin: 0;
 }
 
-p {
+p, li {
     font-family: 'Noto Sans', sans-serif;
     font-weight: 400;
     font-size: 1rem;
@@ -66,7 +66,7 @@ a {
     font-family: 'Noto Sans', sans-serif;
     font-weight: 700;
     font-size: 1rem;
-    color: var(--main_ltgrey);
+    color: var(--accent);
     margin: 0;
 
     text-decoration: none;
@@ -103,6 +103,33 @@ img {
     margin: auto;
 }
 
+tr th {
+    font-family: 'Noto Sans', sans-serif;
+    font-weight: 400;
+    font-size: 1rem;
+    color: var(--main_grey);
+    margin: 0;
+
+    line-height: 1.5;
+}
+
+tr td {
+    font-family: 'Noto Sans', sans-serif;
+    font-weight: 400;
+    font-size: 1rem;
+    color: var(--main_white);
+    margin: 0;
+
+    line-height: 1.5;
+}
+
+a.anchor {
+    display: block;
+    position: relative;
+    top: -64px;
+    visibility: hidden;
+}
+
 .main {
     width:   min(80%, 1200px);
     padding: 96px 0 0 0;
@@ -119,6 +146,8 @@ img {
     justify-content: space-between;
 
     background-color: var(--main_dkblack);
+
+    z-index: 1;
 }
 
 .header-title {
@@ -141,7 +170,8 @@ img {
 }
 
 .sidebar {
-    width: 320px;
+    width: 280px;
+    height: 80%;
     padding: 0;
     margin: auto;
     margin-top: 3.5rem;
@@ -151,6 +181,9 @@ img {
     flex-direction: row;
     align-items: flex-start;
     justify-content: flex-start;
+
+    position: fixed;
+    overflow-y: scroll;
 }
 
 .sidebar ul {
@@ -178,10 +211,16 @@ img {
     margin: 0;
     color: var(--main_ltgrey);
     text-decoration: none;
+
+    transition: color 0.1s ease-in-out;
 }
 
 .sidebar li.active > a {
     color: var(--accent);
+}
+
+.sidebar a:hover {
+    color: var(--main_white);
 }
 
 .sidebar li.icon > a {
@@ -200,6 +239,25 @@ img {
 
 .sidebar li.active > svg {
     fill: var(--accent);
+}
+
+.sidebar ul.submenu {
+    margin: 0;
+    padding: 0;
+    padding-left: 20px;
+}
+
+.sidebar ul.submenu li {
+    height: 1.5rem;
+    opacity: 0.5;
+}
+
+.sidebar ul.submenu li:last-child {
+    margin-bottom: 0.25rem;
+}
+
+.sidebar ul.submenu a {
+    font-size: 0.9rem;
 }
 
 .content {
@@ -298,12 +356,19 @@ span.inline-code {
     font-optical-sizing: auto;
     font-weight: 600;
     font-style: normal;
-    font-size: 0.85rem;
     color: var(--main_ltgrey);
 
     background-color: var(--main_dkblack);
     border: 1px solid var(--main_dkgrey);
     border-radius: 4px;
+}
+
+p span.inline-code {
+    font-size: 0.9rem;
+}
+
+h3 span.inline-code {
+    font-size: 1.25rem;
 }
 
 span.code-block {
@@ -321,4 +386,36 @@ span.code-block {
     background-color: var(--main_dkblack);
     border: 1px solid var(--main_dkgrey);
     border-radius: 4px;
+}
+
+p.banner {
+    display: block;
+    margin: 16px 0px 16px 0px;
+    padding: 16px;
+
+    background-color: #ff916610;
+    border: 1px solid var(--accent);
+    border-radius: 4px;
+}
+
+span.bold {
+    font-weight: 700;
+}
+
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--main_dkblack);
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--main_dkgrey);
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--main_grey);
 }

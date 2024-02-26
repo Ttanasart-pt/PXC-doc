@@ -1,0 +1,10 @@
+table.datatype {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 16px;
+    margin-bottom: 16px;
+}
+
+table.datatype tr {
+    height: 2rem;
+}

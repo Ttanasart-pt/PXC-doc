@@ -1,13 +1,12 @@
 import os
 import shutil
-from re import sub
+import re
 from enum import Enum
-from tqdm import tqdm
 
 class FileType(Enum):
-    FILE = 0
-    DIR  = 1
-    BACK = 2
+    FILE  = 0
+    DIR   = 1
+    BACK  = 2
 
 templatePath = "templates/page.html"
 with open(templatePath, "r") as f:
@@ -38,6 +37,10 @@ def generateFile(dirOut, pathIn, sidebar):
     fileName  = os.path.basename(pathIn)
     outPath   = f"{dirOut}\\{fileName}"
 
+    h2s = re.findall(r"<h2>(.*?)</h2>", content)
+    for h2 in h2s:
+        content = content.replace(f"<h2>{h2}</h2>", f"<h2><a class='anchor' id='{h2}'></a>{h2}</h2>")
+
     sideContent = ""
     for fType, _, fName, title in sidebar:
         aClass  = ""
@@ -55,11 +58,17 @@ def generateFile(dirOut, pathIn, sidebar):
 
         elif fType == FileType.BACK:
             liClass += "back "
-        
+
         if icon != "":
             liClass += "icon "
 
         sideContent += f'<li class="{liClass}">{icon}<a class="{aClass}" href="{fName}">{title}</a></li>\n'
+
+        if fName == fileName :
+            sideContent += '<ul class="submenu">\n'
+            for h2 in h2s:
+                sideContent += f'<li><a href="#{h2}">{h2}</a></li>\n'
+            sideContent += "</ul>\n"
 
     data = template.replace("{{content}}", content)
     data = data.replace("{{sidebar}}", sideContent)
@@ -99,6 +108,9 @@ def generateFolder(dirIn, dirOut):
                 title = groupTitle
 
             sidebar.append((FileType.FILE, f, fs, title))
+
+        else :
+            shutil.copy(fullPath, os.path.join(dirOut, f))
 
     for t, f, fs, _ in sidebar[1:]:
         fDirIn = os.path.join(dirIn, f)
