@@ -187,6 +187,8 @@ a.anchor {
 }
 
 .sidebar ul {
+    width: inherit;
+
     list-style-type: none;
     margin: 0;
     padding: 0;
@@ -206,11 +208,16 @@ a.anchor {
 }
 
 .sidebar a {
+    width: auto;
+    
     display: block;
     padding-left: 32px;
     margin: 0;
     color: var(--main_ltgrey);
     text-decoration: none;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 
     transition: color 0.1s ease-in-out;
 }
@@ -242,6 +249,7 @@ a.anchor {
 }
 
 .sidebar ul.submenu {
+    width: auto;
     margin: 0;
     padding: 0;
     padding-left: 20px;
@@ -258,6 +266,10 @@ a.anchor {
 
 .sidebar ul.submenu a {
     font-size: 0.9rem;
+}
+
+.sidebar ul.submenu ul.h3 a {
+    font-weight: 500;
 }
 
 .content {
@@ -404,6 +416,7 @@ span.bold {
 
 ::-webkit-scrollbar {
     width: 8px;
+    height: 8px;;
 }
 
 ::-webkit-scrollbar-track {
@@ -418,4 +431,8 @@ span.bold {
 
 ::-webkit-scrollbar-thumb:hover {
     background: var(--main_grey);
+}
+
+::-webkit-scrollbar-corner {
+    background: #00000000;
 }

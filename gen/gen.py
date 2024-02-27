@@ -37,9 +37,21 @@ def generateFile(dirOut, pathIn, sidebar):
     fileName  = os.path.basename(pathIn)
     outPath   = f"{dirOut}\\{fileName}"
 
-    h2s = re.findall(r"<h2>(.*?)</h2>", content)
-    for h2 in h2s:
-        content = content.replace(f"<h2>{h2}</h2>", f"<h2><a class='anchor' id='{h2}'></a>{h2}</h2>")
+    headers = []
+
+    for h2s in content.split("<h2>")[1:]:
+        h2 = h2s.split("</h2>")[0]
+        h3s = re.findall(r"<h3>(.*?)</h3>", h2s)
+        
+        content = content.replace(f"<h2>{h2}</h2>", f'<h2><a id="{h2}" class="anchor"></a>{h2}</h2>')
+        for i, _h3 in enumerate(h3s):
+            h3 = re.sub(r'<(.*?)\/.*?>', '', _h3)
+            if h3 == "":
+                h3 = re.sub(r'<.*?>', '', _h3)
+            h3s[i] = h3
+            content = content.replace(f"<h3>{_h3}</h3>", f'<h3><a id="{h3}" class="anchor"></a>{_h3}</h3>')
+
+        headers.append({"h2": h2, "h3s": h3s})
 
     sideContent = ""
     for fType, _, fName, title in sidebar:
@@ -66,8 +78,15 @@ def generateFile(dirOut, pathIn, sidebar):
 
         if fName == fileName :
             sideContent += '<ul class="submenu">\n'
-            for h2 in h2s:
-                sideContent += f'<li><a href="#{h2}">{h2}</a></li>\n'
+            for h2 in headers:
+                title = h2["h2"]
+                sideContent += f'<li><a href="#{title}">{title}</a></li>\n'
+
+                sideContent += '<ul class="submenu h3">\n'
+                for h3 in h2["h3s"]:
+                    sideContent += f'<li><a href="#{h3}">{h3}</a></li>\n'
+                sideContent += "</ul>\n"
+
             sideContent += "</ul>\n"
 
     data = template.replace("{{content}}", content)
