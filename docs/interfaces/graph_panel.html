@@ -44,8 +44,9 @@
 <ul class="submenu h3">
 <li><a href="#Context">Context</a></li>
 <li><a href="#Visibility Settings">Visibility Settings</a></li>
+<li><a href="#Grid Settings">Grid Settings</a></li>
 <li><a href="#Connection Rendering Settings">Connection Rendering Settings</a></li>
-<li><a href="#Minimap Settings">Minimap Settings</a></li>
+<li><a href="#Minimap">Minimap</a></li>
 <li><a href="#Export Graph">Export Graph</a></li>
 </ul>
 <li><a href="#View Manipulation">View Manipulation</a></li>
@@ -54,8 +55,17 @@
 <li><a href="#Nodes Manipulation">Nodes Manipulation</a></li>
 <ul class="submenu h3">
 </ul>
-<li><a href="#Connections Manipulation">Connections Manipulation</a></li>
+<li><a href="#Junction Manipulation">Junction Manipulation</a></li>
 <ul class="submenu h3">
+<li><a href="#Connecting">Connecting</a></li>
+<li><a href="#Disconnecting">Disconnecting</a></li>
+</ul>
+<li><a href="#Hotkeys">Hotkeys</a></li>
+<ul class="submenu h3">
+<li><a href="#Blend">Blend</a></li>
+<li><a href="#Compose">Compose</a></li>
+<li><a href="#Group">Group</a></li>
+<li><a href="#Quick nodes">Quick nodes</a></li>
 </ul>
 </ul>
 <li class=""><a class="" href="inspector_panel.html">Inspector Panel</a></li>
@@ -73,43 +83,117 @@
 <br><br>
 <img src="/src/images/2_interfaces/graph_panel.png" alt="">
 <br>
-<p>Graph panel is the main work area of your project. It displays all the nodes and connections.</p>
+<p>Graph panel is the central work area of your project. It displays all the nodes and connections.</p>
 <br><br>
 <h2><a id="Toolbars" class="anchor"></a>Toolbars</h2>
 <br>
-<p></p>
-<br>
 <h3><a id="Context" class="anchor"></a>Context</h3>
 <br>
-<p></p>
+<p>Context means the area the node can resides. When you first open the graph panel, you're in the "global" context. 
+When you double-click on a group, you'll be move into the group context.</p>
+<br>
+<p>You can click on the name in the context area to navigate between context level.</p>
 <br>
 <h3><a id="Visibility Settings" class="anchor"></a>Visibility Settings</h3>
 <br>
-<p></p>
+<p>Here you can toggle on/off different elements of the display.</p>
+<br>
+<h3><a id="Grid Settings" class="anchor"></a>Grid Settings</h3>
+<br>
+<p>Here you can modify grid underlying the nodes.</p>
 <br>
 <h3><a id="Connection Rendering Settings" class="anchor"></a>Connection Rendering Settings</h3>
 <br>
-<p></p>
+<p>Here you can change how the connection line is being rendered.</p>
 <br>
-<h3><a id="Minimap Settings" class="anchor"></a>Minimap Settings</h3>
+<h3><a id="Minimap" class="anchor"></a>Minimap</h3>
 <br>
-<p></p>
+<p>Clicking on this button will toggle minimap on/off. Minimap will show your entire node graph. 
+Click on the map to navigate to that area.</p>
 <br>
 <h3><a id="Export Graph" class="anchor"></a>Export Graph</h3>
 <br>
-<p></p>
+<p>This button open graph export dialog, where you can export current node graph as a .png file for sharing.</p>
 <br><br>
 <h2><a id="View Manipulation" class="anchor"></a>View Manipulation</h2>
 <br>
-<p></p>
+<p>When viewing node graph, you can manipulate the view using mouse and keyboards:</p>
+<br>
+<ul>
+    <li>Middle click or <span class="inline-code">ctrl</span> + Left click to pan the view.</li>
+    <li>Scroll up/down to zoom the view.</li>
+    <li>Press F to center selecting nodes or all nodes (if no nodes are selected)</li>
+</ul>
 <br><br>
 <h2><a id="Nodes Manipulation" class="anchor"></a>Nodes Manipulation</h2>
 <br>
-<p></p>
+<ul>
+    <li>Left click on a node to select it. Hold shift to select multiple.</li>
+    <li>Left click on an empty space to deselect all node.</li>
+    <li>Left click and drag to move selecting nodes. Hold <span class="inline-code">ctrl</span> to disable snapping.</li>
+</ul>
 <br><br>
-<h2><a id="Connections Manipulation" class="anchor"></a>Connections Manipulation</h2>
+<h2><a id="Junction Manipulation" class="anchor"></a>Junction Manipulation</h2>
 <br>
-<p></p>
+<h3><a id="Connecting" class="anchor"></a>Connecting</h3>
+<br>
+<p>To connect two nodes, click on the output junction of the source node, then drag to the input junction of 
+the target node. The connection will be made if the data types are compatible.</p>
+<br>
+<p>You can also connect from output directly to the input property on the inspector panel directly.</p>
+<br>
+<p>You can also drag out from the inspector panel to the graph panel to extract the value to a new node.</p>
+<br>
+<h3><a id="Disconnecting" class="anchor"></a>Disconnecting</h3>
+<br>
+<p>Click once on the input junction to disconnect it.</p>
+<br>
+<p>You can also right click on the connection and click on the connection in the context menu to remove it.</p>
+<br><br>
+<h2><a id="Hotkeys" class="anchor"></a>Hotkeys</h2>
+<br>
+<p>There're a number of hotkeys to make some common operation faster.</p>
+<br>
+<h3><a id="Blend" class="anchor"></a>Blend</h3>
+<br>
+<p>Select 2 nodes and press <span class="inline-code">ctrl + b</span> to blend outputs from both nodes together.</p>
+<br>
+<h3><a id="Compose" class="anchor"></a>Compose</h3>
+<br>
+<p>Select 2 nodes or more and press <span class="inline-code">ctrl + shift + b</span> to combine all 
+outputs from all nodes with compose node.</p>
+<br>
+<h3><a id="Group" class="anchor"></a>Group</h3>
+<br>
+<p>Select multiple nodes, then press <span class="inline-code">ctrl + g</span> to group all of them together. 
+External connection will be turns into group input/output nodes automatically.</p>
+<br>
+<h3><a id="Quick nodes" class="anchor"></a>Quick nodes</h3>
+<br>
+<p>When the graph panel is active (orange border) you can use one letter shortcut to create some basic nodes.</p>
+<br>
+<table>
+    <tr>
+        <th>Hotkey</th>
+        <th>Node</th>
+    </tr>
+    <tr class = "center">
+        <td><span class="inline-code">1</span></td>
+        <td>Number</td>
+    </tr>
+    <tr class = "center">
+        <td><span class="inline-code">2</span></td>
+        <td>Vector 2</td>
+    </tr>
+    <tr class = "center">
+        <td><span class="inline-code">3</span></td>
+        <td>Vector 3</td>
+    </tr>
+    <tr class = "center">
+        <td><span class="inline-code">4</span></td>
+        <td>Vector 4</td>
+    </tr>
+</table>
         </div>
     </div>
 

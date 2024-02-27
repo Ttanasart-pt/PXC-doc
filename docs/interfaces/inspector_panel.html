@@ -43,11 +43,12 @@
 <ul class="submenu">
 <li><a href="#Project Inspector">Project Inspector</a></li>
 <ul class="submenu h3">
+<li><a href="#Project-wide Values">Project-wide Values</a></li>
+<li><a href="#Metadata">Metadata</a></li>
 <li><a href="#Global Variables">Global Variables</a></li>
 </ul>
 <li><a href="#Context Inspector">Context Inspector</a></li>
 <ul class="submenu h3">
-<li><a href="#IO Editors">IO Editors</a></li>
 </ul>
 <li><a href="#Node Inspector">Node Inspector</a></li>
 <ul class="submenu h3">
@@ -77,39 +78,92 @@
 <br><br>
 <img src="/src/images/2_interfaces/inspector_panel.png" alt="">
 <br>
-<p>Inspector Panel show properties of the node you're selecting, if none, display properties of the current context/project.</p>
+<p>Inspector Panel displays properties of the node(s) you're selecting, if none, displays properties of the 
+current context/project.</p>
 <br><br>
 <h2><a id="Project Inspector" class="anchor"></a>Project Inspector</h2>
 <br>
-<p></p>
+<p>When not selecting any nodes and you're on the global context. Inspector panel will display project properties. 
+Including project-wide values, metadata and global variables.</p>
+<br>
+<h3><a id="Project-wide Values" class="anchor"></a>Project-wide Values</h3>
+<br>
+<p>Project wide-values are global variables that applies automatically to some values. Currently there're only 2 
+values: default dimension and default palette.</p>
+<br>
+<p>The value that use project wide-values will have the "use project []" button. Modifying the value will disable 
+the link. Click on the button to sync the value with the project-wide value again.</p>
+</p>
+<br>
+<h3><a id="Metadata" class="anchor"></a>Metadata</h3>
+<br>
+<p>Project metadata contains basic information used when sharing the project with other peoples.</p>
 <br>
 <h3><a id="Global Variables" class="anchor"></a>Global Variables</h3>
 <br>
-<p></p>
+<p>Global Variables are values that can be access from any node using expression. It can also be modify through 
+command line. There're several rules for naming global variable to prevent error:</p>
+<br>
+<ul>
+    <li>Name has to starts with alphabet or underscore.</li>
+    <li>It can only contains alphabets, numbers, and underscores</li>
+    <li>It can't be one of the reserved name.</li>
+</ul>
+<br>
+<p>For more information, visit <a href="">global variable</a> page.</p>
 <br><br>
 <h2><a id="Context Inspector" class="anchor"></a>Context Inspector</h2>
 <br>
-<p></p>
-<br>
-<h3><a id="IO Editors" class="anchor"></a>IO Editors</h3>
-<br>
-<p></p>
+<p>When not selecting any nodes and you're inside some group. The inspector will display group information 
+as if you're selecting the group itself.</p>
 <br><br>
 <h2><a id="Node Inspector" class="anchor"></a>Node Inspector</h2>
 <br>
-<p></p>
+<p>When selecting a node. The inspector panel will display node information.</p>
+<br>
+<p>When selecting multiple nodes of the same type, the inspector will display the common properties of the nodes. 
+And when selecting multiple nodes of different types, the inspector will display the properties of 
+each node after another.</p>
 <br>
 <h3><a id="Presets" class="anchor"></a>Presets</h3>
 <br>
-<p></p>
+<p>You can store the current value of the node and reuse it by creating a preset.</p>
+<br>
+<p class="banner warning">You can name the preset "_default" to make it the default value when creating the node 
+of the same type.</p>
 <br>
 <h3><a id="Inspector Actions" class="anchor"></a>Inspector Actions</h3>
 <br>
-<p></p>
+<p>Some node comes with action button that has to be trigger manually. Some common inspector actions are:</p>
+<br>
+<table>
+    <colgroup>
+        <col span="1" style="width: 20%;">
+        <col span="1" style="width: 20%;">
+        <col span="1" style="width: 60%;">
+      </colgroup>
+    <tr>
+        <td>Refresh</td>
+        <td></td>
+        <td>Refresh the node.</td>
+    </tr>
+    <tr>
+        <td>Render</td>
+        <td></td>
+        <td>Render the export node.</td>
+    </tr>
+    <tr>
+        <td>Clear Cache</td>
+        <td></td>
+        <td>Clear cached output.</td>
+    </tr>
+</table>
+<br><br>
+<p>The inspector contains 2 pages accessible with the tab on top.</p>
 <br><br>
 <h2><a id="Properties Tab" class="anchor"></a>Properties Tab</h2>
 <br>
-<p></p>
+<p>This tab list all input and output properties of the node.</p>
 <br>
 <h3><a id="Animation" class="anchor"></a>Animation</h3>
 <br>
