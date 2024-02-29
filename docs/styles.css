@@ -112,6 +112,11 @@ img {
     margin: auto;
 }
 
+img.deco {
+    outline: 1px solid var(--main_dkgrey);
+    border-radius: 8px;
+}
+
 tr th {
     font-family: 'Noto Sans', sans-serif;
     font-weight: 600;
