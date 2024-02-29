@@ -22,15 +22,13 @@
         <div class="sidebar">
             <ul>
                 <li class="back "><a class="" href=""></a></li>
-<li class="active icon "><?xml version="1.0" encoding="utf-8"?>
+<li class="icon "><?xml version="1.0" encoding="utf-8"?>
 <!-- Generator: Adobe Illustrator 28.2.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
 <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 	 viewBox="0 0 24 24" style="enable-background:new 0 0 24 24;" xml:space="preserve">
 <path class="st0" d="M4,21V9l8-6l8,6v12h-6v-6h-4v6H4z"/>
 </svg>
 <a class="" href="index.html">Home</a></li>
-<ul class="submenu">
-</ul>
 <li class=""><a class="" href="getting_started.html">Getting Started</a></li>
 <li class="icon "><?xml version="1.0" encoding="utf-8"?>
 <!-- Generator: Adobe Illustrator 28.2.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
@@ -53,7 +51,18 @@
 <circle cx="12" cy="12" r="6"/>
 </svg>
 <a class="" href="animations">Animations</a></li>
-<li class=""><a class="" href="exporting.html">Exporting</a></li>
+<li class="active "><a class="" href="exporting.html">Exporting</a></li>
+<ul class="submenu">
+<li><a href="#Preview Export">Preview Export</a></li>
+<ul class="submenu h3">
+</ul>
+<li><a href="#Export Node">Export Node</a></li>
+<ul class="submenu h3">
+</ul>
+<li><a href="#CLI">CLI</a></li>
+<ul class="submenu h3">
+</ul>
+</ul>
 <li class="icon "><?xml version="1.0" encoding="utf-8"?>
 <!-- Generator: Adobe Illustrator 28.2.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
 <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
@@ -74,18 +83,29 @@
         </div>
 
         <div class="content">
-            <h1>Introduction</h1>
+            <h1>Exporting</h1>
 <br><br>
-<img src="src/images/banner.png" alt="banner">
+<p>There're several ways to export a file in Pixel Composer.</p>
 <br>
-<p>Pixel Composer is a node based VFX compositor for pixel art. 
-Using nodes to pass data and apply different effects. It also support keyframe-based animation
-with timeline.</p>
+<h2><a id="Preview Export" class="anchor"></a>Preview Export</h2>
 <br>
-<p>This documentation aims to help you with basic functionalities of Pixel Composer. From its user interface 
-to the several nodes it offers. </p>
+<p>The simplest way is to export directly from the preview panel. Send a node to export panel by double-click 
+or right click on a node and select "Send to preview" then on the preview panel, click the "Export canvas" 
+button on the bottom right.</p>
 <br>
-<p>Pixel Composer is in active development and this documentation will be update as the software evolves.</p>
+<p>When previewing surface array. The export canvas button will export all images in the array by adding 
+number at the end of each file name.</p>
+<br><br>
+<h2><a id="Export Node" class="anchor"></a>Export Node</h2>
+<br>
+<p>The export node is the main way to export image, animation. You can export single image, image sequence, 
+or animation. For more information, see <a href="">Export Node</a> page.</p>
+<br><br>
+<h2><a id="CLI" class="anchor"></a>CLI</h2>
+<br>
+<p>With export node in the project, you can run Pixel Composer project without opening the GUI using the 
+command line interface. For more information, see <a href="">CLI</a> page.</p>  
+<br><br>
         </div>
     </div>
 

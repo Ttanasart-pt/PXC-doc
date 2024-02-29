@@ -44,6 +44,14 @@ h3 {
     margin: 0;
 }
 
+h4 {
+    font-family: 'Noto Sans', sans-serif;
+    font-weight: 500;
+    font-size: 1.25rem;
+    color: var(--main_ltgrey);
+    margin: 0;
+}
+
 p, li {
     font-family: 'Noto Sans', sans-serif;
     font-weight: 400;
@@ -104,8 +112,8 @@ img {
 
 tr th {
     font-family: 'Noto Sans', sans-serif;
-    font-weight: 400;
-    font-size: 1rem;
+    font-weight: 600;
+    font-size: 0.9rem;
     color: var(--main_grey);
     margin: 0;
 
@@ -124,13 +132,24 @@ tr td {
 
 table {
     width: 100%;
-    border-collapse: collapse;
+    border-collapse: separate;
     margin-top: 16px;
     margin-bottom: 16px;
+
+    border: 1px solid var(--main_dkgrey);
+    border-radius: 8px;
 }
 
 table tr {
     height: 2rem;
+}
+
+table tr:nth-child(odd) {
+    background-color: #191925a0;
+}
+
+table th, table td {
+    padding: 8px;
 }
 
 a.anchor {
@@ -267,7 +286,7 @@ a.anchor {
 
 .sidebar ul.submenu li {
     height: 1.5rem;
-    opacity: 0.5;
+    opacity: 0.75;
 }
 
 .sidebar ul.submenu li:last-child {
@@ -426,6 +445,31 @@ span.bold {
 
 tr.center {
     text-align: center;
+}
+
+table.hotkey td:first-child {
+    text-align: center;
+    width: 60%;
+}
+
+table.hotkey td:nth-child(2) {
+    text-align: center;
+    width: 40%;
+}
+
+table.icon-detail td:first-child {
+    text-align: center;
+    width: 10%;
+}
+
+table.icon-detail td:nth-child(2) {
+    text-align: center;
+    width: 30%;
+}
+
+table.icon-detail td:nth-child(3) {
+    text-align: left;
+    width: 60%;
 }
 
 ::-webkit-scrollbar {

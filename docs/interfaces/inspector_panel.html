@@ -57,8 +57,10 @@
 </ul>
 <li><a href="#Properties Tab">Properties Tab</a></li>
 <ul class="submenu h3">
-<li><a href="#Animation">Animation</a></li>
+<li><a href="#Name Area">Name Area</a></li>
+<li><a href="#Property Recolor">Property Recolor</a></li>
 <li><a href="#Expression">Expression</a></li>
+<li><a href="#Keyframe Control">Keyframe Control</a></li>
 </ul>
 <li><a href="#Settings Tab">Settings Tab</a></li>
 <ul class="submenu h3">
@@ -138,44 +140,103 @@ of the same type.</p>
 <br>
 <table>
     <colgroup>
-        <col span="1" style="width: 20%;">
-        <col span="1" style="width: 20%;">
+        <col span="1" style="width: 10%;">
+        <col span="1" style="width: 30%;">
         <col span="1" style="width: 60%;">
       </colgroup>
     <tr>
-        <td>Refresh</td>
         <td></td>
+        <td>Refresh</td>
         <td>Refresh the node.</td>
     </tr>
     <tr>
-        <td>Render</td>
         <td></td>
+        <td>Render</td>
         <td>Render the export node.</td>
     </tr>
     <tr>
-        <td>Clear Cache</td>
         <td></td>
+        <td>Clear Cache</td>
         <td>Clear cached output.</td>
     </tr>
 </table>
 <br><br>
-<p>The inspector contains 2 pages accessible with the tab on top.</p>
+<p>The inspector contains 2 pages accessible with the tab.</p>
 <br><br>
 <h2><a id="Properties Tab" class="anchor"></a>Properties Tab</h2>
 <br>
-<p>This tab list all input and output properties of the node.</p>
+<p>This tab list all input and output properties of the node. You can modify the input value using the edit widget. 
+Each data type and subtype has its own edit widget. However there're some shared elements:</p>
+</p>
 <br>
-<h3><a id="Animation" class="anchor"></a>Animation</h3>
+<h3><a id="Name Area" class="anchor"></a>Name Area</h3>
 <br>
-<p></p>
+<p>This area contains main controls for the properties.</p>
+<br>
+<table>
+    <colgroup>
+        <col span="1" style="width: 10%;">
+        <col span="1" style="width: 30%;">
+        <col span="1" style="width: 60%;">
+      </colgroup>
+    <tr>
+        <td></td>
+        <td>Toggle animation</td>
+        <td>Toggle animation status on/off</td>
+    </tr>
+    <tr>
+        <td></td>
+        <td>Visibility</td>
+        <td>Make the junction appear on the graph.</td>
+    </tr>
+    <tr>
+        <td></td>
+        <td>Name</td>
+        <td>Name of the property. You can click and drag it to the graph panel to extract value.</td>
+    </tr>
+</table>
+<br>
+<h3><a id="Property Recolor" class="anchor"></a>Property Recolor</h3>
+<br>
+<p>You can right click on the property name to change its color. This change will reflect on the junction color 
+in the graph as well.</p>
 <br>
 <h3><a id="Expression" class="anchor"></a>Expression</h3>
 <br>
-<p></p>
+<p>On the right side is a button to toggle expression. Expression allows the data to be control using script. 
+For more information about expression scripting please visit the <a href="">scripting</a> page.</p>
+</p>
+<br>
+<h3><a id="Keyframe Control" class="anchor"></a>Keyframe Control</h3>
+<br>
+<p>When the property is animated. The right area will turns into keyframe controller. There you can add and jump 
+between keyframes.</p>
+<br>
+<table class="icon-detail">
+    <tr>
+        <td></td>
+        <td>Looping mode</td>
+        <td>Cycle around different keyframe looping modes.</td>
+    </tr>
+    <tr>
+        <td></td>
+        <td>Jump to next/previous keyframe</td>
+        <td>Mode frames cursor to previous/next keyframe.</td>
+    </tr>
+    <tr>
+        <td></td>
+        <td>Add/remove keyframe</td>
+        <td>If there's no keyframe at the current time, add a new keyframe with the current value.<br><br>
+If there is one, remove it.</td>
+    </tr>
+</table>
 <br><br>
 <h2><a id="Settings Tab" class="anchor"></a>Settings Tab</h2>
 <br>
-<p></p>
+<p>This tab will display node attributes. Node attributes control the behaviour of the node similiar to properties, 
+but attributes are more general and cannot be animated.</p>
+<br>
+<p>For more information about node attributes, check out the <a href="">attributes</a> page.</p>
 <br>
         </div>
     </div>

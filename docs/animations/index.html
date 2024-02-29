@@ -32,6 +32,9 @@
 <ul class="submenu">
 <li><a href="#Animation Basics">Animation Basics</a></li>
 <ul class="submenu h3">
+<li><a href="#Enabling Animation">Enabling Animation</a></li>
+<li><a href="#Adding Keyframe">Adding Keyframe</a></li>
+<li><a href="#Removing Keyframe">Removing Keyframe</a></li>
 </ul>
 <li><a href="#Keyframe Types">Keyframe Types</a></li>
 <ul class="submenu h3">
@@ -44,7 +47,7 @@
 </ul>
 </ul>
 <li class=""><a class="" href="driver.html">Driver</a></li>
-<li class=""><a class="" href="wrapping.html">Wrapping</a></li>
+<li class=""><a class="" href="looping.html">Looping</a></li>
 
                 <div style="height: 96px;"></div>
             </ul>
@@ -53,23 +56,62 @@
         <div class="content">
             <h1>Animations</h1>
 <br><br>
-<p></p>
+<p>Pixel Composer use keyframe-based animation. Most properties can be animated using the inspector panel 
+and the animation can be view and modify at the animation panel.</p>
 <br>
 <h2><a id="Animation Basics" class="anchor"></a>Animation Basics</h2>
 <br>
-<p></p>
+<h3><a id="Enabling Animation" class="anchor"></a>Enabling Animation</h3>
+<br>
+<p>To enable animation, click on the animation icon at the property name in the inspector. Click on it again 
+to disable the animation.</p>
+<br>
+<h3><a id="Adding Keyframe" class="anchor"></a>Adding Keyframe</h3>
+<br>
+<p>When modifying animated properties. A new keyframe will be created automatically at the current frame. 
+You can also create new keyframe by clicking on the keyframe icon on the inspector or animation panel.</p>
+<br>
+<h3><a id="Removing Keyframe" class="anchor"></a>Removing Keyframe</h3>
+<br>
+<p>To remove a keyframe, select the keyframe(s) in the animation panel and press the 
+<span class="inline-code">Del</span> key.</p>
 <br><br>
 <h2><a id="Keyframe Types" class="anchor"></a>Keyframe Types</h2>
 <br>
-<p></p>
+<p>By default, all keyframes use linear interpolation. You can change how the value is interpolated by going to 
+the animation panel. Select a keyframe and double click and drag horizontally to smoothen the interpolation curve.</p>
+<br>
+<p>You can also right click on the keyframe and set the interpolation type directly.</p>
+<br>
+<table class="icon-detail">
+    <tr>
+        <td><img src="" alt=""></td>
+        <td>Linear</td>
+        <td>Value changes linearly between keyframes.</td>
+    </tr>
+    <tr>
+        <td><img src="" alt=""></td>
+        <td>Smooth</td>
+        <td>Value changes following a smooth curve.</td>
+    </tr>
+    <tr>
+        <td><img src="" alt=""></td>
+        <td>Hold</td>
+        <td>Value changes abruptly between keyframes.</td>
+    </tr>
+</table>
 <br><br>
 <h2><a id="Animation Curve" class="anchor"></a>Animation Curve</h2>
 <br>
-<p></p>
+<p>You can display animation curve in the animation panel by pressing the curve icon at the property name.</p>
 <br><br>
 <h2><a id="Separated Axis" class="anchor"></a>Separated Axis</h2>
 <br>
-<p></p>
+<p>For value with array subdata (e.g. Vector, Area, etc.) a keyframe will represent all the member in the array. 
+This means you can't animate each member independently. To do so, you need to separate the axis by right-clicking 
+on the property in the inspector and select "Separate Axis".</p>
+<br>
+<p>With separated axis mode on, each member in the array will get their own timeline.</p>
 <br><br>
         </div>
     </div>
