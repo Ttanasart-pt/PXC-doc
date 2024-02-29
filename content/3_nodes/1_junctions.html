@@ -1,11 +1,11 @@
 <h1>Junctions</h1>
 <br><br>
 <img src="/src/images/3_nodes/junctions.png" alt="">
-<p></p>
+<p>A junction is a representation of a property in a node. Each junction has its own data type and connection 
+compatibility is based on its type. In the graph panel, holding <span class="inline-code">Shift</span> while 
+hovering on the junction will show the content inside it.</p>
 <br><br>
 <h2>Data Types</h2>
-<br>
-<p></p>
 <br>
 <table class="datatype">
     <colgroup>
@@ -240,8 +240,6 @@
 <br>
 <h3>Number (Interger/Float)</h3>
 <br>
-<p></p>
-<br>
 <table class="datatype">
     <colgroup>
         <col span="1" style="width: 30%;">
@@ -327,34 +325,26 @@
 <br>
 <h3>Color</h3>
 <br>
-<p></p>
-<br>
 <table class="datatype">
     <colgroup>
         <col span="1" style="width: 30%;">
-        <col span="1" style="width: 20%;">
-        <col span="1" style="width: 50%;">
+        <col span="1" style="width: 70%;">
       </colgroup>
     <tr>
         <th>Subtype</th>
-        <th>Dimension</th>
         <th>Examples</th>
     </tr>
     <tr>
         <td>Color</td>
         <td></td>
-        <td></td>
     </tr>
     <tr>
         <td>Palette</td>
-        <td></td>
         <td></td>
     </tr>
 </table>
 <br>
 <h3>Text</h3>
-<br>
-<p></p>
 <br>
 <table class="datatype">
     <colgroup>
@@ -375,15 +365,148 @@
     </tr>
 </table>
 <br><br>
-<h2>Array Types</h2>
-<br>
-<p></p>
-<br><br>
 <h2>Type Compatibility</h2>
 <br>
-<p></p>
-<br><br>
-<h2>Expression</h2>
+<p>Junctions of the same type are always compatible to each other. However there're also cross type compatibility 
+as well.</p>
 <br>
-<p></p>
-<br><br>
+<table class="junction-compat">
+    <tr>
+        <th></th>
+        <th>Any</th>
+        <th>Integer</th>
+        <th>Float</th>
+        <th>Boolean</th>
+        <th>Color</th>
+        <th>Surface</th>
+        <th>Path</th>
+        <th>Text</th>
+        <th>D3Material</th>
+    </tr>
+    <tr>
+        <td>Any</td>
+        <td class="compat">Y</td>
+        <td class="compat">Y</td>
+        <td class="compat">Y</td>
+        <td class="compat">Y</td>
+        <td class="compat">Y</td>
+        <td class="compat">Y</td>
+        <td class="compat">Y</td>
+        <td class="compat">Y</td>
+        <td class="compat">Y</td>
+    </tr>
+    <tr>
+        <td>Integer</td>
+        <td class="compat">Y</td>
+        <td class="compat">Y</td>
+        <td class="compat">Y</td>
+        <td class="compat">Y</td>
+        <td class="compat">Y</td>
+        <td>-</td>
+        <td class="compat">Y</td>
+        <td class="compat">Y</td>
+        <td>-</td>
+    </tr>
+    <tr>
+        <td>Float</td>
+        <td class="compat">Y</td>
+        <td class="compat">Y</td>
+        <td class="compat">Y</td>
+        <td class="compat">Y</td>
+        <td class="compat">Y</td>
+        <td>-</td>
+        <td class="compat">Y</td>
+        <td class="compat">Y</td>
+        <td>-</td>
+    </tr>
+    <tr>
+        <td>Boolean</td>
+        <td class="compat">Y</td>
+        <td class="compat">Y</td>
+        <td class="compat">Y</td>
+        <td class="compat">Y</td>
+        <td class="compat">Y</td>
+        <td>-</td>
+        <td class="compat">Y</td>
+        <td class="compat">Y</td>
+        <td>-</td>
+    </tr>
+    <tr>
+        <td>Color</td>
+        <td class="compat">Y</td>
+        <td class="compat">Y</td>
+        <td class="compat">Y</td>
+        <td class="compat">Y</td>
+        <td class="compat">Y</td>
+        <td>-</td>
+        <td class="compat">Y</td>
+        <td class="compat">Y</td>
+        <td>-</td>
+    </tr>
+    <tr>
+        <td>Surface</td>
+        <td class="compat">Y</td>
+        <td class="compat-extra">1</td>
+        <td class="compat-extra">1</td>
+        <td>-</td>
+        <td>-</td>
+        <td class="compat">Y</td>
+        <td>-</td>
+        <td>-</td>
+        <td class="compat">Y</td>
+    </tr>
+    <tr>
+        <td>Path</td>
+        <td class="compat">Y</td>
+        <td>-</td>
+        <td>-</td>
+        <td>-</td>
+        <td>-</td>
+        <td>-</td>
+        <td class="compat">Y</td>
+        <td class="compat">Y</td>
+        <td>-</td>
+    </tr>
+    <tr>
+        <td>Text</td>
+        <td class="compat">Y</td>
+        <td>-</td>
+        <td>-</td>
+        <td>-</td>
+        <td>-</td>
+        <td>-</td>
+        <td class="compat">Y</td>
+        <td class="compat">Y</td>
+        <td>-</td>
+    </tr>
+    <tr>
+        <td>D3Material</td>
+        <td class="compat">Y</td>
+        <td class="compat-extra">1</td>
+        <td class="compat-extra">1</td>
+        <td>-</td>
+        <td>-</td>
+        <td class="compat">Y</td>
+        <td>-</td>
+        <td>-</td>
+        <td class="compat">Y</td>
+    </tr>
+</table>
+<br>
+<p class="subtitle"><sup>1</sup> Surface will be converted to vector2 representing its dimension.</p>
+<br>
+<h3>Struct Type</h3>
+<br>
+<p><span class="inline-code">Mesh</span>, <span class="inline-code">Armature</span> and 
+<span class="inline-code">Particle</span> type can be connected to <span class="inline-code">Struct</span> type 
+but not the opposite.</p>
+<br>
+<h3>3D Types</h3>
+<br>
+<p><span class="inline-code">d3Mesh</span>, <span class="inline-code">d3Light</span>, <span class="inline-code">d3Camera</span>, 
+and <span class="inline-code">d3Scene</span> are all connectable both ways.</p>
+<br>
+<h3>Node Inclusivity</h3>
+<br>
+<p><span class="inline-code">Node</span> type can't be connect to any other type including the 
+<span class="inline-code">Any</span> type.</p>

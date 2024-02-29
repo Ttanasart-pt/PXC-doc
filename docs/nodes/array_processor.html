@@ -29,8 +29,17 @@
 <path class="st0" d="M4,21V9l8-6l8,6v12h-6v-6h-4v6H4z"/>
 </svg>
 <a class="" href="index.html">Nodes</a></li>
-<li class=""><a class="" href="junction.html">Junction</a></li>
-<li class=""><a class="" href="group.html">Group</a></li>
+<li class=""><a class="" href="junctions.html">Junctions</a></li>
+<li class="active "><a class="" href="array_processor.html">Array Processor</a></li>
+<ul class="submenu">
+<li><a href="#Array Processing Types">Array Processing Types</a></li>
+<ul class="submenu h3">
+<li><a href="#Loop">Loop</a></li>
+<li><a href="#Hold">Hold</a></li>
+<li><a href="#Expand">Expand</a></li>
+<li><a href="#Expand Inverse">Expand Inverse</a></li>
+</ul>
+</ul>
 <li class="icon "><?xml version="1.0" encoding="utf-8"?>
 <!-- Generator: Adobe Illustrator 28.2.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
 <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
@@ -38,9 +47,6 @@
 <circle cx="12" cy="12" r="6"/>
 </svg>
 <a class="" href="3d">3D</a></li>
-<li class="active "><a class="" href="array_processor.html">Array Processor</a></li>
-<ul class="submenu">
-</ul>
 <li class="icon "><?xml version="1.0" encoding="utf-8"?>
 <!-- Generator: Adobe Illustrator 28.2.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
 <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
@@ -194,7 +200,40 @@
         </div>
 
         <div class="content">
-            
+            <h1>Array Processor</h1>
+<br><br>
+<p>Array Processors are type of nodes that can process array of inputs. This allows you to batch process 
+multiple data, or create varient of image with different parameters.</p>
+<br>
+<p>Node that are array processor will have the [] icon.</p>
+<br><br>
+<h2><a id="Array Processing Types" class="anchor"></a>Array Processing Types</h2>
+<br>
+<p>If only one input is an array. Then each value in the array will be applies and output one by one. 
+Thus the output will be array of the same size. <br><br>However, if there're multiple array inputs 
+(especially with different size), then there're multiple ways the node can process the arrays.</p>
+<br>
+<p>There are 4 types of array processing which can be change in the settings tab.</p>
+<br>
+<h3><a id="Loop" class="anchor"></a>Loop</h3>
+<br>
+<p>This is the default behaviour. Loop the shorter array until the longer array is ended. The output will be array 
+of the same size as the longer array.</p>
+<br>
+<h3><a id="Hold" class="anchor"></a>Hold</h3>
+<br>
+<p>Hold the last value of the smaller array until the longer array is ended. The output will be array of the 
+same size as the longer array.</p>
+<br>
+<h3><a id="Expand" class="anchor"></a>Expand</h3>
+<br>
+<p>Create all combination of all input array. The output size will be the multiplication of all array length.</p>
+<br>
+<h3><a id="Expand Inverse" class="anchor"></a>Expand Inverse</h3>
+<br>
+<p>Create all combination of all input array. But reverse the order in which the combination generated. 
+The output size will be the multiplication of all array length.</p>
+<br>
         </div>
     </div>
 

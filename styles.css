@@ -8,6 +8,8 @@
     --main_white:	#d6d6e8;
 
     --accent: #ff9166;
+
+    --positive: #8fde5d;
 }
 
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@500;600;700&display=swap');
@@ -63,7 +65,7 @@ p, li {
 }
 
 p.subtitle {
-    font-size: 1rem;
+    font-size: 0.75rem;
     font-weight: 500;
     color: var(--main_ltgrey);
 
