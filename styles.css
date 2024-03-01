@@ -10,6 +10,7 @@
     --accent: #ff9166;
 
     --positive: #8fde5d;
+    --cyan: #88ffe9;
 }
 
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@500;600;700&display=swap');
@@ -446,6 +447,12 @@ p.banner {
     border-radius: 4px;
 }
 
+p img {
+    display: inline;
+    margin: 0px 4px;
+    vertical-align: middle;
+}
+
 span.bold {
     font-weight: 700;
 }
@@ -462,6 +469,10 @@ table.hotkey td:first-child {
 table.hotkey td:nth-child(2) {
     text-align: center;
     width: 40%;
+}
+
+table.center td {
+    text-align: center;
 }
 
 table.icon-detail td:first-child {
