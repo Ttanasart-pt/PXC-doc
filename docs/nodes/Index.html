@@ -223,12 +223,15 @@
             <h1>Nodes basics</h1>
 <br><br>
 <img src="/src/images/3_nodes/nodes.png" alt="">
-<p>Nodes are the fundamental building block for Pixel Composer. Each nodes represent an operation with input and output, 
+<br>
+<p>Nodes are the fundamental building block for Pixel Composer. Each nodes represent an operation with inputs and outputs, 
 and connections between nodes represent the flow of data.</p>
 <br><br>
 <h2><a id="Terminologies" class="anchor"></a>Terminologies</h2>
 <br>
 <h3><a id="Nodes" class="anchor"></a>Nodes</h3>
+<br>
+<img src="/src/images/3_nodes/node_plain.png" alt="">
 <br>
 <p>Node represent an operation. It takes inputs, process them, and returns outputs. In graph, node inputs 
 will appear on the left side, and outputs will appear on the right. This means the data will flow from 
@@ -241,7 +244,9 @@ panel. Input properties can be modify, animated or connected from output propert
 <br>
 <h3><a id="Junctions" class="anchor"></a>Junctions</h3>
 <br>
-<p>See <a href="">Junction</a> page for more detail.</p>
+<img src="/src/images/3_nodes/junctions.png" alt="">
+<br>
+<p>See <a href="./junctions.html">Junctions</a> page for more detail.</p>
 <br>
 <p>Each property can be represent in the graph panel as a junction. The junction shape and color depends on the 
 data behind it. Knowing the junctions will help you understand the data flow in the graph and making it easier 
@@ -256,41 +261,22 @@ same node, and you can't create cycle. For more information about junction type 
 <br><br>
 <h2><a id="Array Processor" class="anchor"></a>Array Processor</h2>
 <br>
-<p>Some node with the icon are array processor. Array processor can batch process array of data. For example: 
+<p>See <a href="./array_processor.html">Array Processor</a> page for more detail.</p>
+<br>
+<p>Some node with the <img src="/src/images/3_nodes/array_processor.png" alt=""> icon are array processor. Array processor can batch process array of data. For example: 
 you can insert array of surfaces and have it all process at the same time.</p>
-<br>
-<p>When multiple inputs are arrays. You can set how the node will process those data in the settings tab.</p>
-<br>
-<table>
-    <colgroup>
-        <col style="width: 40%;">
-        <col style="width: 60%;">
-    </colgroup>
-    <tr>
-        <td>Loop</td>
-        <td></td>
-    </tr>
-    <tr>
-        <td>Hold</td>
-        <td></td>
-    </tr>
-    <tr>
-        <td>Expand</td>
-        <td></td>
-    </tr>
-    <tr>
-        <td>Expand inverse</td>
-        <td></td>
-    </tr>
-</table>
 <br><br>
 <h2><a id="Node Group" class="anchor"></a>Node Group</h2>
+<br>
+<img src="/src/images/3_nodes/node_group.png" alt="">
 <br>
 <p>You can group multiple nodes by pressing <span class="inline-code">Ctrl+G</span> in the graph panel. 
 Groupped node can be enter with double-click. Inside a group, you can create Group Input/Output node to 
 interface with the outside context.</p>
 <br>
 <h3><a id="Inline Group" class="anchor"></a>Inline Group</h3>
+<br>
+<img src="/src/images/3_nodes/inline_group.png" alt="">
 <br>
 <p>Some nodes, such as VFX, RigidSim, FluidSim, will create it's own context area called inline group. 
 Right-clicking in theose area will allow you to create node that can't be created outside of the inline group.</p>
@@ -303,6 +289,8 @@ the new values.</p>
 <br><br>
 <h2><a id="Actions" class="anchor"></a>Actions</h2>
 <br>
+<img class="deco" src="/src/images/2_interfaces/inspector_action.png" alt="">
+<br>
 <p>Some nodes comes with inspector actions that can be manually trigger in the inspector panel. Those action can 
 be display as a junction for automation.</p>
 <br><br>
@@ -311,10 +299,14 @@ be display as a junction for automation.</p>
 <p>Some nodes store (cache) value of all frames for performance or to achieve some effects. Cache status will 
 appear when inspecting a node at the animation panel.</p>
 <br>
+<img class="deco" src="/src/images/3_nodes/cache_stat.png" alt="">
+<br>
 <p>The red bar means that frame has not been cached yet, green means the frames is cached.</p>
 <br>
 <p>Cache will automatically refresh if any properties is changed. However sometime you might want to clear the 
 cache manually. You can do so by clicking the "Clear Cache" button in the inspector.</p>
+<br>
+<img class="deco" src="/src/images/3_nodes/clear_cache.png" alt="">
 <br><br>
 <h2><a id="Attributes" class="anchor"></a>Attributes</h2>
 <br>
@@ -367,6 +359,8 @@ texture interpolation, color space, etc. Attributes can be view in the setting t
 </table>
 <br><br>
 <h2><a id="Tools" class="anchor"></a>Tools</h2>
+<br>
+<img class="deco" src="/src/images/2_interfaces/preview_tool_rack.png" alt="">
 <br>
 <p>Some nodes also come with tools which allow for interaction directly from the preview panel. Node tools 
 will appear when the node is inspecting. Which means you can display tools while previewing another nodes.</p>
