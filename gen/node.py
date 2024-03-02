@@ -17,8 +17,8 @@ with open(regPath, "r") as file:
 
 if not os.path.exists("docs/nodes"):
     os.makedirs("docs/nodes")
-if not os.path.exists("docs/nodes/__redir"):
-    os.makedirs("docs/nodes/__redir")
+if not os.path.exists("docs/nodes/_redir"):
+    os.makedirs("docs/nodes/_redir")
 
 nodeListRaws = content.split("// NODE LIST")
 nodeListRaw = nodeListRaws[1]
@@ -93,7 +93,7 @@ def writeNodeFile(cat, node, line):
         elif p == "node_processor":
             link = "../array_processor.html"
         elif p in nodePages:
-            link = f"../__redir/{p[5:]}.html"
+            link = f"../_redir/{p[5:]}.html"
         
         if link == "":
             basicData += f'<tr><th colspan="2" class="inheritance-block"><p>{p}</p></th></tr>'
@@ -129,7 +129,7 @@ def writeNodeFile(cat, node, line):
     with open(filePath, "w") as file:
         file.write(txt)
 
-    redirectPath = f"docs/nodes/__redir/{fileName}.html"
+    redirectPath = f"docs/nodes/_redir/{fileName}.html"
     with open(redirectPath, "w") as file:
         file.write(f'''<!DOCTYPE html>
 <html>
