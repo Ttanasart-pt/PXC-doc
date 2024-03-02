@@ -111,7 +111,7 @@ def generateFolder(dirIn, dirOut):
         os.mkdir(dirOut)
 
     for f in files:
-        if f.startswith("_"):
+        if f.startswith("__"):
             continue
         
         fullPath = os.path.join(dirIn, f)

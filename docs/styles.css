@@ -66,11 +66,11 @@ p, li {
 }
 
 p.subtitle {
-    font-size: 0.75rem;
+    font-size: 1rem;
     font-weight: 500;
     color: var(--main_ltgrey);
 
-    margin: 8px 0 32px 0;
+    margin: 8px 0 16px 0;
 }
 
 a {
@@ -184,7 +184,7 @@ a.anchor {
 
     background-color: var(--main_dkblack);
 
-    z-index: 1;
+    z-index: 100;
 }
 
 .header-title {
@@ -345,6 +345,19 @@ table.summary-table {
     border-radius:    4px;
 }
 
+table.summary-table tr {
+    height: auto;
+    background-color: #00000000;
+}
+
+table.summary-table th {
+    padding: 2px;
+}
+
+table.summary-table td {
+    padding: 2px;
+}
+
 table.summary-table td.summary-topic > p {
     margin-right: 8px;
     color: var(--main_ltgrey);
@@ -378,18 +391,24 @@ table.summary-table th.head > p {
     border-radius: 4px;
 }
 
-th.inheritance-block > p {
+th.inheritance-block > p, th.inheritance-block > a {
     width: fit-content;
     padding: 4px 16px;
     margin: 2px auto;
+    display: inline-block;
 
     color: var(--main_ltgrey);
     font-size: 0.85rem;
     font-weight: 600;
+    line-height: 1.5;
 
     background-color: var(--main_mdblack);
     border-radius: 4px;
     border: 1px solid var(--main_dkgrey);
+}
+
+th.inheritance-block > a {
+    color: var(--accent);
 }
 
 th.inheritance-block {

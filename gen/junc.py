@@ -96,31 +96,39 @@ def getColor(dataType):
     return typeColor[ind]
 
 def IOTable(ioList):
-    inputs = []
-    outputs = []
+    inputRows = ""
+    outputRows = ""
 
-    for io in ioList:
-        io = io.strip()
-        io = io.split(",")
+    for node, ios in ioList:
+        inputs = []
+        outputs = []
+
+        for io in ios:
+            io = io.strip()
+            io = io.split(",")
+            
+            _name   = io[0].strip().strip("\"")
+            _iotype = io[2].strip()
+            _dataty = io[3].strip().replace("VALUE_TYPE.", "")
+
+            if _iotype == "JUNCTION_CONNECT.input":
+                inputs.append((_name, _dataty))
+            elif _iotype == "JUNCTION_CONNECT.output":
+                outputs.append((_name, _dataty))
         
-        _name   = io[0].strip().strip("\"")
-        _iotype = io[2].strip()
-        _dataty = io[3].strip().replace("VALUE_TYPE.", "")
+        if inputs:
+            inputRows += f'<tr><th colspan="2" class="summary-topic"><p>{node}</p></th></tr>'
+        inputRows += "".join([f"""<tr>
+            <td class="summary-topic"><p style="color: {getColor(_dataty)}" >{_dataty}</p></td>
+            <td><p>{_name}</p></td>
+        </tr>""" for _name, _dataty in inputs])
 
-        if _iotype == "JUNCTION_CONNECT.input":
-            inputs.append((_name, _dataty))
-        elif _iotype == "JUNCTION_CONNECT.output":
-            outputs.append((_name, _dataty))
-
-    inputRows = "".join([f"""<tr>
-        <td class="summary-topic"><p style="color: {getColor(_dataty)}" >{_dataty}</p></td>
-        <td><p>{_name}</p></td>
-    </tr>""" for _name, _dataty in inputs])
-
-    outputRows = "".join([f"""<tr>
-        <td class="summary-topic"><p style="color: {getColor(_dataty)}">{_dataty}</p></td>
-        <td><p>{_name}</p></td>
-    </tr>""" for _name, _dataty in outputs])
+        if outputs:
+            outputRows += f'<tr><th colspan="2" class="summary-topic"><p>{node}</p></th></tr>'
+        outputRows += "".join([f"""<tr>
+            <td class="summary-topic"><p style="color: {getColor(_dataty)}">{_dataty}</p></td>
+            <td><p>{_name}</p></td>
+        </tr>""" for _name, _dataty in outputs])
 
     return f"""
 <tr><th class="head" colspan="2"><p>Inputs</p></th></tr>

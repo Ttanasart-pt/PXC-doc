@@ -1,5 +1,4 @@
 import os
-import shutil
 import re
 
 import junc
@@ -16,12 +15,18 @@ content = ""
 with open(regPath, "r") as file:
     content = file.read()
 
+if not os.path.exists("docs/nodes"):
+    os.makedirs("docs/nodes")
+if not os.path.exists("docs/nodes/__redir"):
+    os.makedirs("docs/nodes/__redir")
+
 nodeListRaws = content.split("// NODE LIST")
 nodeListRaw = nodeListRaws[1]
 
-cat      = ""
-nodeData = {}
-nodes    = {}
+cat       = ""
+nodeData  = {}
+nodePages = {}
+nodes     = {}
 
 def extractNodeData(node):
     path = f"{scriptDir}\\{node}\\{node}.gml"
@@ -54,7 +59,7 @@ def writeNodeFile(cat, node, line):
     
     _data = nodeData[node.lower()]
     nodeName  = _data["name"]
-    junctions = _data["io"]
+    junctions = [ ( node.lower(), _data["io"] ) ]
     parent    = _data["parent"]
     
     basicData = '<tr><th class="head" colspan="2"><p>Node Data</p></th></tr>'
@@ -70,7 +75,7 @@ def writeNodeFile(cat, node, line):
 
     while p in nodeData:
         _pdata = nodeData[p]
-        junctions = _pdata["io"] + junctions
+        junctions.insert(0, ( p, _pdata["io"] ))
         parents.insert(0, p)
         
         p = nodeData[p]["parent"]
@@ -82,7 +87,18 @@ def writeNodeFile(cat, node, line):
     basicData += '<tr height="8px"></tr>'
     basicData += '<tr><th class="head" colspan="2"><p>Inheritances</p></th></tr>'
     for p in parents:
-        basicData += f'<tr><th colspan="2" class="inheritance-block"><p>{p}</p></th></tr>'
+        link = ""
+        if p == "node":
+            link = "../index.html"
+        elif p == "node_processor":
+            link = "../array_processor.html"
+        elif p in nodePages:
+            link = f"../__redir/{p[5:]}.html"
+        
+        if link == "":
+            basicData += f'<tr><th colspan="2" class="inheritance-block"><p>{p}</p></th></tr>'
+        else:
+            basicData += f'<tr><th colspan="2" class="inheritance-block"><a href="{link}">{p}</a></th></tr>'
 
     className = node
 
@@ -92,8 +108,8 @@ def writeNodeFile(cat, node, line):
     if len(args) > 6:
         tooltip = args[6].strip().strip("\"")
 
-    junctions = junc.IOTable(junctions)
-    summary = basicData + '<tr height="8px"></tr>' + junctions
+    junctionList = junc.IOTable(junctions)
+    summary = basicData + '<tr height="8px"></tr>' + junctionList
 
     txt = template.replace("{{nodeName}}", nodeName) \
                   .replace("{{tooltip}}", tooltip)   \
@@ -101,7 +117,7 @@ def writeNodeFile(cat, node, line):
 
     fileName = className.replace('Node_', '').lower()
 
-    manFilePath = f"content/_nodes/{fileName}.html"
+    manFilePath = f"content/__nodes/{fileName}.html"
     if os.path.exists(manFilePath):
         with open(manFilePath, "r") as file:
             txt += file.read()
@@ -112,6 +128,10 @@ def writeNodeFile(cat, node, line):
     filePath = f"content/{dirname}/{cat}/{fileName}.html"
     with open(filePath, "w") as file:
         file.write(txt)
+
+    redirectPath = f"docs/nodes/__redir/{fileName}.html"
+    with open(redirectPath, "w") as file:
+        file.write(f'<meta http-equiv="refresh" content="0; url=/nodes/{cat}/{fileName}.html" />')
 
 for line in nodeListRaw.split("\n"):
     line = line.strip()
@@ -124,6 +144,8 @@ for line in nodeListRaw.split("\n"):
 
         nodeClass = args[3].strip().strip("\"")
         nodes[cat].append((nodeClass, line))
+
+        nodePages[nodeClass.lower()] = 1
 
 for cat in nodes:
     catPath = f"content/{dirname}/{cat}"
