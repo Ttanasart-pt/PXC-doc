@@ -131,7 +131,10 @@ def writeNodeFile(cat, node, line):
 
     redirectPath = f"docs/nodes/__redir/{fileName}.html"
     with open(redirectPath, "w") as file:
-        file.write(f'<meta http-equiv="refresh" content="0; url=/nodes/{cat}/{fileName}.html" />')
+        file.write(f'''<!DOCTYPE html>
+<html>
+    <meta http-equiv="refresh" content="0; url=/nodes/{cat}/{fileName}.html"/>
+</html>''')
 
 for line in nodeListRaw.split("\n"):
     line = line.strip()
