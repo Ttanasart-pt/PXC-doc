@@ -19,6 +19,9 @@ if not os.path.exists("docs/nodes"):
     os.makedirs("docs/nodes")
 if not os.path.exists("docs/nodes/_redir"):
     os.makedirs("docs/nodes/_redir")
+if not os.path.exists("docs/nodes/_redir/index.html"):
+    with open("docs/nodes/_redir/index.html", "w") as file:
+        file.write(f'''<!DOCTYPE html><html></html>''')
 
 nodeListRaws = content.split("// NODE LIST")
 nodeListRaw = nodeListRaws[1]
