@@ -89,7 +89,7 @@ def writeNodeFile(cat, node, line):
     
     basicData += '<tr height="8px"></tr>'
     basicData += '<tr><th class="head" colspan="2"><p>Inheritances</p></th></tr>'
-    for p in parents:
+    for i, p in enumerate(parents):
         link = ""
         if p == "node":
             link = "../index.html"
@@ -98,10 +98,12 @@ def writeNodeFile(cat, node, line):
         elif p in nodePages:
             link = f"../_index/{p[5:]}.html"
         
+        _class = "inheritance-block current" if i == len(parents) - 1 else "inheritance-block"
+
         if link == "":
-            basicData += f'<tr><th colspan="2" class="inheritance-block"><p>{p}</p></th></tr>'
+            basicData += f'<tr><th colspan="2" class="{_class}"><p>{p}</p></th></tr>'
         else:
-            basicData += f'<tr><th colspan="2" class="inheritance-block"><a href="{link}">{p}</a></th></tr>'
+            basicData += f'<tr><th colspan="2" class="{_class}"><a href="{link}">{p}</a></th></tr>'
 
     className = node
 

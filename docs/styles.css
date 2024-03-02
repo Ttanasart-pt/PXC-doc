@@ -411,9 +411,8 @@ th.inheritance-block > a {
     color: var(--accent);
 }
 
-th.inheritance-block {
-    position: relative;
-    z-index: 1;
+th.inheritance-block.current > a {
+    color: var(--main_white);
 }
 
 span.inline-code {
