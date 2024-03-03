@@ -395,6 +395,11 @@ table.summary-table th.head > p {
     border-radius: 4px;
 }
 
+table.summary-table img {
+    width: 100%;
+    padding: 8px;
+}
+
 th.inheritance-block > p, th.inheritance-block > a {
     width: fit-content;
     padding: 4px 16px;

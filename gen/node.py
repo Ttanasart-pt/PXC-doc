@@ -64,8 +64,15 @@ def writeNodeFile(cat, node, line):
     nodeName  = _data["name"]
     junctions = [ ( node.lower(), _data["io"] ) ]
     parent    = _data["parent"]
+
+    createLine = line.replace("\t", "").strip()
+    createLine = createLine.split("(")[1].split(")")[0] # remove content inside [] to prevent comma miscount
+    args = re.sub(r'\[.*?\]', '', createLine).split(",")
+
+    spr = args[2].strip()
     
     basicData = '<tr><th class="head" colspan="2"><p>Node Data</p></th></tr>'
+    basicData += f'<tr><th colspan="2"><img {spr}></th></tr>'
 
     basicData += f'<tr><th colspan="2" class="summary-topic"><p>Display name</p></th></tr>'
     basicData += f'<tr><th colspan="2" class="summary-content"><p>{nodeName}</p></th></tr>'
@@ -107,11 +114,7 @@ def writeNodeFile(cat, node, line):
 
     className = node
 
-    tooltip   = ""
-    createLine = line.split("(")[1].split(")")[0] # remove content inside [] to prevent comma miscount
-    args = re.sub(r'\[.*?\]', '', createLine).split(",")
-    if len(args) > 6:
-        tooltip = args[6].strip().strip("\"")
+    tooltip   = "" if len(args) <= 6 else args[6].strip().strip("\"")
 
     junctionList = junc.IOTable(junctions)
     summary = basicData + '<tr height="8px"></tr>' + junctionList
