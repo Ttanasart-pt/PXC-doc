@@ -107,7 +107,7 @@ def writeNodeFile(cat, node, line):
 
     className = node
 
-    tooltip   = className
+    tooltip   = ""
     createLine = line.split("(")[1].split(")")[0] # remove content inside [] to prevent comma miscount
     args = re.sub(r'\[.*?\]', '', createLine).split(",")
     if len(args) > 6:

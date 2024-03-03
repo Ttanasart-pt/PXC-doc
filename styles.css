@@ -73,6 +73,10 @@ p.subtitle {
     margin: 8px 0 16px 0;
 }
 
+p.subtitle a {
+    font-weight: 500;
+}
+
 a {
     font-family: 'Noto Sans', sans-serif;
     font-weight: 700;
@@ -334,7 +338,7 @@ a.anchor {
 
 table.summary-table {
     width: min(50%, 240px);
-    margin: 0px 0px 0px 16px;
+    margin: 0px 0px 16px 16px;
     padding: 8px;
 
     float: right;
@@ -459,10 +463,15 @@ p.banner {
     display: block;
     margin: 16px 0px 16px 0px;
     padding: 16px;
+    width: inherit;
 
     background-color: #ff916610;
     border: 1px solid var(--accent);
     border-radius: 4px;
+}
+
+p.center {
+    text-align: center;
 }
 
 p img {

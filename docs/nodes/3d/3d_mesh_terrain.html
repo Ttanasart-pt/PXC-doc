@@ -44,6 +44,13 @@
 <li class=""><a class="" href="3d_mesh_sphere_uv.html">3D Mesh Sphere Uv</a></li>
 <li class="active "><a class="" href="3d_mesh_terrain.html">3D Mesh Terrain</a></li>
 <ul class="submenu">
+<li><a href="#Mesh Properties">Mesh Properties</a></li>
+<ul class="submenu h3">
+<li><a href="#Subdivision">Subdivision</a></li>
+<li><a href="#Input type">Input type</a></li>
+<li><a href="#Height Map">Height Map</a></li>
+<li><a href="#Height Array">Height Array</a></li>
+</ul>
 </ul>
 <li class=""><a class="" href="3d_point_affector.html">3D Point Affector</a></li>
 <li class=""><a class="" href="3d_repeat.html">3D Repeat</a></li>
@@ -64,7 +71,9 @@
         </div>
 
         <div class="content">
-            <h1>3D Terrain</h1>
+            <link rel="stylesheet" href="../styles.css">
+
+<h1>3D Terrain</h1>
 <p class="subtitle">Create 3D terrain from height map.</p>
 <br><br>
 
@@ -106,7 +115,28 @@
             <td><p>Mesh</p></td>
         </tr>
 
-</table>
+</table><p>Create a terrain mesh by displacing verticies by a height map.</p>
+<br>
+<img class="node-content deco" src="/src/images/captures/node_3d_mesh_terrain.png">
+<br><br>
+<h2><a id="Mesh Properties" class="anchor"></a>Mesh Properties</h2>
+<br>
+<h3><a id="Subdivision" class="anchor"></a>Subdivision</h3>
+<br>
+<p>Number of subdivisions/detail of the terrain.</p>
+<br>
+<h3><a id="Input type" class="anchor"></a>Input type</h3>
+<br>
+<p>The terrain can be controlled using height map (surface) or directly through the array type.</p>
+<br>
+<h3><a id="Height Map" class="anchor"></a>Height Map</h3>
+<br>
+<p>Height map to displace the terrain.</p>
+<br>
+<h3><a id="Height Array" class="anchor"></a>Height Array</h3>
+<br>
+<p>1D array of heights to displace each vertex.</p>
+<br>
         </div>
     </div>
 

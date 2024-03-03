@@ -8,6 +8,12 @@ class FileType(Enum):
     DIR   = 1
     BACK  = 2
 
+images = {}
+for root, dirs, files in os.walk("src"):
+    for file in files:
+        if file.endswith(".png"):
+            images[file[:-4]] = os.path.join(root, file).replace("\\", "/")
+
 templatePath = "templates/page.html"
 with open(templatePath, "r") as f:
     template = f.read()
@@ -52,6 +58,16 @@ def generateFile(dirOut, pathIn, sidebar):
             content = content.replace(f"<h3>{_h3}</h3>", f'<h3><a id="{h3}" class="anchor"></a>{_h3}</h3>')
 
         headers.append({"h2": h2, "h3s": h3s})
+
+    imgs = re.findall(r"<img (.*?)>", content)
+    for img in imgs:
+        if img in images:
+            content = content.replace(f"<img {img}>", f'<img class="node-content" src="/{images[img]}">')
+
+    imgs = re.findall(r"<img-deco (.*?)>", content)
+    for img in imgs:
+        if img in images:
+            content = content.replace(f"<img-deco {img}>", f'<img class="node-content deco" src="/{images[img]}">')
 
     sideContent = ""
     for fType, _, fName, title in sidebar:
