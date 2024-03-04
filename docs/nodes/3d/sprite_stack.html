@@ -57,6 +57,12 @@
 <li class=""><a class="" href="normal_light.html">Normal Light</a></li>
 <li class="active "><a class="" href="sprite_stack.html">Sprite Stack</a></li>
 <ul class="submenu">
+<li><a href="#Stacking Positions">Stacking Positions</a></li>
+<ul class="submenu h3">
+</ul>
+<li><a href="#Rendering Properties">Rendering Properties</a></li>
+<ul class="submenu h3">
+</ul>
 </ul>
 
                 <div style="height: 96px;"></div>
@@ -120,7 +126,31 @@
             <td><p>Surface out</p></td>
         </tr>
 
-</table>
+</table><p>Sprite stack is a way to create a 3D like image using 2D images by stacking them on top of each other.</p>
+<br>
+<img class="node-content" src="/src/images/captures/node_sprite_stack.png">
+<br><br>
+<h2><a id="Stacking Positions" class="anchor"></a>Stacking Positions</h2>
+<br>
+<p>When stacking, each copy will be shifted by the amount set by the <span class="inline-code">Stack shift</span> properties. 
+The final position can also be adjusted by the <span class="inline-code">Position</span>.</p>
+<br>
+<p>The <span class="inline-code">Move base</span> property will revert the position such that the original image 
+got shifted instead of the copies.</p>
+<br>
+<img class="node-content" src="/src/images/captures/node_sprite_stack_position.png">
+<br><br>
+<h2><a id="Rendering Properties" class="anchor"></a>Rendering Properties</h2>
+<br>
+<p><span class="inline-code">Stack blend</span> will blend the copies with a new color. You can make make the 
+copies fade out over time with the <span class="inline-code">Alpha end</span> property.</p>
+<br>
+<img class="node-content" src="/src/images/captures/node_sprite_stack_rendering.png">
+<br>
+<p>The <span class="inline-code">Highlight</span> property allow you to change the color of the edge.</p>
+<br>
+<img class="node-content" src="/src/images/captures/node_sprite_stack_highlight.png">
+<br>
         </div>
     </div>
 

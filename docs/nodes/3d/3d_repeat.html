@@ -46,6 +46,12 @@
 <li class=""><a class="" href="3d_point_affector.html">3D Point Affector</a></li>
 <li class="active "><a class="" href="3d_repeat.html">3D Repeat</a></li>
 <ul class="submenu">
+<li><a href="#Direct vs. Compound Transformations">Direct vs. Compound Transformations</a></li>
+<ul class="submenu h3">
+</ul>
+<li><a href="#Object Mode">Object Mode</a></li>
+<ul class="submenu h3">
+</ul>
 </ul>
 <li class=""><a class="" href="3d_round_vertex.html">3D Round Vertex</a></li>
 <li class=""><a class="" href="3d_scene.html">3D Scene</a></li>
@@ -71,92 +77,72 @@
 <br><br>
 
 <table class = "summary-table">
-    <tr><th class="head" colspan="2"><p>Node Data</p></th></tr><tr><th colspan="2"><img class="node-content" src="/src/nodeIcons/s_node_3d_array.png"></th></tr><tr><th colspan="2" class="summary-topic"><p>Display name</p></th></tr><tr><th colspan="2" class="summary-content"><p>3D Repeat</p></th></tr><tr><th colspan="2" class="summary-topic"><p>Internal name</p></th></tr><tr><th colspan="2" class="summary-content"><p>Node_3D_Repeat</p></th></tr><tr height="8px"></tr><tr><th class="head" colspan="2"><p>Inheritances</p></th></tr><tr><th colspan="2" class="inheritance-block"><a href="../index.html">node</a></th></tr><tr><th colspan="2" class="inheritance-block current"><a href="../_index/3d_repeat.html">node_3d_repeat</a></th></tr><tr height="8px"></tr>
+    <tr><th class="head" colspan="2"><p>Node Data</p></th></tr><tr><th colspan="2"><img class="node-content" src="/src/nodeIcons/s_node_3d_array.png"></th></tr><tr><th colspan="2" class="summary-topic"><p>Display name</p></th></tr><tr><th colspan="2" class="summary-content"><p>3D Repeat</p></th></tr><tr><th colspan="2" class="summary-topic"><p>Internal name</p></th></tr><tr><th colspan="2" class="summary-content"><p>Node_3D_Repeat</p></th></tr><tr height="8px"></tr><tr><th class="head" colspan="2"><p>Inheritances</p></th></tr><tr><th colspan="2" class="inheritance-block"><a href="../index.html">node</a></th></tr><tr><th colspan="2" class="inheritance-block"><a href="../array_processor.html">node_processor</a></th></tr><tr><th colspan="2" class="inheritance-block"><p>node_3d</p></th></tr><tr><th colspan="2" class="inheritance-block current"><a href="../_index/3d_repeat.html">node_3d_repeat</a></th></tr><tr height="8px"></tr>
 <tr><th class="head" colspan="2"><p>Inputs</p></th></tr>
 <tr><th colspan="2" class="summary-topic"><p>node_3d_repeat</p></th></tr><tr>
-            <td class="summary-topic"><p style="color: #ff9166" >integer</p></td>
-            <td><p>Dimension</p></td>
-        </tr><tr>
-            <td class="summary-topic"><p style="color: #ffe478" >float</p></td>
-            <td><p>Object position</p></td>
-        </tr><tr>
-            <td class="summary-topic"><p style="color: #ffe478" >float</p></td>
-            <td><p>Object rotation</p></td>
-        </tr><tr>
-            <td class="summary-topic"><p style="color: #ffe478" >float</p></td>
-            <td><p>Object scale</p></td>
-        </tr><tr>
-            <td class="summary-topic"><p style="color: #ffe478" >float</p></td>
-            <td><p>Render position</p></td>
-        </tr><tr>
-            <td class="summary-topic"><p style="color: #ffe478" >float</p></td>
-            <td><p>Render scale</p></td>
-        </tr><tr>
-            <td class="summary-topic"><p style="color: #ffe478" >float</p></td>
-            <td><p>Light direction</p></td>
-        </tr><tr>
-            <td class="summary-topic"><p style="color: #ffe478" >float</p></td>
-            <td><p>Light height</p></td>
-        </tr><tr>
-            <td class="summary-topic"><p style="color: #ffe478" >float</p></td>
-            <td><p>Light intensity</p></td>
-        </tr><tr>
-            <td class="summary-topic"><p style="color: #8fde5d" >color</p></td>
-            <td><p>Light color</p></td>
-        </tr><tr>
-            <td class="summary-topic"><p style="color: #8fde5d" >color</p></td>
-            <td><p>Ambient color</p></td>
-        </tr><tr>
-            <td class="summary-topic"><p style="color: #c1007c" >d3object</p></td>
-            <td><p>3D object</p></td>
+            <td class="summary-topic"><p style="color: #4da6ff" >d3Mesh</p></td>
+            <td><p>Objects</p></td>
         </tr><tr>
             <td class="summary-topic"><p style="color: #ff9166" >integer</p></td>
-            <td><p>Repeat</p></td>
-        </tr><tr>
-            <td class="summary-topic"><p style="color: #ffe478" >float</p></td>
-            <td><p>Repeat position</p></td>
-        </tr><tr>
-            <td class="summary-topic"><p style="color: #ffe478" >float</p></td>
-            <td><p>Repeat rotation</p></td>
-        </tr><tr>
-            <td class="summary-topic"><p style="color: #ffe478" >float</p></td>
-            <td><p>Repeat scale</p></td>
+            <td><p>Object Mode</p></td>
         </tr><tr>
             <td class="summary-topic"><p style="color: #ff9166" >integer</p></td>
-            <td><p>Repeat pattern</p></td>
-        </tr><tr>
-            <td class="summary-topic"><p style="color: #ff9166" >integer</p></td>
-            <td><p>Axis</p></td>
+            <td><p>Amount</p></td>
         </tr><tr>
             <td class="summary-topic"><p style="color: #ffe478" >float</p></td>
-            <td><p>Radius</p></td>
-        </tr><tr>
-            <td class="summary-topic"><p style="color: #ff9166" >integer</p></td>
-            <td><p>Rotation</p></td>
-        </tr><tr>
-            <td class="summary-topic"><p style="color: #ff9166" >integer</p></td>
-            <td><p>Projection</p></td>
+            <td><p>Starting Position</p></td>
         </tr><tr>
             <td class="summary-topic"><p style="color: #ffe478" >float</p></td>
-            <td><p>Field of view</p></td>
+            <td><p>Starting Rotation</p></td>
+        </tr><tr>
+            <td class="summary-topic"><p style="color: #ffe478" >float</p></td>
+            <td><p>Starting Scale</p></td>
+        </tr><tr>
+            <td class="summary-topic"><p style="color: #ffe478" >float</p></td>
+            <td><p>Shift Position</p></td>
+        </tr><tr>
+            <td class="summary-topic"><p style="color: #ffe478" >float</p></td>
+            <td><p>Shift Rotation</p></td>
+        </tr><tr>
+            <td class="summary-topic"><p style="color: #ffe478" >float</p></td>
+            <td><p>Shift Scale</p></td>
+        </tr><tr>
+            <td class="summary-topic"><p style="color: #ffe478" >float</p></td>
+            <td><p>Positions</p></td>
+        </tr><tr>
+            <td class="summary-topic"><p style="color: #ffe478" >float</p></td>
+            <td><p>Rotations</p></td>
+        </tr><tr>
+            <td class="summary-topic"><p style="color: #ffe478" >float</p></td>
+            <td><p>Scales</p></td>
         </tr><tr>
             <td class="summary-topic"><p style="color: #8c3f5d" >boolean</p></td>
-            <td><p>Scale view with dimension</p></td>
+            <td><p>Use Instance</p></td>
         </tr>
 <tr height="8px"></tr>
 <tr><th class="head" colspan="2"><p>Outputs</p></th></tr>
 <tr><th colspan="2" class="summary-topic"><p>node_3d_repeat</p></th></tr><tr>
-            <td class="summary-topic"><p style="color: #ff6b97">surface</p></td>
-            <td><p>Surface out</p></td>
-        </tr><tr>
-            <td class="summary-topic"><p style="color: #c1007c">d3object</p></td>
-            <td><p>3D objects</p></td>
-        </tr><tr>
-            <td class="summary-topic"><p style="color: #ff6b97">surface</p></td>
-            <td><p>Normal pass</p></td>
+            <td class="summary-topic"><p style="color: #4da6ff">d3Scene</p></td>
+            <td><p>Scene</p></td>
         </tr>
 
 </table><p>3D repeat allows you to create clones of the object with different transformations.</p>
+<br><br>
+<h2><a id="Direct vs. Compound Transformations" class="anchor"></a>Direct vs. Compound Transformations</h2>
+<br>
+<p>The transformations of each instances are controlled by 2 values, direct and compound. <br><br>
+The direct value apply directly to each object based on its index, there are set by the 
+<span class="inline-code">Positions</span>, <span class="inline-code">Rotations</span>, and <span class="inline-code">Scale</span> 
+properties. <br><br>
+The compound value multiply per each index, e.g. the second object will tranform twice as much as the first object, 
+the compound values are controlled by the <span class="inline-code">Shift_</span> properties.<br><br>
+Both direct and compound transformations are added to create the final transformations.</p>
+<br><br>
+<h2><a id="Object Mode" class="anchor"></a>Object Mode</h2>
+<br>
+<p>The repeat amount can be set in the <span class="inline-code">Object Mode</span> property. Duplicate mode 
+will allows you to set the amount dierctly. Array mode will set the amount to match the <span class="inline-code">Positions</span>, <span class="inline-code">Rotations</span>, 
+and <span class="inline-code">Scale</span> array.</p>
         </div>
     </div>
 

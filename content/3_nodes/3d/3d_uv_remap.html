@@ -26,7 +26,7 @@
             <td class="summary-topic"><p style="color: #ff9166" >integer</p></td>
             <td><p>Target subobject</p></td>
         </tr><tr>
-            <td class="summary-topic"><p style="color: #ff9166" >integer</p></td>
+            <td class="summary-topic"><p style="color: #8fde5d" >trigger</p></td>
             <td><p>Bake UV</p></td>
         </tr>
 <tr height="8px"></tr>
@@ -36,4 +36,18 @@
             <td><p>Mesh</p></td>
         </tr>
 
-</table>
+</table><p>The process of mapping a 2D image to a 3D model is call UV mapping. This node allow you to remap the UV 
+by projecting texture onto the model in world space.</p>
+<br>
+<img-deco node_3d_uv_remap>
+<br><br>
+<h2>Subobject</h2>
+<br>
+<p>For object with multiple textures, each textrue will be assigned to a subobject. This property allow you 
+to target a specific subobject to remap the UV insted of all.</p>
+<br><br>
+<h2>Bake</h2>
+<br>
+<p>Click the "Bake" button to freeze the current mapping. Without this option, all the transformation prior 
+to this node will be applied to the UV mapping.</p>
+<br>

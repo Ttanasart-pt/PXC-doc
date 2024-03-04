@@ -36,11 +36,13 @@ def extractNodeData(node):
     with open(path, "r") as file:
         content = file.read()
     
-    node = node.strip("_").lower()
-    nodeName  = ""
+    matchNode = re.search(r"function\s(.*?)\(.*?\s:\s_*Node", content)
+    node = "" if not matchNode else matchNode.group(1).lower()
+    if not node.strip("_").startswith("node"):
+        return
+    
     matchName = re.search(r"name\s*=\s*['\"](.*)['\"]", content)
-    if matchName:
-        nodeName = matchName.group(1)
+    nodeName  = "" if not matchName else matchName.group(1)
 
     junctions = re.findall(r"nodeValue\((.*)\)", content)
 
@@ -113,11 +115,8 @@ def writeNodeFile(cat, node, line):
             basicData += f'<tr><th colspan="2" class="{_class}"><a href="{link}">{p}</a></th></tr>'
 
     className = node
-
     tooltip   = "" if len(args) <= 6 else args[6].strip().strip("\"")
-
-    junctionList = junc.IOTable(junctions)
-    summary = basicData + '<tr height="8px"></tr>' + junctionList
+    summary   = basicData + '<tr height="8px"></tr>' + junc.IOTable(junctions)
 
     txt = template.replace("{{nodeName}}", nodeName) \
                   .replace("{{tooltip}}", tooltip)   \
@@ -158,15 +157,34 @@ for line in nodeListRaw.split("\n"):
 
         nodePages[nodeClass.lower()] = 1
 
+def generateNodeCatagory(cat):
+    txt = f"""<h1>{cat.title()}</h1>
+<br><br>
+<img node_cat_{cat}>
+<br>
+<div class=node-group>"""
+    
+    nodeNames = [ node for node, _ in nodes[cat] ]
+    nodeNames.sort()
+
+    for node in nodeNames:
+        txt += f'''<div>
+<img s_{node.lower()}>
+<a href="{node}.html">{node.replace("_", " ").replace("Node ", "")}</a>
+</div>\n'''
+
+    txt += "</div>"
+    
+    filePath = f"content/{dirname}/{cat}/0_index.html"
+    with open(filePath, "w") as file:
+        file.write(txt)
+
 for cat in nodes:
     catPath = f"content/{dirname}/{cat}"
     if not os.path.exists(catPath):
         os.makedirs(catPath)
 
-    txt = f"""<h1>{cat.title()}</h1>"""
-    filePath = f"content/{dirname}/{cat}/0_index.html"
-    with open(filePath, "w") as file:
-        file.write(txt)
+    generateNodeCatagory(cat)
 
     for node, line in nodes[cat]:
         writeNodeFile(cat, node, line)

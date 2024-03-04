@@ -103,9 +103,153 @@
 <br><br>
 
 <table class = "summary-table">
-    <tr><th class="head" colspan="2"><p>Node Data</p></th></tr><tr><th colspan="2"><img class="node-content" src="/src/nodeIcons/s_node_particle.png"></th></tr><tr><th colspan="2" class="summary-topic"><p>Display name</p></th></tr><tr><th colspan="2" class="summary-content"><p>Particle</p></th></tr><tr><th colspan="2" class="summary-topic"><p>Internal name</p></th></tr><tr><th colspan="2" class="summary-content"><p>Node_Particle</p></th></tr><tr height="8px"></tr><tr><th class="head" colspan="2"><p>Inheritances</p></th></tr><tr><th colspan="2" class="inheritance-block"><a href="../index.html">node</a></th></tr><tr><th colspan="2" class="inheritance-block current"><a href="../_index/particle.html">node_particle</a></th></tr><tr height="8px"></tr>
+    <tr><th class="head" colspan="2"><p>Node Data</p></th></tr><tr><th colspan="2"><img class="node-content" src="/src/nodeIcons/s_node_particle.png"></th></tr><tr><th colspan="2" class="summary-topic"><p>Display name</p></th></tr><tr><th colspan="2" class="summary-content"><p>Particle</p></th></tr><tr><th colspan="2" class="summary-topic"><p>Internal name</p></th></tr><tr><th colspan="2" class="summary-content"><p>Node_Particle</p></th></tr><tr height="8px"></tr><tr><th class="head" colspan="2"><p>Inheritances</p></th></tr><tr><th colspan="2" class="inheritance-block"><a href="../index.html">node</a></th></tr><tr><th colspan="2" class="inheritance-block"><p>node_vfx_spawner_base</p></th></tr><tr><th colspan="2" class="inheritance-block current"><a href="../_index/particle.html">node_particle</a></th></tr><tr height="8px"></tr>
 <tr><th class="head" colspan="2"><p>Inputs</p></th></tr>
-<tr><th colspan="2" class="summary-topic"><p>node_particle</p></th></tr><tr>
+<tr><th colspan="2" class="summary-topic"><p>node_vfx_spawner_base</p></th></tr><tr>
+            <td class="summary-topic"><p style="color: #ff6b97" >surface</p></td>
+            <td><p>Particle sprite</p></td>
+        </tr><tr>
+            <td class="summary-topic"><p style="color: #ff9166" >integer</p></td>
+            <td><p>Spawn delay</p></td>
+        </tr><tr>
+            <td class="summary-topic"><p style="color: #ff9166" >integer</p></td>
+            <td><p>Spawn amount</p></td>
+        </tr><tr>
+            <td class="summary-topic"><p style="color: #ffe478" >float</p></td>
+            <td><p>Spawn area</p></td>
+        </tr><tr>
+            <td class="summary-topic"><p style="color: #ff9166" >integer</p></td>
+            <td><p>Spawn distribution</p></td>
+        </tr><tr>
+            <td class="summary-topic"><p style="color: #ff9166" >integer</p></td>
+            <td><p>Lifespan</p></td>
+        </tr><tr>
+            <td class="summary-topic"><p style="color: #ff9166" >integer</p></td>
+            <td><p>Spawn direction</p></td>
+        </tr><tr>
+            <td class="summary-topic"><p style="color: #ffe478" >float</p></td>
+            <td><p>Acceleration</p></td>
+        </tr><tr>
+            <td class="summary-topic"><p style="color: #ff9166" >integer</p></td>
+            <td><p>Orientation</p></td>
+        </tr><tr>
+            <td class="summary-topic"><p style="color: #ffe478" >float</p></td>
+            <td><p>Rotational speed</p></td>
+        </tr><tr>
+            <td class="summary-topic"><p style="color: #ffe478" >float</p></td>
+            <td><p>Spawn scale</p></td>
+        </tr><tr>
+            <td class="summary-topic"><p style="color: #c2c2d1" >curve</p></td>
+            <td><p>Scale over time</p></td>
+        </tr><tr>
+            <td class="summary-topic"><p style="color: #8fde5d" >gradient</p></td>
+            <td><p>Color over lifetime</p></td>
+        </tr><tr>
+            <td class="summary-topic"><p style="color: #ffe478" >float</p></td>
+            <td><p>Alpha</p></td>
+        </tr><tr>
+            <td class="summary-topic"><p style="color: #c2c2d1" >curve</p></td>
+            <td><p>Alpha over time</p></td>
+        </tr><tr>
+            <td class="summary-topic"><p style="color: #8c3f5d" >boolean</p></td>
+            <td><p>Rotate by direction</p></td>
+        </tr><tr>
+            <td class="summary-topic"><p style="color: #ff9166" >integer</p></td>
+            <td><p>Spawn type</p></td>
+        </tr><tr>
+            <td class="summary-topic"><p style="color: #ffe478" >float</p></td>
+            <td><p>Spawn size</p></td>
+        </tr><tr>
+            <td class="summary-topic"><p style="color: #ffe478" >float</p></td>
+            <td><p>Spawn velocity</p></td>
+        </tr><tr>
+            <td class="summary-topic"><p style="color: #ffe478" >float</p></td>
+            <td><p>Gravity</p></td>
+        </tr><tr>
+            <td class="summary-topic"><p style="color: #ffe478" >float</p></td>
+            <td><p>Direction wiggle</p></td>
+        </tr><tr>
+            <td class="summary-topic"><p style="color: #8c3f5d" >boolean</p></td>
+            <td><p>Loop</p></td>
+        </tr><tr>
+            <td class="summary-topic"><p style="color: #ff9166" >integer</p></td>
+            <td><p>Surface array</p></td>
+        </tr><tr>
+            <td class="summary-topic"><p style="color: #ffe478" >float</p></td>
+            <td><p>Animation speed</p></td>
+        </tr><tr>
+            <td class="summary-topic"><p style="color: #ff9166" >integer</p></td>
+            <td><p>Scatter</p></td>
+        </tr><tr>
+            <td class="summary-topic"><p style="color: #ff9166" >integer</p></td>
+            <td><p>Boundary data</p></td>
+        </tr><tr>
+            <td class="summary-topic"><p style="color: #ff9166" >integer</p></td>
+            <td><p>On animation end</p></td>
+        </tr><tr>
+            <td class="summary-topic"><p style="color: #8c3f5d" >boolean</p></td>
+            <td><p>Spawn</p></td>
+        </tr><tr>
+            <td class="summary-topic"><p style="color: #8fde5d" >gradient</p></td>
+            <td><p>Random blend</p></td>
+        </tr><tr>
+            <td class="summary-topic"><p style="color: #8c3f5d" >boolean</p></td>
+            <td><p>Directed from center</p></td>
+        </tr><tr>
+            <td class="summary-topic"><p style="color: #ff6b97" >surface</p></td>
+            <td><p>Distribution map</p></td>
+        </tr><tr>
+            <td class="summary-topic"><p style="color: #ff6b97" >surface</p></td>
+            <td><p>Atlas</p></td>
+        </tr><tr>
+            <td class="summary-topic"><p style="color: #ffe478" >float</p></td>
+            <td><p>Seed</p></td>
+        </tr><tr>
+            <td class="summary-topic"><p style="color: #ff9166" >integer</p></td>
+            <td><p>Gravity direction</p></td>
+        </tr><tr>
+            <td class="summary-topic"><p style="color: #ffe478" >float</p></td>
+            <td><p>Turning</p></td>
+        </tr><tr>
+            <td class="summary-topic"><p style="color: #8c3f5d" >boolean</p></td>
+            <td><p>Turn both directions</p></td>
+        </tr><tr>
+            <td class="summary-topic"><p style="color: #ffe478" >float</p></td>
+            <td><p>Turn scale with speed</p></td>
+        </tr><tr>
+            <td class="summary-topic"><p style="color: #8c3f5d" >boolean</p></td>
+            <td><p>Collide ground</p></td>
+        </tr><tr>
+            <td class="summary-topic"><p style="color: #ffe478" >float</p></td>
+            <td><p>Ground offset</p></td>
+        </tr><tr>
+            <td class="summary-topic"><p style="color: #ffe478" >float</p></td>
+            <td><p>Bounce amount</p></td>
+        </tr><tr>
+            <td class="summary-topic"><p style="color: #ffe478" >float</p></td>
+            <td><p>Bounce friction</p></td>
+        </tr><tr>
+            <td class="summary-topic"><p style="color: #ffe478" >float</p></td>
+            <td><p>Position wiggle</p></td>
+        </tr><tr>
+            <td class="summary-topic"><p style="color: #ffe478" >float</p></td>
+            <td><p>Rotation wiggle</p></td>
+        </tr><tr>
+            <td class="summary-topic"><p style="color: #ffe478" >float</p></td>
+            <td><p>Scale wiggle</p></td>
+        </tr><tr>
+            <td class="summary-topic"><p style="color: #8fde5d" >trigger</p></td>
+            <td><p>Spawn</p></td>
+        </tr><tr>
+            <td class="summary-topic"><p style="color: #8c3f5d" >boolean</p></td>
+            <td><p>Follow Path</p></td>
+        </tr><tr>
+            <td class="summary-topic"><p style="color: #ffb5b5" >pathnode</p></td>
+            <td><p>Path</p></td>
+        </tr><tr>
+            <td class="summary-topic"><p style="color: #c2c2d1" >curve</p></td>
+            <td><p>Path Deviation</p></td>
+        </tr><tr><th colspan="2" class="summary-topic"><p>node_particle</p></th></tr><tr>
             <td class="summary-topic"><p style="color: #ff9166" >integer</p></td>
             <td><p>Output dimension</p></td>
         </tr><tr>
