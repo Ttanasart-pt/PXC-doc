@@ -68,6 +68,15 @@
 <li class=""><a class="" href="pixel_builder.html">Pixel Builder</a></li>
 <li class="active "><a class="" href="plot_linear.html">Plot Linear</a></li>
 <ul class="submenu">
+<li><a href="#Data Processing">Data Processing</a></li>
+<ul class="submenu h3">
+</ul>
+<li><a href="#Plot Properties">Plot Properties</a></li>
+<ul class="submenu h3">
+</ul>
+<li><a href="#Render Properties">Render Properties</a></li>
+<ul class="submenu h3">
+</ul>
 </ul>
 <li class=""><a class="" href="pytagorean_tile.html">Pytagorean Tile</a></li>
 <li class=""><a class="" href="quasicrystal.html">Quasicrystal</a></li>
@@ -194,6 +203,141 @@
             <td><p>Surface out</p></td>
         </tr>
 
+<tr><th class="head" colspan="2"><p>Attributes</p></th></tr>
+
+
+</table><p>Bar/Graph node is used to plot graph using array of number. While initialliy created for audio visualization, 
+it can be use to create interesting shape as well.</p>
+<br><br>
+<h2><a id="Data Processing" class="anchor"></a>Data Processing</h2>
+<br><br>
+<p>The first section contain properties related to data processing.</p>
+<br>
+<table class="cc4060">
+    <tr>
+        <th>Property</th>
+        <th>Description</th>
+    </tr>
+    <tr>
+        <td><span class="inline-code">Value Offset</span></td>
+        <td>Add or subtract all values with a fixed amount</td>
+    </tr>
+    <tr>
+        <td><span class="inline-code">Flip Value</span></td>
+        <td>Invert the sign of the data</td>
+    </tr>
+    <tr>
+        <td><span class="inline-code">Trim mode</span></td>
+        <td>Set the data trimming mode</td>
+    </tr>
+    <tr>
+        <td><span class="inline-code">Range</span></td>
+        <td>Range of the data trimming</td>
+    </tr>
+    <tr>
+        <td><span class="inline-code">Sample frequency</span></td>
+        <td>Sample data at every N values instead of all</td>
+    </tr>
+</table>
+<br><br>
+<h2><a id="Plot Properties" class="anchor"></a>Plot Properties</h2>
+<br>
+<p>There're 2 typs of plot: bar and graph. Both types share similiar set of properties:</p>
+<br>
+<table class="cc4060">
+    <tr>
+        <th>Property</th>
+        <th>Description</th>
+    </tr>
+    <tr>
+        <td><span class="inline-code">Type</span></td>
+        <td>Set the type of plot between Bar and Graph</td>
+    </tr>
+    <tr>
+        <td><span class="inline-code">Origin</span></td>
+        <td>The origin position</td>
+    </tr>
+    <tr>
+        <td><span class="inline-code">Direction</span></td>
+        <td>The direction where each subsequence data go</td>
+    </tr>
+    <tr>
+        <td><span class="inline-code">Path</span></td>
+        <td>The path to draw the plot on. If using path, the <span class="inline-code">Direction</span> property will be disabled</td>
+    </tr>
+    <tr>
+        <td><span class="inline-code">Scale</span></td>
+        <td>The scale of the plot</td>
+    </tr>
+</table>
+<br>
+<p>The graph type open up to more controls:</p>
+<br>
+<table class="cc4060">
+    <tr>
+        <th>Property</th>
+        <th>Description</th>
+    </tr>
+    <tr>
+        <td><span class="inline-code">Loop</span></td>
+        <td>Add line connecting the last and first data</td>
+    </tr>
+    <tr>
+        <td><span class="inline-code">Smooth</span></td>
+        <td>Smooth out the value with moving average</td>
+    </tr>
+</table>
+<br><br>
+<h2><a id="Render Properties" class="anchor"></a>Render Properties</h2>
+<br>
+<p>Properties in this section are all related to rendering.</p>
+<br>
+<table class="cc4060">
+    <tr>
+        <th>Property</th>
+        <th>Description</th>
+    </tr>
+    <tr>
+        <td><span class="inline-code">Base Color</span></td>
+        <td>Base color of the plot</td>
+    </tr>
+    <tr>
+        <td><span class="inline-code">Color Over Sample</span></td>
+        <td>Color to blend per each value (based on the index)</td>
+    </tr>
+    <tr>
+        <td><span class="inline-code">Color Over Value</span></td>
+        <td>Color to blend based on the value</td>
+    </tr>
+    <tr>
+        <td><span class="inline-code">Value range</span></td>
+        <td>The range for the <span class="inline-code">Color Over Value</span> property.<br><br>e.g. 
+if the range is [0, 10] then value 5 will correspond to the middle of the gradient</td>
+    </tr>
+    <tr>
+        <td><span class="inline-code">Absolute</span></td>
+        <td>Apply absolute to the value before calculating <span class="inline-code">Color Over Value</span></td>
+    </tr>
+    <tr>
+        <td><span class="inline-code">Bar Width</span></td>
+        <td>The width of each bar</td>
+    </tr>
+    <tr>
+        <td><span class="inline-code">Round Bar</span></td>
+        <td>Use capsule bar shape instead of rectangle</td>
+    </tr>
+    <tr>
+        <td><span class="inline-code">Graph Thickness</span></td>
+        <td>The thickness of the graph line</td>
+    </tr>
+    <tr>
+        <td><span class="inline-code">Spacing</span></td>
+        <td>The distance between each data point</td>
+    </tr>
+    <tr>
+        <td><span class="inline-code">Background</span></td>
+        <td>Background Color</td>
+    </tr>
 </table>
         </div>
     </div>

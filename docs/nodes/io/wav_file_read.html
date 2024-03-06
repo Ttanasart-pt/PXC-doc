@@ -49,6 +49,9 @@
 <li class=""><a class="" href="text_file_write.html">Text File Write</a></li>
 <li class="active "><a class="" href="wav_file_read.html">Wav File Read</a></li>
 <ul class="submenu">
+<li><a href="#Previewing">Previewing</a></li>
+<ul class="submenu h3">
+</ul>
 </ul>
 <li class=""><a class="" href="wav_file_write.html">Wav File Write</a></li>
 <li class=""><a class="" href="websocket_receiver.html">Websocket Receiver</a></li>
@@ -66,18 +69,9 @@
 <br><br>
 
 <table class = "summary-table">
-    <tr><th class="head" colspan="2"><p>Node Data</p></th></tr><tr><th colspan="2"><img class="node-content" src="/src/nodeIcons/s_node_wav_file_read.png"></th></tr><tr><th colspan="2" class="summary-topic"><p>Display name</p></th></tr><tr><th colspan="2" class="summary-content"><p>WAV File In</p></th></tr><tr><th colspan="2" class="summary-topic"><p>Internal name</p></th></tr><tr><th colspan="2" class="summary-content"><p>Node_WAV_File_Read</p></th></tr><tr height="8px"></tr><tr><th class="head" colspan="2"><p>Inheritances</p></th></tr><tr><th colspan="2" class="inheritance-block"><a href="../index.html">node</a></th></tr><tr><th colspan="2" class="inheritance-block"><a href="../index.html">node</a></th></tr><tr><th colspan="2" class="inheritance-block current"><a href="../_index/wav_file_read.html">node_wav_file_read</a></th></tr><tr height="8px"></tr>
+    <tr><th class="head" colspan="2"><p>Node Data</p></th></tr><tr><th colspan="2"><img class="node-content" src="/src/nodeIcons/s_node_wav_file_read.png"></th></tr><tr><th colspan="2" class="summary-topic"><p>Display name</p></th></tr><tr><th colspan="2" class="summary-content"><p>WAV File In</p></th></tr><tr><th colspan="2" class="summary-topic"><p>Internal name</p></th></tr><tr><th colspan="2" class="summary-content"><p>Node_WAV_File_Read</p></th></tr><tr height="8px"></tr><tr><th class="head" colspan="2"><p>Inheritances</p></th></tr><tr><th colspan="2" class="inheritance-block"><a href="../index.html">node</a></th></tr><tr><th colspan="2" class="inheritance-block current"><a href="../_index/wav_file_read.html">node_wav_file_read</a></th></tr><tr height="8px"></tr>
 <tr><th class="head" colspan="2"><p>Inputs</p></th></tr>
-<tr><th colspan="2" class="summary-topic"><p>node</p></th></tr><tr>
-            <td class="summary-topic"><p style="color: #8fde5d" >action</p></td>
-            <td><p>Toggle execution</p></td>
-        </tr><tr>
-            <td class="summary-topic"><p style="color: #8fde5d" >action</p></td>
-            <td><p>Toggle execution</p></td>
-        </tr><tr>
-            <td class="summary-topic"><p style="color: #8fde5d" >trigger</p></td>
-            <td><p>Update</p></td>
-        </tr><tr><th colspan="2" class="summary-topic"><p>node_wav_file_read</p></th></tr><tr>
+<tr><th colspan="2" class="summary-topic"><p>node_wav_file_read</p></th></tr><tr>
             <td class="summary-topic"><p style="color: #eb004b" >path</p></td>
             <td><p>Path</p></td>
         </tr><tr>
@@ -89,10 +83,7 @@
         </tr>
 <tr height="8px"></tr>
 <tr><th class="head" colspan="2"><p>Outputs</p></th></tr>
-<tr><th colspan="2" class="summary-topic"><p>node</p></th></tr><tr>
-            <td class="summary-topic"><p style="color: #8fde5d">trigger</p></td>
-            <td><p>Updated</p></td>
-        </tr><tr><th colspan="2" class="summary-topic"><p>node_wav_file_read</p></th></tr><tr>
+<tr><th colspan="2" class="summary-topic"><p>node_wav_file_read</p></th></tr><tr>
             <td class="summary-topic"><p style="color: #8fde5d">audioBit</p></td>
             <td><p>Data</p></td>
         </tr><tr>
@@ -109,6 +100,35 @@
             <td><p>Duration (s)</p></td>
         </tr>
 
+<tr><th class="head" colspan="2"><p>Attributes</p></th></tr>
+<tr><th colspan="2" class="summary-topic"><p>node_wav_file_read</p></th></tr><tr><td colspan="2" class="summary-attribute"><p>Gain</p></td></tr><tr><td colspan="2" class="summary-attribute"><p>Shift</p></td></tr>
+
+</table><p>WAV File In node allows you to import .wav audio file as a audioBit data. The node also read the file 
+attributes such as sample rate, no. of channels, and duration.</p>
+<br>
+<p>To output as a single channel, choose the <span class="inline-code">Mono</span> option.</p>
+<br>
+<p>The <span class="inline-code">Sync length</span> button allows you to set the animation length to the same 
+as the audio duration.</p>
+<br><br>
+<h2><a id="Previewing" class="anchor"></a>Previewing</h2>
+<br>
+<p>The node will playback the audio when playing the animation. The inspector action is used to toggle the 
+playback. Most attributes are used to control the playback:</p>
+<br>
+<table class="cc4060">
+    <tr>
+        <th>Property</th>
+        <th>Description</th>
+    </tr>
+    <tr>
+        <td>Gain</td>
+        <td>Playback volume</td>
+    </tr>
+    <tr>
+        <td>Shift</td>
+        <td>Shift playback time to sync with the timeline</td>
+    </tr>
 </table>
         </div>
     </div>

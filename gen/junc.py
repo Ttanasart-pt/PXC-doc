@@ -137,3 +137,15 @@ def IOTable(ioList):
 <tr><th class="head" colspan="2"><p>Outputs</p></th></tr>
 {outputRows}
 """
+
+def AttributeTable(attrList):
+    rows = ""
+    for node, attrs in attrList:
+        if attrs:
+            rows += f'<tr><th colspan="2" class="summary-topic"><p>{node}</p></th></tr>'
+            rows += "".join([f"""<tr><td colspan="2" class="summary-attribute"><p>{_attr}</p></td></tr>""" for _attr in attrs])
+    
+    return f"""
+<tr><th class="head" colspan="2"><p>Attributes</p></th></tr>
+{rows}
+"""
