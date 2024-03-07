@@ -135,11 +135,19 @@ def writeNodeFile(cat, node, line):
                   .replace("{{summary}}", summary)
 
     fileName = className.replace('Node_', '').lower()
-
+    
     manFilePath = f"content/__nodes/{fileName}.html"
     if os.path.exists(manFilePath):
         with open(manFilePath, "r") as file:
-            txt += file.read()
+            content = file.read()
+            nodeTags = re.findall(r'<node\s(.*?)>', content)
+            for tag in nodeTags:
+                name = tag
+                if "node_" + tag in nodeData:
+                    name = nodeData["node_" + tag]["name"]
+
+                content = content.replace(f'<node {tag}>', f'<a href="../_index/{tag}.html">{name}</a>')
+            txt += content
     else:
         with open(manFilePath, "w") as file:
             file.write("")

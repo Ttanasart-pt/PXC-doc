@@ -43,6 +43,12 @@
 <li class=""><a class="" href="palette.html">Palette</a></li>
 <li class="active "><a class="" href="palette_extract.html">Palette Extract</a></li>
 <ul class="submenu">
+<li><a href="#Algorithms">Algorithms</a></li>
+<ul class="submenu h3">
+<li><a href="#K-mean">K-mean</a></li>
+<li><a href="#Frequency">Frequency</a></li>
+<li><a href="#All colors">All colors</a></li>
+</ul>
 </ul>
 <li class=""><a class="" href="palette_replace.html">Palette Replace</a></li>
 <li class=""><a class="" href="palette_sort.html">Palette Sort</a></li>
@@ -85,10 +91,43 @@
             <td><p>Palette</p></td>
         </tr>
 
-<tr><th class="head" colspan="2"><p>Attributes</p></th></tr>
-
-
+</table><p>Palette extract read the image and generate palette from it. Note that this node can cause performance issue if 
+the image is too large.</p>
+<br><br>
+<h2><a id="Algorithms" class="anchor"></a>Algorithms</h2>
+<br>
+<p>The first step is to extract all colors from the images, then we can use different algorithms to reduce the 
+number of colors. The available algorithms are:</p>
+<br>
+<h3><a id="K-mean" class="anchor"></a>K-mean</h3>
+<br>
+<p>K-mean is a simple algorithm that can be used to cluster data. When select this algorithm you can choose what 
+color space to use, and how many colors to extract.</p>
+<br>
+<table class="cc4060">
+    <tr>
+        <th>Property</th>
+        <th>Description</th>
+    </tr>
+    <tr>
+        <td>Color Space</td>
+        <td>Color space to use for the algorithm</td>
+    </tr>
+    <tr>
+        <td>Max colors</td>
+        <td>Number of initial cluster centrals. Note that due to the nature of the algorithm, the resulting 
+palette may not have the exact number of colors as specified.</td>
+    </tr>
 </table>
+<br>
+<h3><a id="Frequency" class="anchor"></a>Frequency</h3>
+<br>
+<p>Frequency algorithm simply count the frequency of each color and return the most frequent colors based on 
+the <span class="inline-code">Max colors</span> value.</p>
+<br>
+<h3><a id="All colors" class="anchor"></a>All colors</h3>
+<br>
+<p>Return all colors found in the image.</p>
         </div>
     </div>
 

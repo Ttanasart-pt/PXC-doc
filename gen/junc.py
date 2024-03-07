@@ -1,3 +1,5 @@
+import re
+
 typeIndex = {
     "integer"      : 0,
 	"float"        : 1,
@@ -107,7 +109,11 @@ def IOTable(ioList):
             io = io.strip()
             io = io.split(",")
             
-            _name   = io[0].strip().strip("\"")
+            _name = io[0].strip()
+            names = re.search(r'"(.*?)"', _name)
+            if names:
+                _name = names.group(1)
+
             _iotype = io[2].strip()
             _dataty = io[3].strip().replace("VALUE_TYPE.", "")
 
@@ -145,6 +151,8 @@ def AttributeTable(attrList):
             rows += f'<tr><th colspan="2" class="summary-topic"><p>{node}</p></th></tr>'
             rows += "".join([f"""<tr><td colspan="2" class="summary-attribute"><p>{_attr}</p></td></tr>""" for _attr in attrs])
     
+    if rows == "":
+        return ""
     return f"""
 <tr><th class="head" colspan="2"><p>Attributes</p></th></tr>
 {rows}

@@ -34,6 +34,12 @@
 <li class=""><a class="" href="armature_path.html">Armature Path</a></li>
 <li class="active "><a class="" href="armature_pose.html">Armature Pose</a></li>
 <ul class="submenu">
+<li><a href="#Posing">Posing</a></li>
+<ul class="submenu h3">
+</ul>
+<li><a href="#Animation">Animation</a></li>
+<ul class="submenu h3">
+</ul>
 </ul>
 <li class=""><a class="" href="armature_sample.html">Armature Sample</a></li>
 <li class=""><a class="" href="blend.html">Blend</a></li>
@@ -64,7 +70,7 @@
             <td><p>Armature</p></td>
         </tr><tr>
             <td class="summary-topic"><p style="color: #ffe478" >float</p></td>
-            <td><p>bone != noone? bone.name : "bone</p></td>
+            <td><p>bone</p></td>
         </tr>
 <tr height="8px"></tr>
 <tr><th class="head" colspan="2"><p>Outputs</p></th></tr>
@@ -76,7 +82,36 @@
 <tr><th class="head" colspan="2"><p>Attributes</p></th></tr>
 <tr><th colspan="2" class="summary-topic"><p>node_armature_pose</p></th></tr><tr><td colspan="2" class="summary-attribute"><p>Display name</p></td></tr><tr><td colspan="2" class="summary-attribute"><p>Display bone</p></td></tr>
 
+</table><p>Armature Pose takes a bone structure defined by the <a href="../_index/armature.html">Armature Create</a> node and transform them.</p>
+<br><br>
+<h2><a id="Posing" class="anchor"></a>Posing</h2>
+<br>
+<p>Bone created by the <a href="../_index/armature.html">Armature Create</a> node can't be animated by itself and consider as the "rest" position. Armature Pose can 
+transform and animated them in the preview panel:</p>
+<br>
+<table class="cc4060">
+    <tr>
+        <th>Property</th>
+        <th>Description</th>
+    </tr>
+    <tr>
+        <td>Rotation</td>
+        <td>Click and drag on the bone</td>
+    </tr>
+    <tr>
+        <td>Translation</td>
+        <td>Click and drag the origin (only a parent or a detached bone can be move)</td>
+    </tr>
+    <tr>
+        <td>Scale</td>
+        <td>Click and drag the end point of the bone</td>
+    </tr>
 </table>
+<br><br>
+<h2><a id="Animation" class="anchor"></a>Animation</h2>
+<br>
+<p>Animation can be toggle in the inspector just like any other properties. However because all transformation (position, 
+rotation, scale) are combines as one property. It's recommended to separate axis when animating to allows for more control.</p>
         </div>
     </div>
 

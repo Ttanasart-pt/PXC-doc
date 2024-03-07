@@ -36,6 +36,9 @@
 <li class=""><a class="" href="color_rgb.html">Color Rgb</a></li>
 <li class="active "><a class="" href="find_pixel.html">Find Pixel</a></li>
 <ul class="submenu">
+<li><a href="#Properties">Properties</a></li>
+<ul class="submenu h3">
+</ul>
 </ul>
 <li class=""><a class="" href="gradient_extract.html">Gradient Extract</a></li>
 <li class=""><a class="" href="gradient_out.html">Gradient Out</a></li>
@@ -88,9 +91,36 @@
             <td><p>Position</p></td>
         </tr>
 
-<tr><th class="head" colspan="2"><p>Attributes</p></th></tr>
-
-
+</table><p>This node will search throught every pixel in the image and returns the position of the pixel with a given color. 
+With [0, 0] be the top left of the image, x axis goes to the right and y axis goes down.</p>
+<br><br>
+<h2><a id="Properties" class="anchor"></a>Properties</h2>
+<br>
+<table class="cc4060">
+    <tr>
+        <th>Property</th>
+        <th>Description</th>
+    </tr>
+    <tr>
+        <td><span class="inline-code">Search color</span></td>
+        <td>Color of the pixel to find</td>
+    </tr>
+    <tr>
+        <td><span class="inline-code">Tolerance</span></td>
+        <td>How much the color can differ from the search color to be match</td>
+    </tr>
+    <tr>
+        <td><span class="inline-code">Find all</span></td>
+        <td>Returns all matches pixel instead of the first pixel</td>
+    </tr>
+    <tr>
+        <td><span class="inline-code">Include alpha</span></td>
+        <td>Include alpha channel in the search</td>
+    </tr>
+    <tr>
+        <td><span class="inline-code">Alpha tolerance</span></td>
+        <td>How much the alpha channel can differ from the search color to be match</td>
+    </tr>
 </table>
         </div>
     </div>
