@@ -126,9 +126,13 @@ def writeNodeFile(cat, node, line):
 
     className = node
     tooltip   = "" if len(args) <= 6 else args[6].strip().strip("\"")
+
+    junctionText, io = junc.IOTable(junctions)
+    attributeText, attributes = junc.AttributeTable(attributes)
+
     summary   = basicData + '<tr height="8px"></tr>' + \
-                    junc.IOTable(junctions) +          \
-                    junc.AttributeTable(attributes)
+                    junctionText +          \
+                    attributeText
 
     txt = template.replace("{{nodeName}}", nodeName) \
                   .replace("{{tooltip}}", tooltip)   \
@@ -136,10 +140,13 @@ def writeNodeFile(cat, node, line):
 
     fileName = className.replace('Node_', '').lower()
     
+    ############################### File Generations ###############################
+
     manFilePath = f"content/__nodes/{fileName}.html"
     if os.path.exists(manFilePath):
         with open(manFilePath, "r") as file:
             content = file.read()
+            
             nodeTags = re.findall(r'<node\s(.*?)>', content)
             for tag in nodeTags:
                 name = tag
@@ -147,6 +154,15 @@ def writeNodeFile(cat, node, line):
                     name = nodeData["node_" + tag]["name"]
 
                 content = content.replace(f'<node {tag}>', f'<a href="../_index/{tag}.html">{name}</a>')
+            
+            juncTags = re.findall(r'<junc\s(.*?)>', content)
+            for tag in juncTags:
+                _tag = tag.lower()
+                if _tag in io:
+                    content = content.replace(f'<junc {tag}>', f'<span class="junction" style="border-color: {io[_tag]}AA">{_tag.title()}</span>')
+                else :
+                    print(f"Junction {_tag} not found in {manFilePath}")
+
             txt += content
     else:
         with open(manFilePath, "w") as file:

@@ -101,9 +101,11 @@ def IOTable(ioList):
     inputRows = ""
     outputRows = ""
 
+    allio = {}
+    
     for node, ios in ioList:
-        inputs = []
-        outputs = []
+        _inputs = []
+        _outputs = []
 
         for io in ios:
             io = io.strip()
@@ -118,42 +120,59 @@ def IOTable(ioList):
             _dataty = io[3].strip().replace("VALUE_TYPE.", "")
 
             if _iotype == "JUNCTION_CONNECT.input":
-                inputs.append((_name, _dataty))
+                _inputs.append((_name, _dataty))
+                
             elif _iotype == "JUNCTION_CONNECT.output":
-                outputs.append((_name, _dataty))
-        
-        if inputs:
+                _outputs.append((_name, _dataty))
+
+        for _name, _dataty in _inputs:
+            allio[_name.lower()] = getColor(_dataty)
+        for _name, _dataty in _outputs:
+            allio[_name.lower()] = getColor(_dataty)
+
+        if _inputs:
             inputRows += f'<tr><th colspan="2" class="summary-topic"><p>{node}</p></th></tr>'
+
         inputRows += "".join([f"""<tr>
             <td class="summary-topic"><p style="color: {getColor(_dataty)}" >{_dataty}</p></td>
-            <td><p>{_name}</p></td>
-        </tr>""" for _name, _dataty in inputs])
+            <td><p>{_name.title()}</p></td>
+        </tr>""" for _name, _dataty in _inputs])
 
-        if outputs:
+        if _outputs:
             outputRows += f'<tr><th colspan="2" class="summary-topic"><p>{node}</p></th></tr>'
+
         outputRows += "".join([f"""<tr>
             <td class="summary-topic"><p style="color: {getColor(_dataty)}">{_dataty}</p></td>
-            <td><p>{_name}</p></td>
-        </tr>""" for _name, _dataty in outputs])
+            <td><p>{_name.title()}</p></td>
+        </tr>""" for _name, _dataty in _outputs])
 
-    return f"""
+    summaryTxt = f"""
 <tr><th class="head" colspan="2"><p>Inputs</p></th></tr>
 {inputRows}
 <tr height="8px"></tr>
 <tr><th class="head" colspan="2"><p>Outputs</p></th></tr>
 {outputRows}
 """
+    
+    return (summaryTxt, allio)
 
 def AttributeTable(attrList):
     rows = ""
+    attributes = []
+
     for node, attrs in attrList:
         if attrs:
             rows += f'<tr><th colspan="2" class="summary-topic"><p>{node}</p></th></tr>'
             rows += "".join([f"""<tr><td colspan="2" class="summary-attribute"><p>{_attr}</p></td></tr>""" for _attr in attrs])
+
+        attributes.append(attrs)
     
     if rows == "":
-        return ""
-    return f"""
+        return ("", attributes)
+    
+    summaryTxt = f"""
 <tr><th class="head" colspan="2"><p>Attributes</p></th></tr>
 {rows}
 """
+
+    return (summaryTxt, attributes)

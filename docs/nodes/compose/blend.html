@@ -36,6 +36,16 @@
 <li class=""><a class="" href="armature_sample.html">Armature Sample</a></li>
 <li class="active "><a class="" href="blend.html">Blend</a></li>
 <ul class="submenu">
+<li><a href="#Blend Modes">Blend Modes</a></li>
+<ul class="submenu h3">
+<li><a href="#Opacity">Opacity</a></li>
+<li><a href="#Preserve Alpha">Preserve Alpha</a></li>
+</ul>
+<li><a href="#Dimension Mixing">Dimension Mixing</a></li>
+<ul class="submenu h3">
+<li><a href="#Filling">Filling</a></li>
+<li><a href="#Alignment">Alignment</a></li>
+</ul>
 </ul>
 <li class=""><a class="" href="camera.html">Camera</a></li>
 <li class=""><a class="" href="composite.html">Composite</a></li>
@@ -67,7 +77,7 @@
             <td><p>Foreground</p></td>
         </tr><tr>
             <td class="summary-topic"><p style="color: #ff9166" >integer</p></td>
-            <td><p>Blend mode</p></td>
+            <td><p>Blend Mode</p></td>
         </tr><tr>
             <td class="summary-topic"><p style="color: #ffe478" >float</p></td>
             <td><p>Opacity</p></td>
@@ -76,19 +86,19 @@
             <td><p>Mask</p></td>
         </tr><tr>
             <td class="summary-topic"><p style="color: #ff9166" >integer</p></td>
-            <td><p>Fill mode</p></td>
+            <td><p>Fill Mode</p></td>
         </tr><tr>
             <td class="summary-topic"><p style="color: #ff9166" >integer</p></td>
-            <td><p>Output dimension</p></td>
+            <td><p>Output Dimension</p></td>
         </tr><tr>
             <td class="summary-topic"><p style="color: #ff9166" >integer</p></td>
-            <td><p>Constant dimension</p></td>
+            <td><p>Constant Dimension</p></td>
         </tr><tr>
             <td class="summary-topic"><p style="color: #8c3f5d" >boolean</p></td>
             <td><p>Active</p></td>
         </tr><tr>
             <td class="summary-topic"><p style="color: #8c3f5d" >boolean</p></td>
-            <td><p>Preserve alpha</p></td>
+            <td><p>Preserve Alpha</p></td>
         </tr><tr>
             <td class="summary-topic"><p style="color: #ff9166" >integer</p></td>
             <td><p>Horizontal Align</p></td>
@@ -97,10 +107,10 @@
             <td><p>Vertical Align</p></td>
         </tr><tr>
             <td class="summary-topic"><p style="color: #8c3f5d" >boolean</p></td>
-            <td><p>Invert mask</p></td>
+            <td><p>Invert Mask</p></td>
         </tr><tr>
             <td class="summary-topic"><p style="color: #ffe478" >float</p></td>
-            <td><p>Mask feather</p></td>
+            <td><p>Mask Feather</p></td>
         </tr><tr>
             <td class="summary-topic"><p style="color: #ffe478" >float</p></td>
             <td><p>Position</p></td>
@@ -109,10 +119,131 @@
 <tr><th class="head" colspan="2"><p>Outputs</p></th></tr>
 <tr><th colspan="2" class="summary-topic"><p>node_blend</p></th></tr><tr>
             <td class="summary-topic"><p style="color: #ff6b97">surface</p></td>
-            <td><p>Surface out</p></td>
+            <td><p>Surface Out</p></td>
         </tr>
 
+</table><script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+<p>Blending surfaces is a fundamental step in any VFX process. Blend node allows you to combine 2 surfaces 
+under different blend mode.</p>
+<br><br>
+<h2><a id="Blend Modes" class="anchor"></a>Blend Modes</h2>
+<br>
+<p>Blend mode control how the surface is being mixed. Blend modes available in the this node are:</p>
+<br>
+<table class="ccc203050">
+    <tr>
+        <th>Mode</th>
+        <th>Operation</th>
+        <th>Example</th>
+    </tr>
+    <tr>
+        <td>Normal</td>
+        <td>$$C_{out} = C_{fg}C_{fg.a} + C_{bg}(1-C_{fg.a})$$</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>Add</td>
+        <td>$$C_{out} = C_{fg} + C_{bg}$$</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>Subtract</td>
+        <td>$$C_{out} = C_{fg} - C_{bg}$$</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>Multiply</td>
+        <td>$$C_{out} = C_{fg}C_{bg}$$</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>Screen</td>
+        <td>$$C_{out} = 1 - (1-C_{fg})(1-C_{bg})$$</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>Overlay</td>
+        <td>$$C_{out} = C_{fg} < 0.5 ? 2C_{fg}C_{bg} : 1 - 2(1-C_{fg})(1-C_{bg})$$</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>Hue</td>
+        <td>Transfer the hue of the foreground to the background</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>Saturation</td>
+        <td>Transfer the saturation of the foreground to the background</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>Luminosity</td>
+        <td>Transfer the luminosity of the foreground to the background</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>Maximum</td>
+        <td>$$C_{out} = max(C_{fg}, C_{bg})$$</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>Minimum</td>
+        <td>$$C_{out} = min(C_{fg}, C_{bg})$$</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>Replace</td>
+        <td>$$C_{out} = C_{fg}$$</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>Difference</td>
+        <td>$$C_{out} = |C_{fg} - C_{bg}|$$</td>
+        <td></td>
+    </tr>
 </table>
+<br>
+<h3><a id="Opacity" class="anchor"></a>Opacity</h3>
+<br>
+<p>The intensity of the effect will be multiply by the <span class="junction" style="border-color: #ffe478AA">Opacity</span> property.</p>
+<br>
+<h3><a id="Preserve Alpha" class="anchor"></a>Preserve Alpha</h3>
+<br>
+<p>Blend operation apply to all channel including alpha channel. Which mean some operation may erase the 
+alpha channel of the original image. To exclude the alpha calculation, set <span class="junction" style="border-color: #8c3f5dAA">Preserve Alpha</span> to true.</p>
+<br><br>
+<h2><a id="Dimension Mixing" class="anchor"></a>Dimension Mixing</h2>
+<br>
+<p>When blending surfaces of different sizes. You can set the blending behaviour using several properties:</p>
+<br>
+<h3><a id="Filling" class="anchor"></a>Filling</h3>
+<br>
+<p>The <span class="junction" style="border-color: #ff9166AA">Fill Mode</span> property control the behaviour of the smaller surface.</p>
+<br>
+<table class="cc4060">
+    <tr>
+        <th>Mode</th>
+        <th>Description</th>
+    </tr>
+    <tr>
+        <td>None</td>
+        <td>Do nothing, place smaller surface directly.</td>
+    </tr>
+    <tr>
+        <td>Stretch</td>
+        <td>Stretch the smaller surface to fit the larger surface.</td>
+    </tr>
+    <tr>
+        <td>Tile</td>
+        <td>Tile the smaller surface to fit the larger surface.</td>
+    </tr>
+</table>
+<br>
+<h3><a id="Alignment" class="anchor"></a>Alignment</h3>
+<br>
+<p>When set the fill mode to None, you can move the foreground freely in the preview panel.</p>
         </div>
     </div>
 

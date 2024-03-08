@@ -32,6 +32,13 @@
 <li class=""><a class="" href="armature.html">Armature</a></li>
 <li class="active "><a class="" href="armature_bind.html">Armature Bind</a></li>
 <ul class="submenu">
+<li><a href="#Surface Binding">Surface Binding</a></li>
+<ul class="submenu h3">
+<li><a href="#Binding Transformation">Binding Transformation</a></li>
+</ul>
+<li><a href="#Binding Properties">Binding Properties</a></li>
+<ul class="submenu h3">
+</ul>
 </ul>
 <li class=""><a class="" href="armature_path.html">Armature Path</a></li>
 <li class=""><a class="" href="armature_pose.html">Armature Pose</a></li>
@@ -67,13 +74,13 @@
             <td><p>Armature</p></td>
         </tr><tr>
             <td class="summary-topic"><p style="color: #8c3f5d" >struct</p></td>
-            <td><p>Bind data</p></td>
+            <td><p>Bind Data</p></td>
         </tr><tr>
             <td class="summary-topic"><p style="color: #ffe478" >float</p></td>
-            <td><p>Bone transform</p></td>
+            <td><p>Bone Transform</p></td>
         </tr><tr>
             <td class="summary-topic"><p style="color: #ffe478" >float</p></td>
-            <td><p>Bone scale</p></td>
+            <td><p>Bone Scale</p></td>
         </tr><tr>
             <td class="summary-topic"><p style="color: #ff6b97" >surface</p></td>
             <td><p>Surface</p></td>
@@ -97,19 +104,66 @@
 <tr><th class="head" colspan="2"><p>Outputs</p></th></tr>
 <tr><th colspan="2" class="summary-topic"><p>node_armature_bind</p></th></tr><tr>
             <td class="summary-topic"><p style="color: #ff6b97">surface</p></td>
-            <td><p>Surface out</p></td>
+            <td><p>Surface Out</p></td>
         </tr><tr>
             <td class="summary-topic"><p style="color: #ff6b97">surface</p></td>
-            <td><p>Atlas data</p></td>
+            <td><p>Atlas Data</p></td>
         </tr><tr>
             <td class="summary-topic"><p style="color: #8c3f5d">struct</p></td>
-            <td><p>Bind data</p></td>
+            <td><p>Bind Data</p></td>
         </tr>
 
 <tr><th class="head" colspan="2"><p>Attributes</p></th></tr>
 <tr><th colspan="2" class="summary-topic"><p>node_armature_bind</p></th></tr><tr><td colspan="2" class="summary-attribute"><p>Display name</p></td></tr><tr><td colspan="2" class="summary-attribute"><p>Display bone</p></td></tr>
 
-</table><p></p>
+</table><p>This node is the "rendering" part of the armature system.</p>
+<br><br>
+<h2><a id="Surface Binding" class="anchor"></a>Surface Binding</h2>
+<br>
+<p>To bind a surface, the first step is to connect that surface to the node.</p>
+<br>
+<img class="node-content deco" src="/src/images/captures/armature_bind_1.png">
+<br>
+<p>The binding stage is done in the inspector. Click and drag the hamburger icon in the left of a surface 
+to the bone you want.</p>
+<br>
+<img class="node-content deco" src="/src/images/captures/armature_bind_2.png">
+<br>
+<p>Binded surface will show up next to the bone. A surface can only be binded to one bone.</p>
+<br>
+<img class="node-content deco" src="/src/images/captures/armature_bind_3.png">
+<br>
+<h3><a id="Binding Transformation" class="anchor"></a>Binding Transformation</h3>
+<br>
+<p>After the surfaces is binded, it will show up in the preview panel. You can modify the transformation 
+of the binded surface in the preview panel.</p>
+<br><br>
+<h2><a id="Binding Properties" class="anchor"></a>Binding Properties</h2>
+<br>
+<p>Each surface when binded will have extra properties accessible in the surfaces section in the inspector.</p>
+<br>
+<table class="cc4060">
+    <tr>
+        <th>Property</th>
+        <th>Description</th>
+    </tr>
+    <tr>
+        <td>Surface</td>
+        <td>The surface that is binded to the bone.</td>
+    </tr>
+    <tr>
+        <td>Transform</td>
+        <td>The transformation of the surface related to the bone.</td>
+    </tr>
+    <tr>
+        <td>Inherit Rotation</td>
+        <td>When checked, the surface will inherit the rotation of the bone parent.</td>
+    </tr>
+    <tr>
+        <td>Inherit Scale</td>
+        <td>When checked, the surface will inherit the scale of the bone parent.</td>
+    </tr>
+</table>
         </div>
     </div>
 

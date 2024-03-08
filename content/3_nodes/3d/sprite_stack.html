@@ -9,16 +9,16 @@
 <tr><th class="head" colspan="2"><p>Inputs</p></th></tr>
 <tr><th colspan="2" class="summary-topic"><p>node_sprite_stack</p></th></tr><tr>
             <td class="summary-topic"><p style="color: #ff6b97" >surface</p></td>
-            <td><p>Base shape</p></td>
+            <td><p>Base Shape</p></td>
         </tr><tr>
             <td class="summary-topic"><p style="color: #ff9166" >integer</p></td>
             <td><p>Dimension</p></td>
         </tr><tr>
             <td class="summary-topic"><p style="color: #ff9166" >integer</p></td>
-            <td><p>Stack amount</p></td>
+            <td><p>Stack Amount</p></td>
         </tr><tr>
             <td class="summary-topic"><p style="color: #ff9166" >integer</p></td>
-            <td><p>Stack shift</p></td>
+            <td><p>Stack Shift</p></td>
         </tr><tr>
             <td class="summary-topic"><p style="color: #ff9166" >integer</p></td>
             <td><p>Position</p></td>
@@ -27,31 +27,31 @@
             <td><p>Rotation</p></td>
         </tr><tr>
             <td class="summary-topic"><p style="color: #8fde5d" >color</p></td>
-            <td><p>Stack blend</p></td>
+            <td><p>Stack Blend</p></td>
         </tr><tr>
             <td class="summary-topic"><p style="color: #ffe478" >float</p></td>
-            <td><p>Alpha end</p></td>
+            <td><p>Alpha End</p></td>
         </tr><tr>
             <td class="summary-topic"><p style="color: #8c3f5d" >boolean</p></td>
-            <td><p>Move base</p></td>
+            <td><p>Move Base</p></td>
         </tr><tr>
             <td class="summary-topic"><p style="color: #ff9166" >integer</p></td>
             <td><p>Highlight</p></td>
         </tr><tr>
             <td class="summary-topic"><p style="color: #8fde5d" >color</p></td>
-            <td><p>Highlight color</p></td>
+            <td><p>Highlight Color</p></td>
         </tr><tr>
             <td class="summary-topic"><p style="color: #ffe478" >float</p></td>
-            <td><p>Highlight alpha</p></td>
+            <td><p>Highlight Alpha</p></td>
         </tr><tr>
             <td class="summary-topic"><p style="color: #ffe478" >float</p></td>
-            <td><p>Array process</p></td>
+            <td><p>Array Process</p></td>
         </tr>
 <tr height="8px"></tr>
 <tr><th class="head" colspan="2"><p>Outputs</p></th></tr>
 <tr><th colspan="2" class="summary-topic"><p>node_sprite_stack</p></th></tr><tr>
             <td class="summary-topic"><p style="color: #ff6b97">surface</p></td>
-            <td><p>Surface out</p></td>
+            <td><p>Surface Out</p></td>
         </tr>
 
 </table><p>Sprite stack is a way to create a 3D like image using 2D images by stacking them on top of each other.</p>
@@ -60,22 +60,22 @@
 <br><br>
 <h2>Stacking Positions</h2>
 <br>
-<p>When stacking, each copy will be shifted by the amount set by the <span class="inline-code">Stack shift</span> properties. 
-The final position can also be adjusted by the <span class="inline-code">Position</span>.</p>
+<p>When stacking, each copy will be shifted by the amount set by the <span class="junction" style="border-color: #ff9166AA">Stack Shift</span> properties. 
+The final position can also be adjusted by the <span class="junction" style="border-color: #ff9166AA">Position</span>.</p>
 <br>
-<p>The <span class="inline-code">Move base</span> property will revert the position such that the original image 
+<p>The <span class="junction" style="border-color: #8c3f5dAA">Move Base</span> property will revert the position such that the original image 
 got shifted instead of the copies.</p>
 <br>
 <img node_sprite_stack_position>
 <br><br>
 <h2>Rendering Properties</h2>
 <br>
-<p><span class="inline-code">Stack blend</span> will blend the copies with a new color. You can make make the 
-copies fade out over time with the <span class="inline-code">Alpha end</span> property.</p>
+<p><span class="junction" style="border-color: #8fde5dAA">Stack Blend</span> will blend the copies with a new color. You can make make the 
+copies fade out over time with the <span class="junction" style="border-color: #ffe478AA">Alpha End</span> property.</p>
 <br>
 <img node_sprite_stack_rendering>
 <br>
-<p>The <span class="inline-code">Highlight</span> property allow you to change the color of the edge.</p>
+<p>The <span class="junction" style="border-color: #ff9166AA">Highlight</span> property allow you to change the color of the edge.</p>
 <br>
 <img node_sprite_stack_highlight>
 <br>

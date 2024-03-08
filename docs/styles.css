@@ -451,6 +451,17 @@ h3 span.inline-code {
     font-size: 1.25rem;
 }
 
+span.junction {
+    padding: 2px 8px;
+    
+    font-size: 0.85rem;
+    font-weight: 600;
+
+    background-color: var(--main_dkblack);
+    border: 1px solid var(--main_dkgrey);
+    border-radius: 100px;
+}
+
 span.code-block {
     display: block;
     margin: 16px 0px 16px 0px;
@@ -534,6 +545,21 @@ table.cc4060 td:first-child {
 table.cc4060 td:nth-child(2) {
     text-align: center;
     width: 60%;
+}
+
+table.ccc203050 td:first-child {
+    text-align: center;
+    width: 20%;
+}
+
+table.ccc203050 td:nth-child(2) {
+    text-align: center;
+    width: 30%;
+}
+
+table.ccc203050 td:nth-child(3) {
+    text-align: center;
+    width: 50%;
 }
 
 div.node-group {
