@@ -6,7 +6,7 @@ under different blend mode.</p>
 <br><br>
 <h2>Blend Modes</h2>
 <br>
-<p>Blend mode control how the surface is being mixed. Blend modes available in the this node are:</p>
+<p><junc Blend mode> control how the surface is being mixed. Blend modes available in the this node are:</p>
 <br>
 <table class="ccc203050">
     <tr>
@@ -41,7 +41,7 @@ under different blend mode.</p>
     </tr>
     <tr>
         <td>Overlay</td>
-        <td>$$C_{out} = C_{fg} < 0.5 ? 2C_{fg}C_{bg} : 1 - 2(1-C_{fg})(1-C_{bg})$$</td>
+        <td>$$C_{out} = \begin {cases} 2C_{fg}C_{bg} & C_{fg} < 0.5 \\ 1 - 2(1-C_{fg})(1-C_{bg}) & C_{fg} \ge 0.5 \end {cases}$$</td>
         <td></td>
     </tr>
     <tr>
@@ -119,4 +119,4 @@ alpha channel of the original image. To exclude the alpha calculation, set <junc
 <br>
 <h3>Alignment</h3>
 <br>
-<p>When set the fill mode to None, you can move the foreground freely in the preview panel.</p>
+<p>When <junc Fill mode> is set to None, you can move the foreground freely in the preview panel.</p>

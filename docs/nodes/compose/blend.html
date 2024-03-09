@@ -70,55 +70,55 @@
     <tr><th class="head" colspan="2"><p>Node Data</p></th></tr><tr><th colspan="2"><img class="node-content" src="/src/nodeIcons/s_node_blend.png"></th></tr><tr><th colspan="2" class="summary-topic"><p>Display name</p></th></tr><tr><th colspan="2" class="summary-content"><p>Blend</p></th></tr><tr><th colspan="2" class="summary-topic"><p>Internal name</p></th></tr><tr><th colspan="2" class="summary-content"><p>Node_Blend</p></th></tr><tr height="8px"></tr><tr><th class="head" colspan="2"><p>Inheritances</p></th></tr><tr><th colspan="2" class="inheritance-block"><a href="../index.html">node</a></th></tr><tr><th colspan="2" class="inheritance-block"><a href="../array_processor.html">node_processor</a></th></tr><tr><th colspan="2" class="inheritance-block current"><a href="../_index/blend.html">node_blend</a></th></tr><tr height="8px"></tr>
 <tr><th class="head" colspan="2"><p>Inputs</p></th></tr>
 <tr><th colspan="2" class="summary-topic"><p>node_blend</p></th></tr><tr>
-            <td class="summary-topic"><p style="color: #ff6b97" >surface</p></td>
+            <td class="summary-topic" style="width: 60px"><p style="color: #ff6b97">surface</p></td>
             <td><p>Background</p></td>
         </tr><tr>
-            <td class="summary-topic"><p style="color: #ff6b97" >surface</p></td>
+            <td class="summary-topic" style="width: 60px"><p style="color: #ff6b97">surface</p></td>
             <td><p>Foreground</p></td>
         </tr><tr>
-            <td class="summary-topic"><p style="color: #ff9166" >integer</p></td>
+            <td class="summary-topic" style="width: 60px"><p style="color: #ff9166">integer</p></td>
             <td><p>Blend Mode</p></td>
         </tr><tr>
-            <td class="summary-topic"><p style="color: #ffe478" >float</p></td>
+            <td class="summary-topic" style="width: 60px"><p style="color: #ffe478">float</p></td>
             <td><p>Opacity</p></td>
         </tr><tr>
-            <td class="summary-topic"><p style="color: #ff6b97" >surface</p></td>
+            <td class="summary-topic" style="width: 60px"><p style="color: #ff6b97">surface</p></td>
             <td><p>Mask</p></td>
         </tr><tr>
-            <td class="summary-topic"><p style="color: #ff9166" >integer</p></td>
+            <td class="summary-topic" style="width: 60px"><p style="color: #ff9166">integer</p></td>
             <td><p>Fill Mode</p></td>
         </tr><tr>
-            <td class="summary-topic"><p style="color: #ff9166" >integer</p></td>
+            <td class="summary-topic" style="width: 60px"><p style="color: #ff9166">integer</p></td>
             <td><p>Output Dimension</p></td>
         </tr><tr>
-            <td class="summary-topic"><p style="color: #ff9166" >integer</p></td>
+            <td class="summary-topic" style="width: 60px"><p style="color: #ff9166">integer</p></td>
             <td><p>Constant Dimension</p></td>
         </tr><tr>
-            <td class="summary-topic"><p style="color: #8c3f5d" >boolean</p></td>
+            <td class="summary-topic" style="width: 60px"><p style="color: #8c3f5d">boolean</p></td>
             <td><p>Active</p></td>
         </tr><tr>
-            <td class="summary-topic"><p style="color: #8c3f5d" >boolean</p></td>
+            <td class="summary-topic" style="width: 60px"><p style="color: #8c3f5d">boolean</p></td>
             <td><p>Preserve Alpha</p></td>
         </tr><tr>
-            <td class="summary-topic"><p style="color: #ff9166" >integer</p></td>
+            <td class="summary-topic" style="width: 60px"><p style="color: #ff9166">integer</p></td>
             <td><p>Horizontal Align</p></td>
         </tr><tr>
-            <td class="summary-topic"><p style="color: #ff9166" >integer</p></td>
+            <td class="summary-topic" style="width: 60px"><p style="color: #ff9166">integer</p></td>
             <td><p>Vertical Align</p></td>
         </tr><tr>
-            <td class="summary-topic"><p style="color: #8c3f5d" >boolean</p></td>
+            <td class="summary-topic" style="width: 60px"><p style="color: #8c3f5d">boolean</p></td>
             <td><p>Invert Mask</p></td>
         </tr><tr>
-            <td class="summary-topic"><p style="color: #ffe478" >float</p></td>
+            <td class="summary-topic" style="width: 60px"><p style="color: #ffe478">float</p></td>
             <td><p>Mask Feather</p></td>
         </tr><tr>
-            <td class="summary-topic"><p style="color: #ffe478" >float</p></td>
+            <td class="summary-topic" style="width: 60px"><p style="color: #ffe478">float</p></td>
             <td><p>Position</p></td>
         </tr>
 <tr height="8px"></tr>
 <tr><th class="head" colspan="2"><p>Outputs</p></th></tr>
 <tr><th colspan="2" class="summary-topic"><p>node_blend</p></th></tr><tr>
-            <td class="summary-topic"><p style="color: #ff6b97">surface</p></td>
+            <td class="summary-topic" style="width: 60px"><p style="color: #ff6b97">surface</p></td>
             <td><p>Surface Out</p></td>
         </tr>
 
@@ -130,7 +130,7 @@ under different blend mode.</p>
 <br><br>
 <h2><a id="Blend Modes" class="anchor"></a>Blend Modes</h2>
 <br>
-<p>Blend mode control how the surface is being mixed. Blend modes available in the this node are:</p>
+<p><span class="junction" style="border-color: #ff9166AA">Blend Mode</span> control how the surface is being mixed. Blend modes available in the this node are:</p>
 <br>
 <table class="ccc203050">
     <tr>
@@ -165,7 +165,7 @@ under different blend mode.</p>
     </tr>
     <tr>
         <td>Overlay</td>
-        <td>$$C_{out} = C_{fg} < 0.5 ? 2C_{fg}C_{bg} : 1 - 2(1-C_{fg})(1-C_{bg})$$</td>
+        <td>$$C_{out} = \begin {cases} 2C_{fg}C_{bg} & C_{fg} < 0.5 \\ 1 - 2(1-C_{fg})(1-C_{bg}) & C_{fg} \ge 0.5 \end {cases}$$</td>
         <td></td>
     </tr>
     <tr>
@@ -243,7 +243,7 @@ alpha channel of the original image. To exclude the alpha calculation, set <span
 <br>
 <h3><a id="Alignment" class="anchor"></a>Alignment</h3>
 <br>
-<p>When set the fill mode to None, you can move the foreground freely in the preview panel.</p>
+<p>When <span class="junction" style="border-color: #ff9166AA">Fill Mode</span> is set to None, you can move the foreground freely in the preview panel.</p>
         </div>
     </div>
 

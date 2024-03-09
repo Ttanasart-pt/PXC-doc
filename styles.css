@@ -10,6 +10,7 @@
     --accent: #ff9166;
 
     --positive: #8fde5d;
+    --positive_50: #8fde5d88;
     --cyan: #88ffe9;
 }
 
@@ -345,8 +346,22 @@ table.summary-table {
     clear: right;
 
     background-color: var(--main_black);
-    border:          1px solid var(--main_dkgrey);
-    border-radius:    4px;
+    border: 1px solid var(--main_dkgrey);
+    border-radius: 4px;
+}
+
+table.summary-table table.dynamic {
+    width: 100%;
+    margin: 0px;
+    padding: 0px 4px;
+
+    border-color: var(--positive_50);
+}
+
+table.summary-table table.dynamic tr th p {
+    font-size: 0.8rem;
+    color: var(--positive);
+    background: var(--main_black);
 }
 
 table.summary-table tr {
@@ -460,6 +475,16 @@ span.junction {
     background-color: var(--main_dkblack);
     border: 1px solid var(--main_dkgrey);
     border-radius: 100px;
+}
+
+a.node {
+    padding: 2px 6px;
+    
+    font-weight: 600;
+
+    background-color: var(--main_black);
+    border: 1px solid var(--main_dkgrey);
+    border-radius: 4px;
 }
 
 span.code-block {

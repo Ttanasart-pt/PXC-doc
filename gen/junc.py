@@ -104,10 +104,17 @@ def IOTable(ioList):
     allio = {}
     
     for node, ios in ioList:
-        _inputs = []
+        _inputs  = []
+        _inputDy = []
         _outputs = []
 
+        inputPnt = _inputs
+
         for io in ios:
+            if io == "[Dynamic]": 
+                inputPnt = _inputDy
+                continue
+            
             io = io.strip()
             io = io.split(",")
             
@@ -120,13 +127,16 @@ def IOTable(ioList):
             _dataty = io[3].strip().replace("VALUE_TYPE.", "")
 
             if _iotype == "JUNCTION_CONNECT.input":
-                _inputs.append((_name, _dataty))
+                inputPnt.append((_name, _dataty))
                 
             elif _iotype == "JUNCTION_CONNECT.output":
                 _outputs.append((_name, _dataty))
 
         for _name, _dataty in _inputs:
             allio[_name.lower()] = getColor(_dataty)
+        for _name, _dataty in _inputDy:
+            allio[_name.lower()] = getColor(_dataty)
+
         for _name, _dataty in _outputs:
             allio[_name.lower()] = getColor(_dataty)
 
@@ -134,15 +144,31 @@ def IOTable(ioList):
             inputRows += f'<tr><th colspan="2" class="summary-topic"><p>{node}</p></th></tr>'
 
         inputRows += "".join([f"""<tr>
-            <td class="summary-topic"><p style="color: {getColor(_dataty)}" >{_dataty}</p></td>
+            <td class="summary-topic" style="width: 60px"><p style="color: {getColor(_dataty)}">{_dataty}</p></td>
             <td><p>{_name.title()}</p></td>
         </tr>""" for _name, _dataty in _inputs])
+
+        if _inputDy:
+            dynamicTable = f'''<table class="summary-table dynamic" style="margin-top: 8px;"><tr>
+    <th colspan="2" class="summary-topic">
+        <p style="margin: -0.85rem auto -4px auto;width: fit-content;padding: 0px 8px;">Dynamic Inputs</p>
+    </th>
+</tr>'''
+
+            dynamicTable += "".join([f"""<tr>
+                <td class="summary-topic" style="width: 60px"><p style="color: {getColor(_dataty)}" >{_dataty}</p></td>
+                <td><p>{_name.title()}</p></td>
+            </tr>""" for _name, _dataty in _inputDy])
+
+            dynamicTable += "</table>"
+
+            inputRows += f"""<tr><td colspan="2">{dynamicTable}</td></tr>"""
 
         if _outputs:
             outputRows += f'<tr><th colspan="2" class="summary-topic"><p>{node}</p></th></tr>'
 
         outputRows += "".join([f"""<tr>
-            <td class="summary-topic"><p style="color: {getColor(_dataty)}">{_dataty}</p></td>
+            <td class="summary-topic" style="width: 60px"><p style="color: {getColor(_dataty)}">{_dataty}</p></td>
             <td><p>{_name.title()}</p></td>
         </tr>""" for _name, _dataty in _outputs])
 

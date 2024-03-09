@@ -46,7 +46,14 @@ def extractNodeData(node):
     matchName = re.search(r"name\s*=\s*[\"](.*)[\"]", content)
     nodeName  = "" if not matchName else matchName.group(1)
 
-    junctions  = re.findall(r"nodeValue\((.*)\)", content)
+    if "static createNewInput" in content:
+        conSep = content.split("static createNewInput")
+        
+        junctions  = re.findall(r"nodeValue\((.*)\)", conSep[0])
+        junctions.append("[Dynamic]")
+        junctions += re.findall(r"nodeValue\((.*)\)", conSep[1])
+    else :
+        junctions  = re.findall(r"nodeValue\((.*)\)", content)
 
     parent = "node"
     constructLine = re.search(r"function\s*" + node + r"(.*){", content, re.IGNORECASE)
@@ -149,19 +156,22 @@ def writeNodeFile(cat, node, line):
             
             nodeTags = re.findall(r'<node\s(.*?)>', content)
             for tag in nodeTags:
-                name = tag
-                if "node_" + tag in nodeData:
-                    name = nodeData["node_" + tag]["name"]
+                name = tag.strip("/")
+                page = name
 
-                content = content.replace(f'<node {tag}>', f'<a href="../_index/{tag}.html">{name}</a>')
+                if "node_" + name in nodeData:
+                    name = nodeData["node_" + name]["name"]
+
+                content = content.replace(f'<node {tag}>', f'<a class="node" href="../_index/{page}.html">{name}</a>')
             
             juncTags = re.findall(r'<junc\s(.*?)>', content)
             for tag in juncTags:
-                _tag = tag.lower()
-                if _tag in io:
-                    content = content.replace(f'<junc {tag}>', f'<span class="junction" style="border-color: {io[_tag]}AA">{_tag.title()}</span>')
+                name = tag.strip("/").lower()
+                
+                if name in io:
+                    content = content.replace(f'<junc {tag}>', f'<span class="junction" style="border-color: {io[name]}AA">{name.title()}</span>')
                 else :
-                    print(f"Junction {_tag} not found in {manFilePath}")
+                    print(f"Junction {name} not found in {manFilePath}")
 
             txt += content
     else:
