@@ -42,6 +42,16 @@
 <li class=""><a class="" href="pack_sprites.html">Pack Sprites</a></li>
 <li class="active "><a class="" href="render_sprite_sheet.html">Render Sprite Sheet</a></li>
 <ul class="submenu">
+<li><a href="#Input">Input</a></li>
+<ul class="submenu h3">
+</ul>
+<li><a href="#Output Properties">Output Properties</a></li>
+<ul class="submenu h3">
+<li><a href="#Packing Type">Packing Type</a></li>
+<li><a href="#Alignment">Alignment</a></li>
+<li><a href="#Spacing">Spacing</a></li>
+<li><a href="#Padding">Padding</a></li>
+</ul>
 </ul>
 <li class=""><a class="" href="stack.html">Stack</a></li>
 
@@ -106,7 +116,37 @@
             <td><p>Atlas Data</p></td>
         </tr>
 
-</table>
+</table><p>Render Spritesheet generate a single surface containing frames from animation or array. It is recommended that every frames should 
+have the same size.</p>
+<br><br>
+<h2><a id="Input" class="anchor"></a>Input</h2>
+<br>
+<p>There are 2 types of input set by the <span class="junction" style="border-color: #ff9166AA">Sprite Set</span>: Animation and sprite array.<br><br>When set to animation, the node will 
+require full rendering to record all the animation frames. You can also use <span class="junction" style="border-color: #ff9166AA">Frame Step</span> to skip frames for smaller spritesheet.<br><br>
+When set to sprite array, the node will runs automatically similiar 
+to <a class="node" href="../_index/image_grid.html">Image Grid</a>.</p>
+<br><br>
+<h2><a id="Output Properties" class="anchor"></a>Output Properties</h2>
+<br>
+<h3><a id="Packing Type" class="anchor"></a><span class="junction" style="border-color: #ff9166AA">Packing Type</span></h3>
+<br>
+<p>Control how the surface is arranged. <span class="inline-code">Horizontal</span> and <span class="inline-code">Vertical</span> mode 
+will place the surfaces linearly. <span class="inline-code">Grid</span> will place image in a grid.</p>
+<br>
+<h3><a id="Alignment" class="anchor"></a><span class="junction" style="border-color: #ff9166AA">Alignment</span></h3>
+<br>
+<p>When the input surfaces has different sizes, <span class="junction" style="border-color: #ff9166AA">Alignment</span> control where to place the smaller surface:</p>
+<br>
+<img class="node-content" src="/src/images/captures/spritesheet_alignment.png">
+<br>
+<h3><a id="Spacing" class="anchor"></a><span class="junction" style="border-color: #ff9166AA">Spacing</span></h3>
+<br>
+<p>Set the space between each surface. If the <span class="junction" style="border-color: #ff9166AA">Packing Type</span> is set to grid, then this value will becomes vec2 for horizontal and 
+vertical spacing.</p>
+<br>
+<h3><a id="Padding" class="anchor"></a><span class="junction" style="border-color: #ff9166AA">Padding</span></h3>
+<br>
+<p>Add padding space in each direction afterward.</p>
         </div>
     </div>
 

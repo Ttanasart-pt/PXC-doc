@@ -39,6 +39,23 @@
 <li class=""><a class="" href="composite.html">Composite</a></li>
 <li class="active "><a class="" href="export.html">Export</a></li>
 <ul class="submenu">
+<li><a href="#Output Format">Output Format</a></li>
+<ul class="submenu h3">
+</ul>
+<li><a href="#Export Path">Export Path</a></li>
+<ul class="submenu h3">
+<li><a href="#Export Template">Export Template</a></li>
+</ul>
+<li><a href="#Format Properties">Format Properties</a></li>
+<ul class="submenu h3">
+<li><a href="#.png">.png</a></li>
+<li><a href="#.jpg">.jpg</a></li>
+<li><a href="#.gif">.gif</a></li>
+<li><a href="#.mp4">.mp4</a></li>
+</ul>
+<li><a href="#Animation Properties">Animation Properties</a></li>
+<ul class="submenu h3">
+</ul>
 </ul>
 <li class=""><a class="" href="image_grid.html">Image Grid</a></li>
 <li class=""><a class="" href="pack_sprites.html">Pack Sprites</a></li>
@@ -118,6 +135,158 @@
             <td><p>Preview</p></td>
         </tr>
 
+</table><p>Export node is one of the most important node in Pixel Composer. It allows you to export surface to different 
+formats, it also allows Pixel Composer project to be run in headless mode.</p>
+<br><br>
+<h2><a id="Output Format" class="anchor"></a>Output Format</h2>
+<br>
+<p>There're 3 types of output:</p>
+<br>
+<table class="ccc205030">
+    <tr>
+        <th><span class="junction" style="border-color: #ff9166AA">Type</span></th>
+        <th>Description</th>
+        <th><span class="junction" style="border-color: #ff9166AA">Format</span></th>
+    </tr>
+    <tr>
+        <td>Single Image</td>
+        <td>Export still surface to image file</td>
+        <td>.png, .jpg, .webp</td>
+    </tr>
+    <tr>
+        <td>Image Sequence</td>
+        <td>Export the entire animation into series of still images</td>
+        <td>.png, .jpg, .webp</td>
+    </tr>
+    <tr>
+        <td>Animation</td>
+        <td>Export the animation into a animation file</td>
+        <td>.gif, .apng, .mp4, .webm</td>
+    </tr>
+</table>
+<br><br>
+<h2><a id="Export Path" class="anchor"></a>Export Path</h2>
+<br>
+<p>The exported file location is control by <span class="junction" style="border-color: #eb004bAA">Paths</span>. However, you can add extra formatting using <span class="junction" style="border-color: #66ffe3AA">Template</span>.</p>
+<br>
+<h3><a id="Export Template" class="anchor"></a>Export Template</h3>
+<br>
+<p><span class="junction" style="border-color: #66ffe3AA">Template</span> is used with a defined <span class="junction" style="border-color: #eb004bAA">Paths</span>. Template will replace special token with the actual value in 
+the <span class="junction" style="border-color: #eb004bAA">Paths</span>.<br><br>The available tokens are:</p>
+<br>
+<table class="cc4060">
+    <tr>
+        <th>Token</th>
+        <th>Description</th>
+    </tr>
+    <tr>
+        <td><span style="color: #88ffe9">%d</span></td>
+        <td>Path directory, the folder where the path is located</td>
+    </tr>
+    <tr>
+        <td><span style="color: #88ffe9">%{number}d</span></td>
+        <td>Getting the parent folder, the {number} control how many parent to go up</td>
+    </tr>
+    <tr>
+        <td><span style="color: #8fde5d">%n</span></td>
+        <td>File name</td>
+    </tr>
+    <tr>
+        <td><span style="color: #eb00b7">%f</span></td>
+        <td>Frame number, use with image sequence export</td>
+    </tr>
+    <tr>
+        <td><span style="color: #eb00b7">%{number}f</span></td>
+        <td>Frame number, with zero padding to 2 digits</td>
+    </tr>
+    <tr>
+        <td><span style="color: #ffe478">%i</span></td>
+        <td>Array index, use when exporting surface array</td>
+    </tr>
+</table>
+<br>
+<p>For example, if the <span class="junction" style="border-color: #eb004bAA">Paths</span> is set to <span class="inline-code">foo/bar/file.png</span> then these templates will returns:</p>
+<br>
+<table class="cc4060">
+    <tr>
+        <th>Template</th>
+        <th>Result</th>
+    </tr>
+    <tr>
+        <td><span style="color: #88ffe9">%d</span><span style="color: #8fde5d">%n</span></td>
+        <td>foo/bar/file</td>
+    </tr>
+    <tr>
+        <td><span style="color: #88ffe9">%1d</span>name</td>
+        <td>foo/name</td>
+    </tr>
+</table>
+<br>
+<p>Note that the extension will be remove and re-added automatically based on the selecting <span class="junction" style="border-color: #ff9166AA">Format</span>.</p>
+<br><br>
+<h2><a id="Format Properties" class="anchor"></a>Format Properties</h2>
+<br>
+<h3><a id=".png" class="anchor"></a>.png</h3>
+<br>
+<p>.png format comes with extra <span class="junction" style="border-color: #ff9166AA">Subformat</span> for file optimization.</p>
+<br>
+<table class="ccc205030">
+    <tr>
+        <th><span class="junction" style="border-color: #ff9166AA">Subformat</span></th>
+        <th>Description</th>
+    </tr>
+    <tr>
+        <td>PNG32</td>
+        <td>Default 32 bit PNG format</td>
+    </tr>
+    <tr>
+        <td>INDEX4</td>
+        <td>4 bit indexed PNG format</td>
+    </tr>
+    <tr>
+        <td>INDEX8</td>
+        <td>8 bit indexed PNG format</td>
+    </tr>
+</table>
+<br>
+<h3><a id=".jpg" class="anchor"></a>.jpg</h3>
+<br>
+<p>.jpg format comes with <span class="junction" style="border-color: #ffe478AA">Quality</span>, the lower the quality, the smaller the file size.</p>
+<br>
+<h3><a id=".gif" class="anchor"></a>.gif</h3>
+<br>
+<p>.gif comes with <span class="junction" style="border-color: #8c3f5dAA">Frame Optimization</span> for reducing file size and <span class="junction" style="border-color: #ffe478AA">Color Merge</span> that combine similiar into one for even smaller 
+file.</p>
+<br>
+<h3><a id=".mp4" class="anchor"></a>.mp4</h3>
+<br>
+<p>.mp4 file has <span class="junction" style="border-color: #ffe478AA">Quality</span> (crf value) slider for controlling quality of the output. The higher the CRF value, the lower the quality.</p>
+<br><br>
+<h2><a id="Animation Properties" class="anchor"></a>Animation Properties</h2>
+<br>
+<p>For animation type, there're extra properties for controlling the animation.</p>
+<br>
+<table class="cc4060">
+    <tr>
+        <th>Property</th>
+        <th>Description</th>
+    </tr>
+    <tr>
+        <td><span class="junction" style="border-color: #ff9166AA">Framerate</span></td>
+        <td>The speed of the animation</td>
+    </tr>
+    <tr>
+        <td><span class="junction" style="border-color: #ff9166AA">Frame Step</span></td>
+        <td>Export one frame every n frames step</td>
+    </tr>
+    <tr>
+        <td><span class="junction" style="border-color: #ff9166AA">Frame Range</span></td>
+        <td>Range of the animation to export</td>
+    </tr>
+    <tr>
+        <td><span class="junction" style="border-color: #8c3f5dAA">Loop</span></td>
+        <td>Loop the animation</td>
+    </tr>
 </table>
         </div>
     </div>

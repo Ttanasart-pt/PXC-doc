@@ -41,6 +41,13 @@
 <li class=""><a class="" href="image_grid.html">Image Grid</a></li>
 <li class="active "><a class="" href="pack_sprites.html">Pack Sprites</a></li>
 <ul class="submenu">
+<li><a href="#Packing Algorithms">Packing Algorithms</a></li>
+<ul class="submenu h3">
+<li><a href="#Skyline">Skyline</a></li>
+<li><a href="#Shelf">Shelf</a></li>
+<li><a href="#Top left">Top left</a></li>
+<li><a href="#Best fit">Best fit</a></li>
+</ul>
 </ul>
 <li class=""><a class="" href="render_sprite_sheet.html">Render Sprite Sheet</a></li>
 <li class=""><a class="" href="stack.html">Stack</a></li>
@@ -85,7 +92,29 @@
             <td><p>Atlas Data</p></td>
         </tr>
 
-</table>
+</table><p>Pack sprites nodes allows for quick composition of surfaces array with different sizes.</p>
+<br><br>
+<h2><a id="Packing Algorithms" class="anchor"></a>Packing Algorithms</h2>
+<br>
+<h3><a id="Skyline" class="anchor"></a>Skyline</h3>
+<br>
+<p>Skyline packing place surfaces next to each other horizontally until it reach <span class="junction" style="border-color: #ff9166AA">Max Width</span>, then it goes to the beginning 
+of the row and search for the best fit for the next surface. It is a very fast algorithm but it can leave a lot of empty space.</p>
+<br>
+<h3><a id="Shelf" class="anchor"></a>Shelf</h3>
+<br>
+<p>Shelf packing place surfaces next to each other horizontally until it reach <span class="junction" style="border-color: #ff9166AA">Max Width</span> while keeping the same height, 
+then it goes to the next row.</p>
+<br>
+<h3><a id="Top left" class="anchor"></a>Top left</h3>
+<br>
+<p>Top left packing sort the surfaces by height and always try to place the next surface in the top left corner of the leftover space.</p>
+<br>
+<h3><a id="Best fit" class="anchor"></a>Best fit</h3>
+<br>
+<p>Best fit is the slowest algorithm. It sort all surfaces by size and search for the best fit for each subsequent surface.</p>
+<br>
+
         </div>
     </div>
 

@@ -146,8 +146,7 @@ tr td {
 table {
     width: auto;
     border-collapse: separate;
-    margin-top: 16px;
-    margin-bottom: 16px;
+    margin: 16px auto;
 
     border: 1px solid var(--main_dkgrey);
     border-radius: 8px;
@@ -477,6 +476,20 @@ span.junction {
     border-radius: 100px;
 }
 
+h3 span.junction {
+    padding: 2px 12px;
+
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--main_white);
+
+    border-width: 2px;
+}
+
+h3:has(span.junction) {
+    margin-top: 8px;
+}
+
 a.node {
     padding: 2px 6px;
     
@@ -585,6 +598,21 @@ table.ccc203050 td:nth-child(2) {
 table.ccc203050 td:nth-child(3) {
     text-align: center;
     width: 50%;
+}
+
+table.ccc205030 td:first-child {
+    text-align: center;
+    width: 20%;
+}
+
+table.ccc205030 td:nth-child(2) {
+    text-align: center;
+    width: 50%;
+}
+
+table.ccc205030 td:nth-child(3) {
+    text-align: center;
+    width: 30%;
 }
 
 div.node-group {
