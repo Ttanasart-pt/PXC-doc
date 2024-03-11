@@ -42,11 +42,10 @@ def generateFile(dirOut, pathIn, sidebar):
     pathIn    = pathStrip(pathIn)
     fileName  = os.path.basename(pathIn)
     outPath   = f"{dirOut}\\{fileName}"
-
-    headers = []
+    headers   = []
 
     for h2s in content.split("<h2>")[1:]:
-        h2 = h2s.split("</h2>")[0]
+        h2  = h2s.split("</h2>")[0]
         h3s = re.findall(r"<h3>(.*?)</h3>", h2s)
         
         content = content.replace(f"<h2>{h2}</h2>", f'<h2><a id="{h2}" class="anchor"></a>{h2}</h2>')
@@ -63,11 +62,15 @@ def generateFile(dirOut, pathIn, sidebar):
     for img in imgs:
         if img in images:
             content = content.replace(f"<img {img}>", f'<img class="node-content" src="/{images[img]}">')
+        elif '"' not in img: 
+            print(f"Image {img} in {pathIn} not found")
 
     imgs = re.findall(r"<img-deco (.*?)>", content)
     for img in imgs:
         if img in images:
             content = content.replace(f"<img-deco {img}>", f'<img class="node-content deco" src="/{images[img]}">')
+        elif '"' not in img: 
+            print(f"Image {img} in {pathIn} not found")
 
     sideContent = ""
     for fType, _, fName, title in sidebar:

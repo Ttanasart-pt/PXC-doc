@@ -493,11 +493,12 @@ h3:has(span.junction) {
 a.node {
     padding: 2px 6px;
     
+    font-size: 0.85rem;
     font-weight: 600;
 
-    background-color: var(--main_black);
-    border: 1px solid var(--main_dkgrey);
-    border-radius: 4px;
+    background-color: var(--main_dkblack);
+    border: 2px solid var(--main_dkgrey);
+    border-radius: 6px;
 }
 
 span.code-block {
@@ -613,6 +614,11 @@ table.ccc205030 td:nth-child(2) {
 table.ccc205030 td:nth-child(3) {
     text-align: center;
     width: 30%;
+}
+
+table img.node-content {
+    width: 100%;
+    max-width: fit-content;
 }
 
 div.node-group {

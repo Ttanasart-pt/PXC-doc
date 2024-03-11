@@ -37,6 +37,9 @@
 <li class=""><a class="" href="blend.html">Blend</a></li>
 <li class="active "><a class="" href="blobify.html">Blobify</a></li>
 <ul class="submenu">
+<li><a href="#Algorithm">Algorithm</a></li>
+<ul class="submenu h3">
+</ul>
 </ul>
 <li class=""><a class="" href="bloom.html">Bloom</a></li>
 <li class=""><a class="" href="blur.html">Blur</a></li>
@@ -134,7 +137,14 @@
             <td><p>Surface Out</p></td>
         </tr>
 
-</table>
+</table><p>Blobify node tries to soften the sharp edge.</p>
+<br>
+<img class="node-content" src="/src/images/etc/blobify.png">
+<br><br>
+<h2><a id="Algorithm" class="anchor"></a>Algorithm</h2>
+<br>
+<p>The node first blur the image by the <span class="junction" style="border-color: #ff9166AA">Radius</span> amount, then apply threshold by 
+the <span class="junction" style="border-color: #ffe478AA">Threshold</span> value.</p>
         </div>
     </div>
 

@@ -66,4 +66,56 @@
             <td><p>Light Only</p></td>
         </tr>
 
-</table>
+</table><p>2D Light node draw a light on top of original surface. If you want the light to cast a shadow, check 
+out <a class="node" href="../_index/shadow_cast.html">Cast Shadow</a>.</p>
+<br><br>
+<h2>Light Properties</h2>
+<br>
+<h3><span class="junction" style="border-color: #ff9166AA">Light Shape</span></h3>
+<br>
+<p>Control the shape of the light. There are 4 available shapes: Point, line, line asymmetric, and spot.</p>
+<br>
+<img 2d_light_shape>
+<br>
+<h3><span class="junction" style="border-color: #ffe478AA">Range</span></h3>
+<br>
+<p>The size of the light.</p>
+<br>
+<h3><span class="junction" style="border-color: #ffe478AA">Intensity</span></h3>
+<br>
+<p>The brightness of the light. Adjusting this amount may effect the resulting range.</p>
+<br>
+<h3><span class="junction" style="border-color: #8fde5dAA">Color</span></h3>
+<br>
+<p>Control color of the light. Note that light use additive blending.</p>
+<br>
+<h3><span class="junction" style="border-color: #ff9166AA">Attenuation</span></h3>
+<br>
+<p>Control the falloff of the light. There are 3 available falloff: quadratic, invert quadratic and linear.</p>
+<br>
+<img 2d_light_attenuation>
+<br>
+<h3><span class="junction" style="border-color: #ff9166AA">Banding</span></h3>
+<br>
+<p>Banding convert smooth light to discrete steps. The banding width depends on the <span class="junction" style="border-color: #ff9166AA">Attenuation</span>.</p>
+<br>
+<img 2d_light_banding>
+<br><br>
+<h2>Radial Properties</h2>
+<br>
+<p>With point light, you can use <span class="junction" style="border-color: #ff9166AA">Radial Banding</span> to add the "shine" effect to the light.</p>
+<br>
+<h3><span class="junction" style="border-color: #ff9166AA">Radial Banding</span></h3>
+<br>
+<p>The amount of radials, set to 0 for a full circle.</p>
+<br>
+<h3><span class="junction" style="border-color: #ff9166AA">Radial Start</span></h3>
+<br>
+<p>Rotate the radial effect.</p>
+<br>
+<h3><span class="junction" style="border-color: #ffe478AA">Radial Band Ratio</span></h3>
+<br>
+<p>The width of the radial band as a ratio. 0 means no light and 1 mean fulll circle.</p>
+<br>
+<img 2d_light_radial_banding>
+<br><br>

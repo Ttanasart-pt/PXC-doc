@@ -208,8 +208,6 @@ for line in nodeListRaw.split("\n"):
 def generateNodeCatagory(cat):
     txt = f"""<h1>{cat.title()}</h1>
 <br><br>
-<img node_cat_{cat}>
-<br>
 <div class=node-group>"""
     
     nodeNames = [ node for node, _ in nodes[cat] ]
