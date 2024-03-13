@@ -115,9 +115,10 @@ def IOTable(ioList):
                 inputPnt = _inputDy
                 continue
             
+            ioRaw = io
             io = io.strip()
             io = io.split(",")
-            
+
             _name = io[0].strip()
             names = re.search(r'"(.*?)"', _name)
             if names:
@@ -125,40 +126,45 @@ def IOTable(ioList):
 
             _iotype = io[2].strip()
             _dataty = io[3].strip().replace("VALUE_TYPE.", "")
+            _mappable = "setMappable" in ioRaw
 
             if _iotype == "JUNCTION_CONNECT.input":
-                inputPnt.append((_name, _dataty))
+                inputPnt.append((_name, _dataty, _mappable))
                 
             elif _iotype == "JUNCTION_CONNECT.output":
-                _outputs.append((_name, _dataty))
+                _outputs.append((_name, _dataty, _mappable))
 
-        for _name, _dataty in _inputs:
+        for _name, _dataty, _ in _inputs:
             allio[_name.lower()] = getColor(_dataty)
-        for _name, _dataty in _inputDy:
+        for _name, _dataty, _ in _inputDy:
             allio[_name.lower()] = getColor(_dataty)
 
-        for _name, _dataty in _outputs:
+        for _name, _dataty, _ in _outputs:
             allio[_name.lower()] = getColor(_dataty)
 
         if _inputs:
             inputRows += f'<tr><th colspan="2" class="summary-topic"><p>{node}</p></th></tr>'
 
-        inputRows += "".join([f"""<tr>
-            <td class="summary-topic" style="width: 60px"><p style="color: {getColor(_dataty)}">{_dataty}</p></td>
-            <td><p>{_name.title()}</p></td>
-        </tr>""" for _name, _dataty in _inputs])
+        for _name, _dataty, _mappable in _inputs:
+            mapStr = "" if not _mappable else '<a href="/nodes/junctions/mappable.html" style="line-height: 1;"><img mappable></a>'
+
+            inputRows += f"""<tr>
+                <td class="summary-topic" style="width: 60px"><p style="color: {getColor(_dataty)}">{_dataty}</p></td>
+                <td><p>{_name.title()}{mapStr}</p></td>
+            </tr>"""
 
         if _inputDy:
             dynamicTable = f'''<table class="summary-table dynamic" style="margin-top: 8px;"><tr>
-    <th colspan="2" class="summary-topic">
-        <p style="margin: -0.85rem auto -4px auto;width: fit-content;padding: 0px 8px;">Dynamic Inputs</p>
-    </th>
-</tr>'''
+                <th colspan="2" class="summary-topic">
+                    <p style="margin: -0.85rem auto -4px auto;width: fit-content;padding: 0px 8px;">Dynamic Inputs</p>
+                </th>
+            </tr>'''
 
-            dynamicTable += "".join([f"""<tr>
-                <td class="summary-topic" style="width: 60px"><p style="color: {getColor(_dataty)}" >{_dataty}</p></td>
-                <td><p>{_name.title()}</p></td>
-            </tr>""" for _name, _dataty in _inputDy])
+            for _name, _dataty, _mappable in _inputDy:
+                dynamicTable += f"""<tr>
+                    <td class="summary-topic" style="width: 60px"><p style="color: {getColor(_dataty)}" >{_dataty}</p></td>
+                    <td><p>{_name.title()}</p></td>
+                </tr>"""
 
             dynamicTable += "</table>"
 
@@ -167,10 +173,11 @@ def IOTable(ioList):
         if _outputs:
             outputRows += f'<tr><th colspan="2" class="summary-topic"><p>{node}</p></th></tr>'
 
-        outputRows += "".join([f"""<tr>
-            <td class="summary-topic" style="width: 60px"><p style="color: {getColor(_dataty)}">{_dataty}</p></td>
-            <td><p>{_name.title()}</p></td>
-        </tr>""" for _name, _dataty in _outputs])
+        for _name, _dataty, _mappable in _outputs:
+            outputRows += f"""<tr>
+                <td class="summary-topic" style="width: 60px"><p style="color: {getColor(_dataty)}">{_dataty}</p></td>
+                <td><p>{_name.title()}</p></td>
+            </tr>"""
 
     summaryTxt = f"""
 <tr><th class="head" colspan="2"><p>Inputs</p></th></tr>

@@ -53,8 +53,8 @@ def extractNodeData(node):
         junctions.append("[Dynamic]")
         junctions += re.findall(r"nodeValue\((.*)\)", conSep[1])
     else :
-        junctions  = re.findall(r"nodeValue\((.*)\)", content)
-
+        junctions  = re.findall(r"nodeValue\(([\s\S]*?);", content)
+    
     parent = "node"
     constructLine = re.search(r"function\s*" + node + r"(.*){", content, re.IGNORECASE)
     if constructLine and ":" in constructLine.group(1):
@@ -99,7 +99,7 @@ def writeNodeFile(cat, node, line):
     
     basicData += f'<tr><th colspan="2" class="summary-topic"><p>Internal name</p></th></tr>'
     basicData += f'<tr><th colspan="2" class="summary-content"><p>{node}</p></th></tr>'
-
+    
     p = parent
     parents = [ node.lower() ]
 
@@ -172,6 +172,10 @@ def writeNodeFile(cat, node, line):
                     content = content.replace(f'<junc {tag}>', f'<span class="junction" style="border-color: {io[name]}AA">{name.title()}</span>')
                 else :
                     print(f"Junction {name} not found in {manFilePath}")
+
+            attrTags = re.findall(r'<attr\s(.*?)/>', content)
+            for tag in attrTags:
+                content = content.replace(f'<attr {tag}/>', f'<span class="inline-code">{tag}</span>')
 
             txt += content
     else:

@@ -47,6 +47,13 @@
 <li class=""><a class="" href="blur_slope.html">Blur Slope</a></li>
 <li class="active "><a class="" href="blur_zoom.html">Blur Zoom</a></li>
 <ul class="submenu">
+<li><a href="#Properties">Properties</a></li>
+<ul class="submenu h3">
+<li><a href="#Strength">Strength</a></li>
+<li><a href="#Center">Center</a></li>
+<li><a href="#Zoom Mode">Zoom Mode</a></li>
+<li><a href="#Blur Mask">Blur Mask</a></li>
+</ul>
 </ul>
 <li class=""><a class="" href="bw.html">Bw</a></li>
 <li class=""><a class="" href="chromatic_aberration.html">Chromatic Aberration</a></li>
@@ -115,44 +122,67 @@
     <tr><th class="head" colspan="2"><p>Node Data</p></th></tr><tr><th colspan="2"><img class="node-content" src="/src/nodeIcons/s_node_zoom.png"></th></tr><tr><th colspan="2" class="summary-topic"><p>Display name</p></th></tr><tr><th colspan="2" class="summary-content"><p>Zoom Blur</p></th></tr><tr><th colspan="2" class="summary-topic"><p>Internal name</p></th></tr><tr><th colspan="2" class="summary-content"><p>Node_Blur_Zoom</p></th></tr><tr height="8px"></tr><tr><th class="head" colspan="2"><p>Inheritances</p></th></tr><tr><th colspan="2" class="inheritance-block"><a href="../index.html">node</a></th></tr><tr><th colspan="2" class="inheritance-block"><a href="../array_processor.html">node_processor</a></th></tr><tr><th colspan="2" class="inheritance-block current"><a href="../_index/blur_zoom.html">node_blur_zoom</a></th></tr><tr height="8px"></tr>
 <tr><th class="head" colspan="2"><p>Inputs</p></th></tr>
 <tr><th colspan="2" class="summary-topic"><p>node_blur_zoom</p></th></tr><tr>
-            <td class="summary-topic" style="width: 60px"><p style="color: #ff6b97">surface</p></td>
-            <td><p>Surface In</p></td>
-        </tr><tr>
-            <td class="summary-topic" style="width: 60px"><p style="color: #ffe478">float</p></td>
-            <td><p>Strength</p></td>
-        </tr><tr>
-            <td class="summary-topic" style="width: 60px"><p style="color: #ffe478">float</p></td>
-            <td><p>Center</p></td>
-        </tr><tr>
-            <td class="summary-topic" style="width: 60px"><p style="color: #ff9166">integer</p></td>
-            <td><p>Oversample Mode</p></td>
-        </tr><tr>
-            <td class="summary-topic" style="width: 60px"><p style="color: #ff9166">integer</p></td>
-            <td><p>Zoom Mode</p></td>
-        </tr><tr>
-            <td class="summary-topic" style="width: 60px"><p style="color: #ff6b97">surface</p></td>
-            <td><p>Blur Mask</p></td>
-        </tr><tr>
-            <td class="summary-topic" style="width: 60px"><p style="color: #ff6b97">surface</p></td>
-            <td><p>Mask</p></td>
-        </tr><tr>
-            <td class="summary-topic" style="width: 60px"><p style="color: #ffe478">float</p></td>
-            <td><p>Mix</p></td>
-        </tr><tr>
-            <td class="summary-topic" style="width: 60px"><p style="color: #8c3f5d">boolean</p></td>
-            <td><p>Active</p></td>
-        </tr><tr>
-            <td class="summary-topic" style="width: 60px"><p style="color: #ff9166">integer</p></td>
-            <td><p>Channel</p></td>
-        </tr>
+                <td class="summary-topic" style="width: 60px"><p style="color: #ff6b97">surface</p></td>
+                <td><p>Surface In</p></td>
+            </tr><tr>
+                <td class="summary-topic" style="width: 60px"><p style="color: #ffe478">float</p></td>
+                <td><p>Strength<a href="/nodes/junctions/mappable.html" style="line-height: 1;"><img class="node-content" src="/src/images/etc/mappable.png"></a></p></td>
+            </tr><tr>
+                <td class="summary-topic" style="width: 60px"><p style="color: #ffe478">float</p></td>
+                <td><p>Center</p></td>
+            </tr><tr>
+                <td class="summary-topic" style="width: 60px"><p style="color: #ff9166">integer</p></td>
+                <td><p>Oversample Mode</p></td>
+            </tr><tr>
+                <td class="summary-topic" style="width: 60px"><p style="color: #ff9166">integer</p></td>
+                <td><p>Zoom Mode</p></td>
+            </tr><tr>
+                <td class="summary-topic" style="width: 60px"><p style="color: #ff6b97">surface</p></td>
+                <td><p>Blur Mask</p></td>
+            </tr><tr>
+                <td class="summary-topic" style="width: 60px"><p style="color: #ff6b97">surface</p></td>
+                <td><p>Mask</p></td>
+            </tr><tr>
+                <td class="summary-topic" style="width: 60px"><p style="color: #ffe478">float</p></td>
+                <td><p>Mix</p></td>
+            </tr><tr>
+                <td class="summary-topic" style="width: 60px"><p style="color: #8c3f5d">boolean</p></td>
+                <td><p>Active</p></td>
+            </tr><tr>
+                <td class="summary-topic" style="width: 60px"><p style="color: #ff9166">integer</p></td>
+                <td><p>Channel</p></td>
+            </tr>
 <tr height="8px"></tr>
 <tr><th class="head" colspan="2"><p>Outputs</p></th></tr>
 <tr><th colspan="2" class="summary-topic"><p>node_blur_zoom</p></th></tr><tr>
-            <td class="summary-topic" style="width: 60px"><p style="color: #ff6b97">surface</p></td>
-            <td><p>Surface Out</p></td>
-        </tr>
+                <td class="summary-topic" style="width: 60px"><p style="color: #ff6b97">surface</p></td>
+                <td><p>Surface Out</p></td>
+            </tr>
 
-</table>
+</table><p>Zoom blur node blur image by scaling the image in and out of a point.</p>
+<br>
+<img class="node-content deco" src="/src/images/etc/blur_zoom.png">
+<br><br>
+<h2><a id="Properties" class="anchor"></a>Properties</h2>
+<br>
+<h3><a id="Strength" class="anchor"></a><span class="junction" style="border-color: #ffe478AA">Strength</span></h3>
+<br>
+<p>Blur strength.</p>
+<br>
+<h3><a id="Center" class="anchor"></a><span class="junction" style="border-color: #ffe478AA">Center</span></h3>
+<br>
+<p>Center point where the zoom happens.</p>
+<br>
+<h3><a id="Zoom Mode" class="anchor"></a><span class="junction" style="border-color: #ff9166AA">Zoom Mode</span></h3>
+<br>
+<p>Where the zoom begins.</p>
+<br>
+<img class="node-content" src="/src/images/etc/blur_zoom_mode.png">
+<br>
+<h3><a id="Blur Mask" class="anchor"></a><span class="junction" style="border-color: #ff6b97AA">Blur Mask</span></h3>
+<br>
+<p>Additional mask to control the size of the blur.</p>
+<br>
         </div>
     </div>
 

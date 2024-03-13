@@ -44,6 +44,12 @@
 <li class=""><a class="" href="blur_radial.html">Blur Radial</a></li>
 <li class="active "><a class="" href="blur_shape.html">Blur Shape</a></li>
 <ul class="submenu">
+<li><a href="#Properties">Properties</a></li>
+<ul class="submenu h3">
+<li><a href="#Mode">Mode</a></li>
+<li><a href="#Blur Shape">Blur Shape</a></li>
+<li><a href="#Blur Mask">Blur Mask</a></li>
+</ul>
 </ul>
 <li class=""><a class="" href="blur_simple.html">Blur Simple</a></li>
 <li class=""><a class="" href="blur_slope.html">Blur Slope</a></li>
@@ -115,38 +121,61 @@
     <tr><th class="head" colspan="2"><p>Node Data</p></th></tr><tr><th colspan="2"><img class="node-content" src="/src/nodeIcons/s_node_shape_blur.png"></th></tr><tr><th colspan="2" class="summary-topic"><p>Display name</p></th></tr><tr><th colspan="2" class="summary-content"><p>Shape Blur</p></th></tr><tr><th colspan="2" class="summary-topic"><p>Internal name</p></th></tr><tr><th colspan="2" class="summary-content"><p>Node_Blur_Shape</p></th></tr><tr height="8px"></tr><tr><th class="head" colspan="2"><p>Inheritances</p></th></tr><tr><th colspan="2" class="inheritance-block"><a href="../index.html">node</a></th></tr><tr><th colspan="2" class="inheritance-block"><a href="../array_processor.html">node_processor</a></th></tr><tr><th colspan="2" class="inheritance-block current"><a href="../_index/blur_shape.html">node_blur_shape</a></th></tr><tr height="8px"></tr>
 <tr><th class="head" colspan="2"><p>Inputs</p></th></tr>
 <tr><th colspan="2" class="summary-topic"><p>node_blur_shape</p></th></tr><tr>
-            <td class="summary-topic" style="width: 60px"><p style="color: #ff6b97">surface</p></td>
-            <td><p>Surface In</p></td>
-        </tr><tr>
-            <td class="summary-topic" style="width: 60px"><p style="color: #ff6b97">surface</p></td>
-            <td><p>Blur Shape</p></td>
-        </tr><tr>
-            <td class="summary-topic" style="width: 60px"><p style="color: #ff6b97">surface</p></td>
-            <td><p>Blur Mask</p></td>
-        </tr><tr>
-            <td class="summary-topic" style="width: 60px"><p style="color: #ff6b97">surface</p></td>
-            <td><p>Mask</p></td>
-        </tr><tr>
-            <td class="summary-topic" style="width: 60px"><p style="color: #ffe478">float</p></td>
-            <td><p>Mix</p></td>
-        </tr><tr>
-            <td class="summary-topic" style="width: 60px"><p style="color: #8c3f5d">boolean</p></td>
-            <td><p>Active</p></td>
-        </tr><tr>
-            <td class="summary-topic" style="width: 60px"><p style="color: #ff9166">integer</p></td>
-            <td><p>Channel</p></td>
-        </tr><tr>
-            <td class="summary-topic" style="width: 60px"><p style="color: #ff9166">integer</p></td>
-            <td><p>Mode</p></td>
-        </tr>
+                <td class="summary-topic" style="width: 60px"><p style="color: #ff6b97">surface</p></td>
+                <td><p>Surface In</p></td>
+            </tr><tr>
+                <td class="summary-topic" style="width: 60px"><p style="color: #ff6b97">surface</p></td>
+                <td><p>Blur Shape</p></td>
+            </tr><tr>
+                <td class="summary-topic" style="width: 60px"><p style="color: #ff6b97">surface</p></td>
+                <td><p>Blur Mask</p></td>
+            </tr><tr>
+                <td class="summary-topic" style="width: 60px"><p style="color: #ff6b97">surface</p></td>
+                <td><p>Mask</p></td>
+            </tr><tr>
+                <td class="summary-topic" style="width: 60px"><p style="color: #ffe478">float</p></td>
+                <td><p>Mix</p></td>
+            </tr><tr>
+                <td class="summary-topic" style="width: 60px"><p style="color: #8c3f5d">boolean</p></td>
+                <td><p>Active</p></td>
+            </tr><tr>
+                <td class="summary-topic" style="width: 60px"><p style="color: #ff9166">integer</p></td>
+                <td><p>Channel</p></td>
+            </tr><tr>
+                <td class="summary-topic" style="width: 60px"><p style="color: #ff9166">integer</p></td>
+                <td><p>Mode</p></td>
+            </tr>
 <tr height="8px"></tr>
 <tr><th class="head" colspan="2"><p>Outputs</p></th></tr>
 <tr><th colspan="2" class="summary-topic"><p>node_blur_shape</p></th></tr><tr>
-            <td class="summary-topic" style="width: 60px"><p style="color: #ff6b97">surface</p></td>
-            <td><p>Surface Out</p></td>
-        </tr>
+                <td class="summary-topic" style="width: 60px"><p style="color: #ff6b97">surface</p></td>
+                <td><p>Surface Out</p></td>
+            </tr>
 
-</table>
+</table><p>Blur shape node blur image using shape map. For each pixel, it place the shape map in the middle and calculate 
+weighted convolution of the shape map and the pixel. The result is then used as the final pixel color.</p>
+<br>
+<img class="node-content" src="/src/images/etc/blur_shape.png">
+<br><br>
+<h2><a id="Properties" class="anchor"></a>Properties</h2>
+<br>
+<h3><a id="Mode" class="anchor"></a><span class="junction" style="border-color: #ff9166AA">Mode</span></h3>
+<br>
+<p>Blur mode, there're 2 modes available: blur and maximum.</p>
+<br>
+<ul>
+    <li><span class="bold">Blur</span> calculate weighted average of the convolution.</li>
+    <li><span class="bold">Maximum</span> find brightness pixel in the convolution.</li>
+</ul>
+<br>
+<h3><a id="Blur Shape" class="anchor"></a><span class="junction" style="border-color: #ff6b97AA">Blur Shape</span></h3>
+<br>
+<p>Shape map to be used for blurring.</p>
+<br>
+<h3><a id="Blur Mask" class="anchor"></a><span class="junction" style="border-color: #ff6b97AA">Blur Mask</span></h3>
+<br>
+<p>Extra surface use for scaling blur effect.</p>
+<br>
         </div>
     </div>
 

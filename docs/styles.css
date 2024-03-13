@@ -389,6 +389,10 @@ table.summary-table th.summary-topic > p {
     margin-bottom: -4px;
 }
 
+table.summary-table p img {
+    padding: 0px 8px;
+}
+
 table.summary-table td.summary-attribute > p {
     text-align: center;
 }
@@ -444,7 +448,7 @@ th.inheritance-block.current > a {
 
 span.inline-code {
     display: inline;
-    padding: 4px;
+    padding: 2px 4px;
 
     font-family: "Fira Code", monospace;
     font-optical-sizing: auto;
