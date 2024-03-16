@@ -64,6 +64,13 @@
 <li class=""><a class="" href="displace.html">Displace</a></li>
 <li class="active "><a class="" href="dither.html">Dither</a></li>
 <ul class="submenu">
+<li><a href="#Properties">Properties</a></li>
+<ul class="submenu h3">
+<li><a href="#Mode">Mode</a></li>
+<li><a href="#Pattern">Pattern</a></li>
+<li><a href="#Contrast">Contrast</a></li>
+<li><a href="#Contrast Map">Contrast Map</a></li>
+</ul>
 </ul>
 <li class=""><a class="" href="edge_detect.html">Edge Detect</a></li>
 <li class=""><a class="" href="erode.html">Erode</a></li>
@@ -91,6 +98,7 @@
 <li class=""><a class="" href="shadow.html">Shadow</a></li>
 <li class=""><a class="" href="shadow_cast.html">Shadow Cast</a></li>
 <li class=""><a class="" href="shape_map.html">Shape Map</a></li>
+<li class=""><a class="" href="smear.html">Smear</a></li>
 <li class=""><a class="" href="spherize.html">Spherize</a></li>
 <li class=""><a class="" href="surface_replace.html">Surface Replace</a></li>
 <li class=""><a class="" href="texture_remap.html">Texture Remap</a></li>
@@ -155,7 +163,28 @@
                 <td><p>Surface Out</p></td>
             </tr>
 
-</table>
+</table><p>Dither node apply dithering effect to convert smooth gradient of colors into a patterns of discrete colors.</p>
+<br>
+<img class="node-content" src="/src/images/etc/dither.png">
+<br><br>
+<h2><a id="Properties" class="anchor"></a>Properties</h2>
+<br>
+<h3><a id="Mode" class="anchor"></a><span class="junction" style="border-color: #ff9166AA">Mode</span></h3>
+<br>
+<p>Control whether to dither color (RGB channel) or the alpha channel.</p>
+<br>
+<h3><a id="Pattern" class="anchor"></a><span class="junction" style="border-color: #ff9166AA">Pattern</span></h3>
+<br>
+<p>Dither pattern, or use a custom surface as a pattern.</p>
+<br>
+<h3><a id="Contrast" class="anchor"></a><span class="junction" style="border-color: #ffe478AA">Contrast</span></h3>
+<br>
+<p>The sharpness of the transition.</p>
+<br>
+<h3><a id="Contrast Map" class="anchor"></a><span class="junction" style="border-color: #ff6b97AA">Contrast Map</span></h3>
+<br>
+<p>Additional surface use to control contrast per pixel.</p>
+<br>
         </div>
     </div>
 

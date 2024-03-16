@@ -69,6 +69,14 @@
 <li class=""><a class="" href="gamma_map.html">Gamma Map</a></li>
 <li class="active "><a class="" href="glow.html">Glow</a></li>
 <ul class="submenu">
+<li><a href="#Properties">Properties</a></li>
+<ul class="submenu h3">
+<li><a href="#Mode">Mode</a></li>
+<li><a href="#Size">Size</a></li>
+<li><a href="#Strength">Strength</a></li>
+<li><a href="#Color">Color</a></li>
+<li><a href="#Draw Original">Draw Original</a></li>
+</ul>
 </ul>
 <li class=""><a class="" href="greyscale.html">Greyscale</a></li>
 <li class=""><a class="" href="grey_alpha.html">Grey Alpha</a></li>
@@ -91,6 +99,7 @@
 <li class=""><a class="" href="shadow.html">Shadow</a></li>
 <li class=""><a class="" href="shadow_cast.html">Shadow Cast</a></li>
 <li class=""><a class="" href="shape_map.html">Shape Map</a></li>
+<li class=""><a class="" href="smear.html">Smear</a></li>
 <li class=""><a class="" href="spherize.html">Spherize</a></li>
 <li class=""><a class="" href="surface_replace.html">Surface Replace</a></li>
 <li class=""><a class="" href="texture_remap.html">Texture Remap</a></li>
@@ -138,6 +147,12 @@
             </tr><tr>
                 <td class="summary-topic" style="width: 60px"><p style="color: #8c3f5d">boolean</p></td>
                 <td><p>Active</p></td>
+            </tr><tr>
+                <td class="summary-topic" style="width: 60px"><p style="color: #ff9166">integer</p></td>
+                <td><p>Mode</p></td>
+            </tr><tr>
+                <td class="summary-topic" style="width: 60px"><p style="color: #8c3f5d">boolean</p></td>
+                <td><p>Draw Original</p></td>
             </tr>
 <tr height="8px"></tr>
 <tr><th class="head" colspan="2"><p>Outputs</p></th></tr>
@@ -146,7 +161,32 @@
                 <td><p>Surface Out</p></td>
             </tr>
 
-</table>
+</table><p>Glow node apply glow effect to the edge of the image. What consider an edge is depends on the <span class="junction" style="border-color: #ff9166AA">Mode</span>.</p>
+<br>
+<img class="node-content deco" src="/src/images/etc/glow.png">
+<br><br>
+<h2><a id="Properties" class="anchor"></a>Properties</h2>
+<br>
+<h3><a id="Mode" class="anchor"></a><span class="junction" style="border-color: #ff9166AA">Mode</span></h3>
+<br>
+<p>Whether to apply glow effect on the transparent pixel or the darker pixel.</p>
+<br>
+<h3><a id="Size" class="anchor"></a><span class="junction" style="border-color: #ffe478AA">Size</span></h3>
+<br>
+<p>Size of the glow.</p>
+<br>
+<h3><a id="Strength" class="anchor"></a><span class="junction" style="border-color: #ffe478AA">Strength</span></h3>
+<br>
+<p>Glow intensity.</p>
+<br>
+<h3><a id="Color" class="anchor"></a><span class="junction" style="border-color: #8fde5dAA">Color</span></h3>
+<br>
+<p>Color of the glow, note that the glow is added in additively.</p>
+<br>
+<h3><a id="Draw Original" class="anchor"></a><span class="junction" style="border-color: #8c3f5dAA">Draw Original</span></h3>
+<br>
+<p>Whether to draw the original surface, or glow only.</p>
+<br>
         </div>
     </div>
 

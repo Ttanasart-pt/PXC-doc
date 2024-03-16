@@ -84,6 +84,12 @@
 <li class=""><a class="" href="pixel_cloud.html">Pixel Cloud</a></li>
 <li class="active "><a class="" href="pixel_sort.html">Pixel Sort</a></li>
 <ul class="submenu">
+<li><a href="#Properties">Properties</a></li>
+<ul class="submenu h3">
+<li><a href="#Iteration">Iteration</a></li>
+<li><a href="#Threshold">Threshold</a></li>
+<li><a href="#Direction">Direction</a></li>
+</ul>
 </ul>
 <li class=""><a class="" href="posterize.html">Posterize</a></li>
 <li class=""><a class="" href="rgb_channel.html">Rgb Channel</a></li>
@@ -91,6 +97,7 @@
 <li class=""><a class="" href="shadow.html">Shadow</a></li>
 <li class=""><a class="" href="shadow_cast.html">Shadow Cast</a></li>
 <li class=""><a class="" href="shape_map.html">Shape Map</a></li>
+<li class=""><a class="" href="smear.html">Smear</a></li>
 <li class=""><a class="" href="spherize.html">Spherize</a></li>
 <li class=""><a class="" href="surface_replace.html">Surface Replace</a></li>
 <li class=""><a class="" href="texture_remap.html">Texture Remap</a></li>
@@ -146,7 +153,25 @@
                 <td><p>Surface Out</p></td>
             </tr>
 
-</table>
+</table><p>Pixel sorting is an effect where pixels in the same horizontal or vertical axis are being sorted by the 
+brightness. This node is recommended to be animate using the feedback loop.</p>
+<br>
+<img class="node-content deco" src="/src/images/etc/pixel_sort.png">
+<br><br>
+<h2><a id="Properties" class="anchor"></a>Properties</h2>
+<br>
+<h3><a id="Iteration" class="anchor"></a><span class="junction" style="border-color: #ff9166AA">Iteration</span></h3>
+<br>
+<p>The number of sorting iteration.</p>
+<br>
+<h3><a id="Threshold" class="anchor"></a><span class="junction" style="border-color: #ffe478AA">Threshold</span></h3>
+<br>
+<p>The sorting group threshold. Incerasing the amount will separate the sorting into multiple segments.</p>
+<br>
+<h3><a id="Direction" class="anchor"></a><span class="junction" style="border-color: #ff9166AA">Direction</span></h3>
+<br>
+<p>Axis and direction to sort to.</p>
+<br>
         </div>
     </div>
 

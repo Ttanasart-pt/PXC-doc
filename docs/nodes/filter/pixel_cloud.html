@@ -83,6 +83,15 @@
 <li class=""><a class="" href="palette_shift.html">Palette Shift</a></li>
 <li class="active "><a class="" href="pixel_cloud.html">Pixel Cloud</a></li>
 <ul class="submenu">
+<li><a href="#Properties">Properties</a></li>
+<ul class="submenu h3">
+<li><a href="#Distance">Distance</a></li>
+<li><a href="#Strength">Strength</a></li>
+<li><a href="#Strength Map">Strength Map</a></li>
+<li><a href="#Color Over Lifetime">Color Over Lifetime</a></li>
+<li><a href="#Alpha Over Lifetime">Alpha Over Lifetime</a></li>
+<li><a href="#Random Blending">Random Blending</a></li>
+</ul>
 </ul>
 <li class=""><a class="" href="pixel_sort.html">Pixel Sort</a></li>
 <li class=""><a class="" href="posterize.html">Posterize</a></li>
@@ -91,6 +100,7 @@
 <li class=""><a class="" href="shadow.html">Shadow</a></li>
 <li class=""><a class="" href="shadow_cast.html">Shadow Cast</a></li>
 <li class=""><a class="" href="shape_map.html">Shape Map</a></li>
+<li class=""><a class="" href="smear.html">Smear</a></li>
 <li class=""><a class="" href="spherize.html">Spherize</a></li>
 <li class=""><a class="" href="surface_replace.html">Surface Replace</a></li>
 <li class=""><a class="" href="texture_remap.html">Texture Remap</a></li>
@@ -149,7 +159,36 @@
                 <td><p>Surface Out</p></td>
             </tr>
 
-</table>
+</table><p>Pixel Cloud node move each pixel in the surface randomly.</p>
+<br>
+<img class="node-content deco" src="/src/images/etc/pixel_cloud.png">
+<br><br>
+<h2><a id="Properties" class="anchor"></a>Properties</h2>
+<br>
+<h3><a id="Distance" class="anchor"></a><span class="junction" style="border-color: #ffe478AA">Distance</span></h3>
+<br>
+<p>The amount of displacement per step.</p>
+<br>
+<h3><a id="Strength" class="anchor"></a><span class="junction" style="border-color: #ffe478AA">Strength</span></h3>
+<br>
+<p>The amount of displacment step. This values also determine the life of each pixel.</p>
+<br>
+<h3><a id="Strength Map" class="anchor"></a><span class="junction" style="border-color: #ff6b97AA">Strength Map</span></h3>
+<br>
+<p>Extra surface used to control strength per pixel.</p>
+<br>
+<h3><a id="Color Over Lifetime" class="anchor"></a><span class="junction" style="border-color: #8fde5dAA">Color Over Lifetime</span></h3>
+<br>
+<p>Apply color blending over strength.</p>
+<br>
+<h3><a id="Alpha Over Lifetime" class="anchor"></a><span class="junction" style="border-color: #c2c2d1AA">Alpha Over Lifetime</span></h3>
+<br>
+<p>Adjust alpha value over strength.</p>
+<br>
+<h3><a id="Random Blending" class="anchor"></a><span class="junction" style="border-color: #ffe478AA">Random Blending</span></h3>
+<br>
+<p>Add random shift to the lifetime value.</p>
+<br>
         </div>
     </div>
 
