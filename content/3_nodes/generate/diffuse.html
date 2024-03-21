@@ -18,7 +18,13 @@
                 <td><p>Scale</p></td>
             </tr><tr>
                 <td class="summary-topic" style="width: 60px"><p style="color: #ffe478">float</p></td>
-                <td><p>Thershold</p></td>
+                <td><p>Randomness</p></td>
+            </tr><tr>
+                <td class="summary-topic" style="width: 60px"><p style="color: #ffe478">float</p></td>
+                <td><p>Flow Rate</p></td>
+            </tr><tr>
+                <td class="summary-topic" style="width: 60px"><p style="color: #ffe478">float</p></td>
+                <td><p>Threshold</p></td>
             </tr><tr>
                 <td class="summary-topic" style="width: 60px"><p style="color: #ff9166">integer</p></td>
                 <td><p>Seed</p></td>
@@ -33,4 +39,46 @@
 <tr><th class="head" colspan="2"><p>Outputs</p></th></tr>
 
 
-</table>
+</table><p>Diffuse node spread out bright pixel with some turbulence to create a smoke effect. This node is designed 
+to work with the feedback system.</p>
+<br>
+<img-deco diffuse/>
+<br><br>
+<h2>Properties</h2>
+<br>
+<h3><span class="junction" style="border-color: #ffe478AA">Dissipation</span></h3>
+<br>
+<p>The amount of pixel faded away per frame.</p>
+<br><br>
+<h2>Flow Properties</h2>
+<br>
+<p>Flow effect add random turbulence to the image.</p>
+<br>
+<h3><span class="junction" style="border-color: #ffe478AA">Scale</span></h3>
+<br>
+<p>Scale of the turbulence effect.</p>
+<br>
+<h3><span class="junction" style="border-color: #ff9166AA">Detail</span></h3>
+<br>
+<p>Amount of iteration to apply turbulence.</p>
+<br>
+<h3><span class="junction" style="border-color: #ffe478AA">Randomness</span></h3>
+<br>
+<p>Frequency of seed change</p>
+<br>
+<h3><span class="junction" style="border-color: #ffe478AA">Flow Rate</span></h3>
+<br>
+<p>Flow intensity</p>
+<br><br>
+<h2>External Forces</h2>
+<br>
+<h3><span class="junction" style="border-color: #ffe478AA">External Strength</span></h3>
+<br>
+<p>Apply external force in/out of the middle point.</p>
+<br><br>
+<h2>Rendering Properties</h2>
+<br>
+<h3><span class="junction" style="border-color: #ffe478AA">Threshold</span></h3>
+<br>
+<p>Apply threshold after each step.</p>
+<br>

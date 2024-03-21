@@ -34,10 +34,29 @@
 <li class=""><a class="" href="checker.html">Checker</a></li>
 <li class="active "><a class="" href="diffuse.html">Diffuse</a></li>
 <ul class="submenu">
+<li><a href="#Properties">Properties</a></li>
+<ul class="submenu h3">
+<li><a href="#Dissipation">Dissipation</a></li>
+</ul>
+<li><a href="#Flow Properties">Flow Properties</a></li>
+<ul class="submenu h3">
+<li><a href="#Scale">Scale</a></li>
+<li><a href="#Detail">Detail</a></li>
+<li><a href="#Randomness">Randomness</a></li>
+<li><a href="#Flow Rate">Flow Rate</a></li>
+</ul>
+<li><a href="#External Forces">External Forces</a></li>
+<ul class="submenu h3">
+<li><a href="#External Strength">External Strength</a></li>
+</ul>
+<li><a href="#Rendering Properties">Rendering Properties</a></li>
+<ul class="submenu h3">
+<li><a href="#Threshold">Threshold</a></li>
+</ul>
 </ul>
 <li class=""><a class="" href="flip_group_inline.html">Flip Group Inline</a></li>
 <li class=""><a class="" href="flood_fill.html">Flood Fill</a></li>
-<li class=""><a class="" href="fluid_group_inline.html">Fluid Group Inline</a></li>
+<li class=""><a class="" href="flow_noise.html">Flow Noise</a></li>
 <li class=""><a class="" href="fold_noise.html">Fold Noise</a></li>
 <li class=""><a class="" href="gabor_noise.html">Gabor Noise</a></li>
 <li class=""><a class="" href="gradient.html">Gradient</a></li>
@@ -82,6 +101,7 @@
 <li class=""><a class="" href="shape.html">Shape</a></li>
 <li class=""><a class="" href="shape_polygon.html">Shape Polygon</a></li>
 <li class=""><a class="" href="shard_noise.html">Shard Noise</a></li>
+<li class=""><a class="" href="smoke_group_inline.html">Smoke Group Inline</a></li>
 <li class=""><a class="" href="solid.html">Solid</a></li>
 <li class=""><a class="" href="strand_group_inline.html">Strand Group Inline</a></li>
 <li class=""><a class="" href="stripe.html">Stripe</a></li>
@@ -116,7 +136,13 @@
                 <td><p>Scale</p></td>
             </tr><tr>
                 <td class="summary-topic" style="width: 60px"><p style="color: #ffe478">float</p></td>
-                <td><p>Thershold</p></td>
+                <td><p>Randomness</p></td>
+            </tr><tr>
+                <td class="summary-topic" style="width: 60px"><p style="color: #ffe478">float</p></td>
+                <td><p>Flow Rate</p></td>
+            </tr><tr>
+                <td class="summary-topic" style="width: 60px"><p style="color: #ffe478">float</p></td>
+                <td><p>Threshold</p></td>
             </tr><tr>
                 <td class="summary-topic" style="width: 60px"><p style="color: #ff9166">integer</p></td>
                 <td><p>Seed</p></td>
@@ -131,7 +157,50 @@
 <tr><th class="head" colspan="2"><p>Outputs</p></th></tr>
 
 
-</table>
+</table><p>Diffuse node spread out bright pixel with some turbulence to create a smoke effect. This node is designed 
+to work with the feedback system.</p>
+<br>
+<img class="node-content deco" src="/src/images/etc/diffuse.png">
+<br><br>
+<h2><a id="Properties" class="anchor"></a>Properties</h2>
+<br>
+<h3><a id="Dissipation" class="anchor"></a><span class="junction" style="border-color: #ffe478AA">Dissipation</span></h3>
+<br>
+<p>The amount of pixel faded away per frame.</p>
+<br><br>
+<h2><a id="Flow Properties" class="anchor"></a>Flow Properties</h2>
+<br>
+<p>Flow effect add random turbulence to the image.</p>
+<br>
+<h3><a id="Scale" class="anchor"></a><span class="junction" style="border-color: #ffe478AA">Scale</span></h3>
+<br>
+<p>Scale of the turbulence effect.</p>
+<br>
+<h3><a id="Detail" class="anchor"></a><span class="junction" style="border-color: #ff9166AA">Detail</span></h3>
+<br>
+<p>Amount of iteration to apply turbulence.</p>
+<br>
+<h3><a id="Randomness" class="anchor"></a><span class="junction" style="border-color: #ffe478AA">Randomness</span></h3>
+<br>
+<p>Frequency of seed change</p>
+<br>
+<h3><a id="Flow Rate" class="anchor"></a><span class="junction" style="border-color: #ffe478AA">Flow Rate</span></h3>
+<br>
+<p>Flow intensity</p>
+<br><br>
+<h2><a id="External Forces" class="anchor"></a>External Forces</h2>
+<br>
+<h3><a id="External Strength" class="anchor"></a><span class="junction" style="border-color: #ffe478AA">External Strength</span></h3>
+<br>
+<p>Apply external force in/out of the middle point.</p>
+<br><br>
+<h2><a id="Rendering Properties" class="anchor"></a>Rendering Properties</h2>
+<br>
+<h3><a id="Threshold" class="anchor"></a><span class="junction" style="border-color: #ffe478AA">Threshold</span></h3>
+<br>
+<p>Apply threshold after each step.</p>
+<br>
+
         </div>
     </div>
 

@@ -158,7 +158,7 @@ def writeNodeFile(cat, node, line):
             for tag in nodeTags:
                 name = tag.strip("/")
                 page = name
-
+            
                 if "node_" + name in nodeData:
                     name = nodeData["node_" + name]["name"]
 
@@ -168,6 +168,9 @@ def writeNodeFile(cat, node, line):
             for tag in juncTags:
                 name = tag.strip("/").lower()
                 
+                if name == "": 
+                    continue
+
                 if name in io:
                     content = content.replace(f'<junc {tag}>', f'<span class="junction" style="border-color: {io[name]}AA">{name.title()}</span>')
                 else :

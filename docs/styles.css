@@ -505,6 +505,11 @@ a.node {
     border-radius: 6px;
 }
 
+h3 a.node {
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
 span.code-block {
     display: block;
     margin: 16px 0px 16px 0px;
@@ -695,4 +700,14 @@ ul.list-empty li {
 
 ::-webkit-scrollbar-corner {
     background: #00000000;
+}
+
+@media (max-width: 1000px) {
+    .sidebar {
+        display: none;
+    }
+
+    .content {
+        width: 100%;
+    }
 }
