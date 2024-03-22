@@ -27,4 +27,34 @@
                 <td><p>Surface Out</p></td>
             </tr>
 
-</table>
+</table><p>Interpret Number convert array of numbers into surface by map the value into a range. <br><br>This node can be useful 
+for creating animation by animating the number array instead of the surface itself.</p>
+<br>
+<img interpret_number/>
+<br><br>
+<h2>Properties</h2>
+<br>
+<h3><span class="junction" style="border-color: #ffe478AA">Number</span></h3>
+<br>
+<p>The array of number to interpret.</p>
+<br>
+<h3><span class="junction" style="border-color: #ff9166AA">Mode</span></h3>
+<br>
+<p>Select intepretation modes:</p>
+<br>
+<ul>
+    <li><span class="inline-code">Greyscale</span>: Interpret value into greyscale color by mapping to the 
+<span class="junction" style="border-color: #ffe478AA">Range</span> scale.</li>
+    <li><span class="inline-code">Gradient</span>: Takes the value from the range mapping and use it to sample 
+color from the <span class="junction" style="border-color: #8fde5dAA">Gradient</span>.</li>
+</ul>
+<br>
+<h3><span class="junction" style="border-color: #ffe478AA">Range</span></h3>
+<br>
+<p>The range to map the value in. <span class="inline-code">Min</span> value will correspond to 0 and <span
+class="inline-code">Max</span> value will correspond to 1.</p>
+<br>
+<h3><span class="junction" style="border-color: #8fde5dAA">Gradient</span></h3>
+<br>
+<p>The gradient to map to if use the <span class="inline-code">Gradient</span> mode.</p>
+<br>
