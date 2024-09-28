@@ -255,7 +255,11 @@ def generateNodeCatagory(cat):
         file.write(txt)
 
 for cat in nodes:
-    if(cat.lower() == "custom" or cat.lower() == "favourites"):
+    if cat.lower() == "custom":
+        continue
+    if cat.lower() == "favourites":
+        continue
+    if cat.lower() == "action":
         continue
 
     catPath = f"content/{dirname}/{cat}"
