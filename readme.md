@@ -33,15 +33,15 @@ There are multiple tag shortcuts that can be use to simplify writing. There tag 
 
 `<img [image name]>`
 
-Add image with default format using image name (without extension).
+Add image with default style (image name without extension).
 
 `<img-deco [image name]>`
 
-Add image with default corner + frame decoration using image name (without extension).
+Add image with corner + frame decoration.
 
 `<node [node name]>`
 
-Add link to node page.
+Add link to specific node page.
 
 `<junc [junction]>`
 
