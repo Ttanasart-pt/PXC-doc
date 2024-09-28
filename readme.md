@@ -4,7 +4,7 @@ A documentation page for [Pixel Composer](https://github.com/Ttanasart-pt/Pixel-
 
 Github page: https://docs.pixel-composer.com
 
-## Generate pages
+## Generating pages
 
 Call `gen/main.py` to generate all pages.
 
