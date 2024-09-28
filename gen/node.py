@@ -79,7 +79,7 @@ for script in os.listdir(scriptDir):
     if script.strip("_").lower().startswith("node_"):
         extractNodeData(script)
 
-def writeNodeFile(cat, node, line):
+def writeNodeFile(cati, cat, node, line):
     if node.lower() not in nodeData:
         print(f"Node {node.lower()} not found in nodeData")
         return
@@ -191,7 +191,7 @@ def writeNodeFile(cat, node, line):
         with open(manFilePath, "w") as file:
             file.write("")
 
-    filePath = f"content/{dirname}/{cat}/{fileName}.html"
+    filePath = f"content/{dirname}/{cati}_{cat}/{fileName}.html"
     with open(filePath, "w") as file:
         file.write(txt)
 
@@ -199,7 +199,7 @@ def writeNodeFile(cat, node, line):
     with open(redirectPath, "w") as file:
         file.write(f'''<!DOCTYPE html>
 <html>
-    <meta http-equiv="refresh" content="0; url=/nodes/{cat}/{fileName}.html"/>
+    <meta http-equiv="refresh" content="0; url=/nodes/{cati}_{cat}/{fileName}.html"/>
 </html>''')
         
     return { "spr": spr }
@@ -227,7 +227,7 @@ for line in nodeListRaw.split("\n"):
 
         nodePages[nodeClass.lower()] = 1
 
-def generateNodeCatagory(cat):
+def generateNodeCatagory(i, cat):
     
     txt = f"""<h1>{cat.title()}</h1>
 <br><br>
@@ -251,11 +251,11 @@ def generateNodeCatagory(cat):
 
     txt += "</div>"
     
-    filePath = f"content/{dirname}/{cat}/0_index.html"
+    filePath = f"content/{dirname}/{i}_{cat}/0_index.html"
     with open(filePath, "w") as file:
         file.write(txt)
 
-for cat in nodes:
+for i, cat in enumerate(nodes):
     if cat.lower() == "custom":
         continue
     if cat.lower() == "favourites":
@@ -263,11 +263,11 @@ for cat in nodes:
     if cat.lower() == "action":
         continue
 
-    catPath = f"content/{dirname}/{cat}"
+    catPath = f"content/{dirname}/{i}_{cat}"
     if not os.path.exists(catPath):
         os.makedirs(catPath)
 
     for node, line in nodes[cat]:
-        writeNodeFile(cat, node, line)
+        writeNodeFile(i, cat, node, line)
 
-    generateNodeCatagory(cat)
+    generateNodeCatagory(i, cat)
