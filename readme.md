@@ -4,17 +4,49 @@ A documentation page for [Pixel Composer](https://github.com/Ttanasart-pt/Pixel-
 
 Github page: https://docs.pixel-composer.com
 
-## Generate node data
+## Generate pages
 
-`gen/node.py` script generates documentation based on PXC source code to `content/nodes`. Before running it, modify `scriptDir` to point to your script directory.
+Call `gen/main.py` to generate all pages.
 
-Static content should be added to `content/_nodes` which will be inserted after the generated page for each node.
+### Node data
 
-## Generate static pages
+Static content should be added to `content/_nodes` which will be inserted to `content/3_nodes` automatically.
 
-Contents in `content/` will be formatted in to the `template.html` and send to `docs/` with the same subfolder structure using the provided `gen/gen.py` file.
+Make sure to set `scriptDir` to point to the script directory.
 
-- PascalCase will be converted to space separated Title Case. 
+### Other data
+
+All files in `content/` except `content/3_nodes` are editable static content.
+
+- PascalCase will be converted to  Title Case. 
 - Page can begins with number to force ordering. Number needs to ends with underscore `_` before the actual name.
 
-`styles.css` will be copy to `docs/styles.css` automatically. `src` directory is hardlinked to the `docs/src` (not sure how github deal with hardlink)
+`styles.css` will be copy to `docs/styles.css` automatically. `src` directory is hardlinked to the `docs/src`.
+
+## Media
+
+All media are stored in `src`. Every image should use different name (even in different directory.) to allow tag shortcuts.
+
+## Tag shortcuts
+
+There are multiple tag shortcuts that can be use to simplify writing. There tag will be replaced when call `gen/main.py`.
+
+`<img [image name]>`
+
+Add image with default format using image name (without extension).
+
+`<img-deco [image name]>`
+
+Add image with default corner + frame decoration using image name (without extension).
+
+`<node [node name]>`
+
+Add link to node page.
+
+`<junc [junction]>`
+
+(Only works in `content/__nodes`) Add decorated junction with type data.
+
+`<attr [attribute name]>`
+
+(Only works in `content/__nodes`) Add decorated attrubute.
