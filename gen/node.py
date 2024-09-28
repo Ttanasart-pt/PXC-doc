@@ -263,11 +263,13 @@ for i, cat in enumerate(nodes):
     if cat.lower() == "action":
         continue
 
-    catPath = f"content/{dirname}/{i}_{cat}"
+    cati = i + 10
+
+    catPath = f"content/{dirname}/{cati}_{cat}"
     if not os.path.exists(catPath):
         os.makedirs(catPath)
 
     for node, line in nodes[cat]:
-        writeNodeFile(i, cat, node, line)
+        writeNodeFile(cati, cat, node, line)
 
-    generateNodeCatagory(i, cat)
+    generateNodeCatagory(cati, cat)

@@ -119,7 +119,7 @@ def generateFile(dirOut, pathIn, sidebar):
         f.write(data)
 
 def generateFolder(dirIn, dirOut):
-    files = os.listdir(dirIn)
+    files = sorted(os.listdir(dirIn))
     sidebar = []
 
     if dirIn == "content":
