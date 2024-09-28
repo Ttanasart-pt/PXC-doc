@@ -51,10 +51,12 @@
 <li class=""><a class="" href="array_shift.html">Array Shift</a></li>
 <li class=""><a class="" href="array_shuffle.html">Array Shuffle</a></li>
 <li class=""><a class="" href="array_sort.html">Array Sort</a></li>
+<li class=""><a class="" href="array_split.html">Array Split</a></li>
 <li class=""><a class="" href="array_zip.html">Array Zip</a></li>
 <li class=""><a class="" href="atlas_draw.html">Atlas Draw</a></li>
 <li class=""><a class="" href="atlas_get.html">Atlas Get</a></li>
 <li class=""><a class="" href="atlas_set.html">Atlas Set</a></li>
+<li class=""><a class="" href="atlas_struct.html">Atlas Struct</a></li>
 <li class=""><a class="" href="base_convert.html">Base Convert</a></li>
 <li class=""><a class="" href="boolean.html">Boolean</a></li>
 <li class=""><a class="" href="compare.html">Compare</a></li>
@@ -71,6 +73,7 @@
 <li class=""><a class="" href="move_point.html">Move Point</a></li>
 <li class=""><a class="" href="number.html">Number</a></li>
 <li class=""><a class="" href="path.html">Path</a></li>
+<li class=""><a class="" href="path_3d.html">Path 3D</a></li>
 <li class=""><a class="" href="path_anchor.html">Path Anchor</a></li>
 <li class=""><a class="" href="path_array.html">Path Array</a></li>
 <li class=""><a class="" href="path_bake.html">Path Bake</a></li>
@@ -84,14 +87,17 @@
 <li class=""><a class="" href="path_plot.html">Path Plot</a></li>
 <li class=""><a class="" href="path_reverse.html">Path Reverse</a></li>
 <li class=""><a class="" href="path_sample.html">Path Sample</a></li>
+<li class=""><a class="" href="path_scatter.html">Path Scatter</a></li>
 <li class=""><a class="" href="path_separate_folder.html">Path Separate Folder</a></li>
 <li class=""><a class="" href="path_shift.html">Path Shift</a></li>
 <li class=""><a class="" href="path_smooth.html">Path Smooth</a></li>
 <li class=""><a class="" href="path_transform.html">Path Transform</a></li>
 <li class=""><a class="" href="path_trim.html">Path Trim</a></li>
 <li class=""><a class="" href="path_wave.html">Path Wave</a></li>
+<li class=""><a class="" href="point_in_area.html">Point In Area</a></li>
 <li class=""><a class="" href="random.html">Random</a></li>
 <li class=""><a class="" href="scatter_points.html">Scatter Points</a></li>
+<li class=""><a class="" href="segment_filter.html">Segment Filter</a></li>
 <li class=""><a class="" href="statistic.html">Statistic</a></li>
 <li class=""><a class="" href="string.html">String</a></li>
 <li class=""><a class="" href="string_get_char.html">String Get Char</a></li>
@@ -120,7 +126,9 @@
 <li class=""><a class="" href="vector_cross_2d.html">Vector Cross 2D</a></li>
 <li class=""><a class="" href="vector_cross_3d.html">Vector Cross 3D</a></li>
 <li class=""><a class="" href="vector_dot.html">Vector Dot</a></li>
+<li class=""><a class="" href="vector_magnitude.html">Vector Magnitude</a></li>
 <li class=""><a class="" href="vector_split.html">Vector Split</a></li>
+<li class=""><a class="" href="vector_swizzle.html">Vector Swizzle</a></li>
 
                 <div style="height: 96px;"></div>
             </ul>
@@ -190,6 +198,9 @@
 <a href="./array_sort.html"><img class="node-content" src="/src/nodeIcons/s_node_array_sort.png">Sort Array</a>
 </div>
 <div>
+<a href="./array_split.html"><img class="node-content" src="/src/nodeIcons/s_node_array_split.png">Array Split</a>
+</div>
+<div>
 <a href="./array_zip.html"><img class="node-content" src="/src/nodeIcons/s_node_array_zip.png">Array Zip</a>
 </div>
 <div>
@@ -200,6 +211,9 @@
 </div>
 <div>
 <a href="./atlas_set.html"><img class="node-content" src="/src/nodeIcons/s_node_atlas_set.png">Atlas Set</a>
+</div>
+<div>
+<a href="./atlas_struct.html"><img class="node-content" src="/src/nodeIcons/s_node_atlas_struct.png">Atlas to Struct</a>
 </div>
 <div>
 <a href="./base_convert.html"><img class="node-content" src="/src/nodeIcons/s_node_base_conversion.png">Convert Base</a>
@@ -229,9 +243,6 @@
 <a href="./iterate_filter_inline.html"><img class="node-content" src="/src/nodeIcons/s_node_filter_array.png">Filter Array</a>
 </div>
 <div>
-<a href="./iterate_sort_inline.html"><img class="node-content" src="/src/nodeIcons/s_node_sort_array.png">Sort Array</a>
-</div>
-<div>
 <a href="./logic.html"><img class="node-content" src="/src/nodeIcons/s_node_logic_opr.png">Logic Opr</a>
 </div>
 <div>
@@ -259,10 +270,13 @@
 <a href="./path.html"><img class="node-content" src="/src/nodeIcons/s_node_path.png">Path</a>
 </div>
 <div>
+<a href="./path_3d.html"><img class="node-content" src="/src/nodeIcons/s_node_path_3d.png">3D Path</a>
+</div>
+<div>
 <a href="./path_anchor.html"><img class="node-content" src="/src/nodeIcons/s_node_path_anchor.png">Path Anchor</a>
 </div>
 <div>
-<a href="./path_array.html"><img class="node-content" src="/src/nodeIcons/s_node_path_array.png">Path Array</a>
+<a href="./path_array.html"><img class="node-content" src="/src/nodeIcons/s_node_path_array.png">Path Combine</a>
 </div>
 <div>
 <a href="./path_bake.html"><img class="node-content" src="/src/nodeIcons/s_node_path_bake.png">Bake Path</a>
@@ -298,6 +312,9 @@
 <a href="./path_sample.html"><img class="node-content" src="/src/nodeIcons/s_node_path_sample.png">Sample Path</a>
 </div>
 <div>
+<a href="./path_scatter.html"><img class="node-content" src="/src/nodeIcons/s_node_path_scatter.png">Scatter Path</a>
+</div>
+<div>
 <a href="./path_separate_folder.html"><img class="node-content" src="/src/nodeIcons/s_node_separate_file_path.png">Separate File Path</a>
 </div>
 <div>
@@ -316,10 +333,16 @@
 <a href="./path_wave.html"><img class="node-content" src="/src/nodeIcons/s_node_path_wave.png">Wave Path</a>
 </div>
 <div>
+<a href="./point_in_area.html"><img class="node-content" src="/src/nodeIcons/s_node_point_in_area.png">Point in Area</a>
+</div>
+<div>
 <a href="./random.html"><img class="node-content" src="/src/nodeIcons/s_node_random.png">Random</a>
 </div>
 <div>
 <a href="./scatter_points.html"><img class="node-content" src="/src/nodeIcons/s_node_scatter_point.png">Scatter Points</a>
+</div>
+<div>
+<a href="./segment_filter.html"><img class="node-content" src="/src/nodeIcons/s_node_segment_filter.png">Filter Segment</a>
 </div>
 <div>
 <a href="./statistic.html"><img class="node-content" src="/src/nodeIcons/s_node_statistic.png">Statistic</a>
@@ -409,7 +432,13 @@
 <a href="./vector_dot.html"><img class="node-content" src="/src/nodeIcons/s_node_dot_product.png">Dot Product</a>
 </div>
 <div>
+<a href="./vector_magnitude.html"><img class="node-content" src="/src/nodeIcons/s_node_magnitude.png">Magnitude</a>
+</div>
+<div>
 <a href="./vector_split.html"><img class="node-content" src="/src/nodeIcons/s_node_vec_split.png">Vector Split</a>
+</div>
+<div>
+<a href="./vector_swizzle.html"><img class="node-content" src="/src/nodeIcons/s_node_swizzle.png">Swizzle</a>
 </div>
 </div>
         </div>

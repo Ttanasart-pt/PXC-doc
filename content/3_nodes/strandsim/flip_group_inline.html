@@ -1,0 +1,41 @@
+<link rel="stylesheet" href="../styles.css">
+
+<h1>FLIP Fluid</h1>
+<p class="subtitle">Create group for fluid simulation.</p>
+<br><br>
+
+<table class = "summary-table">
+    <tr><th class="head" colspan="2"><p>Node Data</p></th></tr><tr><th colspan="2"><img s_node_fluidSim_group></th></tr><tr><th colspan="2" class="summary-topic"><p>Display name</p></th></tr><tr><th colspan="2" class="summary-content"><p>FLIP Fluid</p></th></tr><tr><th colspan="2" class="summary-topic"><p>Internal name</p></th></tr><tr><th colspan="2" class="summary-content"><p>Node_FLIP_Group_Inline</p></th></tr><tr height="8px"></tr><tr><th class="head" colspan="2"><p>Inheritances</p></th></tr><tr><th colspan="2" class="inheritance-block"><a href="../index.html">node</a></th></tr><tr><th colspan="2" class="inheritance-block"><p>node_collection_inline</p></th></tr><tr><th colspan="2" class="inheritance-block current"><a href="../_index/flip_group_inline.html">node_flip_group_inline</a></th></tr><tr height="8px"></tr>
+<tr><th class="head" colspan="2"><p>Inputs</p></th></tr>
+
+<tr height="8px"></tr>
+<tr><th class="head" colspan="2"><p>Outputs</p></th></tr>
+
+
+</table><p>FLIP Fluid simulation is a group of nodes used to simulate fluid behaviour using Fluid-Implicit-Particle (FLIP) 
+algorithm.</p>
+<br><br>
+<h2>FLIP Fluid nodes</h2>
+<br>
+<p>To see the list and detail of all FLIP Fluid nodes, check out <a href="../flip fluid/">FLIP Fluid</a> section.</p>
+<br><br>
+<h2>System Overview</h2>
+<br>
+<p>The FLIP fluid system consists of 3 main parts, the domain, particle and renderer. When selecting this 
+node from the add node menu, 3 nodes will be created:</p>
+<br>
+<img-deco flip_init/>
+<br><br>
+<h3><a class="node" href="../_index/flip_domain.html">Domain</a></h3>
+<br>
+<p>Fluid domain represent a space where a fluid can exist. This node contain properties to 
+control particle grid size, fluid physics, solver settings, etc.</p>
+<br><br>
+<h3><a class="node" href="../_index/flip_spawner.html">Spawner</a></h3>
+<br>
+<p>Spawn fluid particles to represent fluid volume.</p>
+<br><br>
+<h3><a class="node" href="../_index/flip_render.html">Render</a></h3>
+<br>
+<p>Render out fluid particles to a surface.</p>
+<br><br>

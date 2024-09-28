@@ -1,0 +1,111 @@
+<link rel="stylesheet" href="../styles.css">
+
+<h1>Armature Bind</h1>
+<p class="subtitle">Bind and render image to an armature system.</p>
+<br><br>
+
+<table class = "summary-table">
+    <tr><th class="head" colspan="2"><p>Node Data</p></th></tr><tr><th colspan="2"><img s_node_armature_bind></th></tr><tr><th colspan="2" class="summary-topic"><p>Display name</p></th></tr><tr><th colspan="2" class="summary-content"><p>Armature Bind</p></th></tr><tr><th colspan="2" class="summary-topic"><p>Internal name</p></th></tr><tr><th colspan="2" class="summary-content"><p>Node_Armature_Bind</p></th></tr><tr height="8px"></tr><tr><th class="head" colspan="2"><p>Inheritances</p></th></tr><tr><th colspan="2" class="inheritance-block"><a href="../index.html">node</a></th></tr><tr><th colspan="2" class="inheritance-block"><a href="../array_processor.html">node_processor</a></th></tr><tr><th colspan="2" class="inheritance-block current"><a href="../_index/armature_bind.html">node_armature_bind</a></th></tr><tr height="8px"></tr>
+<tr><th class="head" colspan="2"><p>Inputs</p></th></tr>
+<tr><th colspan="2" class="summary-topic"><p>node_armature_bind</p></th></tr><tr>
+                <td class="summary-topic" style="width: 60px"><p style="color: #ff9166">dimension</p></td>
+                <td><p>Dimension</p></td>
+            </tr><tr>
+                <td class="summary-topic" style="width: 60px"><p style="color: #ff9166">armature</p></td>
+                <td><p>Armature</p></td>
+            </tr><tr>
+                <td class="summary-topic" style="width: 60px"><p style="color: #8c3f5d">struct</p></td>
+                <td><p>Bind Data</p></td>
+            </tr><tr>
+                <td class="summary-topic" style="width: 60px"><p style="color: #ffe478">vec2</p></td>
+                <td><p>Bone Transform</p></td>
+            </tr><tr>
+                <td class="summary-topic" style="width: 60px"><p style="color: #ffe478">float</p></td>
+                <td><p>Bone Scale</p></td>
+            </tr><tr><td colspan="2"><table class="summary-table dynamic" style="margin-top: 8px;"><tr>
+                <th colspan="2" class="summary-topic">
+                    <p style="margin: -0.85rem auto -4px auto;width: fit-content;padding: 0px 8px;">Dynamic Inputs</p>
+                </th>
+            </tr><tr>
+                    <td class="summary-topic" style="width: 60px"><p style="color: #ff6b97" >surface</p></td>
+                    <td><p>Surface</p></td>
+                </tr><tr>
+                    <td class="summary-topic" style="width: 60px"><p style="color: #ffe478" >float</p></td>
+                    <td><p>Transform</p></td>
+                </tr><tr>
+                    <td class="summary-topic" style="width: 60px"><p style="color: #8c3f5d" >bool</p></td>
+                    <td><p>Inherit Rotation</p></td>
+                </tr><tr>
+                    <td class="summary-topic" style="width: 60px"><p style="color: #8c3f5d" >bool</p></td>
+                    <td><p>Apply Bone Rotation</p></td>
+                </tr><tr>
+                    <td class="summary-topic" style="width: 60px"><p style="color: #8c3f5d" >bool</p></td>
+                    <td><p>Inherit Scale</p></td>
+                </tr><tr>
+                    <td class="summary-topic" style="width: 60px"><p style="color: #8c3f5d" >bool</p></td>
+                    <td><p>Apply Bone Scale</p></td>
+                </tr></table></td></tr>
+<tr height="8px"></tr>
+<tr><th class="head" colspan="2"><p>Outputs</p></th></tr>
+<tr><th colspan="2" class="summary-topic"><p>node_armature_bind</p></th></tr><tr>
+                <td class="summary-topic" style="width: 60px"><p style="color: #ff6b97">surface</p></td>
+                <td><p>Surface Out</p></td>
+            </tr><tr>
+                <td class="summary-topic" style="width: 60px"><p style="color: #ff6b97">surface</p></td>
+                <td><p>Atlas Data</p></td>
+            </tr><tr>
+                <td class="summary-topic" style="width: 60px"><p style="color: #8c3f5d">struct</p></td>
+                <td><p>Bind Data</p></td>
+            </tr>
+
+<tr><th class="head" colspan="2"><p>Attributes</p></th></tr>
+<tr><th colspan="2" class="summary-topic"><p>node_armature_bind</p></th></tr><tr><td colspan="2" class="summary-attribute"><p>Display name</p></td></tr><tr><td colspan="2" class="summary-attribute"><p>Display bone</p></td></tr>
+
+</table><p>This node is the "rendering" part of the armature system.</p>
+<br><br>
+<h2>Surface Binding</h2>
+<br>
+<p>To bind a surface, the first step is to connect that surface to the node.</p>
+<br>
+<img-deco armature_bind_1>
+<br>
+<p>The binding stage is done in the inspector. Click and drag the hamburger icon in the left of a surface 
+to the bone you want.</p>
+<br>
+<img-deco armature_bind_2>
+<br>
+<p>Binded surface will show up next to the bone. A surface can only be binded to one bone.</p>
+<br>
+<img-deco armature_bind_3>
+<br>
+<h3>Binding Transformation</h3>
+<br>
+<p>After the surfaces is binded, it will show up in the preview panel. You can modify the transformation 
+of the binded surface in the preview panel.</p>
+<br><br>
+<h2>Binding Properties</h2>
+<br>
+<p>Each surface when binded will have extra properties accessible in the surfaces section in the inspector.</p>
+<br>
+<table class="cc4060">
+    <tr>
+        <th>Property</th>
+        <th>Description</th>
+    </tr>
+    <tr>
+        <td>Surface</td>
+        <td>The surface that is binded to the bone.</td>
+    </tr>
+    <tr>
+        <td>Transform</td>
+        <td>The transformation of the surface related to the bone.</td>
+    </tr>
+    <tr>
+        <td>Inherit Rotation</td>
+        <td>When checked, the surface will inherit the rotation of the bone parent.</td>
+    </tr>
+    <tr>
+        <td>Inherit Scale</td>
+        <td>When checked, the surface will inherit the scale of the bone parent.</td>
+    </tr>
+</table>

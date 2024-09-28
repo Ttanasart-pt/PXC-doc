@@ -1,0 +1,76 @@
+<link rel="stylesheet" href="../styles.css">
+
+<h1>Glow</h1>
+<p class="subtitle">Apply glow to the border of the image.</p>
+<br><br>
+
+<table class = "summary-table">
+    <tr><th class="head" colspan="2"><p>Node Data</p></th></tr><tr><th colspan="2"><img s_node_glow></th></tr><tr><th colspan="2" class="summary-topic"><p>Display name</p></th></tr><tr><th colspan="2" class="summary-content"><p>Glow</p></th></tr><tr><th colspan="2" class="summary-topic"><p>Internal name</p></th></tr><tr><th colspan="2" class="summary-content"><p>Node_Glow</p></th></tr><tr height="8px"></tr><tr><th class="head" colspan="2"><p>Inheritances</p></th></tr><tr><th colspan="2" class="inheritance-block"><a href="../index.html">node</a></th></tr><tr><th colspan="2" class="inheritance-block"><a href="../array_processor.html">node_processor</a></th></tr><tr><th colspan="2" class="inheritance-block current"><a href="../_index/glow.html">node_glow</a></th></tr><tr height="8px"></tr>
+<tr><th class="head" colspan="2"><p>Inputs</p></th></tr>
+<tr><th colspan="2" class="summary-topic"><p>node_glow</p></th></tr><tr>
+                <td class="summary-topic" style="width: 60px"><p style="color: #ff6b97">surface</p></td>
+                <td><p>Surface In</p></td>
+            </tr><tr>
+                <td class="summary-topic" style="width: 60px"><p style="color: #ffe478">float</p></td>
+                <td><p>Border</p></td>
+            </tr><tr>
+                <td class="summary-topic" style="width: 60px"><p style="color: #ffe478">float</p></td>
+                <td><p>Size</p></td>
+            </tr><tr>
+                <td class="summary-topic" style="width: 60px"><p style="color: #ffe478">float</p></td>
+                <td><p>Strength</p></td>
+            </tr><tr>
+                <td class="summary-topic" style="width: 60px"><p style="color: #8fde5d">color</p></td>
+                <td><p>Color</p></td>
+            </tr><tr>
+                <td class="summary-topic" style="width: 60px"><p style="color: #ff6b97">surface</p></td>
+                <td><p>Mask</p></td>
+            </tr><tr>
+                <td class="summary-topic" style="width: 60px"><p style="color: #ffe478">float</p></td>
+                <td><p>Mix</p></td>
+            </tr><tr>
+                <td class="summary-topic" style="width: 60px"><p style="color: #8c3f5d">bool</p></td>
+                <td><p>Active</p></td>
+            </tr><tr>
+                <td class="summary-topic" style="width: 60px"><p style="color: #8fde5d">enum</p></td>
+                <td><p>Mode</p></td>
+            </tr><tr>
+                <td class="summary-topic" style="width: 60px"><p style="color: #8c3f5d">bool</p></td>
+                <td><p>Draw Original</p></td>
+            </tr><tr>
+                <td class="summary-topic" style="width: 60px"><p style="color: #8fde5d">enum</p></td>
+                <td><p>Side</p></td>
+            </tr>
+<tr height="8px"></tr>
+<tr><th class="head" colspan="2"><p>Outputs</p></th></tr>
+<tr><th colspan="2" class="summary-topic"><p>node_glow</p></th></tr><tr>
+                <td class="summary-topic" style="width: 60px"><p style="color: #ff6b97">surface</p></td>
+                <td><p>Surface Out</p></td>
+            </tr>
+
+</table><p>Glow node apply glow effect to the edge of the image. What consider an edge is depends on the <span class="junction" style="border-color: #8fde5dAA">Mode</span>.</p>
+<br>
+<img-deco glow>
+<br><br>
+<h2>Properties</h2>
+<br>
+<h3><span class="junction" style="border-color: #8fde5dAA">Mode</span></h3>
+<br>
+<p>Whether to apply glow effect on the transparent pixel or the darker pixel.</p>
+<br>
+<h3><span class="junction" style="border-color: #ffe478AA">Size</span></h3>
+<br>
+<p>Size of the glow.</p>
+<br>
+<h3><span class="junction" style="border-color: #ffe478AA">Strength</span></h3>
+<br>
+<p>Glow intensity.</p>
+<br>
+<h3><span class="junction" style="border-color: #8fde5dAA">Color</span></h3>
+<br>
+<p>Color of the glow, note that the glow is added in additively.</p>
+<br>
+<h3><span class="junction" style="border-color: #8c3f5dAA">Draw Original</span></h3>
+<br>
+<p>Whether to draw the original surface, or glow only.</p>
+<br>

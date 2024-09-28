@@ -1,0 +1,89 @@
+<link rel="stylesheet" href="../styles.css">
+
+<h1>Camera</h1>
+<p class="subtitle">Create camera that crop image to fix dimension with control of position</p>
+<br><br>
+
+<table class = "summary-table">
+    <tr><th class="head" colspan="2"><p>Node Data</p></th></tr><tr><th colspan="2"><img s_node_camera></th></tr><tr><th colspan="2" class="summary-topic"><p>Display name</p></th></tr><tr><th colspan="2" class="summary-content"><p>Camera</p></th></tr><tr><th colspan="2" class="summary-topic"><p>Internal name</p></th></tr><tr><th colspan="2" class="summary-content"><p>Node_Camera</p></th></tr><tr height="8px"></tr><tr><th class="head" colspan="2"><p>Inheritances</p></th></tr><tr><th colspan="2" class="inheritance-block"><a href="../index.html">node</a></th></tr><tr><th colspan="2" class="inheritance-block"><a href="../array_processor.html">node_processor</a></th></tr><tr><th colspan="2" class="inheritance-block current"><a href="../_index/camera.html">node_camera</a></th></tr><tr height="8px"></tr>
+<tr><th class="head" colspan="2"><p>Inputs</p></th></tr>
+<tr><th colspan="2" class="summary-topic"><p>node_camera</p></th></tr><tr>
+                <td class="summary-topic" style="width: 60px"><p style="color: #ffe478">area</p></td>
+                <td><p>Focus Area</p></td>
+            </tr><tr>
+                <td class="summary-topic" style="width: 60px"><p style="color: #ffe478">float</p></td>
+                <td><p>Zoom</p></td>
+            </tr><tr>
+                <td class="summary-topic" style="width: 60px"><p style="color: #8c3f5d">bool</p></td>
+                <td><p>Depth Of Field</p></td>
+            </tr><tr>
+                <td class="summary-topic" style="width: 60px"><p style="color: #ffe478">float</p></td>
+                <td><p>Focal Distance</p></td>
+            </tr><tr>
+                <td class="summary-topic" style="width: 60px"><p style="color: #ffe478">float</p></td>
+                <td><p>Defocus</p></td>
+            </tr><tr>
+                <td class="summary-topic" style="width: 60px"><p style="color: #ffe478">float</p></td>
+                <td><p>Focal Range</p></td>
+            </tr><tr><td colspan="2"><table class="summary-table dynamic" style="margin-top: 8px;"><tr>
+                <th colspan="2" class="summary-topic">
+                    <p style="margin: -0.85rem auto -4px auto;width: fit-content;padding: 0px 8px;">Dynamic Inputs</p>
+                </th>
+            </tr><tr>
+                    <td class="summary-topic" style="width: 60px"><p style="color: #ff6b97" >surface</p></td>
+                    <td><p>Element {_S}</p></td>
+                </tr><tr>
+                    <td class="summary-topic" style="width: 60px"><p style="color: #8fde5d" >enum</p></td>
+                    <td><p>Positioning {_S}</p></td>
+                </tr><tr>
+                    <td class="summary-topic" style="width: 60px"><p style="color: #ffe478" >vec2</p></td>
+                    <td><p>Position {_S}</p></td>
+                </tr><tr>
+                    <td class="summary-topic" style="width: 60px"><p style="color: #8fde5d" >enum</p></td>
+                    <td><p>Oversample {_S}</p></td>
+                </tr><tr>
+                    <td class="summary-topic" style="width: 60px"><p style="color: #ffe478" >vec2</p></td>
+                    <td><p>Parallax {_S}</p></td>
+                </tr><tr>
+                    <td class="summary-topic" style="width: 60px"><p style="color: #ffe478" >float</p></td>
+                    <td><p>Depth {_S}</p></td>
+                </tr></table></td></tr>
+<tr height="8px"></tr>
+<tr><th class="head" colspan="2"><p>Outputs</p></th></tr>
+<tr><th colspan="2" class="summary-topic"><p>node_camera</p></th></tr><tr>
+                <td class="summary-topic" style="width: 60px"><p style="color: #ff6b97">surface</p></td>
+                <td><p>Surface Out</p></td>
+            </tr>
+
+</table><p>Camera node used to capture parts of the scene. You can think of it as a 2D camera with fix dimension 
+looking around your image.<br><br>
+Camera node also allows for parallax and Depth of Field effect.</p>
+<br><br>
+<h2>Camera Properties</h2>
+<br>
+<p>The <span class="junction" style="border-color: #ffe478AA">Focus Area</span> is an array data controlling the camera size and position.<br><br>
+The <span class="junction" style="border-color: #ffe478AA">Zoom</span> property allows you to scale the image.</p>
+<br>
+<h2>Parallax</h2>
+<br>
+<p>Camera node allows for parallax effect by layering multiple surfaces at different depth.<br><br>
+The extra surface can be added to the <span class="junction" style="border-color: #ff6b97AA">Element {_S}</span> properties. When 
+the new element is added, you can change the position setting in the <span class="junction" style="border-color: #ffe478AA">Parallax {_S}</span>
+property. The X and Y value indicate the parallax direction, and the Z value use to control the speed in which 
+the surface will be moved with the camera.</p>
+<br>
+<img node_camera_parallax>
+<br>
+<p>Note that the speed of parallax is depends on both XY and Z axis. If both X and Y are set to 0, then 
+there will be no parallax effect.</p>
+<br><br>
+<h2>Depth of Field</h2>
+<br>
+<p>Camera node can simulate basic Depth of Field effect using the Z value of the object as a distance from 
+camera</p>
+<br>
+<img node_camera_dof>
+<br>
+<p>The <span class="junction" style="border-color: #ffe478AA">Focal Distance</span> control where the sharpest depth will be, 
+the <span class="junction" style="border-color: #ffe478AA">Focal Range</span> control the range where the object stays sharp 
+and <span class="junction" style="border-color: #ffe478AA">Defocus</span> control how much blur will applies to object further away.</p>

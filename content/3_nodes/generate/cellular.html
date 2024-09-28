@@ -7,95 +7,59 @@
 <table class = "summary-table">
     <tr><th class="head" colspan="2"><p>Node Data</p></th></tr><tr><th colspan="2"><img s_node_noise_cell></th></tr><tr><th colspan="2" class="summary-topic"><p>Display name</p></th></tr><tr><th colspan="2" class="summary-content"><p>Cellular Noise</p></th></tr><tr><th colspan="2" class="summary-topic"><p>Internal name</p></th></tr><tr><th colspan="2" class="summary-content"><p>Node_Cellular</p></th></tr><tr height="8px"></tr><tr><th class="head" colspan="2"><p>Inheritances</p></th></tr><tr><th colspan="2" class="inheritance-block"><a href="../index.html">node</a></th></tr><tr><th colspan="2" class="inheritance-block"><a href="../array_processor.html">node_processor</a></th></tr><tr><th colspan="2" class="inheritance-block current"><a href="../_index/cellular.html">node_cellular</a></th></tr><tr height="8px"></tr>
 <tr><th class="head" colspan="2"><p>Inputs</p></th></tr>
-<tr><th colspan="2" class="summary-topic"><p>node_cellular</p></th></tr><tr>
-                <td class="summary-topic" style="width: 60px"><p style="color: #ff9166">integer</p></td>
-                <td><p>Dimension</p></td>
-            </tr><tr>
-                <td class="summary-topic" style="width: 60px"><p style="color: #ffe478">float</p></td>
-                <td><p>Position</p></td>
-            </tr><tr>
-                <td class="summary-topic" style="width: 60px"><p style="color: #ffe478">float</p></td>
-                <td><p>Scale<a href="/nodes/junctions/mappable.html" style="line-height: 1;"><img mappable></a></p></td>
-            </tr><tr>
-                <td class="summary-topic" style="width: 60px"><p style="color: #ffe478">float</p></td>
-                <td><p>Seed</p></td>
-            </tr><tr>
-                <td class="summary-topic" style="width: 60px"><p style="color: #ff9166">integer</p></td>
-                <td><p>Type</p></td>
-            </tr><tr>
-                <td class="summary-topic" style="width: 60px"><p style="color: #ffe478">float</p></td>
-                <td><p>Contrast</p></td>
-            </tr><tr>
-                <td class="summary-topic" style="width: 60px"><p style="color: #ff9166">integer</p></td>
-                <td><p>Pattern</p></td>
-            </tr><tr>
-                <td class="summary-topic" style="width: 60px"><p style="color: #ffe478">float</p></td>
-                <td><p>Middle</p></td>
-            </tr><tr>
-                <td class="summary-topic" style="width: 60px"><p style="color: #ffe478">float</p></td>
-                <td><p>Radial Scale</p></td>
-            </tr><tr>
-                <td class="summary-topic" style="width: 60px"><p style="color: #ffe478">float</p></td>
-                <td><p>Radial Shatter</p></td>
-            </tr><tr>
-                <td class="summary-topic" style="width: 60px"><p style="color: #8c3f5d">boolean</p></td>
-                <td><p>Colored</p></td>
-            </tr>
+
 <tr height="8px"></tr>
 <tr><th class="head" colspan="2"><p>Outputs</p></th></tr>
-<tr><th colspan="2" class="summary-topic"><p>node_cellular</p></th></tr><tr>
-                <td class="summary-topic" style="width: 60px"><p style="color: #ff6b97">surface</p></td>
-                <td><p>Surface Out</p></td>
-            </tr>
+
 
 </table><h2>Properties</h2>
 <br>
-<h3><span class="junction" style="border-color: #ff9166AA">Type</span></h3>
+<h3><junc type/></h3>
 <br>
 <p>Type of the pattern.</p>
 <br>
 <img cellular_type/>
 <br>
-<h3><span class="junction" style="border-color: #ff9166AA">Pattern</span></h3>
+<h3><junc pattern/></h3>
 <br>
 <p>Cell distribution.</p>
 <br>
 <ul>
     <li><span class="inline-code">Uniform</span>: Distribute the cell randomly across the surface.</li>
-    <li><span class="inline-code">Radial</span>: Distribute the cell around the <span class="junction" style="border-color: #ffe478AA">Position</span> value.</li>
+    <li><span class="inline-code">Radial</span>: Distribute the cell around the <junc position/> value.</li>
 </ul>
 <br>
 <img cellular_pattern/>
 <br>
-<h3><span class="junction" style="border-color: #ffe478AA">Position</span></h3>
+<h3><junc position/></h3>
 <br>
 <p>The position of the pattern, or center point if set to <li><span class="inline-code">Radial</span> pattern.</p>
 <br>
-<h3><span class="junction" style="border-color: #ffe478AA">Scale</span></h3>
+<h3><junc scale/></h3>
 <br>
 <p>Scale of the pattern.</p>
 <br><br>
 <h2>Radial Properties</h2>
 <br>
-<h3><span class="junction" style="border-color: #ffe478AA">Radial Scale</span></h3>
+<h3><junc radial scale/></h3>
 <br>
 <p>Control scaling of the radial effect.</p>
 <br>
-<h3><span class="junction" style="border-color: #ffe478AA">Radial Shatter</span></h3>
+<h3><junc radial shatter/></h3>
 <br>
 <p>Control how many angular fragmentation per radius.</p>
 <br><br>
 <h2>Rendering Properties</h2>
 <br>
-<h3><span class="junction" style="border-color: #ffe478AA">Contrast</span></h3>
+<h3><junc contrast/></h3>
 <br>
 <p>Control the contrast of the final image.</p>
 <br>
-<h3><span class="junction" style="border-color: #ffe478AA">Middle</span></h3>
+<h3><junc middle/></h3>
 <br>
 <p>The middle point for contrast calculation.</p>
 <br>
-<h3><span class="junction" style="border-color: #8c3f5dAA">Colored</span></h3>
+<h3><junc colored/></h3>
 <br>
 <p><span class="inline-code">Cell</span> type only: fill each cell with random color.</p>
 <br>

@@ -7,55 +7,25 @@
 <table class = "summary-table">
     <tr><th class="head" colspan="2"><p>Node Data</p></th></tr><tr><th colspan="2"><img s_node_erode></th></tr><tr><th colspan="2" class="summary-topic"><p>Display name</p></th></tr><tr><th colspan="2" class="summary-content"><p>Erode</p></th></tr><tr><th colspan="2" class="summary-topic"><p>Internal name</p></th></tr><tr><th colspan="2" class="summary-content"><p>Node_Erode</p></th></tr><tr height="8px"></tr><tr><th class="head" colspan="2"><p>Inheritances</p></th></tr><tr><th colspan="2" class="inheritance-block"><a href="../index.html">node</a></th></tr><tr><th colspan="2" class="inheritance-block"><a href="../array_processor.html">node_processor</a></th></tr><tr><th colspan="2" class="inheritance-block current"><a href="../_index/erode.html">node_erode</a></th></tr><tr height="8px"></tr>
 <tr><th class="head" colspan="2"><p>Inputs</p></th></tr>
-<tr><th colspan="2" class="summary-topic"><p>node_erode</p></th></tr><tr>
-                <td class="summary-topic" style="width: 60px"><p style="color: #ff6b97">surface</p></td>
-                <td><p>Surface In</p></td>
-            </tr><tr>
-                <td class="summary-topic" style="width: 60px"><p style="color: #ff9166">integer</p></td>
-                <td><p>Width<a href="/nodes/junctions/mappable.html" style="line-height: 1;"><img mappable></a></p></td>
-            </tr><tr>
-                <td class="summary-topic" style="width: 60px"><p style="color: #8c3f5d">boolean</p></td>
-                <td><p>Preserve Border</p></td>
-            </tr><tr>
-                <td class="summary-topic" style="width: 60px"><p style="color: #8c3f5d">boolean</p></td>
-                <td><p>Use Alpha</p></td>
-            </tr><tr>
-                <td class="summary-topic" style="width: 60px"><p style="color: #ff6b97">surface</p></td>
-                <td><p>Mask</p></td>
-            </tr><tr>
-                <td class="summary-topic" style="width: 60px"><p style="color: #ffe478">float</p></td>
-                <td><p>Mix</p></td>
-            </tr><tr>
-                <td class="summary-topic" style="width: 60px"><p style="color: #8c3f5d">boolean</p></td>
-                <td><p>Active</p></td>
-            </tr><tr>
-                <td class="summary-topic" style="width: 60px"><p style="color: #ff9166">integer</p></td>
-                <td><p>Channel</p></td>
-            </tr><tr>
-                <td class="summary-topic" style="width: 60px"><p style="color: #ff6b97">surface</p></td>
-                <td><p>Width Map</p></td>
-            </tr>
+
 <tr height="8px"></tr>
 <tr><th class="head" colspan="2"><p>Outputs</p></th></tr>
-<tr><th colspan="2" class="summary-topic"><p>node_erode</p></th></tr><tr>
-                <td class="summary-topic" style="width: 60px"><p style="color: #ff6b97">surface</p></td>
-                <td><p>Surface Out</p></td>
-            </tr>
 
-</table><p>Erode node delete the edge of the image as far as the <span class="junction" style="border-color: #ff9166AA">Width</span> properties to create a smaller inset of 
+
+</table><p>Erode node delete the edge of the image as far as the <junc width/> properties to create a smaller inset of 
 the shape.</p>
 <br><br>
 <h2>Properties</h2>
 <br>
-<h3><span class="junction" style="border-color: #ff9166AA">Width</span></h3>
+<h3><junc width/></h3>
 <br>
 <p>How far away from the border to delete.</p>
 <br>
-<h3><span class="junction" style="border-color: #8c3f5dAA">Preserve Border</span></h3>
+<h3><junc preserve border/></h3>
 <br>
 <p>Whether to treat the edges of the image as the border, or as a filled space.</p>
 <br>
-<h3><span class="junction" style="border-color: #8c3f5dAA">Use Alpha</span></h3>
+<h3><junc use alpha/></h3>
 <br>
 <p>Whether to use transparent pixel or black pixel as the border.</p>
 <br>

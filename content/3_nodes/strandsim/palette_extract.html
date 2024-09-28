@@ -1,0 +1,69 @@
+<link rel="stylesheet" href="../styles.css">
+
+<h1>Palette Extract</h1>
+<p class="subtitle">Extract palette from an image.</p>
+<br><br>
+
+<table class = "summary-table">
+    <tr><th class="head" colspan="2"><p>Node Data</p></th></tr><tr><th colspan="2"><img s_node_palette_extract></th></tr><tr><th colspan="2" class="summary-topic"><p>Display name</p></th></tr><tr><th colspan="2" class="summary-content"><p>Palette Extract</p></th></tr><tr><th colspan="2" class="summary-topic"><p>Internal name</p></th></tr><tr><th colspan="2" class="summary-content"><p>Node_Palette_Extract</p></th></tr><tr height="8px"></tr><tr><th class="head" colspan="2"><p>Inheritances</p></th></tr><tr><th colspan="2" class="inheritance-block"><a href="../index.html">node</a></th></tr><tr><th colspan="2" class="inheritance-block"><a href="../array_processor.html">node_processor</a></th></tr><tr><th colspan="2" class="inheritance-block current"><a href="../_index/palette_extract.html">node_palette_extract</a></th></tr><tr height="8px"></tr>
+<tr><th class="head" colspan="2"><p>Inputs</p></th></tr>
+<tr><th colspan="2" class="summary-topic"><p>node_palette_extract</p></th></tr><tr>
+                <td class="summary-topic" style="width: 60px"><p style="color: #ff6b97">surface</p></td>
+                <td><p>Surface In</p></td>
+            </tr><tr>
+                <td class="summary-topic" style="width: 60px"><p style="color: #ff9166">int</p></td>
+                <td><p>Max Colors</p></td>
+            </tr><tr>
+                <td class="summary-topic" style="width: 60px"><p style="color: #ff9166">int</p></td>
+                <td><p>Seed</p></td>
+            </tr><tr>
+                <td class="summary-topic" style="width: 60px"><p style="color: #8fde5d">enum</p></td>
+                <td><p>Algorithm</p></td>
+            </tr><tr>
+                <td class="summary-topic" style="width: 60px"><p style="color: #8fde5d">enum</p></td>
+                <td><p>Color Space</p></td>
+            </tr>
+<tr height="8px"></tr>
+<tr><th class="head" colspan="2"><p>Outputs</p></th></tr>
+<tr><th colspan="2" class="summary-topic"><p>node_palette_extract</p></th></tr><tr>
+                <td class="summary-topic" style="width: 60px"><p style="color: #8fde5d">color</p></td>
+                <td><p>Palette</p></td>
+            </tr>
+
+</table><p>Palette extract read the image and generate palette from it. Note that this node can cause performance issue if 
+the image is too large.</p>
+<br><br>
+<h2>Algorithms</h2>
+<br>
+<p>The first step is to extract all colors from the images, then we can use different algorithms to reduce the 
+number of colors. The available algorithms are:</p>
+<br>
+<h3>K-mean</h3>
+<br>
+<p>K-mean is a simple algorithm that can be used to cluster data. When select this algorithm you can choose what 
+color space to use, and how many colors to extract.</p>
+<br>
+<table class="cc4060">
+    <tr>
+        <th>Property</th>
+        <th>Description</th>
+    </tr>
+    <tr>
+        <td>Color Space</td>
+        <td>Color space to use for the algorithm</td>
+    </tr>
+    <tr>
+        <td>Max colors</td>
+        <td>Number of initial cluster centrals. Note that due to the nature of the algorithm, the resulting 
+palette may not have the exact number of colors as specified.</td>
+    </tr>
+</table>
+<br>
+<h3>Frequency</h3>
+<br>
+<p>Frequency algorithm simply count the frequency of each color and return the most frequent colors based on 
+the <span class="junction" style="border-color: #ff9166AA">Max Colors</span> value.</p>
+<br>
+<h3>All colors</h3>
+<br>
+<p>Return all colors found in the image.</p>

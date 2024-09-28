@@ -35,17 +35,20 @@
 <li class=""><a class="" href="atlas.html">Atlas</a></li>
 <li class=""><a class="" href="average.html">Average</a></li>
 <li class=""><a class="" href="blend.html">Blend</a></li>
+<li class=""><a class="" href="blend_edge.html">Blend Edge</a></li>
 <li class=""><a class="" href="blobify.html">Blobify</a></li>
 <li class=""><a class="" href="bloom.html">Bloom</a></li>
 <li class=""><a class="" href="blur.html">Blur</a></li>
 <li class=""><a class="" href="blur_bokeh.html">Blur Bokeh</a></li>
 <li class=""><a class="" href="blur_contrast.html">Blur Contrast</a></li>
 <li class=""><a class="" href="blur_directional.html">Blur Directional</a></li>
+<li class=""><a class="" href="blur_path.html">Blur Path</a></li>
 <li class=""><a class="" href="blur_radial.html">Blur Radial</a></li>
 <li class=""><a class="" href="blur_shape.html">Blur Shape</a></li>
 <li class=""><a class="" href="blur_simple.html">Blur Simple</a></li>
 <li class=""><a class="" href="blur_slope.html">Blur Slope</a></li>
 <li class=""><a class="" href="blur_zoom.html">Blur Zoom</a></li>
+<li class=""><a class="" href="brush_linear.html">Brush Linear</a></li>
 <li class=""><a class="" href="bw.html">Bw</a></li>
 <li class=""><a class="" href="chromatic_aberration.html">Chromatic Aberration</a></li>
 <li class=""><a class="" href="colorize.html">Colorize</a></li>
@@ -58,6 +61,7 @@
 <li class=""><a class="" href="convolution.html">Convolution</a></li>
 <li class=""><a class="" href="corner.html">Corner</a></li>
 <li class=""><a class="" href="curve.html">Curve</a></li>
+<li class=""><a class="" href="curve_hsv.html">Curve Hsv</a></li>
 <li class=""><a class="" href="de_corner.html">De Corner</a></li>
 <li class=""><a class="" href="de_stray.html">De Stray</a></li>
 <li class=""><a class="" href="dilate.html">Dilate</a></li>
@@ -69,16 +73,16 @@
 <li><a href="#Vector">Vector</a></li>
 <li><a href="#Angle">Angle</a></li>
 <li><a href="#Gradient">Gradient</a></li>
-<li><a href="#Separate Axis">Separate Axis</a></li>
+<li><a href="#"></a></li>
 </ul>
 <li><a href="#Strength">Strength</a></li>
 <ul class="submenu h3">
-<li><a href="#Mid Value">Mid Value</a></li>
+<li><a href="#"></a></li>
 </ul>
 <li><a href="#Algorithm">Algorithm</a></li>
 <ul class="submenu h3">
-<li><a href="#Iterate">Iterate</a></li>
-<li><a href="#Blend Mode">Blend Mode</a></li>
+<li><a href="#"></a></li>
+<li><a href="#"></a></li>
 </ul>
 </ul>
 <li class=""><a class="" href="dither.html">Dither</a></li>
@@ -87,16 +91,22 @@
 <li class=""><a class="" href="fxaa.html">Fxaa</a></li>
 <li class=""><a class="" href="gamma_map.html">Gamma Map</a></li>
 <li class=""><a class="" href="glow.html">Glow</a></li>
+<li class=""><a class="" href="grain.html">Grain</a></li>
 <li class=""><a class="" href="greyscale.html">Greyscale</a></li>
 <li class=""><a class="" href="grey_alpha.html">Grey Alpha</a></li>
 <li class=""><a class="" href="hsv_channel.html">Hsv Channel</a></li>
+<li class=""><a class="" href="interlaced.html">Interlaced</a></li>
 <li class=""><a class="" href="invert.html">Invert</a></li>
+<li class=""><a class="" href="iterator_index.html">Iterator Index</a></li>
+<li class=""><a class="" href="iterator_length.html">Iterator Length</a></li>
+<li class=""><a class="" href="jpeg.html">Jpeg</a></li>
 <li class=""><a class="" href="kuwahara.html">Kuwahara</a></li>
 <li class=""><a class="" href="level.html">Level</a></li>
 <li class=""><a class="" href="level_selector.html">Level Selector</a></li>
 <li class=""><a class="" href="local_analyze.html">Local Analyze</a></li>
 <li class=""><a class="" href="mirror.html">Mirror</a></li>
 <li class=""><a class="" href="morph_surface.html">Morph Surface</a></li>
+<li class=""><a class="" href="normalize.html">Normalize</a></li>
 <li class=""><a class="" href="outline.html">Outline</a></li>
 <li class=""><a class="" href="override_channel.html">Override Channel</a></li>
 <li class=""><a class="" href="palette_shift.html">Palette Shift</a></li>
@@ -114,6 +124,7 @@
 <li class=""><a class="" href="texture_remap.html">Texture Remap</a></li>
 <li class=""><a class="" href="threshold.html">Threshold</a></li>
 <li class=""><a class="" href="time_remap.html">Time Remap</a></li>
+<li class=""><a class="" href="tonemap_ace.html">Tonemap Ace</a></li>
 <li class=""><a class="" href="trail.html">Trail</a></li>
 <li class=""><a class="" href="twirl.html">Twirl</a></li>
 <li class=""><a class="" href="vignette.html">Vignette</a></li>
@@ -132,61 +143,10 @@
 <table class = "summary-table">
     <tr><th class="head" colspan="2"><p>Node Data</p></th></tr><tr><th colspan="2"><img class="node-content" src="/src/nodeIcons/s_node_displace.png"></th></tr><tr><th colspan="2" class="summary-topic"><p>Display name</p></th></tr><tr><th colspan="2" class="summary-content"><p>Displace</p></th></tr><tr><th colspan="2" class="summary-topic"><p>Internal name</p></th></tr><tr><th colspan="2" class="summary-content"><p>Node_Displace</p></th></tr><tr height="8px"></tr><tr><th class="head" colspan="2"><p>Inheritances</p></th></tr><tr><th colspan="2" class="inheritance-block"><a href="../index.html">node</a></th></tr><tr><th colspan="2" class="inheritance-block"><a href="../array_processor.html">node_processor</a></th></tr><tr><th colspan="2" class="inheritance-block current"><a href="../_index/displace.html">node_displace</a></th></tr><tr height="8px"></tr>
 <tr><th class="head" colspan="2"><p>Inputs</p></th></tr>
-<tr><th colspan="2" class="summary-topic"><p>node_displace</p></th></tr><tr>
-                <td class="summary-topic" style="width: 60px"><p style="color: #ff6b97">surface</p></td>
-                <td><p>Surface In</p></td>
-            </tr><tr>
-                <td class="summary-topic" style="width: 60px"><p style="color: #ff6b97">surface</p></td>
-                <td><p>Displace Map</p></td>
-            </tr><tr>
-                <td class="summary-topic" style="width: 60px"><p style="color: #ffe478">float</p></td>
-                <td><p>Position</p></td>
-            </tr><tr>
-                <td class="summary-topic" style="width: 60px"><p style="color: #ffe478">float</p></td>
-                <td><p>Strength<a href="/nodes/junctions/mappable.html" style="line-height: 1;"><img class="node-content" src="/src/images/etc/mappable.png"></a></p></td>
-            </tr><tr>
-                <td class="summary-topic" style="width: 60px"><p style="color: #ffe478">float</p></td>
-                <td><p>Mid Value</p></td>
-            </tr><tr>
-                <td class="summary-topic" style="width: 60px"><p style="color: #ff9166">integer</p></td>
-                <td><p>Mode</p></td>
-            </tr><tr>
-                <td class="summary-topic" style="width: 60px"><p style="color: #8c3f5d">boolean</p></td>
-                <td><p>Iterate</p></td>
-            </tr><tr>
-                <td class="summary-topic" style="width: 60px"><p style="color: #ff9166">integer</p></td>
-                <td><p>Oversample Mode</p></td>
-            </tr><tr>
-                <td class="summary-topic" style="width: 60px"><p style="color: #ff6b97">surface</p></td>
-                <td><p>Mask</p></td>
-            </tr><tr>
-                <td class="summary-topic" style="width: 60px"><p style="color: #ffe478">float</p></td>
-                <td><p>Mix</p></td>
-            </tr><tr>
-                <td class="summary-topic" style="width: 60px"><p style="color: #8c3f5d">boolean</p></td>
-                <td><p>Active</p></td>
-            </tr><tr>
-                <td class="summary-topic" style="width: 60px"><p style="color: #ff9166">integer</p></td>
-                <td><p>Blend Mode</p></td>
-            </tr><tr>
-                <td class="summary-topic" style="width: 60px"><p style="color: #ff9166">integer</p></td>
-                <td><p>Channel</p></td>
-            </tr><tr>
-                <td class="summary-topic" style="width: 60px"><p style="color: #ff6b97">surface</p></td>
-                <td><p>Strength Map</p></td>
-            </tr><tr>
-                <td class="summary-topic" style="width: 60px"><p style="color: #8c3f5d">boolean</p></td>
-                <td><p>Separate Axis</p></td>
-            </tr><tr>
-                <td class="summary-topic" style="width: 60px"><p style="color: #ff6b97">surface</p></td>
-                <td><p>Displace Map 2</p></td>
-            </tr>
+
 <tr height="8px"></tr>
 <tr><th class="head" colspan="2"><p>Outputs</p></th></tr>
-<tr><th colspan="2" class="summary-topic"><p>node_displace</p></th></tr><tr>
-                <td class="summary-topic" style="width: 60px"><p style="color: #ff6b97">surface</p></td>
-                <td><p>Surface Out</p></td>
-            </tr>
+
 
 </table><p>Displace node distort an image based on a displacement map.</p>
 <br>
@@ -196,16 +156,16 @@
 <br>
 <br>
 <p>Displacement refers to the shifting of pixels. A shifting can be uniformly applies to the entire surface, which 
-will simply move the image. By using the <span class="junction" style="border-color: #ff6b97AA">Displace Map</span> you can control the shifting amount to make the 
+will simply move the image. By using the <junc displace map/> you can control the shifting amount to make the 
 effect more interesting.</p>
 <br>
 <img class="node-content" src="/src/images/etc/displace_basic.png">
 <br>
-<p><span class="junction" style="border-color: #ff9166AA">Mode</span> property control how the displacement amount is being calculated.</p>
+<p><junc mode/> property control how the displacement amount is being calculated.</p>
 <br>
 <h3><a id="Linear" class="anchor"></a>Linear</h3>
 <br>
-<p>When using linear mode, you can set the <span class="junction" style="border-color: #ffe478AA">Position</span> to control the direction you want the displacement to 
+<p>When using linear mode, you can set the <junc position/> to control the direction you want the displacement to 
 happen. The displacement map will be use to scale that position vector.</p>
 <br>
 <h3><a id="Vector" class="anchor"></a>Vector</h3>
@@ -221,22 +181,22 @@ starts with 0 means toward the right and goes counter-clockwise.</p>
 <br>
 <p>Gradient mode will distort the image down the slope of the displace map brightness.</p>
 <br>
-<h3><a id="Separate Axis" class="anchor"></a><span class="junction" style="border-color: #8c3f5dAA">Separate Axis</span></h3>
+<h3><a id="" class="anchor"></a><junc separate axis/></h3>
 <br>
-<p>For vector and angle mode which use red and green channel, you can check the <span class="junction" style="border-color: #8c3f5dAA">Separate Axis</span> to use 
+<p>For vector and angle mode which use red and green channel, you can check the <junc separate axis/> to use 
 two separate surfaces for each value.</p>
 <br><br>
 <h2><a id="Strength" class="anchor"></a>Strength</h2>
 <br>
-<p>The intensity of the displacement depends on the <span class="junction" style="border-color: #ff9166AA">Mode</span>. In linear mode, the intensity can be defined 
-directly in the <span class="junction" style="border-color: #ffe478AA">Position</span>. But for other modes, the <span class="junction" style="border-color: #ffe478AA">Strength</span> can be use to scale the displacement 
+<p>The intensity of the displacement depends on the <junc mode/>. In linear mode, the intensity can be defined 
+directly in the <junc position/>. But for other modes, the <junc strength/> can be use to scale the displacement 
 intensity.</p>
 <br>
-<h3><a id="Mid Value" class="anchor"></a><span class="junction" style="border-color: #ffe478AA">Mid Value</span></h3>
+<h3><a id="" class="anchor"></a><junc mid value/></h3>
 <br>
 <p>By default, the data read from displacement map goes from 0 to 1, with black color correspond to 0 and 
 white color equals 1. However, if you want the effect to goes from -0.5 to 0.5, so the black color means invert 
-displacement. You can change the <span class="junction" style="border-color: #ffe478AA">Mid Value</span> properties to 0.5.</p>
+displacement. You can change the <junc mid value/> properties to 0.5.</p>
 <br>
 <img class="node-content" src="/src/images/etc/displace_mid.png">
 <br><br>
@@ -244,13 +204,13 @@ displacement. You can change the <span class="junction" style="border-color: #ff
 <br>
 <p>Properties in this section control how the color is being sampled.</p>
 <br>
-<h3><a id="Iterate" class="anchor"></a><span class="junction" style="border-color: #8c3f5dAA">Iterate</span></h3>
+<h3><a id="" class="anchor"></a><junc iterate/></h3>
 <br>
 <p>Iterate make the displace map sampling done step by step, instead of calculating where the pixel will go by taking 
-a single sample and multiply with the <span class="junction" style="border-color: #ffe478AA">Strength</span>. It will only move by one step, then take another displace map 
-sample repeatedly for <span class="junction" style="border-color: #ffe478AA">Strength</span> amount of time.</p>
+a single sample and multiply with the <junc strength/>. It will only move by one step, then take another displace map 
+sample repeatedly for <junc strength/> amount of time.</p>
 <br>
-<h3><a id="Blend Mode" class="anchor"></a><span class="junction" style="border-color: #ff9166AA">Blend Mode</span></h3>
+<h3><a id="" class="anchor"></a><junc blend mode/></h3>
 <br>
 <p>Blend mode control how the new color is chosen.</p>
 <br>

@@ -65,7 +65,7 @@ def generateFile(dirOut, pathIn, sidebar):
         if imgraw in images:
             content = content.replace(f"<img {img}>", f'<img class="node-content" src="/{images[imgraw]}">')
         elif '"' not in img: 
-            print(f"Image {imgraw} in {pathIn} not found")
+            print(f"{pathIn} : Image {imgraw} not found")
 
     imgs = re.findall(r"<img-deco (.*?)>", content)
     for img in imgs:
@@ -74,7 +74,7 @@ def generateFile(dirOut, pathIn, sidebar):
         if imgraw in images:
             content = content.replace(f"<img-deco {img}>", f'<img class="node-content deco" src="/{images[imgraw]}">')
         elif '"' not in img: 
-            print(f"Image {imgraw} in {pathIn} not found")
+            print(f"{pathIn} : Image {imgraw} not found")
 
     sideContent = ""
     for fType, _, fName, title in sidebar:

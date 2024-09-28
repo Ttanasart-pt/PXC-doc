@@ -1,0 +1,130 @@
+<link rel="stylesheet" href="../styles.css">
+
+<h1>Hexagonal Grid</h1>
+<p class="subtitle">Generate hexagonal grid pattern.</p>
+<br><br>
+
+<table class = "summary-table">
+    <tr><th class="head" colspan="2"><p>Node Data</p></th></tr><tr><th colspan="2"><img s_node_grid_hex></th></tr><tr><th colspan="2" class="summary-topic"><p>Display name</p></th></tr><tr><th colspan="2" class="summary-content"><p>Hexagonal Grid</p></th></tr><tr><th colspan="2" class="summary-topic"><p>Internal name</p></th></tr><tr><th colspan="2" class="summary-content"><p>Node_Grid_Hex</p></th></tr><tr height="8px"></tr><tr><th class="head" colspan="2"><p>Inheritances</p></th></tr><tr><th colspan="2" class="inheritance-block"><a href="../index.html">node</a></th></tr><tr><th colspan="2" class="inheritance-block"><a href="../array_processor.html">node_processor</a></th></tr><tr><th colspan="2" class="inheritance-block current"><a href="../_index/grid_hex.html">node_grid_hex</a></th></tr><tr height="8px"></tr>
+<tr><th class="head" colspan="2"><p>Inputs</p></th></tr>
+<tr><th colspan="2" class="summary-topic"><p>node_grid_hex</p></th></tr><tr>
+                <td class="summary-topic" style="width: 60px"><p style="color: #ff9166">dimension</p></td>
+                <td><p>Dimension</p></td>
+            </tr><tr>
+                <td class="summary-topic" style="width: 60px"><p style="color: #ffe478">vec2</p></td>
+                <td><p>Position</p></td>
+            </tr><tr>
+                <td class="summary-topic" style="width: 60px"><p style="color: #ffe478">vec2</p></td>
+                <td><p>Scale</p></td>
+            </tr><tr>
+                <td class="summary-topic" style="width: 60px"><p style="color: #ffe478">rotation</p></td>
+                <td><p>Angle</p></td>
+            </tr><tr>
+                <td class="summary-topic" style="width: 60px"><p style="color: #ffe478">float</p></td>
+                <td><p>Gap</p></td>
+            </tr><tr>
+                <td class="summary-topic" style="width: 60px"><p style="color: #8fde5d">gradient</p></td>
+                <td><p>Tile Color</p></td>
+            </tr><tr>
+                <td class="summary-topic" style="width: 60px"><p style="color: #8fde5d">color</p></td>
+                <td><p>Gap Color</p></td>
+            </tr><tr>
+                <td class="summary-topic" style="width: 60px"><p style="color: #8fde5d">enum</p></td>
+                <td><p>Render Type</p></td>
+            </tr><tr>
+                <td class="summary-topic" style="width: 60px"><p style="color: #ffe478">float</p></td>
+                <td><p>Seed</p></td>
+            </tr><tr>
+                <td class="summary-topic" style="width: 60px"><p style="color: #ff6b97">surface</p></td>
+                <td><p>Texture</p></td>
+            </tr><tr>
+                <td class="summary-topic" style="width: 60px"><p style="color: #8c3f5d">bool</p></td>
+                <td><p>Anti Aliasing</p></td>
+            </tr><tr>
+                <td class="summary-topic" style="width: 60px"><p style="color: #8fde5d">map</p></td>
+                <td><p>Scale Map</p></td>
+            </tr><tr>
+                <td class="summary-topic" style="width: 60px"><p style="color: #8fde5d">map</p></td>
+                <td><p>Angle Map</p></td>
+            </tr><tr>
+                <td class="summary-topic" style="width: 60px"><p style="color: #8fde5d">map</p></td>
+                <td><p>Gap Map</p></td>
+            </tr><tr>
+                <td class="summary-topic" style="width: 60px"><p style="color: #8c3f5d">bool</p></td>
+                <td><p>Truchet</p></td>
+            </tr><tr>
+                <td class="summary-topic" style="width: 60px"><p style="color: #ff9166">int</p></td>
+                <td><p>Truchet Seed</p></td>
+            </tr><tr>
+                <td class="summary-topic" style="width: 60px"><p style="color: #ffe478">float</p></td>
+                <td><p>Truchet Threshold</p></td>
+            </tr><tr>
+                <td class="summary-topic" style="width: 60px"><p style="color: #8fde5d">gradientrange</p></td>
+                <td><p>Gradient Map Range</p></td>
+            </tr><tr>
+                <td class="summary-topic" style="width: 60px"><p style="color: #ffe478">rotation</p></td>
+                <td><p>Texture Angle</p></td>
+            </tr><tr>
+                <td class="summary-topic" style="width: 60px"><p style="color: #8fde5d">slider</p></td>
+                <td><p>Level</p></td>
+            </tr><tr>
+                <td class="summary-topic" style="width: 60px"><p style="color: #8c3f5d">bool</p></td>
+                <td><p>Use Texture Dimension</p></td>
+            </tr>
+<tr height="8px"></tr>
+<tr><th class="head" colspan="2"><p>Outputs</p></th></tr>
+<tr><th colspan="2" class="summary-topic"><p>node_grid_hex</p></th></tr><tr>
+                <td class="summary-topic" style="width: 60px"><p style="color: #ff6b97">surface</p></td>
+                <td><p>Surface Out</p></td>
+            </tr>
+
+</table><p>Generate hexagonal grid, honeycomb pattern.</p>
+<br>
+<img-deco grid_hex/>
+<br><br>
+<h2>Properties</h2>
+<br>
+<h3><span class="junction" style="border-color: #ffe478AA">Gap</span></h3>
+<br>
+<p>Thickness of the gap between each cell.</p>
+<br><br>
+<h2>Rendering Modes</h2>
+<br>
+<h3>Colored Tile</h3>
+<br>
+<p>Fill each cell with a solid random color sampled from the <span class="junction" style="border-color: #8fde5dAA">Tile Color</span> value.</p>
+<br>
+<img-deco grid_hex_colored_tile/>
+<br>
+<h3>Height Map</h3>
+<br>
+<p>Render each cell out as a heightmap.</p>
+<br>
+<img-deco grid_hex_height_map/>
+<br>
+<h3>Texture Grid</h3>
+<br>
+<p>Render out the surface value from <span class="junction" style="border-color: #ff6b97AA">Texture</span> to each cell.</p>
+<br>
+<img-deco grid_hex_texture_grid/>
+<br>
+<h3>Texture Sample</h3>
+<br>
+<p>Fill each cell with a solid color sampled from the <span class="junction" style="border-color: #ff6b97AA">Texture</span> value.</p>
+<br>
+<img-deco grid_hex_texture_sampler/>
+<br>
+<h2>Truchet Properties</h2>
+<br>
+<p>Similiar to the <a class="node" href="../_index/grid.html">Grid</a> node. Truchet settings rotate the surface randomly to create an interesting effect.</p>
+<br>
+<img-deco grid_hex_truchet/>
+<br>
+<h3><span class="junction" style="border-color: #ffe478AA">Truchet Threshold</span></h3>
+<br>
+<p>The ratio of the rotation.</p>
+<br>
+<h3><span class="junction" style="border-color: #ffe478AA">Texture Angle</span></h3>
+<br>
+<p>Apply random rotation on top of the truchet.</p>
+<br>

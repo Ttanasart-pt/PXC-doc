@@ -46,14 +46,20 @@ def extractNodeData(node):
     matchName = re.search(r"name\s*=\s*[\"](.*)[\"]", content)
     nodeName  = "" if not matchName else matchName.group(1)
 
+    junctionSrc = r"nodeValue.*\([\s\S]*?\);"
+
     if "static createNewInput" in content:
         conSep = content.split("static createNewInput")
         
-        junctions  = re.findall(r"nodeValue\((.*)\)", conSep[0])
+        j = re.findall(junctionSrc, conSep[0])
+        junctions = [ junc.extractJunction(jc) for jc in j ]
         junctions.append("[Dynamic]")
-        junctions += re.findall(r"nodeValue\((.*)\)", conSep[1])
+
+        j = re.findall(junctionSrc, conSep[1])
+        junctions += [ junc.extractJunction(jc) for jc in j ]
     else :
-        junctions  = re.findall(r"nodeValue\(([\s\S]*?);", content)
+        j = re.findall(junctionSrc, content)
+        junctions = [ junc.extractJunction(jc) for jc in j ]
     
     parent = "node"
     constructLine = re.search(r"function\s*" + node + r"(.*){", content, re.IGNORECASE)
@@ -78,7 +84,7 @@ def writeNodeFile(cat, node, line):
         print(f"Node {node.lower()} not found in nodeData")
         return
     
-    _data = nodeData[node.lower()]
+    _data      = nodeData[node.lower()]
     nodeName   = _data["name"]
     junctions  = [ ( node.lower(), _data["io"] ) ]
     parent     = _data["parent"]
@@ -174,7 +180,7 @@ def writeNodeFile(cat, node, line):
                 if name in io:
                     content = content.replace(f'<junc {tag}>', f'<span class="junction" style="border-color: {io[name]}AA">{name.title()}</span>')
                 else :
-                    print(f"Junction {name} not found in {manFilePath}")
+                    print(f"{manFilePath} : Junction {name} not found")
 
             attrTags = re.findall(r'<attr\s(.*?)/>', content)
             for tag in attrTags:
@@ -201,18 +207,28 @@ def writeNodeFile(cat, node, line):
 for line in nodeListRaw.split("\n"):
     line = line.strip()
 
-    if line.startswith("addNodeCatagory("):
+    if line.startswith("NODE_ADD_CAT"):
         cat = line.split("\"")[1].lower()
         nodes[cat] = []
+
     elif line.startswith("addNodeObject("):
         args = line.split("(")[1].split(")")[0].split(",")
+        if len(args) < 4:
+            print(f"Invalid node data: {line}")
+            continue
 
         nodeClass = args[3].strip().strip("\"")
+
+        if cat == "":
+            print(f"Node {nodeClass} catagory not found ")
+            continue
+
         nodes[cat].append((nodeClass, line))
 
         nodePages[nodeClass.lower()] = 1
 
 def generateNodeCatagory(cat):
+    
     txt = f"""<h1>{cat.title()}</h1>
 <br><br>
 <div class=node-group>"""
@@ -221,6 +237,9 @@ def generateNodeCatagory(cat):
     nodeNames.sort()
 
     for node in nodeNames:
+        if node.lower() not in nodeData:
+            print(f"Node {node.lower()} not found in nodeData")
+            continue
         _data = nodeData[node.lower()]
         spr   = _data["spr"]
         name  = _data["name"]
@@ -236,6 +255,9 @@ def generateNodeCatagory(cat):
         file.write(txt)
 
 for cat in nodes:
+    if(cat.lower() == "custom" or cat.lower() == "favourites"):
+        continue
+
     catPath = f"content/{dirname}/{cat}"
     if not os.path.exists(catPath):
         os.makedirs(catPath)

@@ -7,25 +7,10 @@
 <table class = "summary-table">
     <tr><th class="head" colspan="2"><p>Node Data</p></th></tr><tr><th colspan="2"><img s_node_interpret_number></th></tr><tr><th colspan="2" class="summary-topic"><p>Display name</p></th></tr><tr><th colspan="2" class="summary-content"><p>Interpret Number</p></th></tr><tr><th colspan="2" class="summary-topic"><p>Internal name</p></th></tr><tr><th colspan="2" class="summary-content"><p>Node_Interpret_Number</p></th></tr><tr height="8px"></tr><tr><th class="head" colspan="2"><p>Inheritances</p></th></tr><tr><th colspan="2" class="inheritance-block"><a href="../index.html">node</a></th></tr><tr><th colspan="2" class="inheritance-block"><a href="../array_processor.html">node_processor</a></th></tr><tr><th colspan="2" class="inheritance-block current"><a href="../_index/interpret_number.html">node_interpret_number</a></th></tr><tr height="8px"></tr>
 <tr><th class="head" colspan="2"><p>Inputs</p></th></tr>
-<tr><th colspan="2" class="summary-topic"><p>node_interpret_number</p></th></tr><tr>
-                <td class="summary-topic" style="width: 60px"><p style="color: #ffe478">float</p></td>
-                <td><p>Number</p></td>
-            </tr><tr>
-                <td class="summary-topic" style="width: 60px"><p style="color: #ff9166">integer</p></td>
-                <td><p>Mode</p></td>
-            </tr><tr>
-                <td class="summary-topic" style="width: 60px"><p style="color: #ffe478">float</p></td>
-                <td><p>Range</p></td>
-            </tr><tr>
-                <td class="summary-topic" style="width: 60px"><p style="color: #8fde5d">gradient</p></td>
-                <td><p>Gradient<a href="/nodes/junctions/mappable.html" style="line-height: 1;"><img mappable></a></p></td>
-            </tr>
+
 <tr height="8px"></tr>
 <tr><th class="head" colspan="2"><p>Outputs</p></th></tr>
-<tr><th colspan="2" class="summary-topic"><p>node_interpret_number</p></th></tr><tr>
-                <td class="summary-topic" style="width: 60px"><p style="color: #ff6b97">surface</p></td>
-                <td><p>Surface Out</p></td>
-            </tr>
+
 
 </table><p>Interpret Number convert array of numbers into surface by map the value into a range. <br><br>This node can be useful 
 for creating animation by animating the number array instead of the surface itself.</p>
@@ -34,27 +19,27 @@ for creating animation by animating the number array instead of the surface itse
 <br><br>
 <h2>Properties</h2>
 <br>
-<h3><span class="junction" style="border-color: #ffe478AA">Number</span></h3>
+<h3><junc number/></h3>
 <br>
 <p>The array of number to interpret.</p>
 <br>
-<h3><span class="junction" style="border-color: #ff9166AA">Mode</span></h3>
+<h3><junc mode/></h3>
 <br>
 <p>Select intepretation modes:</p>
 <br>
 <ul>
     <li><span class="inline-code">Greyscale</span>: Interpret value into greyscale color by mapping to the 
-<span class="junction" style="border-color: #ffe478AA">Range</span> scale.</li>
+<junc range/> scale.</li>
     <li><span class="inline-code">Gradient</span>: Takes the value from the range mapping and use it to sample 
-color from the <span class="junction" style="border-color: #8fde5dAA">Gradient</span>.</li>
+color from the <junc gradient/>.</li>
 </ul>
 <br>
-<h3><span class="junction" style="border-color: #ffe478AA">Range</span></h3>
+<h3><junc range/></h3>
 <br>
 <p>The range to map the value in. <span class="inline-code">Min</span> value will correspond to 0 and <span
 class="inline-code">Max</span> value will correspond to 1.</p>
 <br>
-<h3><span class="junction" style="border-color: #8fde5dAA">Gradient</span></h3>
+<h3><junc gradient/></h3>
 <br>
 <p>The gradient to map to if use the <span class="inline-code">Gradient</span> mode.</p>
 <br>

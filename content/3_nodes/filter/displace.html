@@ -7,61 +7,10 @@
 <table class = "summary-table">
     <tr><th class="head" colspan="2"><p>Node Data</p></th></tr><tr><th colspan="2"><img s_node_displace></th></tr><tr><th colspan="2" class="summary-topic"><p>Display name</p></th></tr><tr><th colspan="2" class="summary-content"><p>Displace</p></th></tr><tr><th colspan="2" class="summary-topic"><p>Internal name</p></th></tr><tr><th colspan="2" class="summary-content"><p>Node_Displace</p></th></tr><tr height="8px"></tr><tr><th class="head" colspan="2"><p>Inheritances</p></th></tr><tr><th colspan="2" class="inheritance-block"><a href="../index.html">node</a></th></tr><tr><th colspan="2" class="inheritance-block"><a href="../array_processor.html">node_processor</a></th></tr><tr><th colspan="2" class="inheritance-block current"><a href="../_index/displace.html">node_displace</a></th></tr><tr height="8px"></tr>
 <tr><th class="head" colspan="2"><p>Inputs</p></th></tr>
-<tr><th colspan="2" class="summary-topic"><p>node_displace</p></th></tr><tr>
-                <td class="summary-topic" style="width: 60px"><p style="color: #ff6b97">surface</p></td>
-                <td><p>Surface In</p></td>
-            </tr><tr>
-                <td class="summary-topic" style="width: 60px"><p style="color: #ff6b97">surface</p></td>
-                <td><p>Displace Map</p></td>
-            </tr><tr>
-                <td class="summary-topic" style="width: 60px"><p style="color: #ffe478">float</p></td>
-                <td><p>Position</p></td>
-            </tr><tr>
-                <td class="summary-topic" style="width: 60px"><p style="color: #ffe478">float</p></td>
-                <td><p>Strength<a href="/nodes/junctions/mappable.html" style="line-height: 1;"><img mappable></a></p></td>
-            </tr><tr>
-                <td class="summary-topic" style="width: 60px"><p style="color: #ffe478">float</p></td>
-                <td><p>Mid Value</p></td>
-            </tr><tr>
-                <td class="summary-topic" style="width: 60px"><p style="color: #ff9166">integer</p></td>
-                <td><p>Mode</p></td>
-            </tr><tr>
-                <td class="summary-topic" style="width: 60px"><p style="color: #8c3f5d">boolean</p></td>
-                <td><p>Iterate</p></td>
-            </tr><tr>
-                <td class="summary-topic" style="width: 60px"><p style="color: #ff9166">integer</p></td>
-                <td><p>Oversample Mode</p></td>
-            </tr><tr>
-                <td class="summary-topic" style="width: 60px"><p style="color: #ff6b97">surface</p></td>
-                <td><p>Mask</p></td>
-            </tr><tr>
-                <td class="summary-topic" style="width: 60px"><p style="color: #ffe478">float</p></td>
-                <td><p>Mix</p></td>
-            </tr><tr>
-                <td class="summary-topic" style="width: 60px"><p style="color: #8c3f5d">boolean</p></td>
-                <td><p>Active</p></td>
-            </tr><tr>
-                <td class="summary-topic" style="width: 60px"><p style="color: #ff9166">integer</p></td>
-                <td><p>Blend Mode</p></td>
-            </tr><tr>
-                <td class="summary-topic" style="width: 60px"><p style="color: #ff9166">integer</p></td>
-                <td><p>Channel</p></td>
-            </tr><tr>
-                <td class="summary-topic" style="width: 60px"><p style="color: #ff6b97">surface</p></td>
-                <td><p>Strength Map</p></td>
-            </tr><tr>
-                <td class="summary-topic" style="width: 60px"><p style="color: #8c3f5d">boolean</p></td>
-                <td><p>Separate Axis</p></td>
-            </tr><tr>
-                <td class="summary-topic" style="width: 60px"><p style="color: #ff6b97">surface</p></td>
-                <td><p>Displace Map 2</p></td>
-            </tr>
+
 <tr height="8px"></tr>
 <tr><th class="head" colspan="2"><p>Outputs</p></th></tr>
-<tr><th colspan="2" class="summary-topic"><p>node_displace</p></th></tr><tr>
-                <td class="summary-topic" style="width: 60px"><p style="color: #ff6b97">surface</p></td>
-                <td><p>Surface Out</p></td>
-            </tr>
+
 
 </table><p>Displace node distort an image based on a displacement map.</p>
 <br>
@@ -71,16 +20,16 @@
 <br>
 <br>
 <p>Displacement refers to the shifting of pixels. A shifting can be uniformly applies to the entire surface, which 
-will simply move the image. By using the <span class="junction" style="border-color: #ff6b97AA">Displace Map</span> you can control the shifting amount to make the 
+will simply move the image. By using the <junc displace map/> you can control the shifting amount to make the 
 effect more interesting.</p>
 <br>
 <img displace_basic>
 <br>
-<p><span class="junction" style="border-color: #ff9166AA">Mode</span> property control how the displacement amount is being calculated.</p>
+<p><junc mode/> property control how the displacement amount is being calculated.</p>
 <br>
 <h3>Linear</h3>
 <br>
-<p>When using linear mode, you can set the <span class="junction" style="border-color: #ffe478AA">Position</span> to control the direction you want the displacement to 
+<p>When using linear mode, you can set the <junc position/> to control the direction you want the displacement to 
 happen. The displacement map will be use to scale that position vector.</p>
 <br>
 <h3>Vector</h3>
@@ -96,22 +45,22 @@ starts with 0 means toward the right and goes counter-clockwise.</p>
 <br>
 <p>Gradient mode will distort the image down the slope of the displace map brightness.</p>
 <br>
-<h3><span class="junction" style="border-color: #8c3f5dAA">Separate Axis</span></h3>
+<h3><junc separate axis/></h3>
 <br>
-<p>For vector and angle mode which use red and green channel, you can check the <span class="junction" style="border-color: #8c3f5dAA">Separate Axis</span> to use 
+<p>For vector and angle mode which use red and green channel, you can check the <junc separate axis/> to use 
 two separate surfaces for each value.</p>
 <br><br>
 <h2>Strength</h2>
 <br>
-<p>The intensity of the displacement depends on the <span class="junction" style="border-color: #ff9166AA">Mode</span>. In linear mode, the intensity can be defined 
-directly in the <span class="junction" style="border-color: #ffe478AA">Position</span>. But for other modes, the <span class="junction" style="border-color: #ffe478AA">Strength</span> can be use to scale the displacement 
+<p>The intensity of the displacement depends on the <junc mode/>. In linear mode, the intensity can be defined 
+directly in the <junc position/>. But for other modes, the <junc strength/> can be use to scale the displacement 
 intensity.</p>
 <br>
-<h3><span class="junction" style="border-color: #ffe478AA">Mid Value</span></h3>
+<h3><junc mid value/></h3>
 <br>
 <p>By default, the data read from displacement map goes from 0 to 1, with black color correspond to 0 and 
 white color equals 1. However, if you want the effect to goes from -0.5 to 0.5, so the black color means invert 
-displacement. You can change the <span class="junction" style="border-color: #ffe478AA">Mid Value</span> properties to 0.5.</p>
+displacement. You can change the <junc mid value/> properties to 0.5.</p>
 <br>
 <img displace_mid>
 <br><br>
@@ -119,13 +68,13 @@ displacement. You can change the <span class="junction" style="border-color: #ff
 <br>
 <p>Properties in this section control how the color is being sampled.</p>
 <br>
-<h3><span class="junction" style="border-color: #8c3f5dAA">Iterate</span></h3>
+<h3><junc iterate/></h3>
 <br>
 <p>Iterate make the displace map sampling done step by step, instead of calculating where the pixel will go by taking 
-a single sample and multiply with the <span class="junction" style="border-color: #ffe478AA">Strength</span>. It will only move by one step, then take another displace map 
-sample repeatedly for <span class="junction" style="border-color: #ffe478AA">Strength</span> amount of time.</p>
+a single sample and multiply with the <junc strength/>. It will only move by one step, then take another displace map 
+sample repeatedly for <junc strength/> amount of time.</p>
 <br>
-<h3><span class="junction" style="border-color: #ff9166AA">Blend Mode</span></h3>
+<h3><junc blend mode/></h3>
 <br>
 <p>Blend mode control how the new color is chosen.</p>
 <br>

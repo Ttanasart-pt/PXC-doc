@@ -1,0 +1,57 @@
+<link rel="stylesheet" href="../styles.css">
+
+<h1>Pack Sprites</h1>
+<p class="subtitle">Combine array of images with different dimension using different algorithms.</p>
+<br><br>
+
+<table class = "summary-table">
+    <tr><th class="head" colspan="2"><p>Node Data</p></th></tr><tr><th colspan="2"><img s_node_pack_sprite></th></tr><tr><th colspan="2" class="summary-topic"><p>Display name</p></th></tr><tr><th colspan="2" class="summary-content"><p>Pack Sprites</p></th></tr><tr><th colspan="2" class="summary-topic"><p>Internal name</p></th></tr><tr><th colspan="2" class="summary-content"><p>Node_Pack_Sprites</p></th></tr><tr height="8px"></tr><tr><th class="head" colspan="2"><p>Inheritances</p></th></tr><tr><th colspan="2" class="inheritance-block"><a href="../index.html">node</a></th></tr><tr><th colspan="2" class="inheritance-block current"><a href="../_index/pack_sprites.html">node_pack_sprites</a></th></tr><tr height="8px"></tr>
+<tr><th class="head" colspan="2"><p>Inputs</p></th></tr>
+<tr><th colspan="2" class="summary-topic"><p>node_pack_sprites</p></th></tr><tr>
+                <td class="summary-topic" style="width: 60px"><p style="color: #ff6b97">surface</p></td>
+                <td><p>Sprites</p></td>
+            </tr><tr>
+                <td class="summary-topic" style="width: 60px"><p style="color: #8fde5d">enum</p></td>
+                <td><p>Algorithm</p></td>
+            </tr><tr>
+                <td class="summary-topic" style="width: 60px"><p style="color: #ff9166">int</p></td>
+                <td><p>Max Width</p></td>
+            </tr><tr>
+                <td class="summary-topic" style="width: 60px"><p style="color: #ff9166">int</p></td>
+                <td><p>Max Height</p></td>
+            </tr><tr>
+                <td class="summary-topic" style="width: 60px"><p style="color: #ff9166">int</p></td>
+                <td><p>Spacing</p></td>
+            </tr>
+<tr height="8px"></tr>
+<tr><th class="head" colspan="2"><p>Outputs</p></th></tr>
+<tr><th colspan="2" class="summary-topic"><p>node_pack_sprites</p></th></tr><tr>
+                <td class="summary-topic" style="width: 60px"><p style="color: #ff6b97">surface</p></td>
+                <td><p>Packed Image</p></td>
+            </tr><tr>
+                <td class="summary-topic" style="width: 60px"><p style="color: #ff6b97">surface</p></td>
+                <td><p>Atlas Data</p></td>
+            </tr>
+
+</table><p>Pack sprites nodes allows for quick composition of surfaces array with different sizes.</p>
+<br><br>
+<h2>Packing Algorithms</h2>
+<br>
+<h3>Skyline</h3>
+<br>
+<p>Skyline packing place surfaces next to each other horizontally until it reach <span class="junction" style="border-color: #ff9166AA">Max Width</span>, then it goes to the beginning 
+of the row and search for the best fit for the next surface. It is a very fast algorithm but it can leave a lot of empty space.</p>
+<br>
+<h3>Shelf</h3>
+<br>
+<p>Shelf packing place surfaces next to each other horizontally until it reach <span class="junction" style="border-color: #ff9166AA">Max Width</span> while keeping the same height, 
+then it goes to the next row.</p>
+<br>
+<h3>Top left</h3>
+<br>
+<p>Top left packing sort the surfaces by height and always try to place the next surface in the top left corner of the leftover space.</p>
+<br>
+<h3>Best fit</h3>
+<br>
+<p>Best fit is the slowest algorithm. It sort all surfaces by size and search for the best fit for each subsequent surface.</p>
+<br>

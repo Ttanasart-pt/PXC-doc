@@ -1,0 +1,68 @@
+<link rel="stylesheet" href="../styles.css">
+
+<h1>Local Analyze</h1>
+<p class="subtitle">Apply non-linear operation</p>
+<br><br>
+
+<table class = "summary-table">
+    <tr><th class="head" colspan="2"><p>Node Data</p></th></tr><tr><th colspan="2"><img s_node_local_analyze></th></tr><tr><th colspan="2" class="summary-topic"><p>Display name</p></th></tr><tr><th colspan="2" class="summary-content"><p>Local Analyze</p></th></tr><tr><th colspan="2" class="summary-topic"><p>Internal name</p></th></tr><tr><th colspan="2" class="summary-content"><p>Node_Local_Analyze</p></th></tr><tr height="8px"></tr><tr><th class="head" colspan="2"><p>Inheritances</p></th></tr><tr><th colspan="2" class="inheritance-block"><a href="../index.html">node</a></th></tr><tr><th colspan="2" class="inheritance-block"><a href="../array_processor.html">node_processor</a></th></tr><tr><th colspan="2" class="inheritance-block current"><a href="../_index/local_analyze.html">node_local_analyze</a></th></tr><tr height="8px"></tr>
+<tr><th class="head" colspan="2"><p>Inputs</p></th></tr>
+<tr><th colspan="2" class="summary-topic"><p>node_local_analyze</p></th></tr><tr>
+                <td class="summary-topic" style="width: 60px"><p style="color: #ff6b97">surface</p></td>
+                <td><p>Surface In</p></td>
+            </tr><tr>
+                <td class="summary-topic" style="width: 60px"><p style="color: #8fde5d">enum</p></td>
+                <td><p>Algorithm</p></td>
+            </tr><tr>
+                <td class="summary-topic" style="width: 60px"><p style="color: #ffe478">float</p></td>
+                <td><p>Size</p></td>
+            </tr><tr>
+                <td class="summary-topic" style="width: 60px"><p style="color: #8fde5d">enum</p></td>
+                <td><p>Oversample Mode</p></td>
+            </tr><tr>
+                <td class="summary-topic" style="width: 60px"><p style="color: #8fde5d">enum</p></td>
+                <td><p>Shape</p></td>
+            </tr><tr>
+                <td class="summary-topic" style="width: 60px"><p style="color: #ff6b97">surface</p></td>
+                <td><p>Mask</p></td>
+            </tr><tr>
+                <td class="summary-topic" style="width: 60px"><p style="color: #ffe478">float</p></td>
+                <td><p>Mix</p></td>
+            </tr><tr>
+                <td class="summary-topic" style="width: 60px"><p style="color: #8c3f5d">bool</p></td>
+                <td><p>Active</p></td>
+            </tr><tr>
+                <td class="summary-topic" style="width: 60px"><p style="color: #ff9166">toggle</p></td>
+                <td><p>Channel</p></td>
+            </tr>
+<tr height="8px"></tr>
+<tr><th class="head" colspan="2"><p>Outputs</p></th></tr>
+<tr><th colspan="2" class="summary-topic"><p>node_local_analyze</p></th></tr><tr>
+                <td class="summary-topic" style="width: 60px"><p style="color: #ff6b97">surface</p></td>
+                <td><p>Surface Out</p></td>
+            </tr>
+
+</table><p>Local analyze node applies non-linear convolution function on the surface.</p>
+<br>
+<img-deco local_analyze>
+<br><br>
+<h2>Properites</h2>
+<br>
+<h3><span class="junction" style="border-color: #8fde5dAA">Algorithm</span></h3>
+<br>
+<p>The junction to use.</p>
+<br>
+<ul>
+    <li><span class="bold">Average</span> Apply average across the kernel (blurring)</li>
+    <li><span class="bold">Maximum</span> Find the brightess pixel in the kernel.</li>
+    <li><span class="bold">Minimum</span> Find the dark pixel in the kernel.</li>
+</ul>
+<br>
+<h3><span class="junction" style="border-color: #ffe478AA">Size</span></h3>
+<br>
+<p>Size of convolution kernel.</p>
+<br>
+<h3><span class="junction" style="border-color: #8fde5dAA">Shape</span></h3>
+<br>
+<p>Shape of the kernel.</p>
+<br>

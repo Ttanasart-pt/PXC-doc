@@ -1,0 +1,68 @@
+<link rel="stylesheet" href="../styles.css">
+
+<h1>Directional Light</h1>
+<p class="subtitle">Create directional light directed at the origin point.</p>
+<br><br>
+
+<table class = "summary-table">
+    <tr><th class="head" colspan="2"><p>Node Data</p></th></tr><tr><th colspan="2"><img s_node_3d_light_directi></th></tr><tr><th colspan="2" class="summary-topic"><p>Display name</p></th></tr><tr><th colspan="2" class="summary-content"><p>Directional Light</p></th></tr><tr><th colspan="2" class="summary-topic"><p>Internal name</p></th></tr><tr><th colspan="2" class="summary-content"><p>Node_3D_Light_Directional</p></th></tr><tr height="8px"></tr><tr><th class="head" colspan="2"><p>Inheritances</p></th></tr><tr><th colspan="2" class="inheritance-block"><a href="../index.html">node</a></th></tr><tr><th colspan="2" class="inheritance-block"><a href="../array_processor.html">node_processor</a></th></tr><tr><th colspan="2" class="inheritance-block"><p>node_3d</p></th></tr><tr><th colspan="2" class="inheritance-block"><p>node_3d_object</p></th></tr><tr><th colspan="2" class="inheritance-block"><p>node_3d_light</p></th></tr><tr><th colspan="2" class="inheritance-block current"><a href="../_index/3d_light_directional.html">node_3d_light_directional</a></th></tr><tr height="8px"></tr>
+<tr><th class="head" colspan="2"><p>Inputs</p></th></tr>
+<tr><th colspan="2" class="summary-topic"><p>node_3d_object</p></th></tr><tr>
+                <td class="summary-topic" style="width: 60px"><p style="color: #ffe478">vec3</p></td>
+                <td><p>Position</p></td>
+            </tr><tr>
+                <td class="summary-topic" style="width: 60px"><p style="color: #ffe478">quaternion</p></td>
+                <td><p>Rotation</p></td>
+            </tr><tr>
+                <td class="summary-topic" style="width: 60px"><p style="color: #ffe478">vec3</p></td>
+                <td><p>Scale</p></td>
+            </tr><tr>
+                <td class="summary-topic" style="width: 60px"><p style="color: #ffe478">vec3</p></td>
+                <td><p>Anchor</p></td>
+            </tr><tr><th colspan="2" class="summary-topic"><p>node_3d_light</p></th></tr><tr>
+                <td class="summary-topic" style="width: 60px"><p style="color: #8c3f5d">bool</p></td>
+                <td><p>Active</p></td>
+            </tr><tr>
+                <td class="summary-topic" style="width: 60px"><p style="color: #8fde5d">color</p></td>
+                <td><p>Color</p></td>
+            </tr><tr>
+                <td class="summary-topic" style="width: 60px"><p style="color: #ffe478">float</p></td>
+                <td><p>Intensity</p></td>
+            </tr><tr><th colspan="2" class="summary-topic"><p>node_3d_light_directional</p></th></tr><tr>
+                <td class="summary-topic" style="width: 60px"><p style="color: #8c3f5d">bool</p></td>
+                <td><p>Cast Shadow</p></td>
+            </tr><tr>
+                <td class="summary-topic" style="width: 60px"><p style="color: #ff9166">int</p></td>
+                <td><p>Shadow Map Size</p></td>
+            </tr><tr>
+                <td class="summary-topic" style="width: 60px"><p style="color: #ff9166">int</p></td>
+                <td><p>Shadow Map Scale</p></td>
+            </tr><tr>
+                <td class="summary-topic" style="width: 60px"><p style="color: #ffe478">float</p></td>
+                <td><p>Shadow Bias</p></td>
+            </tr>
+<tr height="8px"></tr>
+<tr><th class="head" colspan="2"><p>Outputs</p></th></tr>
+<tr><th colspan="2" class="summary-topic"><p>node_3d_light</p></th></tr><tr>
+                <td class="summary-topic" style="width: 60px"><p style="color: #4da6ff">d3light</p></td>
+                <td><p>Light</p></td>
+            </tr>
+
+</table><p>Directional light is a light that projected from far way to each verticies equally. Imagine sunlight that 
+cast perfectly parallel rays to the ground.</p>
+<br>
+<img-deco node_3d_light_directional_scene>
+<br><br>
+<h2>Positioning</h2>
+<br>
+<p>Directional light will always point to the origin (0, 0, 0), thus, its direction is controlled by the position.</p>
+<br>
+<img-deco node_3d_light_directional_preview>
+<br><br>
+<h2>Shadow</h2>
+<br>
+<p>Selecting "Cast Shadow" will make the light cast shadow with solid objects. Note that shadow does not works with 
+transparent and translucent objects.</p>
+<br>
+<p>Shadow Map Size and Scale are used to control shadow quality. Shadow Bias can be used to fix glitch with light
+bleed around the shadow edges.</p>
