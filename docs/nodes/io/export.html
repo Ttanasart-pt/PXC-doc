@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PXC Documentation</title>
+
+    <link rel="stylesheet" href="/styles.css">
+    <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+    <div class = "header">
+        <div class="header-title">
+            <img src="/src/icon_48.png" alt="PXC Logo" class="logo">
+            <h2>PXC Documentation</h2>
+        </div>
+
+        <a href="https://pixel-composer.com">PXC Home</a>
+    </div>
+
+    <div class="main">
+        <div class="sidebar">
+            <ul>
+                <li class="back "><a class="" href="../">Back</a></li>
+<li class="icon "><?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 28.2.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 24 24" style="enable-background:new 0 0 24 24;" xml:space="preserve">
+<path class="st0" d="M4,21V9l8-6l8,6v12h-6v-6h-4v6H4z"/>
+</svg>
+<a class="" href="index.html">Io</a></li>
+<li class=""><a class="" href="active_canvas.html">Active Canvas</a></li>
+<li class=""><a class="" href="ase_file_read.html">Ase File Read</a></li>
+<li class=""><a class="" href="ase_layer.html">Ase Layer</a></li>
+<li class=""><a class="" href="byte_file_read.html">Byte File Read</a></li>
+<li class=""><a class="" href="byte_file_write.html">Byte File Write</a></li>
+<li class=""><a class="" href="canvas.html">Canvas</a></li>
+<li class=""><a class="" href="canvas_group.html">Canvas Group</a></li>
+<li class=""><a class="" href="csv_file_read.html">Csv File Read</a></li>
+<li class=""><a class="" href="csv_file_write.html">Csv File Write</a></li>
+<li class=""><a class="" href="directory_search.html">Directory Search</a></li>
+<li class="active "><a class="" href="export.html">Export</a></li>
+<ul class="submenu">
+<li><a href="#Output Format">Output Format</a></li>
+<ul class="submenu h3">
+</ul>
+<li><a href="#Export Path">Export Path</a></li>
+<ul class="submenu h3">
+<li><a href="#Export Template">Export Template</a></li>
+</ul>
+<li><a href="#Format Properties">Format Properties</a></li>
+<ul class="submenu h3">
+<li><a href="#.png">.png</a></li>
+<li><a href="#.jpg">.jpg</a></li>
+<li><a href="#.gif">.gif</a></li>
+<li><a href="#.mp4">.mp4</a></li>
+</ul>
+<li><a href="#Animation Properties">Animation Properties</a></li>
+<ul class="submenu h3">
+</ul>
+</ul>
+<li class=""><a class="" href="http_request.html">Http Request</a></li>
+<li class=""><a class="" href="image.html">Image</a></li>
+<li class=""><a class="" href="image_animated.html">Image Animated</a></li>
+<li class=""><a class="" href="image_gif.html">Image Gif</a></li>
+<li class=""><a class="" href="image_sequence.html">Image Sequence</a></li>
+<li class=""><a class="" href="image_sheet.html">Image Sheet</a></li>
+<li class=""><a class="" href="json_file_read.html">Json File Read</a></li>
+<li class=""><a class="" href="json_file_write.html">Json File Write</a></li>
+<li class=""><a class="" href="midi_in.html">Midi In</a></li>
+<li class=""><a class="" href="sequence_anim.html">Sequence Anim</a></li>
+<li class=""><a class="" href="spout_send.html">Spout Send</a></li>
+<li class=""><a class="" href="svg.html">Svg</a></li>
+<li class=""><a class="" href="text_file_read.html">Text File Read</a></li>
+<li class=""><a class="" href="text_file_write.html">Text File Write</a></li>
+<li class=""><a class="" href="wav_file_read.html">Wav File Read</a></li>
+<li class=""><a class="" href="wav_file_write.html">Wav File Write</a></li>
+<li class=""><a class="" href="websocket_receiver.html">Websocket Receiver</a></li>
+<li class=""><a class="" href="websocket_sender.html">Websocket Sender</a></li>
+<li class=""><a class="" href="xml_file_read.html">Xml File Read</a></li>
+<li class=""><a class="" href="xml_file_write.html">Xml File Write</a></li>
+
+                <div style="height: 96px;"></div>
+            </ul>
+        </div>
+
+        <div class="content">
+            <link rel="stylesheet" href="../styles.css">
+
+<h1>Export</h1>
+<p class="subtitle">Export image</p>
+<br><br>
+
+<table class = "summary-table">
+    <tr><th class="head" colspan="2"><p>Node Data</p></th></tr><tr><th colspan="2"><img class="node-content" src="/src/nodeIcons/s_node_export.png"></th></tr><tr><th colspan="2" class="summary-topic"><p>Display name</p></th></tr><tr><th colspan="2" class="summary-content"><p>Export</p></th></tr><tr><th colspan="2" class="summary-topic"><p>Internal name</p></th></tr><tr><th colspan="2" class="summary-content"><p>Node_Export</p></th></tr><tr height="8px"></tr><tr><th class="head" colspan="2"><p>Inheritances</p></th></tr><tr><th colspan="2" class="inheritance-block"><a href="../index.html">node</a></th></tr><tr><th colspan="2" class="inheritance-block current"><a href="../_index/export.html">node_export</a></th></tr><tr height="8px"></tr>
+<tr><th class="head" colspan="2"><p>Inputs</p></th></tr>
+<tr><th colspan="2" class="summary-topic"><p>node_export</p></th></tr><tr>
+                <td class="summary-topic" style="width: 60px"><p style="color: #ff6b97">surface</p></td>
+                <td><p>Surface</p></td>
+            </tr><tr>
+                <td class="summary-topic" style="width: 60px"><p style="color: #eb004b">path</p></td>
+                <td><p>Paths</p></td>
+            </tr><tr>
+                <td class="summary-topic" style="width: 60px"><p style="color: #66ffe3">text</p></td>
+                <td><p>Template</p></td>
+            </tr><tr>
+                <td class="summary-topic" style="width: 60px"><p style="color: #8fde5d">enum</p></td>
+                <td><p>Type</p></td>
+            </tr><tr>
+                <td class="summary-topic" style="width: 60px"><p style="color: #ff9166">int</p></td>
+                <td><p>Template Guides</p></td>
+            </tr><tr>
+                <td class="summary-topic" style="width: 60px"><p style="color: #8c3f5d">bool</p></td>
+                <td><p>Loop</p></td>
+            </tr><tr>
+                <td class="summary-topic" style="width: 60px"><p style="color: #8c3f5d">bool</p></td>
+                <td><p>Frame Optimization</p></td>
+            </tr><tr>
+                <td class="summary-topic" style="width: 60px"><p style="color: #ffe478">float</p></td>
+                <td><p>Color Merge</p></td>
+            </tr><tr>
+                <td class="summary-topic" style="width: 60px"><p style="color: #ff9166">int</p></td>
+                <td><p>Framerate</p></td>
+            </tr><tr>
+                <td class="summary-topic" style="width: 60px"><p style="color: #8fde5d">enum</p></td>
+                <td><p>Format</p></td>
+            </tr><tr>
+                <td class="summary-topic" style="width: 60px"><p style="color: #ffe478">float</p></td>
+                <td><p>Quality</p></td>
+            </tr><tr>
+                <td class="summary-topic" style="width: 60px"><p style="color: #ff9166">int</p></td>
+                <td><p>Sequence Begin</p></td>
+            </tr><tr>
+                <td class="summary-topic" style="width: 60px"><p style="color: #8fde5d">slider</p></td>
+                <td><p>Frame Range</p></td>
+            </tr><tr>
+                <td class="summary-topic" style="width: 60px"><p style="color: #8fde5d">enum</p></td>
+                <td><p>Subformat</p></td>
+            </tr><tr>
+                <td class="summary-topic" style="width: 60px"><p style="color: #ff9166">int</p></td>
+                <td><p>Frame Step</p></td>
+            </tr><tr>
+                <td class="summary-topic" style="width: 60px"><p style="color: #8c3f5d">bool</p></td>
+                <td><p>Custom Range</p></td>
+            </tr><tr>
+                <td class="summary-topic" style="width: 60px"><p style="color: #8c3f5d">bool</p></td>
+                <td><p>Export On Save</p></td>
+            </tr>
+<tr height="8px"></tr>
+<tr><th class="head" colspan="2"><p>Outputs</p></th></tr>
+
+
+</table><p>Export node is one of the most important node in Pixel Composer. It allows you to export surface to different 
+formats, it also allows Pixel Composer project to be run in headless mode.</p>
+<br><br>
+<h2><a id="Output Format" class="anchor"></a>Output Format</h2>
+<br>
+<p>There're 3 types of output:</p>
+<br>
+<table class="ccc205030">
+    <tr>
+        <th><span class="junction" style="border-color: #8fde5dAA">Type</span></th>
+        <th>Description</th>
+        <th><span class="junction" style="border-color: #8fde5dAA">Format</span></th>
+    </tr>
+    <tr>
+        <td>Single Image</td>
+        <td>Export still surface to image file</td>
+        <td>.png, .jpg, .webp</td>
+    </tr>
+    <tr>
+        <td>Image Sequence</td>
+        <td>Export the entire animation into series of still images</td>
+        <td>.png, .jpg, .webp</td>
+    </tr>
+    <tr>
+        <td>Animation</td>
+        <td>Export the animation into a animation file</td>
+        <td>.gif, .apng, .mp4, .webm</td>
+    </tr>
+</table>
+<br><br>
+<h2><a id="Export Path" class="anchor"></a>Export Path</h2>
+<br>
+<p>The exported file location is control by <span class="junction" style="border-color: #eb004bAA">Paths</span>. However, you can add extra formatting using <span class="junction" style="border-color: #66ffe3AA">Template</span>.</p>
+<br>
+<h3><a id="Export Template" class="anchor"></a>Export Template</h3>
+<br>
+<p><span class="junction" style="border-color: #66ffe3AA">Template</span> is used with a defined <span class="junction" style="border-color: #eb004bAA">Paths</span>. Template will replace special token with the actual value in 
+the <span class="junction" style="border-color: #eb004bAA">Paths</span>.<br><br>The available tokens are:</p>
+<br>
+<table class="cc4060">
+    <tr>
+        <th>Token</th>
+        <th>Description</th>
+    </tr>
+    <tr>
+        <td><span style="color: #88ffe9">%d</span></td>
+        <td>Path directory, the folder where the path is located</td>
+    </tr>
+    <tr>
+        <td><span style="color: #88ffe9">%{number}d</span></td>
+        <td>Getting the parent folder, the {number} control how many parent to go up</td>
+    </tr>
+    <tr>
+        <td><span style="color: #8fde5d">%n</span></td>
+        <td>File name</td>
+    </tr>
+    <tr>
+        <td><span style="color: #eb00b7">%f</span></td>
+        <td>Frame number, use with image sequence export</td>
+    </tr>
+    <tr>
+        <td><span style="color: #eb00b7">%{number}f</span></td>
+        <td>Frame number, with zero padding to 2 digits</td>
+    </tr>
+    <tr>
+        <td><span style="color: #ffe478">%i</span></td>
+        <td>Array index, use when exporting surface array</td>
+    </tr>
+</table>
+<br>
+<p>For example, if the <span class="junction" style="border-color: #eb004bAA">Paths</span> is set to <span class="inline-code">foo/bar/file.png</span> then these templates will returns:</p>
+<br>
+<table class="cc4060">
+    <tr>
+        <th>Template</th>
+        <th>Result</th>
+    </tr>
+    <tr>
+        <td><span style="color: #88ffe9">%d</span><span style="color: #8fde5d">%n</span></td>
+        <td>foo/bar/file</td>
+    </tr>
+    <tr>
+        <td><span style="color: #88ffe9">%1d</span>name</td>
+        <td>foo/name</td>
+    </tr>
+</table>
+<br>
+<p>Note that the extension will be remove and re-added automatically based on the selecting <span class="junction" style="border-color: #8fde5dAA">Format</span>.</p>
+<br><br>
+<h2><a id="Format Properties" class="anchor"></a>Format Properties</h2>
+<br>
+<h3><a id=".png" class="anchor"></a>.png</h3>
+<br>
+<p>.png format comes with extra <span class="junction" style="border-color: #8fde5dAA">Subformat</span> for file optimization.</p>
+<br>
+<table class="ccc205030">
+    <tr>
+        <th><span class="junction" style="border-color: #8fde5dAA">Subformat</span></th>
+        <th>Description</th>
+    </tr>
+    <tr>
+        <td>PNG32</td>
+        <td>Default 32 bit PNG format</td>
+    </tr>
+    <tr>
+        <td>INDEX4</td>
+        <td>4 bit indexed PNG format</td>
+    </tr>
+    <tr>
+        <td>INDEX8</td>
+        <td>8 bit indexed PNG format</td>
+    </tr>
+</table>
+<br>
+<h3><a id=".jpg" class="anchor"></a>.jpg</h3>
+<br>
+<p>.jpg format comes with <span class="junction" style="border-color: #ffe478AA">Quality</span>, the lower the quality, the smaller the file size.</p>
+<br>
+<h3><a id=".gif" class="anchor"></a>.gif</h3>
+<br>
+<p>.gif comes with <span class="junction" style="border-color: #8c3f5dAA">Frame Optimization</span> for reducing file size and <span class="junction" style="border-color: #ffe478AA">Color Merge</span> that combine similiar into one for even smaller 
+file.</p>
+<br>
+<h3><a id=".mp4" class="anchor"></a>.mp4</h3>
+<br>
+<p>.mp4 file has <span class="junction" style="border-color: #ffe478AA">Quality</span> (crf value) slider for controlling quality of the output. The higher the CRF value, the lower the quality.</p>
+<br><br>
+<h2><a id="Animation Properties" class="anchor"></a>Animation Properties</h2>
+<br>
+<p>For animation type, there're extra properties for controlling the animation.</p>
+<br>
+<table class="cc4060">
+    <tr>
+        <th>Property</th>
+        <th>Description</th>
+    </tr>
+    <tr>
+        <td><span class="junction" style="border-color: #ff9166AA">Framerate</span></td>
+        <td>The speed of the animation</td>
+    </tr>
+    <tr>
+        <td><span class="junction" style="border-color: #ff9166AA">Frame Step</span></td>
+        <td>Export one frame every n frames step</td>
+    </tr>
+    <tr>
+        <td><span class="junction" style="border-color: #8fde5dAA">Frame Range</span></td>
+        <td>Range of the animation to export</td>
+    </tr>
+    <tr>
+        <td><span class="junction" style="border-color: #8c3f5dAA">Loop</span></td>
+        <td>Loop the animation</td>
+    </tr>
+</table>
+        </div>
+    </div>
+
+    <div style="height: 96px;"></div>
+    <div class="footer"> <p>2024 Pixel Composer</p> </div>
+</body>

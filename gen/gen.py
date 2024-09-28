@@ -76,6 +76,11 @@ def generateFile(dirOut, pathIn, sidebar):
         elif '"' not in img: 
             print(f"{pathIn} : Image {imgraw} not found")
 
+    nodeTags = re.findall(r'<node\s(.*?)>', content)
+    for tag in nodeTags:
+        name = tag.strip("/")
+        content = content.replace(f'<node {tag}>', f'<a class="node" href="/nodes/_index/{name}.html">{name.title()}</a>')
+
     sideContent = ""
     for fType, _, fName, title in sidebar:
         aClass  = ""

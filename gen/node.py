@@ -210,7 +210,9 @@ def writeNodeFile(cat, node, line):
         
     return { "spr": spr }
 
+
 for line in nodeListRaw.split("\n"):
+    line = line.replace("if(!DEMO)", "")
     line = line.strip()
     
     if line.startswith("addNodeObject("):
@@ -254,7 +256,6 @@ for line in nodeListRaw.split("\n"):
         cat = c
         if cat not in nodes:
             nodes[cat] = []
-
 
 def generateNodeCatagory(cat):
     
