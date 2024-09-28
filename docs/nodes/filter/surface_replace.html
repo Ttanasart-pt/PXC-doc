@@ -105,11 +105,11 @@
 <ul class="submenu">
 <li><a href="#Properties">Properties</a></li>
 <ul class="submenu h3">
-<li><a href="#"></a></li>
-<li><a href="#"></a></li>
-<li><a href="#"></a></li>
-<li><a href="#"></a></li>
-<li><a href="#"></a></li>
+<li><a href="#Array Mode">Array Mode</a></li>
+<li><a href="#Fast Mode">Fast Mode</a></li>
+<li><a href="#Color Threshold">Color Threshold</a></li>
+<li><a href="#Pixel Threshold">Pixel Threshold</a></li>
+<li><a href="#Draw Base Image">Draw Base Image</a></li>
 </ul>
 </ul>
 <li class=""><a class="" href="texture_remap.html">Texture Remap</a></li>
@@ -134,7 +134,37 @@
 <table class = "summary-table">
     <tr><th class="head" colspan="2"><p>Node Data</p></th></tr><tr><th colspan="2"><img class="node-content" src="/src/nodeIcons/s_node_image_replace.png"></th></tr><tr><th colspan="2" class="summary-topic"><p>Display name</p></th></tr><tr><th colspan="2" class="summary-content"><p>Replace Image</p></th></tr><tr><th colspan="2" class="summary-topic"><p>Internal name</p></th></tr><tr><th colspan="2" class="summary-content"><p>Node_Surface_Replace</p></th></tr><tr height="8px"></tr><tr><th class="head" colspan="2"><p>Inheritances</p></th></tr><tr><th colspan="2" class="inheritance-block"><a href="../index.html">node</a></th></tr><tr><th colspan="2" class="inheritance-block"><a href="../array_processor.html">node_processor</a></th></tr><tr><th colspan="2" class="inheritance-block current"><a href="../_index/surface_replace.html">node_surface_replace</a></th></tr><tr height="8px"></tr>
 <tr><th class="head" colspan="2"><p>Inputs</p></th></tr>
-
+<tr><th colspan="2" class="summary-topic"><p>node_surface_replace</p></th></tr><tr>
+                <td class="summary-topic" style="width: 60px"><p style="color: #ff6b97">surface</p></td>
+                <td><p>Base Image</p></td>
+            </tr><tr>
+                <td class="summary-topic" style="width: 60px"><p style="color: #ff6b97">surface</p></td>
+                <td><p>Target Image</p></td>
+            </tr><tr>
+                <td class="summary-topic" style="width: 60px"><p style="color: #ff6b97">surface</p></td>
+                <td><p>Replacement Image</p></td>
+            </tr><tr>
+                <td class="summary-topic" style="width: 60px"><p style="color: #ffe478">float</p></td>
+                <td><p>Color Threshold</p></td>
+            </tr><tr>
+                <td class="summary-topic" style="width: 60px"><p style="color: #8c3f5d">bool</p></td>
+                <td><p>Draw Base Image</p></td>
+            </tr><tr>
+                <td class="summary-topic" style="width: 60px"><p style="color: #8c3f5d">bool</p></td>
+                <td><p>Fast Mode</p></td>
+            </tr><tr>
+                <td class="summary-topic" style="width: 60px"><p style="color: #ffe478">float</p></td>
+                <td><p>Pixel Threshold</p></td>
+            </tr><tr>
+                <td class="summary-topic" style="width: 60px"><p style="color: #8fde5d">enum</p></td>
+                <td><p>Array Mode</p></td>
+            </tr><tr>
+                <td class="summary-topic" style="width: 60px"><p style="color: #ffe478">float</p></td>
+                <td><p>Seed</p></td>
+            </tr><tr>
+                <td class="summary-topic" style="width: 60px"><p style="color: #8c3f5d">bool</p></td>
+                <td><p>Replace Empty</p></td>
+            </tr>
 <tr height="8px"></tr>
 <tr><th class="head" colspan="2"><p>Outputs</p></th></tr>
 
@@ -145,25 +175,25 @@
 <br><br>
 <h2><a id="Properties" class="anchor"></a>Properties</h2>
 <br>
-<h3><a id="" class="anchor"></a><junc array mode/></h3>
+<h3><a id="Array Mode" class="anchor"></a><span class="junction" style="border-color: #8fde5dAA">Array Mode</span></h3>
 <br>
-<p>When the <junc target image/> and the <junc replacement image/> is an array. You can set whether to match 
+<p>When the <span class="junction" style="border-color: #ff6b97AA">Target Image</span> and the <span class="junction" style="border-color: #ff6b97AA">Replacement Image</span> is an array. You can set whether to match 
 each target to a replacement, or to randomize the replacement image index.</p>
 <br>
-<h3><a id="" class="anchor"></a><junc fast mode/></h3>
+<h3><a id="Fast Mode" class="anchor"></a><span class="junction" style="border-color: #8c3f5dAA">Fast Mode</span></h3>
 <br>
 <p>Fast mode match only the origin point of the image instead of the entire image. This results in faster 
 processing but may not be as accurate.</p>
 <br>
-<h3><a id="" class="anchor"></a><junc color threshold/></h3>
+<h3><a id="Color Threshold" class="anchor"></a><span class="junction" style="border-color: #ffe478AA">Color Threshold</span></h3>
 <br>
 <p>The threshold used to differentiate two color.</p>
 <br>
-<h3><a id="" class="anchor"></a><junc pixel threshold/></h3>
+<h3><a id="Pixel Threshold" class="anchor"></a><span class="junction" style="border-color: #ffe478AA">Pixel Threshold</span></h3>
 <br>
 <p>The amount of pixels need to be match to consider a subsurface.</p>
 <br>
-<h3><a id="" class="anchor"></a><junc draw base image/></h3>
+<h3><a id="Draw Base Image" class="anchor"></a><span class="junction" style="border-color: #8c3f5dAA">Draw Base Image</span></h3>
 <br>
 <p>Whether to draw original image behind the replacement.</p>
 <br>

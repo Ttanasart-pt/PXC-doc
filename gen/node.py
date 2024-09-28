@@ -235,6 +235,7 @@ def generateNodeCatagory(cat):
     
     nodeNames = [ node for node, _ in nodes[cat] ]
     nodeNames.sort()
+    #print(f"Generating {cat} catagory with {len(nodeNames)} nodes")
 
     for node in nodeNames:
         if node.lower() not in nodeData:

@@ -107,12 +107,12 @@
 <ul class="submenu">
 <li><a href="#Properties">Properties</a></li>
 <ul class="submenu h3">
-<li><a href="#"></a></li>
-<li><a href="#"></a></li>
-<li><a href="#"></a></li>
-<li><a href="#"></a></li>
-<li><a href="#"></a></li>
-<li><a href="#"></a></li>
+<li><a href="#Brightness">Brightness</a></li>
+<li><a href="#Brightness Threshold">Brightness Threshold</a></li>
+<li><a href="#Brightness Smoothness">Brightness Smoothness</a></li>
+<li><a href="#Alpha">Alpha</a></li>
+<li><a href="#Alpha Threshold">Alpha Threshold</a></li>
+<li><a href="#Alpha Smoothness">Alpha Smoothness</a></li>
 </ul>
 </ul>
 <li class=""><a class="" href="time_remap.html">Time Remap</a></li>
@@ -135,10 +135,52 @@
 <table class = "summary-table">
     <tr><th class="head" colspan="2"><p>Node Data</p></th></tr><tr><th colspan="2"><img class="node-content" src="/src/nodeIcons/s_node_threshold.png"></th></tr><tr><th colspan="2" class="summary-topic"><p>Display name</p></th></tr><tr><th colspan="2" class="summary-content"><p>Threshold</p></th></tr><tr><th colspan="2" class="summary-topic"><p>Internal name</p></th></tr><tr><th colspan="2" class="summary-content"><p>Node_Threshold</p></th></tr><tr height="8px"></tr><tr><th class="head" colspan="2"><p>Inheritances</p></th></tr><tr><th colspan="2" class="inheritance-block"><a href="../index.html">node</a></th></tr><tr><th colspan="2" class="inheritance-block"><a href="../array_processor.html">node_processor</a></th></tr><tr><th colspan="2" class="inheritance-block current"><a href="../_index/threshold.html">node_threshold</a></th></tr><tr height="8px"></tr>
 <tr><th class="head" colspan="2"><p>Inputs</p></th></tr>
-
+<tr><th colspan="2" class="summary-topic"><p>node_threshold</p></th></tr><tr>
+                <td class="summary-topic" style="width: 60px"><p style="color: #ff6b97">surface</p></td>
+                <td><p>Surface In</p></td>
+            </tr><tr>
+                <td class="summary-topic" style="width: 60px"><p style="color: #8c3f5d">bool</p></td>
+                <td><p>Brightness</p></td>
+            </tr><tr>
+                <td class="summary-topic" style="width: 60px"><p style="color: #ffe478">float</p></td>
+                <td><p>Brightness Threshold</p></td>
+            </tr><tr>
+                <td class="summary-topic" style="width: 60px"><p style="color: #ffe478">float</p></td>
+                <td><p>Brightness Smoothness</p></td>
+            </tr><tr>
+                <td class="summary-topic" style="width: 60px"><p style="color: #ff6b97">surface</p></td>
+                <td><p>Mask</p></td>
+            </tr><tr>
+                <td class="summary-topic" style="width: 60px"><p style="color: #ffe478">float</p></td>
+                <td><p>Mix</p></td>
+            </tr><tr>
+                <td class="summary-topic" style="width: 60px"><p style="color: #8c3f5d">bool</p></td>
+                <td><p>Active</p></td>
+            </tr><tr>
+                <td class="summary-topic" style="width: 60px"><p style="color: #8c3f5d">bool</p></td>
+                <td><p>Alpha</p></td>
+            </tr><tr>
+                <td class="summary-topic" style="width: 60px"><p style="color: #ffe478">float</p></td>
+                <td><p>Alpha Threshold</p></td>
+            </tr><tr>
+                <td class="summary-topic" style="width: 60px"><p style="color: #ffe478">float</p></td>
+                <td><p>Alpha Smoothness</p></td>
+            </tr><tr>
+                <td class="summary-topic" style="width: 60px"><p style="color: #ff9166">toggle</p></td>
+                <td><p>Channel</p></td>
+            </tr><tr>
+                <td class="summary-topic" style="width: 60px"><p style="color: #8fde5d">map</p></td>
+                <td><p>Brightness Map</p></td>
+            </tr><tr>
+                <td class="summary-topic" style="width: 60px"><p style="color: #8fde5d">map</p></td>
+                <td><p>Alpha Map</p></td>
+            </tr>
 <tr height="8px"></tr>
 <tr><th class="head" colspan="2"><p>Outputs</p></th></tr>
-
+<tr><th colspan="2" class="summary-topic"><p>node_threshold</p></th></tr><tr>
+                <td class="summary-topic" style="width: 60px"><p style="color: #ff6b97">surface</p></td>
+                <td><p>Surface Out</p></td>
+            </tr>
 
 </table><p>Threshold node clip image by brightness or alpha channel.</p>
 <br>
@@ -146,27 +188,27 @@
 <br><br>
 <h2><a id="Properties" class="anchor"></a>Properties</h2>
 <br>
-<h3><a id="" class="anchor"></a><junc brightness/></h3>
+<h3><a id="Brightness" class="anchor"></a><span class="junction" style="border-color: #8c3f5dAA">Brightness</span></h3>
 <br>
 <p>Toggle brightness threshold</p>
 <br>
-<h3><a id="" class="anchor"></a><junc brightness threshold/></h3>
+<h3><a id="Brightness Threshold" class="anchor"></a><span class="junction" style="border-color: #ffe478AA">Brightness Threshold</span></h3>
 <br>
 <p>The brightness level to detemine if the pixel should be black or white.</p>
 <br>
-<h3><a id="" class="anchor"></a><junc brightness smoothness/></h3>
+<h3><a id="Brightness Smoothness" class="anchor"></a><span class="junction" style="border-color: #ffe478AA">Brightness Smoothness</span></h3>
 <br>
 <p>Smoothness of the transition.</p>
 <br>
-<h3><a id="" class="anchor"></a><junc alpha/></h3>
+<h3><a id="Alpha" class="anchor"></a><span class="junction" style="border-color: #8c3f5dAA">Alpha</span></h3>
 <br>
 <p>Toggle alpha threshold</p>
 <br>
-<h3><a id="" class="anchor"></a><junc alpha threshold/></h3>
+<h3><a id="Alpha Threshold" class="anchor"></a><span class="junction" style="border-color: #ffe478AA">Alpha Threshold</span></h3>
 <br>
 <p>The alpha level to determin if a pixel will have full or zero alpha.</p>
 <br>
-<h3><a id="" class="anchor"></a><junc alpha smoothness/></h3>
+<h3><a id="Alpha Smoothness" class="anchor"></a><span class="junction" style="border-color: #ffe478AA">Alpha Smoothness</span></h3>
 <br>
 <p>Smoothness of the alpha transition.</p>
 <br>

@@ -110,11 +110,11 @@
 <ul class="submenu">
 <li><a href="#Properties">Properties</a></li>
 <ul class="submenu h3">
-<li><a href="#"></a></li>
-<li><a href="#"></a></li>
-<li><a href="#"></a></li>
-<li><a href="#"></a></li>
-<li><a href="#"></a></li>
+<li><a href="#Max Life">Max Life</a></li>
+<li><a href="#Loop">Loop</a></li>
+<li><a href="#Max Distance">Max Distance</a></li>
+<li><a href="#Match Color">Match Color</a></li>
+<li><a href="#Alpha Over Life">Alpha Over Life</a></li>
 </ul>
 </ul>
 <li class=""><a class="" href="twirl.html">Twirl</a></li>
@@ -134,32 +134,59 @@
 <table class = "summary-table">
     <tr><th class="head" colspan="2"><p>Node Data</p></th></tr><tr><th colspan="2"><img class="node-content" src="/src/nodeIcons/s_node_trail.png"></th></tr><tr><th colspan="2" class="summary-topic"><p>Display name</p></th></tr><tr><th colspan="2" class="summary-content"><p>Trail</p></th></tr><tr><th colspan="2" class="summary-topic"><p>Internal name</p></th></tr><tr><th colspan="2" class="summary-content"><p>Node_Trail</p></th></tr><tr height="8px"></tr><tr><th class="head" colspan="2"><p>Inheritances</p></th></tr><tr><th colspan="2" class="inheritance-block"><a href="../index.html">node</a></th></tr><tr><th colspan="2" class="inheritance-block current"><a href="../_index/trail.html">node_trail</a></th></tr><tr height="8px"></tr>
 <tr><th class="head" colspan="2"><p>Inputs</p></th></tr>
-
+<tr><th colspan="2" class="summary-topic"><p>node_trail</p></th></tr><tr>
+                <td class="summary-topic" style="width: 60px"><p style="color: #ff6b97">surface</p></td>
+                <td><p>Surface In</p></td>
+            </tr><tr>
+                <td class="summary-topic" style="width: 60px"><p style="color: #ff9166">int</p></td>
+                <td><p>Max Life</p></td>
+            </tr><tr>
+                <td class="summary-topic" style="width: 60px"><p style="color: #8c3f5d">bool</p></td>
+                <td><p>Loop</p></td>
+            </tr><tr>
+                <td class="summary-topic" style="width: 60px"><p style="color: #ff9166">int</p></td>
+                <td><p>Max Distance</p></td>
+            </tr><tr>
+                <td class="summary-topic" style="width: 60px"><p style="color: #8c3f5d">bool</p></td>
+                <td><p>Match Color</p></td>
+            </tr><tr>
+                <td class="summary-topic" style="width: 60px"><p style="color: #8c3f5d">bool</p></td>
+                <td><p>Blend Color</p></td>
+            </tr><tr>
+                <td class="summary-topic" style="width: 60px"><p style="color: #c2c2d1">curve</p></td>
+                <td><p>Alpha Over Life</p></td>
+            </tr>
 <tr height="8px"></tr>
 <tr><th class="head" colspan="2"><p>Outputs</p></th></tr>
-
+<tr><th colspan="2" class="summary-topic"><p>node_trail</p></th></tr><tr>
+                <td class="summary-topic" style="width: 60px"><p style="color: #ff6b97">surface</p></td>
+                <td><p>Surface Out</p></td>
+            </tr><tr>
+                <td class="summary-topic" style="width: 60px"><p style="color: #ff6b97">surface</p></td>
+                <td><p>Trail Uv</p></td>
+            </tr>
 
 </table><p>Trail node draw line to connect pixel between each frames.</p>
 <br><br>
 <h2><a id="Properties" class="anchor"></a>Properties</h2>
 <br>
-<h3><a id="" class="anchor"></a><junc max life/></h3>
+<h3><a id="Max Life" class="anchor"></a><span class="junction" style="border-color: #ff9166AA">Max Life</span></h3>
 <br>
 <p>The amount of frame to draw trail.</p>
 <br>
-<h3><a id="" class="anchor"></a><junc loop/></h3>
+<h3><a id="Loop" class="anchor"></a><span class="junction" style="border-color: #8c3f5dAA">Loop</span></h3>
 <br>
 <p>Whether to loop back to the last frame in the beginning.</p>
 <br>
-<h3><a id="" class="anchor"></a><junc max distance/></h3>
+<h3><a id="Max Distance" class="anchor"></a><span class="junction" style="border-color: #ff9166AA">Max Distance</span></h3>
 <br>
 <p>Maximum object movement speed. Adjust this value to decrease processing time and artifact.</p>
 <br>
-<h3><a id="" class="anchor"></a><junc match color/></h3>
+<h3><a id="Match Color" class="anchor"></a><span class="junction" style="border-color: #8c3f5dAA">Match Color</span></h3>
 <br>
 <p>Whether to only match pixel with the same color.</p>
 <br>
-<h3><a id="" class="anchor"></a><junc alpha over life/></h3>
+<h3><a id="Alpha Over Life" class="anchor"></a><span class="junction" style="border-color: #c2c2d1AA">Alpha Over Life</span></h3>
 <br>
 <p>Modulate alpha over time.</p>
 <br>

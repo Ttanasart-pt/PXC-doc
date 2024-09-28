@@ -33,18 +33,18 @@
 <ul class="submenu">
 <li><a href="#Light Properties">Light Properties</a></li>
 <ul class="submenu h3">
-<li><a href="#"></a></li>
-<li><a href="#"></a></li>
-<li><a href="#"></a></li>
-<li><a href="#"></a></li>
-<li><a href="#"></a></li>
-<li><a href="#"></a></li>
+<li><a href="#Light Shape">Light Shape</a></li>
+<li><a href="#Range">Range</a></li>
+<li><a href="#Intensity">Intensity</a></li>
+<li><a href="#Color">Color</a></li>
+<li><a href="#Attenuation">Attenuation</a></li>
+<li><a href="#Banding">Banding</a></li>
 </ul>
 <li><a href="#Radial Properties">Radial Properties</a></li>
 <ul class="submenu h3">
-<li><a href="#"></a></li>
-<li><a href="#"></a></li>
-<li><a href="#"></a></li>
+<li><a href="#Radial Banding">Radial Banding</a></li>
+<li><a href="#Radial Start">Radial Start</a></li>
+<li><a href="#Radial Band Ratio">Radial Band Ratio</a></li>
 </ul>
 </ul>
 <li class=""><a class="" href="alpha_cutoff.html">Alpha Cutoff</a></li>
@@ -141,59 +141,113 @@
 <table class = "summary-table">
     <tr><th class="head" colspan="2"><p>Node Data</p></th></tr><tr><th colspan="2"><img class="node-content" src="/src/nodeIcons/s_node_2d_light.png"></th></tr><tr><th colspan="2" class="summary-topic"><p>Display name</p></th></tr><tr><th colspan="2" class="summary-content"><p>2D Light</p></th></tr><tr><th colspan="2" class="summary-topic"><p>Internal name</p></th></tr><tr><th colspan="2" class="summary-content"><p>Node_2D_light</p></th></tr><tr height="8px"></tr><tr><th class="head" colspan="2"><p>Inheritances</p></th></tr><tr><th colspan="2" class="inheritance-block"><a href="../index.html">node</a></th></tr><tr><th colspan="2" class="inheritance-block"><a href="../array_processor.html">node_processor</a></th></tr><tr><th colspan="2" class="inheritance-block current"><a href="../_index/2d_light.html">node_2d_light</a></th></tr><tr height="8px"></tr>
 <tr><th class="head" colspan="2"><p>Inputs</p></th></tr>
-
+<tr><th colspan="2" class="summary-topic"><p>node_2d_light</p></th></tr><tr>
+                <td class="summary-topic" style="width: 60px"><p style="color: #ff6b97">surface</p></td>
+                <td><p>Surface In</p></td>
+            </tr><tr>
+                <td class="summary-topic" style="width: 60px"><p style="color: #8fde5d">enum</p></td>
+                <td><p>Light Shape</p></td>
+            </tr><tr>
+                <td class="summary-topic" style="width: 60px"><p style="color: #ffe478">vec2</p></td>
+                <td><p>Center</p></td>
+            </tr><tr>
+                <td class="summary-topic" style="width: 60px"><p style="color: #ffe478">float</p></td>
+                <td><p>Range</p></td>
+            </tr><tr>
+                <td class="summary-topic" style="width: 60px"><p style="color: #ffe478">float</p></td>
+                <td><p>Intensity</p></td>
+            </tr><tr>
+                <td class="summary-topic" style="width: 60px"><p style="color: #8fde5d">color</p></td>
+                <td><p>Color</p></td>
+            </tr><tr>
+                <td class="summary-topic" style="width: 60px"><p style="color: #ffe478">vec2</p></td>
+                <td><p>Start</p></td>
+            </tr><tr>
+                <td class="summary-topic" style="width: 60px"><p style="color: #ffe478">vec2</p></td>
+                <td><p>Finish</p></td>
+            </tr><tr>
+                <td class="summary-topic" style="width: 60px"><p style="color: #ff9166">int</p></td>
+                <td><p>Sweep</p></td>
+            </tr><tr>
+                <td class="summary-topic" style="width: 60px"><p style="color: #ff9166">int</p></td>
+                <td><p>Sweep End</p></td>
+            </tr><tr>
+                <td class="summary-topic" style="width: 60px"><p style="color: #ff9166">int</p></td>
+                <td><p>Banding</p></td>
+            </tr><tr>
+                <td class="summary-topic" style="width: 60px"><p style="color: #8fde5d">enum</p></td>
+                <td><p>Attenuation</p></td>
+            </tr><tr>
+                <td class="summary-topic" style="width: 60px"><p style="color: #ff9166">int</p></td>
+                <td><p>Radial Banding</p></td>
+            </tr><tr>
+                <td class="summary-topic" style="width: 60px"><p style="color: #ffe478">rotation</p></td>
+                <td><p>Radial Start</p></td>
+            </tr><tr>
+                <td class="summary-topic" style="width: 60px"><p style="color: #ffe478">float</p></td>
+                <td><p>Radial Band Ratio</p></td>
+            </tr><tr>
+                <td class="summary-topic" style="width: 60px"><p style="color: #8c3f5d">bool</p></td>
+                <td><p>Active</p></td>
+            </tr>
 <tr height="8px"></tr>
 <tr><th class="head" colspan="2"><p>Outputs</p></th></tr>
-
+<tr><th colspan="2" class="summary-topic"><p>node_2d_light</p></th></tr><tr>
+                <td class="summary-topic" style="width: 60px"><p style="color: #ff6b97">surface</p></td>
+                <td><p>Surface Out</p></td>
+            </tr><tr>
+                <td class="summary-topic" style="width: 60px"><p style="color: #ff6b97">surface</p></td>
+                <td><p>Light Only</p></td>
+            </tr>
 
 </table><p>2D Light node draw a light on top of original surface. If you want the light to cast a shadow, check 
 out <a class="node" href="../_index/shadow_cast.html">Cast Shadow</a>.</p>
 <br><br>
 <h2><a id="Light Properties" class="anchor"></a>Light Properties</h2>
 <br>
-<h3><a id="" class="anchor"></a><junc light shape/></h3>
+<h3><a id="Light Shape" class="anchor"></a><span class="junction" style="border-color: #8fde5dAA">Light Shape</span></h3>
 <br>
 <p>Control the shape of the light. There are 4 available shapes: Point, line, line asymmetric, and spot.</p>
 <br>
 <img class="node-content" src="/src/images/etc/2d_light_shape.png">
 <br>
-<h3><a id="" class="anchor"></a><junc range/></h3>
+<h3><a id="Range" class="anchor"></a><span class="junction" style="border-color: #ffe478AA">Range</span></h3>
 <br>
 <p>The size of the light.</p>
 <br>
-<h3><a id="" class="anchor"></a><junc intensity/></h3>
+<h3><a id="Intensity" class="anchor"></a><span class="junction" style="border-color: #ffe478AA">Intensity</span></h3>
 <br>
 <p>The brightness of the light. Adjusting this amount may effect the resulting range.</p>
 <br>
-<h3><a id="" class="anchor"></a><junc color/></h3>
+<h3><a id="Color" class="anchor"></a><span class="junction" style="border-color: #8fde5dAA">Color</span></h3>
 <br>
 <p>Control color of the light. Note that light use additive blending.</p>
 <br>
-<h3><a id="" class="anchor"></a><junc attenuation/></h3>
+<h3><a id="Attenuation" class="anchor"></a><span class="junction" style="border-color: #8fde5dAA">Attenuation</span></h3>
 <br>
 <p>Control the falloff of the light. There are 3 available falloff: quadratic, invert quadratic and linear.</p>
 <br>
 <img class="node-content" src="/src/images/etc/2d_light_attenuation.png">
 <br>
-<h3><a id="" class="anchor"></a><junc banding/></h3>
+<h3><a id="Banding" class="anchor"></a><span class="junction" style="border-color: #ff9166AA">Banding</span></h3>
 <br>
-<p>Banding convert smooth light to discrete steps. The banding width depends on the <junc attenuation/>.</p>
+<p>Banding convert smooth light to discrete steps. The banding width depends on the <span class="junction" style="border-color: #8fde5dAA">Attenuation</span>.</p>
 <br>
 <img class="node-content" src="/src/images/etc/2d_light_banding.png">
 <br><br>
 <h2><a id="Radial Properties" class="anchor"></a>Radial Properties</h2>
 <br>
-<p>With point light, you can use <junc radial banding/> to add the "shine" effect to the light.</p>
+<p>With point light, you can use <span class="junction" style="border-color: #ff9166AA">Radial Banding</span> to add the "shine" effect to the light.</p>
 <br>
-<h3><a id="" class="anchor"></a><junc radial banding/></h3>
+<h3><a id="Radial Banding" class="anchor"></a><span class="junction" style="border-color: #ff9166AA">Radial Banding</span></h3>
 <br>
 <p>The amount of radials, set to 0 for a full circle.</p>
 <br>
-<h3><a id="" class="anchor"></a><junc radial start/></h3>
+<h3><a id="Radial Start" class="anchor"></a><span class="junction" style="border-color: #ffe478AA">Radial Start</span></h3>
 <br>
 <p>Rotate the radial effect.</p>
 <br>
-<h3><a id="" class="anchor"></a><junc radial band ratio/></h3>
+<h3><a id="Radial Band Ratio" class="anchor"></a><span class="junction" style="border-color: #ffe478AA">Radial Band Ratio</span></h3>
 <br>
 <p>The width of the radial band as a ratio. 0 means no light and 1 mean fulll circle.</p>
 <br>
