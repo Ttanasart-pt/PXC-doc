@@ -27,9 +27,15 @@ nodeListRaws = content.split("// NODE LIST")
 nodeListRaw = nodeListRaws[1]
 
 cat       = ""
+catType   = {}
 nodeData  = {}
 nodePages = {}
 nodes     = {}
+
+def pathStrip(path): # Strip out the custom ordering n_ at the start of the file
+    if path.split("_")[0].isdigit():
+        path = path[path.find('_') + 1:]
+    return path
 
 def extractNodeData(node):
     path = f"{scriptDir}\\{node}\\{node}.gml"
@@ -79,7 +85,7 @@ for script in os.listdir(scriptDir):
     if script.strip("_").lower().startswith("node_"):
         extractNodeData(script)
 
-def writeNodeFile(cati, cat, node, line):
+def writeNodeFile(cat, node, line):
     if node.lower() not in nodeData:
         print(f"Node {node.lower()} not found in nodeData")
         return
@@ -191,7 +197,7 @@ def writeNodeFile(cati, cat, node, line):
         with open(manFilePath, "w") as file:
             file.write("")
 
-    filePath = f"content/{dirname}/{cati}_{cat}/{fileName}.html"
+    filePath = f"content/{dirname}/{catType[cat]}_{cat}/{fileName}.html"
     with open(filePath, "w") as file:
         file.write(txt)
 
@@ -199,19 +205,15 @@ def writeNodeFile(cati, cat, node, line):
     with open(redirectPath, "w") as file:
         file.write(f'''<!DOCTYPE html>
 <html>
-    <meta http-equiv="refresh" content="0; url=/nodes/{cati}_{cat}/{fileName}.html"/>
+    <meta http-equiv="refresh" content="0; url=/nodes/{catType[cat]}_{cat}/{fileName}.html"/>
 </html>''')
         
     return { "spr": spr }
 
 for line in nodeListRaw.split("\n"):
     line = line.strip()
-
-    if line.startswith("NODE_ADD_CAT") or line.startswith("addNodeCatagory("):
-        cat = line.split("\"")[1].lower()
-        nodes[cat] = []
-
-    elif line.startswith("addNodeObject("):
+    
+    if line.startswith("addNodeObject("):
         args = line.split("(")[1].split(")")[0].split(",")
         if len(args) < 4:
             print(f"Invalid node data: {line}")
@@ -222,20 +224,47 @@ for line in nodeListRaw.split("\n"):
         if cat == "":
             print(f"Node {nodeClass} catagory not found ")
             continue
-
+        
         nodes[cat].append((nodeClass, line))
 
         nodePages[nodeClass.lower()] = 1
-
-def generateNodeCatagory(i, cat):
     
-    txt = f"""<h1>{cat.title()}</h1>
+    else :
+        if line.find("//#") != -1:
+            c = line.split("//#")[1].strip().lower()
+        else :
+            c  = line.split("\"")
+            if len(c) < 2:
+                continue
+            c = c[1].lower()
+            
+        if c == "hidden":
+            catType[c] = 900
+        elif line.startswith("addNodeCatagory("):
+            catType[c] = 100
+        elif line.startswith("NODE_ADD_CAT"):
+            catType[c] = 200
+        elif line.startswith("addNodePBCatagory("):
+            catType[c] = 300
+        elif line.startswith("addNodePCXCatagory("):
+            catType[c] = 400
+        else :
+            continue
+        
+        cat = c
+        if cat not in nodes:
+            nodes[cat] = []
+
+
+def generateNodeCatagory(cat):
+    
+    title = pathStrip(cat).title()
+    txt = f"""<h1>{title}</h1>
 <br><br>
 <div class=node-group>"""
     
     nodeNames = [ node for node, _ in nodes[cat] ]
     nodeNames.sort()
-    #print(f"Generating {cat} catagory with {len(nodeNames)} nodes")
 
     for node in nodeNames:
         if node.lower() not in nodeData:
@@ -251,25 +280,27 @@ def generateNodeCatagory(i, cat):
 
     txt += "</div>"
     
-    filePath = f"content/{dirname}/{i}_{cat}/0_index.html"
+    filePath = f"content/{dirname}/{catType[cat]}_{cat}/0_index.html"
     with open(filePath, "w") as file:
         file.write(txt)
 
-for i, cat in enumerate(nodes):
+i = 0
+for cat in nodes:
     if cat.lower() == "custom":
         continue
     if cat.lower() == "favourites":
         continue
     if cat.lower() == "action":
         continue
+    
+    catType[cat] += i
+    i += 1
 
-    cati = i + 10
-
-    catPath = f"content/{dirname}/{cati}_{cat}"
+    catPath = f"content/{dirname}/{catType[cat]}_{cat}"
     if not os.path.exists(catPath):
         os.makedirs(catPath)
 
     for node, line in nodes[cat]:
-        writeNodeFile(cati, cat, node, line)
+        writeNodeFile(cat, node, line)
 
-    generateNodeCatagory(cati, cat)
+    generateNodeCatagory(cat)
