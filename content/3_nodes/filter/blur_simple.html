@@ -7,10 +7,58 @@
 <table class = "summary-table">
     <tr><th class="head" colspan="2"><p>Node Data</p></th></tr><tr><th colspan="2"><img s_node_blur_simple></th></tr><tr><th colspan="2" class="summary-topic"><p>Display name</p></th></tr><tr><th colspan="2" class="summary-content"><p>Non-Uniform Blur</p></th></tr><tr><th colspan="2" class="summary-topic"><p>Internal name</p></th></tr><tr><th colspan="2" class="summary-content"><p>Node_Blur_Simple</p></th></tr><tr height="8px"></tr><tr><th class="head" colspan="2"><p>Inheritances</p></th></tr><tr><th colspan="2" class="inheritance-block"><a href="../index.html">node</a></th></tr><tr><th colspan="2" class="inheritance-block"><a href="../array_processor.html">node_processor</a></th></tr><tr><th colspan="2" class="inheritance-block current"><a href="../_index/blur_simple.html">node_blur_simple</a></th></tr><tr height="8px"></tr>
 <tr><th class="head" colspan="2"><p>Inputs</p></th></tr>
-
+<tr><th colspan="2" class="summary-topic"><p>node_blur_simple</p></th></tr><tr>
+                <td class="summary-topic" style="width: 60px"><p style="color: #ff6b97">surface</p></td>
+                <td><p>Surface In</p></td>
+            </tr><tr>
+                <td class="summary-topic" style="width: 60px"><p style="color: #ffe478">float</p></td>
+                <td><p>Size</p></td>
+            </tr><tr>
+                <td class="summary-topic" style="width: 60px"><p style="color: #8fde5d">enum</p></td>
+                <td><p>Oversample Mode</p></td>
+            </tr><tr>
+                <td class="summary-topic" style="width: 60px"><p style="color: #ff6b97">surface</p></td>
+                <td><p>Blur Mask</p></td>
+            </tr><tr>
+                <td class="summary-topic" style="width: 60px"><p style="color: #8c3f5d">bool</p></td>
+                <td><p>Override Color</p></td>
+            </tr><tr>
+                <td class="summary-topic" style="width: 60px"><p style="color: #8fde5d">color</p></td>
+                <td><p>Color</p></td>
+            </tr><tr>
+                <td class="summary-topic" style="width: 60px"><p style="color: #ff6b97">surface</p></td>
+                <td><p>Mask</p></td>
+            </tr><tr>
+                <td class="summary-topic" style="width: 60px"><p style="color: #ffe478">float</p></td>
+                <td><p>Mix</p></td>
+            </tr><tr>
+                <td class="summary-topic" style="width: 60px"><p style="color: #8c3f5d">bool</p></td>
+                <td><p>Active</p></td>
+            </tr><tr>
+                <td class="summary-topic" style="width: 60px"><p style="color: #ff9166">toggle</p></td>
+                <td><p>Channel</p></td>
+            </tr><tr>
+                <td class="summary-topic" style="width: 60px"><p style="color: #8fde5d">gradient</p></td>
+                <td><p>Gradient</p></td>
+            </tr><tr>
+                <td class="summary-topic" style="width: 60px"><p style="color: #8fde5d">map</p></td>
+                <td><p>Gradient Map</p></td>
+            </tr><tr>
+                <td class="summary-topic" style="width: 60px"><p style="color: #8fde5d">gradientrange</p></td>
+                <td><p>Gradient Map Range</p></td>
+            </tr><tr>
+                <td class="summary-topic" style="width: 60px"><p style="color: #8c3f5d">bool</p></td>
+                <td><p>Use Gradient</p></td>
+            </tr><tr>
+                <td class="summary-topic" style="width: 60px"><p style="color: #8c3f5d">bool</p></td>
+                <td><p>Gamma Correction</p></td>
+            </tr>
 <tr height="8px"></tr>
 <tr><th class="head" colspan="2"><p>Outputs</p></th></tr>
-
+<tr><th colspan="2" class="summary-topic"><p>node_blur_simple</p></th></tr><tr>
+                <td class="summary-topic" style="width: 60px"><p style="color: #ff6b97">surface</p></td>
+                <td><p>Surface Out</p></td>
+            </tr>
 
 </table><p>Non-uniform Blur (formerly simple blur) is a blur node that use simpler algorithm than the <a class="node" href="../_index/blur.html">Blur</a>, which 
 allows you to control the blur size per pixel.</p>
@@ -19,19 +67,19 @@ allows you to control the blur size per pixel.</p>
 <br><br>
 <h2>Properties</h2>
 <br>
-<h3><junc size/></h3>
+<h3><span class="junction" style="border-color: #ffe478AA">Size</span></h3>
 <br>
 <p>Maximum blur size.</p>
 <br>
-<h3><junc blur mask/></h3>
+<h3><span class="junction" style="border-color: #ff6b97AA">Blur Mask</span></h3>
 <br>
 <p>Extra surface use for scaling blur effect.</p>
 <br>
-<h3><junc override color/></h3>
+<h3><span class="junction" style="border-color: #8c3f5dAA">Override Color</span></h3>
 <br>
 <p>Replace the resulting color with a uniform color, use when you only want to blur the alpha channel.</p>
 <br>
-<h3><junc gradient/></h3>
+<h3><span class="junction" style="border-color: #8fde5dAA">Gradient</span></h3>
 <br>
 <p>Apply color blending per sampling.</p>
 <br>

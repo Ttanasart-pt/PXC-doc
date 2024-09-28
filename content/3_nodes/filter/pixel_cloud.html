@@ -7,10 +7,46 @@
 <table class = "summary-table">
     <tr><th class="head" colspan="2"><p>Node Data</p></th></tr><tr><th colspan="2"><img s_node_pixel_cloud></th></tr><tr><th colspan="2" class="summary-topic"><p>Display name</p></th></tr><tr><th colspan="2" class="summary-content"><p>Pixel Cloud</p></th></tr><tr><th colspan="2" class="summary-topic"><p>Internal name</p></th></tr><tr><th colspan="2" class="summary-content"><p>Node_Pixel_Cloud</p></th></tr><tr height="8px"></tr><tr><th class="head" colspan="2"><p>Inheritances</p></th></tr><tr><th colspan="2" class="inheritance-block"><a href="../index.html">node</a></th></tr><tr><th colspan="2" class="inheritance-block"><a href="../array_processor.html">node_processor</a></th></tr><tr><th colspan="2" class="inheritance-block current"><a href="../_index/pixel_cloud.html">node_pixel_cloud</a></th></tr><tr height="8px"></tr>
 <tr><th class="head" colspan="2"><p>Inputs</p></th></tr>
-
+<tr><th colspan="2" class="summary-topic"><p>node_pixel_cloud</p></th></tr><tr>
+                <td class="summary-topic" style="width: 60px"><p style="color: #ff6b97">surface</p></td>
+                <td><p>Surface In</p></td>
+            </tr><tr>
+                <td class="summary-topic" style="width: 60px"><p style="color: #ff9166">int</p></td>
+                <td><p>Seed</p></td>
+            </tr><tr>
+                <td class="summary-topic" style="width: 60px"><p style="color: #ffe478">float</p></td>
+                <td><p>Strength</p></td>
+            </tr><tr>
+                <td class="summary-topic" style="width: 60px"><p style="color: #ff6b97">surface</p></td>
+                <td><p>Strength Map</p></td>
+            </tr><tr>
+                <td class="summary-topic" style="width: 60px"><p style="color: #8fde5d">gradient</p></td>
+                <td><p>Color Over Lifetime</p></td>
+            </tr><tr>
+                <td class="summary-topic" style="width: 60px"><p style="color: #ffe478">float</p></td>
+                <td><p>Distance</p></td>
+            </tr><tr>
+                <td class="summary-topic" style="width: 60px"><p style="color: #c2c2d1">curve</p></td>
+                <td><p>Alpha Over Lifetime</p></td>
+            </tr><tr>
+                <td class="summary-topic" style="width: 60px"><p style="color: #ffe478">float</p></td>
+                <td><p>Random Blending</p></td>
+            </tr><tr>
+                <td class="summary-topic" style="width: 60px"><p style="color: #8c3f5d">bool</p></td>
+                <td><p>Active</p></td>
+            </tr><tr>
+                <td class="summary-topic" style="width: 60px"><p style="color: #8fde5d">map</p></td>
+                <td><p>Gradient Map</p></td>
+            </tr><tr>
+                <td class="summary-topic" style="width: 60px"><p style="color: #8fde5d">gradientrange</p></td>
+                <td><p>Gradient Map Range</p></td>
+            </tr>
 <tr height="8px"></tr>
 <tr><th class="head" colspan="2"><p>Outputs</p></th></tr>
-
+<tr><th colspan="2" class="summary-topic"><p>node_pixel_cloud</p></th></tr><tr>
+                <td class="summary-topic" style="width: 60px"><p style="color: #ff6b97">surface</p></td>
+                <td><p>Surface Out</p></td>
+            </tr>
 
 </table><p>Pixel Cloud node move each pixel in the surface randomly.</p>
 <br>
@@ -18,27 +54,27 @@
 <br><br>
 <h2>Properties</h2>
 <br>
-<h3><junc distance/></h3>
+<h3><span class="junction" style="border-color: #ffe478AA">Distance</span></h3>
 <br>
 <p>The amount of displacement per step.</p>
 <br>
-<h3><junc strength/></h3>
+<h3><span class="junction" style="border-color: #ffe478AA">Strength</span></h3>
 <br>
 <p>The amount of displacment step. This values also determine the life of each pixel.</p>
 <br>
-<h3><junc strength map/></h3>
+<h3><span class="junction" style="border-color: #ff6b97AA">Strength Map</span></h3>
 <br>
 <p>Extra surface used to control strength per pixel.</p>
 <br>
-<h3><junc color over lifetime/></h3>
+<h3><span class="junction" style="border-color: #8fde5dAA">Color Over Lifetime</span></h3>
 <br>
 <p>Apply color blending over strength.</p>
 <br>
-<h3><junc alpha over lifetime/></h3>
+<h3><span class="junction" style="border-color: #c2c2d1AA">Alpha Over Lifetime</span></h3>
 <br>
 <p>Adjust alpha value over strength.</p>
 <br>
-<h3><junc random blending/></h3>
+<h3><span class="junction" style="border-color: #ffe478AA">Random Blending</span></h3>
 <br>
 <p>Add random shift to the lifetime value.</p>
 <br>

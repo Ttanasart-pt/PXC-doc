@@ -7,10 +7,58 @@
 <table class = "summary-table">
     <tr><th class="head" colspan="2"><p>Node Data</p></th></tr><tr><th colspan="2"><img s_node_blend></th></tr><tr><th colspan="2" class="summary-topic"><p>Display name</p></th></tr><tr><th colspan="2" class="summary-content"><p>Blend</p></th></tr><tr><th colspan="2" class="summary-topic"><p>Internal name</p></th></tr><tr><th colspan="2" class="summary-content"><p>Node_Blend</p></th></tr><tr height="8px"></tr><tr><th class="head" colspan="2"><p>Inheritances</p></th></tr><tr><th colspan="2" class="inheritance-block"><a href="../index.html">node</a></th></tr><tr><th colspan="2" class="inheritance-block"><a href="../array_processor.html">node_processor</a></th></tr><tr><th colspan="2" class="inheritance-block current"><a href="../_index/blend.html">node_blend</a></th></tr><tr height="8px"></tr>
 <tr><th class="head" colspan="2"><p>Inputs</p></th></tr>
-
+<tr><th colspan="2" class="summary-topic"><p>node_blend</p></th></tr><tr>
+                <td class="summary-topic" style="width: 60px"><p style="color: #ff6b97">surface</p></td>
+                <td><p>Background</p></td>
+            </tr><tr>
+                <td class="summary-topic" style="width: 60px"><p style="color: #ff6b97">surface</p></td>
+                <td><p>Foreground</p></td>
+            </tr><tr>
+                <td class="summary-topic" style="width: 60px"><p style="color: #8fde5d">enum</p></td>
+                <td><p>Blend Mode</p></td>
+            </tr><tr>
+                <td class="summary-topic" style="width: 60px"><p style="color: #ffe478">float</p></td>
+                <td><p>Opacity</p></td>
+            </tr><tr>
+                <td class="summary-topic" style="width: 60px"><p style="color: #ff6b97">surface</p></td>
+                <td><p>Mask</p></td>
+            </tr><tr>
+                <td class="summary-topic" style="width: 60px"><p style="color: #8fde5d">enum</p></td>
+                <td><p>Fill Mode</p></td>
+            </tr><tr>
+                <td class="summary-topic" style="width: 60px"><p style="color: #8fde5d">enum</p></td>
+                <td><p>Output Dimension</p></td>
+            </tr><tr>
+                <td class="summary-topic" style="width: 60px"><p style="color: #ffe478">vec2</p></td>
+                <td><p>Constant Dimension</p></td>
+            </tr><tr>
+                <td class="summary-topic" style="width: 60px"><p style="color: #8c3f5d">bool</p></td>
+                <td><p>Active</p></td>
+            </tr><tr>
+                <td class="summary-topic" style="width: 60px"><p style="color: #8c3f5d">bool</p></td>
+                <td><p>Preserve Alpha</p></td>
+            </tr><tr>
+                <td class="summary-topic" style="width: 60px"><p style="color: #8fde5d">enum</p></td>
+                <td><p>Horizontal Align</p></td>
+            </tr><tr>
+                <td class="summary-topic" style="width: 60px"><p style="color: #8fde5d">enum</p></td>
+                <td><p>Vertical Align</p></td>
+            </tr><tr>
+                <td class="summary-topic" style="width: 60px"><p style="color: #8c3f5d">bool</p></td>
+                <td><p>Invert Mask</p></td>
+            </tr><tr>
+                <td class="summary-topic" style="width: 60px"><p style="color: #ffe478">float</p></td>
+                <td><p>Mask Feather</p></td>
+            </tr><tr>
+                <td class="summary-topic" style="width: 60px"><p style="color: #ffe478">vec2</p></td>
+                <td><p>Position</p></td>
+            </tr>
 <tr height="8px"></tr>
 <tr><th class="head" colspan="2"><p>Outputs</p></th></tr>
-
+<tr><th colspan="2" class="summary-topic"><p>node_blend</p></th></tr><tr>
+                <td class="summary-topic" style="width: 60px"><p style="color: #ff6b97">surface</p></td>
+                <td><p>Surface Out</p></td>
+            </tr>
 
 </table><script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
 <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
@@ -20,7 +68,7 @@ under different blend mode.</p>
 <br><br>
 <h2>Blend Modes</h2>
 <br>
-<p><junc Blend mode> control how the surface is being mixed. Blend modes available in the this node are:</p>
+<p><span class="junction" style="border-color: #8fde5dAA">Blend Mode</span> control how the surface is being mixed. Blend modes available in the this node are:</p>
 <br>
 <p>The examples are blend of 2 surfaces:</p>
 <br>
@@ -101,12 +149,12 @@ under different blend mode.</p>
 <br>
 <h3>Opacity</h3>
 <br>
-<p>The intensity of the effect will be multiply by the <junc Opacity> property.</p>
+<p>The intensity of the effect will be multiply by the <span class="junction" style="border-color: #ffe478AA">Opacity</span> property.</p>
 <br>
 <h3>Preserve Alpha</h3>
 <br>
 <p>Blend operation apply to all channel including alpha channel. Which mean some operation may erase the 
-alpha channel of the original image. To exclude the alpha calculation, set <junc Preserve Alpha> to true.</p>
+alpha channel of the original image. To exclude the alpha calculation, set <span class="junction" style="border-color: #8c3f5dAA">Preserve Alpha</span> to true.</p>
 <br><br>
 <h2>Dimension Mixing</h2>
 <br>
@@ -114,7 +162,7 @@ alpha channel of the original image. To exclude the alpha calculation, set <junc
 <br>
 <h3>Filling</h3>
 <br>
-<p>The <junc Fill mode> property control the behaviour of the smaller surface.</p>
+<p>The <span class="junction" style="border-color: #8fde5dAA">Fill Mode</span> property control the behaviour of the smaller surface.</p>
 <br>
 <table class="cc4060">
     <tr>
@@ -137,4 +185,4 @@ alpha channel of the original image. To exclude the alpha calculation, set <junc
 <br>
 <h3>Alignment</h3>
 <br>
-<p>When <junc Fill mode> is set to None, you can move the foreground freely in the preview panel.</p>
+<p>When <span class="junction" style="border-color: #8fde5dAA">Fill Mode</span> is set to None, you can move the foreground freely in the preview panel.</p>

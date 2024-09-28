@@ -207,7 +207,7 @@ def writeNodeFile(cat, node, line):
 for line in nodeListRaw.split("\n"):
     line = line.strip()
 
-    if line.startswith("NODE_ADD_CAT"):
+    if line.startswith("NODE_ADD_CAT") or line.startswith("addNodeCatagory("):
         cat = line.split("\"")[1].lower()
         nodes[cat] = []
 

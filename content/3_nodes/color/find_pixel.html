@@ -7,10 +7,34 @@
 <table class = "summary-table">
     <tr><th class="head" colspan="2"><p>Node Data</p></th></tr><tr><th colspan="2"><img s_node_pixel_find></th></tr><tr><th colspan="2" class="summary-topic"><p>Display name</p></th></tr><tr><th colspan="2" class="summary-content"><p>Find pixel</p></th></tr><tr><th colspan="2" class="summary-topic"><p>Internal name</p></th></tr><tr><th colspan="2" class="summary-content"><p>Node_Find_Pixel</p></th></tr><tr height="8px"></tr><tr><th class="head" colspan="2"><p>Inheritances</p></th></tr><tr><th colspan="2" class="inheritance-block"><a href="../index.html">node</a></th></tr><tr><th colspan="2" class="inheritance-block"><a href="../array_processor.html">node_processor</a></th></tr><tr><th colspan="2" class="inheritance-block current"><a href="../_index/find_pixel.html">node_find_pixel</a></th></tr><tr height="8px"></tr>
 <tr><th class="head" colspan="2"><p>Inputs</p></th></tr>
-
+<tr><th colspan="2" class="summary-topic"><p>node_find_pixel</p></th></tr><tr>
+                <td class="summary-topic" style="width: 60px"><p style="color: #ff6b97">surface</p></td>
+                <td><p>Surface In</p></td>
+            </tr><tr>
+                <td class="summary-topic" style="width: 60px"><p style="color: #8fde5d">color</p></td>
+                <td><p>Search Color</p></td>
+            </tr><tr>
+                <td class="summary-topic" style="width: 60px"><p style="color: #ffe478">float</p></td>
+                <td><p>Tolerance</p></td>
+            </tr><tr>
+                <td class="summary-topic" style="width: 60px"><p style="color: #8c3f5d">bool</p></td>
+                <td><p>Find All</p></td>
+            </tr><tr>
+                <td class="summary-topic" style="width: 60px"><p style="color: #8c3f5d">bool</p></td>
+                <td><p>Include Alpha</p></td>
+            </tr><tr>
+                <td class="summary-topic" style="width: 60px"><p style="color: #ffe478">float</p></td>
+                <td><p>Alpha Tolerance</p></td>
+            </tr><tr>
+                <td class="summary-topic" style="width: 60px"><p style="color: #8fde5d">enum</p></td>
+                <td><p>Axis</p></td>
+            </tr>
 <tr height="8px"></tr>
 <tr><th class="head" colspan="2"><p>Outputs</p></th></tr>
-
+<tr><th colspan="2" class="summary-topic"><p>node_find_pixel</p></th></tr><tr>
+                <td class="summary-topic" style="width: 60px"><p style="color: #ff9166">integer</p></td>
+                <td><p>Position</p></td>
+            </tr>
 
 </table><p>This node will search throught every pixel in the image and returns the position of the pixel with a given color. 
 With [0, 0] be the top left of the image, x axis goes to the right and y axis goes down.</p>
@@ -23,23 +47,23 @@ With [0, 0] be the top left of the image, x axis goes to the right and y axis go
         <th>Description</th>
     </tr>
     <tr>
-        <td><junc Search color></td>
+        <td><span class="junction" style="border-color: #8fde5dAA">Search Color</span></td>
         <td>Color of the pixel to find</td>
     </tr>
     <tr>
-        <td><junc Tolerance></td>
+        <td><span class="junction" style="border-color: #ffe478AA">Tolerance</span></td>
         <td>How much the color can differ from the search color to be match</td>
     </tr>
     <tr>
-        <td><junc Find all></td>
+        <td><span class="junction" style="border-color: #8c3f5dAA">Find All</span></td>
         <td>Returns all matches pixel instead of the first pixel</td>
     </tr>
     <tr>
-        <td><junc Include alpha></td>
+        <td><span class="junction" style="border-color: #8c3f5dAA">Include Alpha</span></td>
         <td>Include alpha channel in the search</td>
     </tr>
     <tr>
-        <td><junc Alpha tolerance></td>
+        <td><span class="junction" style="border-color: #ffe478AA">Alpha Tolerance</span></td>
         <td>How much the alpha channel can differ from the search color to be match</td>
     </tr>
 </table>

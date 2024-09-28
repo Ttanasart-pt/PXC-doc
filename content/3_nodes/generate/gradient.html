@@ -7,10 +7,64 @@
 <table class = "summary-table">
     <tr><th class="head" colspan="2"><p>Node Data</p></th></tr><tr><th colspan="2"><img s_node_gradient></th></tr><tr><th colspan="2" class="summary-topic"><p>Display name</p></th></tr><tr><th colspan="2" class="summary-content"><p>Draw Gradient</p></th></tr><tr><th colspan="2" class="summary-topic"><p>Internal name</p></th></tr><tr><th colspan="2" class="summary-content"><p>Node_Gradient</p></th></tr><tr height="8px"></tr><tr><th class="head" colspan="2"><p>Inheritances</p></th></tr><tr><th colspan="2" class="inheritance-block"><a href="../index.html">node</a></th></tr><tr><th colspan="2" class="inheritance-block"><a href="../array_processor.html">node_processor</a></th></tr><tr><th colspan="2" class="inheritance-block current"><a href="../_index/gradient.html">node_gradient</a></th></tr><tr height="8px"></tr>
 <tr><th class="head" colspan="2"><p>Inputs</p></th></tr>
-
+<tr><th colspan="2" class="summary-topic"><p>node_gradient</p></th></tr><tr>
+                <td class="summary-topic" style="width: 60px"><p style="color: #ff9166">dimension</p></td>
+                <td><p>Dimension</p></td>
+            </tr><tr>
+                <td class="summary-topic" style="width: 60px"><p style="color: #8fde5d">gradient</p></td>
+                <td><p>Gradient</p></td>
+            </tr><tr>
+                <td class="summary-topic" style="width: 60px"><p style="color: #8fde5d">enum</p></td>
+                <td><p>Type</p></td>
+            </tr><tr>
+                <td class="summary-topic" style="width: 60px"><p style="color: #ffe478">rotation</p></td>
+                <td><p>Angle</p></td>
+            </tr><tr>
+                <td class="summary-topic" style="width: 60px"><p style="color: #ffe478">float</p></td>
+                <td><p>Radius</p></td>
+            </tr><tr>
+                <td class="summary-topic" style="width: 60px"><p style="color: #ffe478">float</p></td>
+                <td><p>Shift</p></td>
+            </tr><tr>
+                <td class="summary-topic" style="width: 60px"><p style="color: #ffe478">vec2</p></td>
+                <td><p>Center</p></td>
+            </tr><tr>
+                <td class="summary-topic" style="width: 60px"><p style="color: #8fde5d">enum</p></td>
+                <td><p>Loop</p></td>
+            </tr><tr>
+                <td class="summary-topic" style="width: 60px"><p style="color: #ff6b97">surface</p></td>
+                <td><p>Mask</p></td>
+            </tr><tr>
+                <td class="summary-topic" style="width: 60px"><p style="color: #ffe478">float</p></td>
+                <td><p>Scale</p></td>
+            </tr><tr>
+                <td class="summary-topic" style="width: 60px"><p style="color: #8fde5d">map</p></td>
+                <td><p>Angle Map</p></td>
+            </tr><tr>
+                <td class="summary-topic" style="width: 60px"><p style="color: #8fde5d">map</p></td>
+                <td><p>Radius Map</p></td>
+            </tr><tr>
+                <td class="summary-topic" style="width: 60px"><p style="color: #8fde5d">map</p></td>
+                <td><p>Shift Map</p></td>
+            </tr><tr>
+                <td class="summary-topic" style="width: 60px"><p style="color: #8fde5d">map</p></td>
+                <td><p>Scale Map</p></td>
+            </tr><tr>
+                <td class="summary-topic" style="width: 60px"><p style="color: #8c3f5d">bool</p></td>
+                <td><p>Uniform Ratio</p></td>
+            </tr><tr>
+                <td class="summary-topic" style="width: 60px"><p style="color: #8fde5d">map</p></td>
+                <td><p>Gradient Map</p></td>
+            </tr><tr>
+                <td class="summary-topic" style="width: 60px"><p style="color: #8fde5d">gradientrange</p></td>
+                <td><p>Gradient Map Range</p></td>
+            </tr>
 <tr height="8px"></tr>
 <tr><th class="head" colspan="2"><p>Outputs</p></th></tr>
-
+<tr><th colspan="2" class="summary-topic"><p>node_gradient</p></th></tr><tr>
+                <td class="summary-topic" style="width: 60px"><p style="color: #ff6b97">surface</p></td>
+                <td><p>Surface Out</p></td>
+            </tr>
 
 </table><p>Gradient node draw gradient on to the surface. Visit <a class="node" href="../_index/gradient_out.html">Gradient</a> for a node that output a 
 gradient data.</p>
@@ -19,48 +73,48 @@ gradient data.</p>
 <br><br>
 <h2>Properties</h2>
 <br>
-<h3><junc gradient/></h3>
+<h3><span class="junction" style="border-color: #8fde5dAA">Gradient</span></h3>
 <br>
 <p>The gradient to draw.</p>
 <br>
-<h3><junc shift/></h3>
+<h3><span class="junction" style="border-color: #ffe478AA">Shift</span></h3>
 <br>
 <p>Shift the gradient keys by a fix amount.</p>
 <br>
 <img gradient_shift/>
 <br>
-<h3><junc scale/></h3>
+<h3><span class="junction" style="border-color: #ffe478AA">Scale</span></h3>
 <br>
 <p>Scale the gradient.</p>
 <br>
 <img gradient_scale/>
 <br>
-<h3><junc loop/></h3>
+<h3><span class="junction" style="border-color: #8fde5dAA">Loop</span></h3>
 <br>
 <p>Loop the keyframe back when overflowing.</p>
 <br>
 <img gradient_loop/>
 <br>
-<h3><junc type/></h3>
+<h3><span class="junction" style="border-color: #8fde5dAA">Type</span></h3>
 <br>
 <p>Types of the gradient.</p>
 <br>
 <img gradient_types/>
 <br>
-<h3><junc angle/></h3>
+<h3><span class="junction" style="border-color: #ffe478AA">Angle</span></h3>
 <br>
 <p><span class="inline-code">Linear</span> and <span class="inline-code">Radial</span> types only. The angle of the 
 pattern.</p>
 <br>
-<h3><junc radius/></h3>
+<h3><span class="junction" style="border-color: #ffe478AA">Radius</span></h3>
 <br>
 <p><span class="inline-code">Circular</span> type only. Radius of the pattern.</p>
 <br>
-<h3><junc center/></h3>
+<h3><span class="junction" style="border-color: #ffe478AA">Center</span></h3>
 <br>
 <p>Center point of the pattern.</p>
 <br>
-<h3><junc uniform ratio/></h3>
+<h3><span class="junction" style="border-color: #8c3f5dAA">Uniform Ratio</span></h3>
 <br>
 <p>For non-square output, whether to follows the surface aspect ratio or use uniform 1:1 ratio.</p>
 <br>
