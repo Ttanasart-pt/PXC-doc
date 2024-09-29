@@ -192,6 +192,10 @@ a.anchor {
     z-index: 100;
 }
 
+.header a {
+    margin: 0 16px;
+}
+
 .header-title {
     margin: 0;
 
@@ -207,8 +211,8 @@ a.anchor {
     color: var(--main_ltgrey);
 }
 
-.header a {
-    margin: 0 16px;
+.header-title > a {
+    margin: 0;
 }
 
 .sidebar {
@@ -678,6 +682,35 @@ ul.list-empty {
 
 ul.list-empty li {
     line-height: 1.75;
+}
+
+li.search-result {
+    height: 1.5rem;
+}
+
+li.search-result a {
+    font-weight: 500;
+    font-size: .9rem;
+}
+
+input#search {
+    width: 100%;
+    padding: 8px;
+    margin: 1px 1px;
+    padding: 8px 16px;
+    border: 1px solid var(--main_dkgrey);
+    border-radius: 4px;
+
+    font-family: 'Noto Sans', sans-serif;
+    font-weight: 400;
+    font-size: 0.75rem;
+
+    background-color: var(--main_black);
+    color: var(--main_white);
+}
+
+input#search:focus {
+    outline: 1px solid var(--accent);
 }
 
 ::-webkit-scrollbar {

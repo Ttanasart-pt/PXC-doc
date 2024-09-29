@@ -34,6 +34,7 @@ def loadFile(path):
     
 svg_home = loadFile("src/svg/home.svg")
 svg_dir = loadFile("src/svg/dir.svg")
+pages = []
 
 def generateFile(dirOut, pathIn, sidebar):
     with open(pathIn, "r") as f:
@@ -102,17 +103,17 @@ def generateFile(dirOut, pathIn, sidebar):
         if icon != "":
             liClass += "icon "
 
-        sideContent += f'<li class="{liClass}">{icon}<a class="{aClass}" href="{fName}">{title}</a></li>\n'
+        sideContent += f'<li class="sidebar-nav {liClass}">{icon}<a class="{aClass}" href="{fName}">{title}</a></li>\n'
 
         if fName == fileName :
             sideContent += '<ul class="submenu">\n'
             for h2 in headers:
                 title = h2["h2"]
-                sideContent += f'<li><a href="#{title}">{title}</a></li>\n'
+                sideContent += f'<li class="sidebar-nav"><a href="#{title}">{title}</a></li>\n'
 
                 sideContent += '<ul class="submenu h3">\n'
                 for h3 in h2["h3s"]:
-                    sideContent += f'<li><a href="#{h3}">{h3}</a></li>\n'
+                    sideContent += f'<li class="sidebar-nav"><a href="#{h3}">{h3}</a></li>\n'
                 sideContent += "</ul>\n"
 
             sideContent += "</ul>\n"
@@ -122,6 +123,9 @@ def generateFile(dirOut, pathIn, sidebar):
 
     with open(outPath, "w") as f:
         f.write(data)
+
+    title = fileName.replace('.html', '').replace('_', ' ').title()
+    pages.append((title, outPath))
 
 def generateFolder(dirIn, dirOut):
     files = sorted(os.listdir(dirIn))
@@ -170,4 +174,19 @@ def generateFolder(dirIn, dirOut):
 
 generateFolder("content", "docs")
 
-shutil.copy("styles.css", "docs/styles.css")
+shutil.copy("static/styles.css",  "docs/styles.css")
+
+# search
+
+search_list_str = ""
+for title, path in pages:
+    if title == "Index":
+        continue
+    search_list_str += f'<li class="search-result"><a href="{path}">{title}</a></li>\n'
+
+for _, path in pages:
+    with open(path, "r") as f:
+        content = f.read()
+    content  = content.replace("{{search_results}}", search_list_str)
+    with open(path, "w") as f:
+        f.write(content)
