@@ -533,7 +533,7 @@ span.code-block {
 }
 
 p.banner {
-    display: block;
+    display: table-cell;
     margin: 16px 0px 16px 0px;
     padding: 16px;
     width: inherit;
@@ -545,6 +545,39 @@ p.banner {
 
 p.center {
     text-align: center;
+}
+
+div.title {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: end;
+}
+
+div.badges {
+    padding: 8px;
+}
+
+p.badge {
+    margin: 4px;
+    padding: 2px 4px;
+    display: inline;
+
+    font-size: .75rem;
+    background-color: var(--main_black);
+    border: 1px solid var(--main_dkgrey);
+    border-radius: 4px;
+}
+
+p.version-banner {
+    display: table-cell;
+    margin: 4px;
+    padding: 2px 4px;
+
+    font-size: .75rem;
+    background-color: var(--main_black);
+    border: 1px solid var(--main_dkgrey);
+    border-radius: 4px;
 }
 
 p img {

@@ -46,6 +46,26 @@ def generateFile(dirOut, pathIn, sidebar):
     fileName  = os.path.basename(pathIn)
     outPath   = f"{dirOut}\\{fileName}"
     headers   = []
+    badges    = ""
+
+    version = re.findall(r"<v (.*?)>", content)
+    if len(version) > 0:
+        version = version[0]
+        content = content.replace(f"<v {version}>", "")
+
+        version = version.strip("/").strip()
+        badges += f'<p class="version-banner" title="Updated for version {version}">{version}</p>'
+    else:
+        badges += f'<p class="version-banner" title="Writen before 1.18, some information might be outdated">pre 1.18</p>'
+
+    h1s = re.findall(r"<h1>(.*?)</h1>", content)
+    if len(h1s) > 0:
+        h1 = h1s[0]
+        content = content.replace(f"<h1>{h1}</h1>", f'''<div class="title">
+                                                            <h1>{h1}</h1>
+                                                            <div class="badges">{badges}</div>
+                                                        </div>''')
+        
 
     for h2s in content.split("<h2>")[1:]:
         h2  = h2s.split("</h2>")[0]

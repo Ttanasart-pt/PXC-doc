@@ -39,6 +39,13 @@
 <a class="" href="index.html">Transform</a></li>
 <li class="sidebar-nav active "><a class="" href="9slice.html">9Slice</a></li>
 <ul class="submenu">
+<li class="sidebar-nav"><a href="#Properties">Properties</a></li>
+<ul class="submenu h3">
+<li class="sidebar-nav"><a href="#Surface In">Surface In</a></li>
+<li class="sidebar-nav"><a href="#Dimension">Dimension</a></li>
+<li class="sidebar-nav"><a href="#Splice">Splice</a></li>
+<li class="sidebar-nav"><a href="#Filling Modes">Filling Modes</a></li>
+</ul>
 </ul>
 <li class="sidebar-nav "><a class="" href="bend.html">Bend</a></li>
 <li class="sidebar-nav "><a class="" href="composite.html">Composite</a></li>
@@ -662,12 +669,15 @@
         <div class="content">
             <link rel="stylesheet" href="../styles.css">
 
-<h1>Nine Slice</h1>
+<div class="title">
+                                                            <h1>Nine Slice</h1>
+                                                            <div class="badges"><p class="version-banner" title="Updated for version 1.18.0">1.18.0</p></div>
+                                                        </div>
 <p class="subtitle">Cut image into 3x3 parts</p>
 <br><br>
 
 <table class = "summary-table">
-    <tr><th class="head" colspan="2"><p>Node Data</p></th></tr><tr><th colspan="2"><img class="node-content" src="/src/nodeIcons/s_node_9patch.png"></th></tr><tr><th colspan="2" class="summary-topic"><p>Display name</p></th></tr><tr><th colspan="2" class="summary-content"><p>Nine Slice</p></th></tr><tr><th colspan="2" class="summary-topic"><p>Internal name</p></th></tr><tr><th colspan="2" class="summary-content"><p>Node_9Slice</p></th></tr><tr height="8px"></tr><tr><th class="head" colspan="2"><p>Inheritances</p></th></tr><tr><th colspan="2" class="inheritance-block"><a href="../index.html">node</a></th></tr><tr><th colspan="2" class="inheritance-block"><a href="../array_processor.html">node_processor</a></th></tr><tr><th colspan="2" class="inheritance-block current"><a href="../_index/9slice.html">node_9slice</a></th></tr><tr height="8px"></tr>
+    <tr><th class="head" colspan="2"><p>Node Data</p></th></tr><tr><th colspan="2"><img class="node-content" src="/src/nodeIcons/s_node_9patch.png"></th></tr><tr style="height: 4px;"></tr><tr><th colspan="2"><p class="badge" style="color: #ffe478; background-color: #ffe47816; border-color: #ffe47860;" title="Array processor">Array</p></th></tr><tr style="height: 8px;"></tr><tr><th colspan="2" class="summary-topic"><p>Display name</p></th></tr><tr><th colspan="2" class="summary-content"><p>Nine Slice</p></th></tr><tr><th colspan="2" class="summary-topic"><p>Internal name</p></th></tr><tr><th colspan="2" class="summary-content"><p>Node_9Slice</p></th></tr><tr height="8px"></tr><tr><th class="head" colspan="2"><p>Inheritances</p></th></tr><tr><th colspan="2" class="inheritance-block"><a href="../index.html">node</a></th></tr><tr><th colspan="2" class="inheritance-block"><a href="../array_processor.html">node_processor</a></th></tr><tr><th colspan="2" class="inheritance-block current"><a href="../_index/9slice.html">node_9slice</a></th></tr><tr height="8px"></tr>
 <tr><th class="head" colspan="2"><p>Inputs</p></th></tr>
 <tr><th colspan="2" class="summary-topic"><p>node_9slice</p></th></tr><tr>
                 <td class="summary-topic" style="width: 60px"><p style="color: #ff6b97">surface</p></td>
@@ -689,7 +699,17 @@
                 <td><p>Surface Out</p></td>
             </tr>
 
-</table>
+</table><p>
+Create a 9-slice image from a source image. 9-slice images are used to create scalable images that can be stretched without distorting the corners. This is useful for creating scalable buttons, panels, and other UI elements.</p><br>
+<br><h2><a id="Properties" class="anchor"></a>Properties</h2><br>
+<h3><a id="Surface In" class="anchor"></a><span class="junction" style="border-color: #ff6b97AA">Surface In</span></h3><br>
+<p>Input image to create 9-slice from.</p><br>
+<h3><a id="Dimension" class="anchor"></a><span class="junction" style="border-color: #ff9166AA">Dimension</span></h3><br>
+<p>Output image size.</p><br>
+<h3><a id="Splice" class="anchor"></a><span class="junction" style="border-color: #ffe478AA">Splice</span></h3><br>
+<p>4 values that define the 9-slice regions. The values are in the order of left, top, right, bottom.</p><br>
+<h3><a id="Filling Modes" class="anchor"></a><span class="junction" style="border-color: #8fde5dAA">Filling Modes</span></h3><br>
+<p>Whether to stretch (scale) or repeat the 9-slice regions.</p><br>
         </div>
     </div>
 

@@ -11,10 +11,6 @@ templatePath = "templates/node.html"
 with open(templatePath, "r") as f:
     template = f.read()
 
-content = ""
-with open(regPath, "r") as file:
-    content = file.read()
-
 if not os.path.exists("docs/nodes"):
     os.makedirs("docs/nodes")
 
@@ -24,9 +20,6 @@ if not os.path.exists("docs/nodes/_index"):
 if not os.path.exists("docs/nodes/_index/index.html"):
     with open("docs/nodes/_index/index.html", "w") as file:
         file.write(f'''<!DOCTYPE html><html></html>''')
-
-nodeListRaws = content.split("// NODE LIST")
-nodeListRaw = nodeListRaws[1]
 
 cat       = ""
 catType   = {}
@@ -105,15 +98,6 @@ def writeNodeFile(cat, node, line):
     spr = args[2].strip()
     _data["spr"] = spr
     
-    basicData = '<tr><th class="head" colspan="2"><p>Node Data</p></th></tr>'
-    basicData += f'<tr><th colspan="2"><img {spr}></th></tr>'
-
-    basicData += f'<tr><th colspan="2" class="summary-topic"><p>Display name</p></th></tr>'
-    basicData += f'<tr><th colspan="2" class="summary-content"><p>{nodeName}</p></th></tr>'
-    
-    basicData += f'<tr><th colspan="2" class="summary-topic"><p>Internal name</p></th></tr>'
-    basicData += f'<tr><th colspan="2" class="summary-content"><p>{node}</p></th></tr>'
-    
     p = parent
     parents = [ node.lower() ]
 
@@ -127,6 +111,33 @@ def writeNodeFile(cat, node, line):
 
     parents.insert(0, "node")
 
+    basicData = '<tr><th class="head" colspan="2"><p>Node Data</p></th></tr>'
+    basicData += f'<tr><th colspan="2"><img {spr}></th></tr>'
+
+    badges = ""
+    if "isdeprecated" in line.lower():
+        style = "color: #eb004b; background-color: #eb004b16; border-color: #eb004b60;"
+        badges += f'<p class="badge" style="{style}" title="Deprecated node, please avoid using it in your project">Deprecated</p>'
+
+    if "patreonextra" in line.lower():
+        style = "color: #88ffe9; background-color: #88ffe916; border-color: #88ffe960;"
+        badges += f'<p class="badge" style="{style}" title="Patreon supporter exclusive">Patreon</p>'
+
+    if "node_processor" in parents:
+        style = "color: #ffe478; background-color: #ffe47816; border-color: #ffe47860;"
+        badges += f'<p class="badge" style="{style}" title="Array processor">Array</p>'
+
+    if badges != "":
+        basicData += '<tr style="height: 4px;"></tr>'
+        basicData += f'<tr><th colspan="2">{badges}</th></tr>'
+        basicData += '<tr style="height: 8px;"></tr>'
+
+    basicData += f'<tr><th colspan="2" class="summary-topic"><p>Display name</p></th></tr>'
+    basicData += f'<tr><th colspan="2" class="summary-content"><p>{nodeName}</p></th></tr>'
+    
+    basicData += f'<tr><th colspan="2" class="summary-topic"><p>Internal name</p></th></tr>'
+    basicData += f'<tr><th colspan="2" class="summary-content"><p>{node}</p></th></tr>'
+    
     basicData += '<tr height="8px"></tr>'
     basicData += '<tr><th class="head" colspan="2"><p>Inheritances</p></th></tr>'
     for i, p in enumerate(parents):
@@ -152,12 +163,12 @@ def writeNodeFile(cat, node, line):
     attributeText, attributes = junc.AttributeTable(attributes)
 
     summary   = basicData + '<tr height="8px"></tr>' + \
-                    junctionText +          \
+                    junctionText +                     \
                     attributeText
 
     txt = template.replace("{{nodeName}}", nodeName) \
-                  .replace("{{tooltip}}", tooltip)   \
-                  .replace("{{summary}}", summary)
+                  .replace("{{tooltip}}",  tooltip)  \
+                  .replace("{{summary}}",  summary)
 
     fileName = className.replace('Node_', '').lower()
     
@@ -215,6 +226,12 @@ def writeNodeFile(cat, node, line):
         
     return { "spr": spr }
 
+content = ""
+with open(regPath, "r") as file:
+    content = file.read()
+
+nodeListRaws = content.split("// NODE LIST")
+nodeListRaw = nodeListRaws[1]
 
 for line in nodeListRaw.split("\n"):
     line = line.replace("if(!DEMO)", "")
@@ -233,7 +250,6 @@ for line in nodeListRaw.split("\n"):
             continue
         
         nodes[cat].append((nodeClass, line))
-
         nodePages[nodeClass.lower()] = 1
     
     else :
