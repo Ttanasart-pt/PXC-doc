@@ -28,7 +28,7 @@
                         <input type="text" name="search" placeholder="Search..." id="search" onkeyup="onSearch()">
                     </form>
                 </li>
-                <div id="search_spacing" style="height: 32px;"></div>
+                <div id="search_spacing" style="height: 48px;"></div>
                 <li class="sidebar-nav back "><a class="" href="../">Back</a></li>
 <li class="sidebar-nav icon "><?xml version="1.0" encoding="utf-8"?>
 <!-- Generator: Adobe Illustrator 28.2.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
@@ -747,7 +747,6 @@ With [0, 0] be the top left of the image, x axis goes to the right and y axis go
         input = input.toLowerCase();
 
         if (input == "") {
-            space.style.height = "16px";
             for (i = 0; i < x.length; i++)
                 x[i].style.display="none";
 
@@ -756,7 +755,6 @@ With [0, 0] be the top left of the image, x axis goes to the right and y axis go
             return;
         }
 
-        space.style.height = "32px";
         for (i = 0; i < cnt.length; i++)
             cnt[i].style.display="none";
 

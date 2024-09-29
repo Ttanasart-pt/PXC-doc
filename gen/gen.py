@@ -175,6 +175,7 @@ def generateFolder(dirIn, dirOut):
             generateFile(dirOut, fDirIn, sidebar)
 
 generateFolder("pregen", "docs")
+shutil.copy("./styles.css", "./docs/styles.css")
 
 # search
 search_list_str = ""

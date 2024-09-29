@@ -28,7 +28,7 @@
                         <input type="text" name="search" placeholder="Search..." id="search" onkeyup="onSearch()">
                     </form>
                 </li>
-                <div id="search_spacing" style="height: 32px;"></div>
+                <div id="search_spacing" style="height: 48px;"></div>
                 {{sidebar}}
                 {{search_results}}
                 <div style="height: 96px;"></div>
@@ -53,7 +53,6 @@
         input = input.toLowerCase();
 
         if (input == "") {
-            space.style.height = "16px";
             for (i = 0; i < x.length; i++)
                 x[i].style.display="none";
 
@@ -62,7 +61,6 @@
             return;
         }
 
-        space.style.height = "32px";
         for (i = 0; i < cnt.length; i++)
             cnt[i].style.display="none";
 

@@ -684,6 +684,18 @@ ul.list-empty li {
     line-height: 1.75;
 }
 
+li.search {
+    position: fixed;
+    width: inherit;
+    height: auto;
+    z-index: 1;
+    transform: translateY(-4px);
+}
+
+li.search form {
+    width: inherit;
+}
+
 li.search-result {
     height: 1.5rem;
 }
@@ -694,8 +706,7 @@ li.search-result a {
 }
 
 input#search {
-    width: 100%;
-    padding: 8px;
+    width: calc(100% - 48px);
     margin: 1px 1px;
     padding: 8px 16px;
     border: 1px solid var(--main_dkgrey);
