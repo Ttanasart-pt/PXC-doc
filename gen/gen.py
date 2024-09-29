@@ -174,10 +174,7 @@ def generateFolder(dirIn, dirOut):
 
 generateFolder("content", "docs")
 
-shutil.copy("static/styles.css",  "docs/styles.css")
-
 # search
-
 search_list_str = ""
 for title, path in pages:
     if title == "Index":
