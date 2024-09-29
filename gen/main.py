@@ -3,6 +3,9 @@ import shutil
 
 shutil.copytree("content", "pregen")
 
+print("Runing md.py...")
+os.system("python gen/md.py")
+
 print("Runing nodes.py...")
 os.system("python gen/node.py")
 
