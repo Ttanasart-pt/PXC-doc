@@ -8,20 +8,16 @@ Github page: https://docs.pixel-composer.com
 
 Call `gen/main.py` to generate all pages.
 
-### Node data
+### Static contents
 
-Static content should be added to `content/_nodes` which will be inserted to `content/3_nodes` automatically.
-
-Make sure to set `scriptDir` to point to the script directory.
-
-### Other data
-
-All files in `content/` except `content/3_nodes` are editable static content.
+All files in `content/` are editable static content.
 
 - PascalCase will be converted to  Title Case. 
 - Page can begins with number to force ordering. Number needs to ends with underscore `_` before the actual name.
 
-`styles.css` will be copy to `docs/styles.css` automatically. `src` directory is hardlinked to the `docs/src`.
+### Node data
+
+Calling `main.py` will generate placeholder content for every nodes in the `content/__nodes`. Content in `__nodes` will be populated in the corresponding page automatically.
 
 ## Media
 

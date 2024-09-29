@@ -17,8 +17,10 @@ with open(regPath, "r") as file:
 
 if not os.path.exists("docs/nodes"):
     os.makedirs("docs/nodes")
+
 if not os.path.exists("docs/nodes/_index"):
     os.makedirs("docs/nodes/_index")
+    
 if not os.path.exists("docs/nodes/_index/index.html"):
     with open("docs/nodes/_index/index.html", "w") as file:
         file.write(f'''<!DOCTYPE html><html></html>''')
@@ -161,7 +163,7 @@ def writeNodeFile(cat, node, line):
     
     ############################### File Generations ###############################
 
-    manFilePath = f"content/__nodes/{fileName}.html"
+    manFilePath = f"pregen/__nodes/{fileName}.html"
     if os.path.exists(manFilePath):
         with open(manFilePath, "r") as file:
             content = file.read()
@@ -194,10 +196,13 @@ def writeNodeFile(cat, node, line):
 
             txt += content
     else:
+        with open(f"content/__nodes/{fileName}.html", "w") as file:
+            file.write("")
+            
         with open(manFilePath, "w") as file:
             file.write("")
 
-    filePath = f"content/{dirname}/{catType[cat]}_{cat}/{fileName}.html"
+    filePath = f"pregen/{dirname}/{catType[cat]}_{cat}/{fileName}.html"
     with open(filePath, "w") as file:
         file.write(txt)
 
@@ -281,7 +286,7 @@ def generateNodeCatagory(cat):
 
     txt += "</div>"
     
-    filePath = f"content/{dirname}/{catType[cat]}_{cat}/0_index.html"
+    filePath = f"pregen/{dirname}/{catType[cat]}_{cat}/0_index.html"
     with open(filePath, "w") as file:
         file.write(txt)
 
@@ -297,7 +302,7 @@ for cat in nodes:
     catType[cat] += i
     i += 1
 
-    catPath = f"content/{dirname}/{catType[cat]}_{cat}"
+    catPath = f"pregen/{dirname}/{catType[cat]}_{cat}"
     if not os.path.exists(catPath):
         os.makedirs(catPath)
 

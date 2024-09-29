@@ -172,7 +172,7 @@ def generateFolder(dirIn, dirOut):
         elif t == FileType.FILE:
             generateFile(dirOut, fDirIn, sidebar)
 
-generateFolder("content", "docs")
+generateFolder("pregen", "docs")
 
 # search
 search_list_str = ""
