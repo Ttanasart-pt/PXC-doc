@@ -4,24 +4,15 @@ A documentation page for [Pixel Composer](https://github.com/Ttanasart-pt/Pixel-
 
 Github page: https://docs.pixel-composer.com
 
-## Generating pages
+## Editing
 
-Call `gen/main.py` to generate all pages.
+Edit files in `content/` then call `py ./gen/main.py` to generate all pages.
 
-### Static contents
-
-All files in `content/` are editable static content.
-
-- PascalCase will be converted to  Title Case. 
-- Page can begins with number to force ordering. Number needs to ends with underscore `_` before the actual name.
-
-### Node data
-
-Calling `main.py` will generate placeholder content for every nodes in the `content/__nodes`. Content in `__nodes` will be populated in the corresponding page automatically.
+- Page name can begins with number to force ordering. Number needs to ends with underscore `_` before the actual name ("2_interfaces").
 
 ## Media
 
-All media are stored in `src`. Every image should use different name (even in different directory.) to allow tag shortcuts.
+All media are stored in `src`. Every image should use different name (even in different directory.) to allow for tag shortcuts.
 
 ## Tag shortcuts
 
