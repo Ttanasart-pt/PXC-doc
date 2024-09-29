@@ -131,7 +131,7 @@ def generateFolder(dirIn, dirOut):
     files = sorted(os.listdir(dirIn))
     sidebar = []
 
-    if dirIn == "content":
+    if dirIn == "pregen":
         groupTitle = "Home"
         sidebar.append((FileType.BACK, "", "", ""))
     else:
