@@ -183,7 +183,7 @@ for title, path in pages:
         continue
 
     real_path = path.replace("docs\\", "\\")
-    search_list_str += f'<li class="search-result"><a href="{real_path}">{title}</a></li>\n'
+    search_list_str += f'<li class="search-result" style="display: none;"><a href="{real_path}">{title}</a></li>\n'
 
 for _, path in pages:
     with open(path, "r") as f:
