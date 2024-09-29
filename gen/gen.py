@@ -8,6 +8,8 @@ class FileType(Enum):
     DIR   = 1
     BACK  = 2
 
+shutil.copytree("src", "docs/src", dirs_exist_ok = True)
+
 images = {}
 for root, dirs, files in os.walk("src"):
     for file in files:
