@@ -182,7 +182,9 @@ search_list_str = ""
 for title, path in pages:
     if title == "Index":
         continue
-    search_list_str += f'<li class="search-result"><a href="{path}">{title}</a></li>\n'
+
+    real_path = path.replace("docs\\", "\\")
+    search_list_str += f'<li class="search-result"><a href="{real_path}">{title}</a></li>\n'
 
 for _, path in pages:
     with open(path, "r") as f:
