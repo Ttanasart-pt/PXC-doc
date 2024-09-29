@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PXC Documentation</title>
+
+    <link rel="stylesheet" href="/styles.css">
+    <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+    <div class = "header">
+        <div class="header-title">
+            <img src="/src/icon_48.png" alt="PXC Logo" class="logo">
+            <a href="/index.html">
+                <h2>PXC Documentation</h2>
+            </a>
+        </div>
+
+        <a href="https://pixel-composer.com">PXC Home</a>
+    </div>
+
+    <div class="main">
+        <div class="sidebar">
+            <ul>
+                <li class="search">
+                    <form action="search.html" method="get">
+                        <input type="text" name="search" placeholder="Search..." id="search" onkeyup="onSearch()">
+                    </form>
+                </li>
+                <div id="search_spacing" style="height: 32px;"></div>
+                <li class="sidebar-nav back "><a class="" href="../">Back</a></li>
+<li class="sidebar-nav active icon "><?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 28.2.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 24 24" style="enable-background:new 0 0 24 24;" xml:space="preserve">
+<path class="st0" d="M4,21V9l8-6l8,6v12h-6v-6h-4v6H4z"/>
+</svg>
+<a class="" href="index.html">Interfaces</a></li>
+<ul class="submenu">
+<li class="sidebar-nav"><a href="#Panels">Panels</a></li>
+<ul class="submenu h3">
+<li class="sidebar-nav"><a href="#Tabbed Panel">Tabbed Panel</a></li>
+</ul>
+<li class="sidebar-nav"><a href="#Dialogs">Dialogs</a></li>
+<ul class="submenu h3">
+</ul>
+<li class="sidebar-nav"><a href="#Workspaces">Workspaces</a></li>
+<ul class="submenu h3">
+</ul>
+</ul>
+<li class="sidebar-nav "><a class="" href="animation_panel.html">Animation Panel</a></li>
+<li class="sidebar-nav "><a class="" href="collection_panel.html">Collection Panel</a></li>
+<li class="sidebar-nav icon "><?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 28.2.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 24 24" style="enable-background:new 0 0 24 24;" xml:space="preserve">
+<circle cx="12" cy="12" r="6"/>
+</svg>
+<a class="" href="color_selector">Color Selector</a></li>
+<li class="sidebar-nav "><a class="" href="graph_panel.html">Graph Panel</a></li>
+<li class="sidebar-nav "><a class="" href="inspector_panel.html">Inspector Panel</a></li>
+<li class="sidebar-nav "><a class="" href="nodes_panel.html">Nodes Panel</a></li>
+<li class="sidebar-nav "><a class="" href="preview_panel.html">Preview Panel</a></li>
+<li class="sidebar-nav "><a class="" href="preview_panel_3D.html">Preview Panel 3D</a></li>
+<li class="sidebar-nav "><a class="" href="tunnels_panel.html">Tunnels Panel</a></li>
+
+                <li class="search-result"><a href="\getting_started.html">Getting Started</a></li>
+<li class="search-result"><a href="docs/interfaces\animation_panel.html">Animation Panel</a></li>
+<li class="search-result"><a href="docs/interfaces\collection_panel.html">Collection Panel</a></li>
+<li class="search-result"><a href="docs/interfaces/color_selector\gradient_editor.html">Gradient Editor</a></li>
+<li class="search-result"><a href="docs/interfaces/color_selector\palette_editor.html">Palette Editor</a></li>
+<li class="search-result"><a href="docs/interfaces\graph_panel.html">Graph Panel</a></li>
+<li class="search-result"><a href="docs/interfaces\inspector_panel.html">Inspector Panel</a></li>
+<li class="search-result"><a href="docs/interfaces\nodes_panel.html">Nodes Panel</a></li>
+<li class="search-result"><a href="docs/interfaces\preview_panel.html">Preview Panel</a></li>
+<li class="search-result"><a href="docs/interfaces\preview_panel_3D.html">Preview Panel 3D</a></li>
+<li class="search-result"><a href="docs/interfaces\tunnels_panel.html">Tunnels Panel</a></li>
+<li class="search-result"><a href="docs/nodes\junctions.html">Junctions</a></li>
+<li class="search-result"><a href="docs/nodes\array_processor.html">Array Processor</a></li>
+<li class="search-result"><a href="docs/animations\driver.html">Driver</a></li>
+<li class="search-result"><a href="docs/animations\looping.html">Looping</a></li>
+<li class="search-result"><a href="\exporting.html">Exporting</a></li>
+<li class="search-result"><a href="docs/scriptings\pcx.html">Pcx</a></li>
+<li class="search-result"><a href="docs/scriptings\hlsl.html">Hlsl</a></li>
+<li class="search-result"><a href="docs/scriptings\lua.html">Lua</a></li>
+<li class="search-result"><a href="docs/misc\command_line.html">Command Line</a></li>
+<li class="search-result"><a href="docs/misc\console_command.html">Console Command</a></li>
+
+                <div style="height: 96px;"></div>
+            </ul>
+        </div>
+
+        <div class="content">
+            <h1>Interface</h1>
+<br><br>
+<img class="deco" src="/src/images/2_interfaces/main.png" alt="">
+<br>
+<p>Pixel Composer interfaces are separated into two types: panels and dialogs. Panels are interface area 
+that embed directly to the main windows. Dialogs are floating area that can be move around freely and overlap with other dialogs.</p>
+<br><br>
+<h2><a id="Panels" class="anchor"></a>Panels</h2>
+<br>
+<img class="deco" src="/src/images/2_interfaces/panels.png" alt="">
+<br>
+<p>The first time you open Pixel Composer. You'll be greeted with 5 panels: menu, graph, preview, inspector and animation panels.</p>
+<br>
+<p>When hovering on the edge of the active panel, the edge will be highlighted. Which means that panel can be manipulated as below:</p>
+<br>
+<table class="center">
+    <colgroup>
+        <col style="width: 30%">
+        <col style="width: 70%">
+    </colgroup>
+    <tr>
+        <td>Resize</td>
+        <td>Click and drag</td>
+    </tr>
+    <tr>
+        <td>Move</td>
+        <td>Double click and drag</td>
+    </tr>
+    <tr>
+        <td>Detach</td>
+        <td><span class="inline-code">Shift</span> + Double click</td>
+    </tr>
+    <tr>
+        <td>Close</td>
+        <td>Right click and select "close"</td>
+    </tr>
+</table>
+<br>
+<p>Right clicking on the edge while hovering will also bring up context menu with option to move, detach and close the panel as well.</p>
+<br>
+<img src="/src/images/2_interfaces/panels_context.png" alt="">
+<br>
+<h3><a id="Tabbed Panel" class="anchor"></a>Tabbed Panel</h3>
+<br>
+<img class="deco" src="/src/images/2_interfaces/tabbed.png" alt="">
+<br>
+<p>You can put panel on top of each other to create tabbed panel. Tabbed panel works the same way as normal panel and can be 
+move around by click and drag on the tab itself.
+</p>
+<br><br>
+<h2><a id="Dialogs" class="anchor"></a>Dialogs</h2>
+<br>
+<img src="/src/images/2_interfaces/dialog.png" alt="">
+<br>
+<p>Dialogs are floating UI elements that can be moved freely. Most dialogs are unpined, which means clicking outside 
+them will close the dialog. You can pin the dialog by clicking the pin icon on the top right of the dialog.</p>
+<br>
+<img class="deco" src="/src/images/2_interfaces/pin.png" alt="">
+<br>
+<p>Hovering on the edge  of the dialog will also highlighted the edge which allows for dialog manipulation 
+similiar to panels.</p>
+<br>
+<br>
+<h2><a id="Workspaces" class="anchor"></a>Workspaces</h2>
+<br>
+<img src="/src/images/2_interfaces/workspace.png" alt="">
+<br>
+<p>You can save your current panels layout as a workspace. Open workspace dialog in <span class="inline-code">Panels > Workspaces</span> 
+then select the "+" button to create new workspace.</p>
+        </div>
+    </div>
+
+    <div style="height: 96px;"></div>
+    <div class="footer"> <p>2024 Pixel Composer</p> </div>
+</body>
+
+<script>
+    function onSearch() {
+        var input = document.getElementById('search').value
+        var space = document.getElementById('search_spacing');
+        var x     = document.getElementsByClassName('search-result');
+        var cnt   = document.getElementsByClassName('sidebar-nav');
+        input = input.toLowerCase();
+
+        if (input == "") {
+            space.style.height = "16px";
+            for (i = 0; i < x.length; i++)
+                x[i].style.display="none";
+
+            for (i = 0; i < cnt.length; i++)
+                cnt[i].style.display="flex";
+            return;
+        }
+
+        space.style.height = "32px";
+        for (i = 0; i < cnt.length; i++)
+            cnt[i].style.display="none";
+
+        for (i = 0; i < x.length; i++) {
+            if (!x[i].innerHTML.toLowerCase().includes(input))
+                x[i].style.display="none";
+            else
+                x[i].style.display="flex";
+        }
+    }
+
+    onSearch()
+</script>
+
+</html>

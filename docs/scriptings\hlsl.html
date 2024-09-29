@@ -1,0 +1,686 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PXC Documentation</title>
+
+    <link rel="stylesheet" href="/styles.css">
+    <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+    <div class = "header">
+        <div class="header-title">
+            <img src="/src/icon_48.png" alt="PXC Logo" class="logo">
+            <a href="/index.html">
+                <h2>PXC Documentation</h2>
+            </a>
+        </div>
+
+        <a href="https://pixel-composer.com">PXC Home</a>
+    </div>
+
+    <div class="main">
+        <div class="sidebar">
+            <ul>
+                <li class="search">
+                    <form action="search.html" method="get">
+                        <input type="text" name="search" placeholder="Search..." id="search" onkeyup="onSearch()">
+                    </form>
+                </li>
+                <div id="search_spacing" style="height: 32px;"></div>
+                <li class="sidebar-nav back "><a class="" href="../">Back</a></li>
+<li class="sidebar-nav icon "><?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 28.2.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 24 24" style="enable-background:new 0 0 24 24;" xml:space="preserve">
+<path class="st0" d="M4,21V9l8-6l8,6v12h-6v-6h-4v6H4z"/>
+</svg>
+<a class="" href="index.html">Scriptings</a></li>
+<li class="sidebar-nav "><a class="" href="pcx.html">Pcx</a></li>
+<li class="sidebar-nav active "><a class="" href="hlsl.html">Hlsl</a></li>
+<ul class="submenu">
+<li class="sidebar-nav"><a href="#HLSL Node">HLSL Node</a></li>
+<ul class="submenu h3">
+</ul>
+<li class="sidebar-nav"><a href="#Syntax">Syntax</a></li>
+<ul class="submenu h3">
+<li class="sidebar-nav"><a href="#Variable">Variable</a></li>
+<li class="sidebar-nav"><a href="#Operators">Operators</a></li>
+<li class="sidebar-nav"><a href="#Swizzling">Swizzling</a></li>
+</ul>
+<li class="sidebar-nav"><a href="#Functions Reference">Functions Reference</a></li>
+<ul class="submenu h3">
+<li class="sidebar-nav"><a href="#abs(x)">abs(x)</a></li>
+<li class="sidebar-nav"><a href="#acos(x)">acos(x)</a></li>
+<li class="sidebar-nav"><a href="#asfloat(x)">asfloat(x)</a></li>
+<li class="sidebar-nav"><a href="#asin(x)">asin(x)</a></li>
+<li class="sidebar-nav"><a href="#asint(x)">asint(x)</a></li>
+<li class="sidebar-nav"><a href="#atan(x)">atan(x)</a></li>
+<li class="sidebar-nav"><a href="#atan2(y, x)">atan2(y, x)</a></li>
+<li class="sidebar-nav"><a href="#ceil(x)">ceil(x)</a></li>
+<li class="sidebar-nav"><a href="#clamp(x, min, max)">clamp(x, min, max)</a></li>
+<li class="sidebar-nav"><a href="#clip(x)">clip(x)</a></li>
+<li class="sidebar-nav"><a href="#cos(x)">cos(x)</a></li>
+<li class="sidebar-nav"><a href="#cosh(x)">cosh(x)</a></li>
+<li class="sidebar-nav"><a href="#cross(x, y)">cross(x, y)</a></li>
+<li class="sidebar-nav"><a href="#ddx(x)">ddx(x)</a></li>
+<li class="sidebar-nav"><a href="#ddy(x)">ddy(x)</a></li>
+<li class="sidebar-nav"><a href="#degrees(x)">degrees(x)</a></li>
+<li class="sidebar-nav"><a href="#determinant(x)">determinant(x)</a></li>
+<li class="sidebar-nav"><a href="#distance(x, y)">distance(x, y)</a></li>
+<li class="sidebar-nav"><a href="#dot(x, y)">dot(x, y)</a></li>
+<li class="sidebar-nav"><a href="#exp(x)">exp(x)</a></li>
+<li class="sidebar-nav"><a href="#exp2(x)">exp2(x)</a></li>
+<li class="sidebar-nav"><a href="#faceforward(n, i, ng)">faceforward(n, i, ng)</a></li>
+<li class="sidebar-nav"><a href="#floor(x)">floor(x)</a></li>
+<li class="sidebar-nav"><a href="#fma(a, b, c)">fma(a, b, c)</a></li>
+<li class="sidebar-nav"><a href="#fmod(x, y)">fmod(x, y)</a></li>
+<li class="sidebar-nav"><a href="#frac(x)">frac(x)</a></li>
+<li class="sidebar-nav"><a href="#frexp(x, exp)">frexp(x, exp)</a></li>
+<li class="sidebar-nav"><a href="#fwidth(x)">fwidth(x)</a></li>
+<li class="sidebar-nav"><a href="#isfinite(x)">isfinite(x)</a></li>
+<li class="sidebar-nav"><a href="#isinf(x)">isinf(x)</a></li>
+<li class="sidebar-nav"><a href="#isnan(x)">isnan(x)</a></li>
+<li class="sidebar-nav"><a href="#ldexp(x, exp)">ldexp(x, exp)</a></li>
+<li class="sidebar-nav"><a href="#length(x)">length(x)</a></li>
+<li class="sidebar-nav"><a href="#lerp(x, y, s)">lerp(x, y, s)</a></li>
+<li class="sidebar-nav"><a href="#lit(n_dot_l, n_dot_h, m)">lit(n_dot_l, n_dot_h, m)</a></li>
+<li class="sidebar-nav"><a href="#log(x)">log(x)</a></li>
+<li class="sidebar-nav"><a href="#log10(x)">log10(x)</a></li>
+<li class="sidebar-nav"><a href="#log2(x)">log2(x)</a></li>
+<li class="sidebar-nav"><a href="#max(x, y)">max(x, y)</a></li>
+<li class="sidebar-nav"><a href="#min(x, y)">min(x, y)</a></li>
+<li class="sidebar-nav"><a href="#modf(x, out ip)">modf(x, out ip)</a></li>
+<li class="sidebar-nav"><a href="#mul(x, y)">mul(x, y)</a></li>
+<li class="sidebar-nav"><a href="#noise(x)">noise(x)</a></li>
+<li class="sidebar-nav"><a href="#normalize(x)">normalize(x)</a></li>
+<li class="sidebar-nav"><a href="#pow(x, y)">pow(x, y)</a></li>
+<li class="sidebar-nav"><a href="#radians(x)">radians(x)</a></li>
+<li class="sidebar-nav"><a href="#rcp(x)">rcp(x)</a></li>
+<li class="sidebar-nav"><a href="#reflect(i, n)">reflect(i, n)</a></li>
+<li class="sidebar-nav"><a href="#refract(i, n, ?)">refract(i, n, ?)</a></li>
+<li class="sidebar-nav"><a href="#round(x)">round(x)</a></li>
+<li class="sidebar-nav"><a href="#rsqrt(x)">rsqrt(x)</a></li>
+<li class="sidebar-nav"><a href="#saturate(x)">saturate(x)</a></li>
+<li class="sidebar-nav"><a href="#sign(x)">sign(x)</a></li>
+<li class="sidebar-nav"><a href="#sin(x)">sin(x)</a></li>
+<li class="sidebar-nav"><a href="#sincos(x, out s, out c)">sincos(x, out s, out c)</a></li>
+<li class="sidebar-nav"><a href="#sinh(x)">sinh(x)</a></li>
+<li class="sidebar-nav"><a href="#smoothstep(min, max, x)">smoothstep(min, max, x)</a></li>
+<li class="sidebar-nav"><a href="#sqrt(x)">sqrt(x)</a></li>
+<li class="sidebar-nav"><a href="#step(y, x)">step(y, x)</a></li>
+<li class="sidebar-nav"><a href="#tan(x)">tan(x)</a></li>
+<li class="sidebar-nav"><a href="#tanh(x)">tanh(x)</a></li>
+<li class="sidebar-nav"><a href="#transpose(x)">transpose(x)</a></li>
+<li class="sidebar-nav"><a href="#trunc(x)">trunc(x)</a></li>
+</ul>
+<li class="sidebar-nav"><a href="#Further Readings">Further Readings</a></li>
+<ul class="submenu h3">
+</ul>
+</ul>
+<li class="sidebar-nav "><a class="" href="lua.html">Lua</a></li>
+
+                <li class="search-result"><a href="\getting_started.html">Getting Started</a></li>
+<li class="search-result"><a href="docs/interfaces\animation_panel.html">Animation Panel</a></li>
+<li class="search-result"><a href="docs/interfaces\collection_panel.html">Collection Panel</a></li>
+<li class="search-result"><a href="docs/interfaces/color_selector\gradient_editor.html">Gradient Editor</a></li>
+<li class="search-result"><a href="docs/interfaces/color_selector\palette_editor.html">Palette Editor</a></li>
+<li class="search-result"><a href="docs/interfaces\graph_panel.html">Graph Panel</a></li>
+<li class="search-result"><a href="docs/interfaces\inspector_panel.html">Inspector Panel</a></li>
+<li class="search-result"><a href="docs/interfaces\nodes_panel.html">Nodes Panel</a></li>
+<li class="search-result"><a href="docs/interfaces\preview_panel.html">Preview Panel</a></li>
+<li class="search-result"><a href="docs/interfaces\preview_panel_3D.html">Preview Panel 3D</a></li>
+<li class="search-result"><a href="docs/interfaces\tunnels_panel.html">Tunnels Panel</a></li>
+<li class="search-result"><a href="docs/nodes\junctions.html">Junctions</a></li>
+<li class="search-result"><a href="docs/nodes\array_processor.html">Array Processor</a></li>
+<li class="search-result"><a href="docs/animations\driver.html">Driver</a></li>
+<li class="search-result"><a href="docs/animations\looping.html">Looping</a></li>
+<li class="search-result"><a href="\exporting.html">Exporting</a></li>
+<li class="search-result"><a href="docs/scriptings\pcx.html">Pcx</a></li>
+<li class="search-result"><a href="docs/scriptings\hlsl.html">Hlsl</a></li>
+<li class="search-result"><a href="docs/scriptings\lua.html">Lua</a></li>
+<li class="search-result"><a href="docs/misc\command_line.html">Command Line</a></li>
+<li class="search-result"><a href="docs/misc\console_command.html">Console Command</a></li>
+
+                <div style="height: 96px;"></div>
+            </ul>
+        </div>
+
+        <div class="content">
+            <h1>High Level Shading Language</h1>
+<br><br>
+<p>High Level Shading Language (HLSL) is a shader programming language for GPU. Pixel Composer has HLSL supports 
+through the <a href="">HLSL node</a>. This page will only cover basics of HLSL. For more information, check out the 
+<a href="">further reading</a> section.</p>
+<br>
+<h2><a id="HLSL Node" class="anchor"></a>HLSL Node</h2>
+<br>
+<img class="deco" src="/src/images/2_interfaces/node_hlsl.png" alt="">
+<br>
+<p>You can find the HLSL node under the Misc. category. HLSL node takes HLSL fragment code and custom arguments. 
+The code will compile automatically, however you can also compile it manually by clicking the Compile button in 
+the inspector.</p>
+<br><br>
+<h2><a id="Syntax" class="anchor"></a>Syntax</h2>
+<br>
+<p>HLSL runs over every pixel. Process and returns the output pixel color. Let's take a look at the default 
+HLSL fragment code.
+<span class="code-block">float4 surfaceColor = gm_BaseTextureObject.Sample(gm_BaseTexture, input.uv);<br>
+output.color = surfaceColor;</span>
+This code does 2 things. <br><br>The first line 
+<span class="code-block">float4 surfaceColor = gm_BaseTextureObject.Sample(gm_BaseTexture, input.uv);</span> 
+Get the color of the current pixel from the input surface and stores it in the 
+<span class="inline-code">surfaceColor</span> variable.<br><br>
+The seconds line <span class="code-block">output.color = surfaceColor;</span> apply the color to the output.</p>
+<br>
+<h3><a id="Variable" class="anchor"></a>Variable</h3>
+<br>
+<p>Variable in HLSL are strongly typed (type need to be defined when create). Variable types you can use are:</p>
+<br>
+<table>
+    <colgroup>
+        <col style="width: 40%">
+        <col style="width: 60%">
+    </colgroup>
+    <tr>
+        <th>Type</th>
+        <th>Description</th>
+    </tr>
+    <tr>
+        <td><span class="inline-code">float</span></td>
+        <td>Floating point number</td>
+    </tr>
+    <tr>
+        <td><span class="inline-code">int</span></td>
+        <td>Integer</td>
+    </tr>
+    <tr>
+        <td><span class="inline-code">bool</span></td>
+        <td>Boolean</td>
+    </tr>
+    <tr>
+        <td><span class="inline-code">float2</span></td>
+        <td>2D vector</td>
+    </tr>
+    <tr>
+        <td><span class="inline-code">float3</span></td>
+        <td>3D vector</td>
+    </tr>
+    <tr>
+        <td><span class="inline-code">float4</span></td>
+        <td>4D vector</td>
+    </tr>
+    <tr>
+        <td><span class="inline-code">float3x3</span></td>
+        <td>3x3 matrix</td>
+    </tr>
+    <tr>
+        <td><span class="inline-code">float4x4</span></td>
+        <td>4x4 matrix</td>
+    </tr>
+</table>
+<br>
+<h3><a id="Operators" class="anchor"></a>Operators</h3>
+<br>
+<p>Operators in HLSL are similar to other programming languages. Here are some of the operators you can use:</p>
+<br>
+<table>
+    <colgroup>
+        <col style="width: 40%">
+        <col style="width: 60%">
+    </colgroup>
+    <tr>
+        <td><span class="inline-code">+</span></td>
+        <td>Addition</td>
+    </tr>
+    <tr>
+        <td><span class="inline-code">-</span></td>
+        <td>Subtraction</td>
+    </tr>
+    <tr>
+        <td><span class="inline-code">*</span></td>
+        <td>Multiplication</td>
+    </tr>
+    <tr>
+        <td><span class="inline-code">/</span></td>
+        <td>Division</td>
+    </tr>
+    <tr>
+        <td><span class="inline-code">%</span></td>
+        <td>Modulus</td>
+    </tr>
+    <tr>
+        <td><span class="inline-code">++</span></td>
+        <td>Increment</td>
+    </tr>
+    <tr>
+        <td><span class="inline-code">--</span></td>
+        <td>Decrement</td>
+    </tr>
+    <tr>
+        <td><span class="inline-code">==</span></td>
+        <td>Equal</td>
+    </tr>
+    <tr>
+        <td><span class="inline-code">!=</span></td>
+        <td>Not equal</td>
+    </tr>
+    <tr>
+        <td><span class="inline-code">&gt;</span></td>
+        <td>Greater than</td>
+    </tr>
+    <tr>
+        <td><span class="inline-code">&lt;</span></td>
+        <td>Less than</td>
+    </tr>
+    <tr>
+        <td><span class="inline-code">&gt;=</span></td>
+        <td>Greater than or equal</td>
+    </tr>
+    <tr>
+        <td><span class="inline-code">&lt;=</span></td>
+        <td>Less than or equal</td>
+    </tr>
+    <tr>
+        <td><span class="inline-code">!</span></td>
+        <td>Logical NOT</td>
+    </tr>
+    <tr>
+        <td><span class="inline-code">&amp;&amp;</span></td>
+        <td>Logical AND</td>
+    </tr>
+    <tr>
+        <td><span class="inline-code">||</span></td>
+        <td>Logical OR</td>
+    </tr>
+</table>
+<br>
+<h3><a id="Swizzling" class="anchor"></a>Swizzling</h3>
+<br>
+<p>Swizzling is a feature in HLSL that allows you to access the components of a vector. For example, you can access 
+the x and y components of a float3 vector by using <span class="inline-code">.xy</span> suffixes. Here are some examples:</p>
+<br>
+<table>
+    <colgroup>
+        <col style="width: 40%">
+        <col style="width: 60%">
+    </colgroup>
+    <tr>
+        <td><span class="inline-code">.x</span></td>
+        <td>Get a single value from vector.</td>
+    </tr>
+    <tr>
+        <td><span class="inline-code">.xz</span></td>
+        <td>Create new float2 consisting of the first and third elements.</td>
+    </tr>
+    <tr>
+        <td><span class="inline-code">.xxx</span></td>
+        <td>Create new float3 with all the values equals to the first element.</td>
+    </tr>
+    <tr>
+        <td><span class="inline-code">.rgb</span></td>
+        <td>Create new float3 with the first three elements.</td>
+    </tr>
+</table>
+<br><br>
+<h2><a id="Functions Reference" class="anchor"></a>Functions Reference</h2>
+<br>
+<h3><a id="abs(x)" class="anchor"></a><span class="inline-code">abs(x)</span></h3>
+<br>
+<p>abs</p>
+<br>
+<br>
+<h3><a id="acos(x)" class="anchor"></a><span class="inline-code">acos(x)</span></h3>
+<br>
+<p>acos</p>
+<br>
+<br>
+<h3><a id="asfloat(x)" class="anchor"></a><span class="inline-code">asfloat(x)</span></h3>
+<br>
+<p>asfloat</p>
+<br>
+<br>
+<h3><a id="asin(x)" class="anchor"></a><span class="inline-code">asin(x)</span></h3>
+<br>
+<p>asin</p>
+<br>
+<br>
+<h3><a id="asint(x)" class="anchor"></a><span class="inline-code">asint(x)</span></h3>
+<br>
+<p>asint</p>
+<br>
+<br>
+<h3><a id="atan(x)" class="anchor"></a><span class="inline-code">atan(x)</span></h3>
+<br>
+<p>atan</p>
+<br>
+<br>
+<h3><a id="atan2(y, x)" class="anchor"></a><span class="inline-code">atan2(y, x)</span></h3>
+<br>
+<p>atan2</p>
+<br>
+<br>
+<h3><a id="ceil(x)" class="anchor"></a><span class="inline-code">ceil(x)</span></h3>
+<br>
+<p>ceil</p>
+<br>
+<br>
+<h3><a id="clamp(x, min, max)" class="anchor"></a><span class="inline-code">clamp(x, min, max)</span></h3>
+<br>
+<p>clamp</p>
+<br>
+<br>
+<h3><a id="clip(x)" class="anchor"></a><span class="inline-code">clip(x)</span></h3>
+<br>
+<p>clip</p>
+<br>
+<br>
+<h3><a id="cos(x)" class="anchor"></a><span class="inline-code">cos(x)</span></h3>
+<br>
+<p>cos</p>
+<br>
+<br>
+<h3><a id="cosh(x)" class="anchor"></a><span class="inline-code">cosh(x)</span></h3>
+<br>
+<p>cosh</p>
+<br>
+<br>
+<h3><a id="cross(x, y)" class="anchor"></a><span class="inline-code">cross(x, y)</span></h3>
+<br>
+<p>cross</p>
+<br>
+<br>
+<h3><a id="ddx(x)" class="anchor"></a><span class="inline-code">ddx(x)</span></h3>
+<br>
+<p>ddx</p>
+<br>
+<br>
+<h3><a id="ddy(x)" class="anchor"></a><span class="inline-code">ddy(x)</span></h3>
+<br>
+<p>ddy</p>
+<br>
+<br>
+<h3><a id="degrees(x)" class="anchor"></a><span class="inline-code">degrees(x)</span></h3>
+<br>
+<p>degrees</p>
+<br>
+<br>
+<h3><a id="determinant(x)" class="anchor"></a><span class="inline-code">determinant(x)</span></h3>
+<br>
+<p>determinant</p>
+<br>
+<br>
+<h3><a id="distance(x, y)" class="anchor"></a><span class="inline-code">distance(x, y)</span></h3>
+<br>
+<p>distance</p>
+<br>
+<br>
+<h3><a id="dot(x, y)" class="anchor"></a><span class="inline-code">dot(x, y)</span></h3>
+<br>
+<p>dot</p>
+<br>
+<br>
+<h3><a id="exp(x)" class="anchor"></a><span class="inline-code">exp(x)</span></h3>
+<br>
+<p>exp</p>
+<br>
+<br>
+<h3><a id="exp2(x)" class="anchor"></a><span class="inline-code">exp2(x)</span></h3>
+<br>
+<p>exp2</p>
+<br>
+<br>
+<h3><a id="faceforward(n, i, ng)" class="anchor"></a><span class="inline-code">faceforward(n, i, ng)</span></h3>
+<br>
+<p>faceforward</p>
+<br>
+<br>
+<h3><a id="floor(x)" class="anchor"></a><span class="inline-code">floor(x)</span></h3>
+<br>
+<p>floor</p>
+<br>
+<br>
+<h3><a id="fma(a, b, c)" class="anchor"></a><span class="inline-code">fma(a, b, c)</span></h3>
+<br>
+<p>fma</p>
+<br>
+<br>
+<h3><a id="fmod(x, y)" class="anchor"></a><span class="inline-code">fmod(x, y)</span></h3>
+<br>
+<p>fmod</p>
+<br>
+<br>
+<h3><a id="frac(x)" class="anchor"></a><span class="inline-code">frac(x)</span></h3>
+<br>
+<p>frac</p>
+<br>
+<br>
+<h3><a id="frexp(x, exp)" class="anchor"></a><span class="inline-code">frexp(x, exp)</span></h3>
+<br>
+<p>frexp</p>
+<br>
+<br>
+<h3><a id="fwidth(x)" class="anchor"></a><span class="inline-code">fwidth(x)</span></h3>
+<br>
+<p>fwidth</p>
+<br>
+<br>
+<h3><a id="isfinite(x)" class="anchor"></a><span class="inline-code">isfinite(x)</span></h3>
+<br>
+<p>isfinite</p>
+<br>
+<br>
+<h3><a id="isinf(x)" class="anchor"></a><span class="inline-code">isinf(x)</span></h3>
+<br>
+<p>isinf</p>
+<br>
+<br>
+<h3><a id="isnan(x)" class="anchor"></a><span class="inline-code">isnan(x)</span></h3>
+<br>
+<p>isnan</p>
+<br>
+<br>
+<h3><a id="ldexp(x, exp)" class="anchor"></a><span class="inline-code">ldexp(x, exp)</span></h3>
+<br>
+<p>ldexp</p>
+<br>
+<br>
+<h3><a id="length(x)" class="anchor"></a><span class="inline-code">length(x)</span></h3>
+<br>
+<p>length</p>
+<br>
+<br>
+<h3><a id="lerp(x, y, s)" class="anchor"></a><span class="inline-code">lerp(x, y, s)</span></h3>
+<br>
+<p>lerp</p>
+<br>
+<br>
+<h3><a id="lit(n_dot_l, n_dot_h, m)" class="anchor"></a><span class="inline-code">lit(n_dot_l, n_dot_h, m)</span></h3>
+<br>
+<p>lit</p>
+<br>
+<br>
+<h3><a id="log(x)" class="anchor"></a><span class="inline-code">log(x)</span></h3>
+<br>
+<p>log</p>
+<br>
+<br>
+<h3><a id="log10(x)" class="anchor"></a><span class="inline-code">log10(x)</span></h3>
+<br>
+<p>log10</p>
+<br>
+<br>
+<h3><a id="log2(x)" class="anchor"></a><span class="inline-code">log2(x)</span></h3>
+<br>
+<p>log2</p>
+<br>
+<br>
+<h3><a id="max(x, y)" class="anchor"></a><span class="inline-code">max(x, y)</span></h3>
+<br>
+<p>max</p>
+<br>
+<br>
+<h3><a id="min(x, y)" class="anchor"></a><span class="inline-code">min(x, y)</span></h3>
+<br>
+<p>min</p>
+<br>
+<br>
+<h3><a id="modf(x, out ip)" class="anchor"></a><span class="inline-code">modf(x, out ip)</span></h3>
+<br>
+<p>modf</p>
+<br>
+<br>
+<h3><a id="mul(x, y)" class="anchor"></a><span class="inline-code">mul(x, y)</span></h3>
+<br>
+<p>mul</p>
+<br>
+<br>
+<h3><a id="noise(x)" class="anchor"></a><span class="inline-code">noise(x)</span></h3>
+<br>
+<p>noise</p>
+<br>
+<br>
+<h3><a id="normalize(x)" class="anchor"></a><span class="inline-code">normalize(x)</span></h3>
+<br>
+<p>normalize</p>
+<br>
+<br>
+<h3><a id="pow(x, y)" class="anchor"></a><span class="inline-code">pow(x, y)</span></h3>
+<br>
+<p>pow</p>
+<br>
+<br>
+<h3><a id="radians(x)" class="anchor"></a><span class="inline-code">radians(x)</span></h3>
+<br>
+<p>radians</p>
+<br>
+<br>
+<h3><a id="rcp(x)" class="anchor"></a><span class="inline-code">rcp(x)</span></h3>
+<br>
+<p>rcp</p>
+<br>
+<br>
+<h3><a id="reflect(i, n)" class="anchor"></a><span class="inline-code">reflect(i, n)</span></h3>
+<br>
+<p>reflect</p>
+<br>
+<br>
+<h3><a id="refract(i, n, ?)" class="anchor"></a><span class="inline-code">refract(i, n, ?)</span></h3>
+<br>
+<p>refract</p>
+<br>
+<br>
+<h3><a id="round(x)" class="anchor"></a><span class="inline-code">round(x)</span></h3>
+<br>
+<p>round</p>
+<br>
+<br>
+<h3><a id="rsqrt(x)" class="anchor"></a><span class="inline-code">rsqrt(x)</span></h3>
+<br>
+<p>rsqrt</p>
+<br>
+<br>
+<h3><a id="saturate(x)" class="anchor"></a><span class="inline-code">saturate(x)</span></h3>
+<br>
+<p>saturate</p>
+<br>
+<br>
+<h3><a id="sign(x)" class="anchor"></a><span class="inline-code">sign(x)</span></h3>
+<br>
+<p>sign</p>
+<br>
+<br>
+<h3><a id="sin(x)" class="anchor"></a><span class="inline-code">sin(x)</span></h3>
+<br>
+<p>sin</p>
+<br>
+<br>
+<h3><a id="sincos(x, out s, out c)" class="anchor"></a><span class="inline-code">sincos(x, out s, out c)</span></h3>
+<br>
+<p>sincos</p>
+<br>
+<br>
+<h3><a id="sinh(x)" class="anchor"></a><span class="inline-code">sinh(x)</span></h3>
+<br>
+<p>sinh</p>
+<br>
+<br>
+<h3><a id="smoothstep(min, max, x)" class="anchor"></a><span class="inline-code">smoothstep(min, max, x)</span></h3>
+<br>
+<p>smoothstep</p>
+<br>
+<br>
+<h3><a id="sqrt(x)" class="anchor"></a><span class="inline-code">sqrt(x)</span></h3>
+<br>
+<p>sqrt</p>
+<br>
+<br>
+<h3><a id="step(y, x)" class="anchor"></a><span class="inline-code">step(y, x)</span></h3>
+<br>
+<p>step</p>
+<br>
+<br>
+<h3><a id="tan(x)" class="anchor"></a><span class="inline-code">tan(x)</span></h3>
+<br>
+<p>tan</p>
+<br>
+<br>
+<h3><a id="tanh(x)" class="anchor"></a><span class="inline-code">tanh(x)</span></h3>
+<br>
+<p>tanh</p>
+<br>
+<br>
+<h3><a id="transpose(x)" class="anchor"></a><span class="inline-code">transpose(x)</span></h3>
+<br>
+<p>transpose</p>
+<br>
+<br>
+<h3><a id="trunc(x)" class="anchor"></a><span class="inline-code">trunc(x)</span></h3>
+<br>
+<p>trunc</p>
+<br>
+<br>
+<h2><a id="Further Readings" class="anchor"></a>Further Readings</h2>
+<br>
+        </div>
+    </div>
+
+    <div style="height: 96px;"></div>
+    <div class="footer"> <p>2024 Pixel Composer</p> </div>
+</body>
+
+<script>
+    function onSearch() {
+        var input = document.getElementById('search').value
+        var space = document.getElementById('search_spacing');
+        var x     = document.getElementsByClassName('search-result');
+        var cnt   = document.getElementsByClassName('sidebar-nav');
+        input = input.toLowerCase();
+
+        if (input == "") {
+            space.style.height = "16px";
+            for (i = 0; i < x.length; i++)
+                x[i].style.display="none";
+
+            for (i = 0; i < cnt.length; i++)
+                cnt[i].style.display="flex";
+            return;
+        }
+
+        space.style.height = "32px";
+        for (i = 0; i < cnt.length; i++)
+            cnt[i].style.display="none";
+
+        for (i = 0; i < x.length; i++) {
+            if (!x[i].innerHTML.toLowerCase().includes(input))
+                x[i].style.display="none";
+            else
+                x[i].style.display="flex";
+        }
+    }
+
+    onSearch()
+</script>
+
+</html>
