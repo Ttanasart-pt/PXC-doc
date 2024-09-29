@@ -210,7 +210,7 @@ def writeNodeFile(cat, node, line):
     with open(redirectPath, "w") as file:
         file.write(f'''<!DOCTYPE html>
 <html>
-    <meta http-equiv="refresh" content="0; url=/nodes/{catType[cat]}_{cat}/{fileName}.html"/>
+    <meta http-equiv="refresh" content="0; url=/nodes/{cat}/{fileName}.html"/>
 </html>''')
         
     return { "spr": spr }
