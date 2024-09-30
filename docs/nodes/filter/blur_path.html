@@ -52,6 +52,16 @@
 <li class="sidebar-nav "><a class="" href="blur_directional.html">Blur Directional</a></li>
 <li class="sidebar-nav active "><a class="" href="blur_path.html">Blur Path</a></li>
 <ul class="submenu">
+<li class="sidebar-nav"><a href="#Properties">Properties</a></li>
+<ul class="submenu h3">
+<li class="sidebar-nav"><a href="#Surface In">Surface In</a></li>
+<li class="sidebar-nav"><a href="#Blur Path">Blur Path</a></li>
+<li class="sidebar-nav"><a href="#Path Origin">Path Origin</a></li>
+<li class="sidebar-nav"><a href="#Range">Range</a></li>
+<li class="sidebar-nav"><a href="#Resolution">Resolution</a></li>
+<li class="sidebar-nav"><a href="#Intensity">Intensity</a></li>
+<li class="sidebar-nav"><a href="#Intensity Along Path">Intensity Along Path</a></li>
+</ul>
 </ul>
 <li class="sidebar-nav "><a class="" href="blur_radial.html">Blur Radial</a></li>
 <li class="sidebar-nav "><a class="" href="blur_shape.html">Blur Shape</a></li>
@@ -725,13 +735,13 @@
 
 <div class="title">
                                                             <h1>Path Blur</h1>
-                                                            <div class="badges"><p class="version-banner" title="Writen before 1.18, some information might be outdated">pre 1.18</p></div>
+                                                            <div class="badges"><p class="version-banner" title="Updated for version 1.18.0">1.18.0</p></div>
                                                         </div>
 <p class="subtitle">Blur pixel along path.</p>
 <br><br>
 
 <table class = "summary-table">
-    <tr><th class="head" colspan="2"><p>Node Data</p></th></tr><tr><th colspan="2"><img class="node-content" src="/src/nodeIcons/s_node_blur_path.png"></th></tr><tr style="height: 4px;"></tr><tr><th colspan="2"><p class="badge" style="color: #ffe478; background-color: #ffe47816; border-color: #ffe47860;" title="Array processor">Array</p></th></tr><tr style="height: 8px;"></tr><tr><th colspan="2" class="summary-topic"><p>Display name</p></th></tr><tr><th colspan="2" class="summary-content"><p>Path Blur</p></th></tr><tr><th colspan="2" class="summary-topic"><p>Internal name</p></th></tr><tr><th colspan="2" class="summary-content"><p>Node_Blur_Path</p></th></tr><tr height="8px"></tr><tr><th class="head" colspan="2"><p>Inheritances</p></th></tr><tr><th colspan="2" class="inheritance-block"><a href="../index.html">node</a></th></tr><tr><th colspan="2" class="inheritance-block"><a href="../array_processor.html">node_processor</a></th></tr><tr><th colspan="2" class="inheritance-block current"><a href="../_index/blur_path.html">node_blur_path</a></th></tr><tr height="8px"></tr>
+    <tr><th class="head" colspan="2"><p>Node Data</p></th></tr><tr><th colspan="2"><img class="node-content" src="/src/nodeIcons/s_node_blur_path.png"></th></tr><tr style="height: 4px;"></tr><tr><th colspan="2"><p class="badge" style="color: #9f9fb5; background-color: #9f9fb516; border-color: #9f9fb560;" title="">filter</p><p class="badge" style="color: #ffe478; background-color: #ffe47816; border-color: #ffe47860;" title="Array processor">Array</p></th></tr><tr style="height: 8px;"></tr><tr><th colspan="2" class="summary-topic"><p>Display name</p></th></tr><tr><th colspan="2" class="summary-content"><p>Path Blur</p></th></tr><tr><th colspan="2" class="summary-topic"><p>Internal name</p></th></tr><tr><th colspan="2" class="summary-content"><p>Node_Blur_Path</p></th></tr><tr height="8px"></tr><tr><th class="head" colspan="2"><p>Inheritances</p></th></tr><tr><th colspan="2" class="inheritance-block"><a href="../index.html">node</a></th></tr><tr><th colspan="2" class="inheritance-block"><a href="../array_processor.html">node_processor</a></th></tr><tr><th colspan="2" class="inheritance-block current"><a href="../_index/blur_path.html">node_blur_path</a></th></tr><tr height="8px"></tr>
 <tr><th class="head" colspan="2"><p>Inputs</p></th></tr>
 <tr><th colspan="2" class="summary-topic"><p>node_blur_path</p></th></tr><tr>
                 <td class="summary-topic" style="width: 60px"><p style="color: #ff6b97">surface</p></td>
@@ -774,7 +784,23 @@
                 <td><p>Surface Out</p></td>
             </tr>
 
-</table>
+</table><p>
+Blur surface along a path.</p><br>
+<br><h2><a id="Properties" class="anchor"></a>Properties</h2><br>
+<h3><a id="Surface In" class="anchor"></a><span class="junction" style="border-color: #ff6b97AA">Surface In</span></h3><br>
+<p>Surface to blur</p><br>
+<h3><a id="Blur Path" class="anchor"></a><span class="junction" style="border-color: #ffb5b5AA">Blur Path</span></h3><br>
+<p>Path to blur along</p><br>
+<h3><a id="Path Origin" class="anchor"></a><span class="junction" style="border-color: #ffe478AA">Path Origin</span></h3><br>
+<p>Where to start the blur. Setting to 0 will start from the beginning of the path, 1 will start from the end of the path.</p><br>
+<h3><a id="Range" class="anchor"></a><span class="junction" style="border-color: #8fde5dAA">Range</span></h3><br>
+<p>Range of the path to blur.</p><br>
+<h3><a id="Resolution" class="anchor"></a><span class="junction" style="border-color: #ff9166AA">Resolution</span></h3><br>
+<p>The amount of sampling along the path. Higher resolution will result in a smoother blur but will take longer to compute.</p><br>
+<h3><a id="Intensity" class="anchor"></a><span class="junction" style="border-color: #ffe478AA">Intensity</span></h3><br>
+<p>The intensity of the blur. Higher intensity will result in a more pronounced blur.</p><br>
+<h3><a id="Intensity Along Path" class="anchor"></a><span class="junction" style="border-color: #c2c2d1AA">Intensity Along Path</span></h3><br>
+<p>Curve that modify the intensity value along the path.</p><br>
         </div>
     </div>
 

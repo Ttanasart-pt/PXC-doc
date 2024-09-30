@@ -43,6 +43,12 @@
 <li class="sidebar-nav "><a class="" href="checker.html">Checker</a></li>
 <li class="sidebar-nav active "><a class="" href="cross_section.html">Cross Section</a></li>
 <ul class="submenu">
+<li class="sidebar-nav"><a href="#Properties">Properties</a></li>
+<ul class="submenu h3">
+<li class="sidebar-nav"><a href="#Axis">Axis</a></li>
+<li class="sidebar-nav"><a href="#Position">Position</a></li>
+<li class="sidebar-nav"><a href="#Mode">Mode</a></li>
+</ul>
 </ul>
 <li class="sidebar-nav "><a class="" href="diffuse.html">Diffuse</a></li>
 <li class="sidebar-nav "><a class="" href="flip_group_inline.html">Flip Group Inline</a></li>
@@ -718,13 +724,13 @@
 
 <div class="title">
                                                             <h1>Draw Cross Section</h1>
-                                                            <div class="badges"><p class="version-banner" title="Writen before 1.18, some information might be outdated">pre 1.18</p></div>
+                                                            <div class="badges"><p class="version-banner" title="Updated for version 1.18.0">1.18.0</p></div>
                                                         </div>
 <p class="subtitle">Map the brightness of pixels on a linear axis into a surface.</p>
 <br><br>
 
 <table class = "summary-table">
-    <tr><th class="head" colspan="2"><p>Node Data</p></th></tr><tr><th colspan="2"><img class="node-content" src="/src/nodeIcons/s_node_cross_section.png"></th></tr><tr style="height: 4px;"></tr><tr><th colspan="2"><p class="badge" style="color: #ffe478; background-color: #ffe47816; border-color: #ffe47860;" title="Array processor">Array</p></th></tr><tr style="height: 8px;"></tr><tr><th colspan="2" class="summary-topic"><p>Display name</p></th></tr><tr><th colspan="2" class="summary-content"><p>Draw Cross Section</p></th></tr><tr><th colspan="2" class="summary-topic"><p>Internal name</p></th></tr><tr><th colspan="2" class="summary-content"><p>Node_Cross_Section</p></th></tr><tr height="8px"></tr><tr><th class="head" colspan="2"><p>Inheritances</p></th></tr><tr><th colspan="2" class="inheritance-block"><a href="../index.html">node</a></th></tr><tr><th colspan="2" class="inheritance-block"><a href="../array_processor.html">node_processor</a></th></tr><tr><th colspan="2" class="inheritance-block current"><a href="../_index/cross_section.html">node_cross_section</a></th></tr><tr height="8px"></tr>
+    <tr><th class="head" colspan="2"><p>Node Data</p></th></tr><tr><th colspan="2"><img class="node-content" src="/src/nodeIcons/s_node_cross_section.png"></th></tr><tr style="height: 4px;"></tr><tr><th colspan="2"><p class="badge" style="color: #9f9fb5; background-color: #9f9fb516; border-color: #9f9fb560;" title="">generate</p><p class="badge" style="color: #ffe478; background-color: #ffe47816; border-color: #ffe47860;" title="Array processor">Array</p></th></tr><tr style="height: 8px;"></tr><tr><th colspan="2" class="summary-topic"><p>Display name</p></th></tr><tr><th colspan="2" class="summary-content"><p>Draw Cross Section</p></th></tr><tr><th colspan="2" class="summary-topic"><p>Internal name</p></th></tr><tr><th colspan="2" class="summary-content"><p>Node_Cross_Section</p></th></tr><tr height="8px"></tr><tr><th class="head" colspan="2"><p>Inheritances</p></th></tr><tr><th colspan="2" class="inheritance-block"><a href="../index.html">node</a></th></tr><tr><th colspan="2" class="inheritance-block"><a href="../array_processor.html">node_processor</a></th></tr><tr><th colspan="2" class="inheritance-block current"><a href="../_index/cross_section.html">node_cross_section</a></th></tr><tr height="8px"></tr>
 <tr><th class="head" colspan="2"><p>Inputs</p></th></tr>
 <tr><th colspan="2" class="summary-topic"><p>node_cross_section</p></th></tr><tr>
                 <td class="summary-topic" style="width: 60px"><p style="color: #ff6b97">surface</p></td>
@@ -749,7 +755,19 @@
                 <td><p>Surface Out</p></td>
             </tr>
 
-</table>
+</table><p>
+This node scan the input image along the specified axis. For each pixel, it will calculate the brightness value and output it as a new image. </p><br>
+<br><h2><a id="Properties" class="anchor"></a>Properties</h2><br>
+<h3><a id="Axis" class="anchor"></a><span class="junction" style="border-color: #8fde5dAA">Axis</span></h3><br>
+<p>Axis to scan the image along.</p><br>
+<h3><a id="Position" class="anchor"></a><span class="junction" style="border-color: #ffe478AA">Position</span></h3><br>
+<p>Position of the scan line.</p><br>
+<h3><a id="Mode" class="anchor"></a><span class="junction" style="border-color: #8fde5dAA">Mode</span></h3><br>
+<p>Rendering mode.</p><br>
+<ul>
+<li><code>BW</code>: Output black and white image.</li>
+<li><code>Colored</code>: Output cross section blend with the sampled color.</li>
+</ul><br>
         </div>
     </div>
 

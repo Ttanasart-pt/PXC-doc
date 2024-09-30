@@ -745,13 +745,13 @@
 
 <div class="title">
                                                             <h1>Area</h1>
-                                                            <div class="badges"><p class="version-banner" title="Writen before 1.18, some information might be outdated">pre 1.18</p></div>
+                                                            <div class="badges"><p class="version-banner" title="Updated for version 1.18.0">1.18.0</p></div>
                                                         </div>
 <p class="subtitle"></p>
 <br><br>
 
 <table class = "summary-table">
-    <tr><th class="head" colspan="2"><p>Node Data</p></th></tr><tr><th colspan="2"><img class="node-content" src="/src/nodeIcons/s_node_area.png"></th></tr><tr style="height: 4px;"></tr><tr><th colspan="2"><p class="badge" style="color: #ffe478; background-color: #ffe47816; border-color: #ffe47860;" title="Array processor">Array</p></th></tr><tr style="height: 8px;"></tr><tr><th colspan="2" class="summary-topic"><p>Display name</p></th></tr><tr><th colspan="2" class="summary-content"><p>Area</p></th></tr><tr><th colspan="2" class="summary-topic"><p>Internal name</p></th></tr><tr><th colspan="2" class="summary-content"><p>Node_Area</p></th></tr><tr height="8px"></tr><tr><th class="head" colspan="2"><p>Inheritances</p></th></tr><tr><th colspan="2" class="inheritance-block"><a href="../index.html">node</a></th></tr><tr><th colspan="2" class="inheritance-block"><a href="../array_processor.html">node_processor</a></th></tr><tr><th colspan="2" class="inheritance-block current"><a href="../_index/area.html">node_area</a></th></tr><tr height="8px"></tr>
+    <tr><th class="head" colspan="2"><p>Node Data</p></th></tr><tr><th colspan="2"><img class="node-content" src="/src/nodeIcons/s_node_area.png"></th></tr><tr style="height: 4px;"></tr><tr><th colspan="2"><p class="badge" style="color: #9f9fb5; background-color: #9f9fb516; border-color: #9f9fb560;" title="">values</p><p class="badge" style="color: #ffe478; background-color: #ffe47816; border-color: #ffe47860;" title="Array processor">Array</p></th></tr><tr style="height: 8px;"></tr><tr><th colspan="2" class="summary-topic"><p>Display name</p></th></tr><tr><th colspan="2" class="summary-content"><p>Area</p></th></tr><tr><th colspan="2" class="summary-topic"><p>Internal name</p></th></tr><tr><th colspan="2" class="summary-content"><p>Node_Area</p></th></tr><tr height="8px"></tr><tr><th class="head" colspan="2"><p>Inheritances</p></th></tr><tr><th colspan="2" class="inheritance-block"><a href="../index.html">node</a></th></tr><tr><th colspan="2" class="inheritance-block"><a href="../array_processor.html">node_processor</a></th></tr><tr><th colspan="2" class="inheritance-block current"><a href="../_index/area.html">node_area</a></th></tr><tr height="8px"></tr>
 <tr><th class="head" colspan="2"><p>Inputs</p></th></tr>
 <tr><th colspan="2" class="summary-topic"><p>node_area</p></th></tr><tr>
                 <td class="summary-topic" style="width: 60px"><p style="color: #ffe478">vec2</p></td>
@@ -773,7 +773,16 @@
                 <td><p>Area</p></td>
             </tr>
 
-</table>
+</table><p>
+Returns area data. Area data is simply a 5 dimensional vector that represents 2d bounding box. Each element of the vector represents the following:</p><br>
+<ol>
+<li>X position of the middle point of the area.</li>
+<li>Y position of the middle point of the area.</li>
+<li>Half width of the area.</li>
+<li>Half height of the area.</li>
+<li>Shape of the area (0: Rectangle, 1: Ellipse).</li>
+</ol>
+<p>This node allow you to create an area by combining vec2 <span class="junction" style="border-color: #ffe478AA">Position</span>, vec2 <span class="junction" style="border-color: #ffe478AA">Span</span> and integer <span class="junction" style="border-color: #8fde5dAA">Shape</span> inputs.</p><br>
         </div>
     </div>
 

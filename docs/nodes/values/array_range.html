@@ -50,6 +50,12 @@
 <li class="sidebar-nav "><a class="" href="array_length.html">Array Length</a></li>
 <li class="sidebar-nav active "><a class="" href="array_range.html">Array Range</a></li>
 <ul class="submenu">
+<li class="sidebar-nav"><a href="#Properties">Properties</a></li>
+<ul class="submenu h3">
+<li class="sidebar-nav"><a href="#Start">Start</a></li>
+<li class="sidebar-nav"><a href="#End">End</a></li>
+<li class="sidebar-nav"><a href="#Step">Step</a></li>
+</ul>
 </ul>
 <li class="sidebar-nav "><a class="" href="array_rearrange.html">Array Rearrange</a></li>
 <li class="sidebar-nav "><a class="" href="array_remove.html">Array Remove</a></li>
@@ -745,13 +751,13 @@
 
 <div class="title">
                                                             <h1>Array Range</h1>
-                                                            <div class="badges"><p class="version-banner" title="Writen before 1.18, some information might be outdated">pre 1.18</p></div>
+                                                            <div class="badges"><p class="version-banner" title="Updated for version 1.18.0">1.18.0</p></div>
                                                         </div>
 <p class="subtitle">Create array of numbers by setting start</p>
 <br><br>
 
 <table class = "summary-table">
-    <tr><th class="head" colspan="2"><p>Node Data</p></th></tr><tr><th colspan="2"><img class="node-content" src="/src/nodeIcons/s_node_array_range.png"></th></tr><tr style="height: 4px;"></tr><tr><th colspan="2"><p class="badge" style="color: #ffe478; background-color: #ffe47816; border-color: #ffe47860;" title="Array processor">Array</p></th></tr><tr style="height: 8px;"></tr><tr><th colspan="2" class="summary-topic"><p>Display name</p></th></tr><tr><th colspan="2" class="summary-content"><p>Array Range</p></th></tr><tr><th colspan="2" class="summary-topic"><p>Internal name</p></th></tr><tr><th colspan="2" class="summary-content"><p>Node_Array_Range</p></th></tr><tr height="8px"></tr><tr><th class="head" colspan="2"><p>Inheritances</p></th></tr><tr><th colspan="2" class="inheritance-block"><a href="../index.html">node</a></th></tr><tr><th colspan="2" class="inheritance-block"><a href="../array_processor.html">node_processor</a></th></tr><tr><th colspan="2" class="inheritance-block current"><a href="../_index/array_range.html">node_array_range</a></th></tr><tr height="8px"></tr>
+    <tr><th class="head" colspan="2"><p>Node Data</p></th></tr><tr><th colspan="2"><img class="node-content" src="/src/nodeIcons/s_node_array_range.png"></th></tr><tr style="height: 4px;"></tr><tr><th colspan="2"><p class="badge" style="color: #9f9fb5; background-color: #9f9fb516; border-color: #9f9fb560;" title="">values</p><p class="badge" style="color: #ffe478; background-color: #ffe47816; border-color: #ffe47860;" title="Array processor">Array</p></th></tr><tr style="height: 8px;"></tr><tr><th colspan="2" class="summary-topic"><p>Display name</p></th></tr><tr><th colspan="2" class="summary-content"><p>Array Range</p></th></tr><tr><th colspan="2" class="summary-topic"><p>Internal name</p></th></tr><tr><th colspan="2" class="summary-content"><p>Node_Array_Range</p></th></tr><tr height="8px"></tr><tr><th class="head" colspan="2"><p>Inheritances</p></th></tr><tr><th colspan="2" class="inheritance-block"><a href="../index.html">node</a></th></tr><tr><th colspan="2" class="inheritance-block"><a href="../array_processor.html">node_processor</a></th></tr><tr><th colspan="2" class="inheritance-block current"><a href="../_index/array_range.html">node_array_range</a></th></tr><tr height="8px"></tr>
 <tr><th class="head" colspan="2"><p>Inputs</p></th></tr>
 <tr><th colspan="2" class="summary-topic"><p>node_array_range</p></th></tr><tr>
                 <td class="summary-topic" style="width: 60px"><p style="color: #ffe478">float</p></td>
@@ -770,7 +776,17 @@
                 <td><p>Array</p></td>
             </tr>
 
-</table>
+</table><p>
+Create an array with a range of numbers.</p><br>
+<br><h2><a id="Properties" class="anchor"></a>Properties</h2><br>
+<h3><a id="Start" class="anchor"></a><span class="junction" style="border-color: #ffe478AA">Start</span></h3><br>
+<p>The first number in the range.</p><br>
+<h3><a id="End" class="anchor"></a><span class="junction" style="border-color: #ffe478AA">End</span></h3><br>
+<p>The last number in the range.</p><br>
+<h3><a id="Step" class="anchor"></a><span class="junction" style="border-color: #ffe478AA">Step</span></h3><br>
+<p>The amount to increment each number by.</p><br>
+<p>If the <span class="junction" style="border-color: #ffe478AA">Start</span> and <span class="junction" style="border-color: #ffe478AA">End</span> is the same value, the output will be an array size <span class="junction" style="border-color: #ffe478AA">Step</span> with the value of <span class="junction" style="border-color: #ffe478AA">Start</span>.</p><br>
+<p>If <span class="junction" style="border-color: #ffe478AA">End</span> is less than <span class="junction" style="border-color: #ffe478AA">Start</span>, then the <span class="junction" style="border-color: #ffe478AA">Step</span> should be negative.</p><br>
         </div>
     </div>
 

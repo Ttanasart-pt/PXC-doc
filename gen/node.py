@@ -26,11 +26,17 @@ catType   = {}
 nodeData  = {}
 nodePages = {}
 nodes     = {}
+node_count = 0
+node_write = 0
 
 def pathStrip(path): # Strip out the custom ordering n_ at the start of the file
     if path.split("_")[0].isdigit():
         path = path[path.find('_') + 1:]
     return path
+
+def badge(title, tooltip, color):
+    style = f"color: #{color}; background-color: #{color}16; border-color: #{color}60;"
+    return f'<p class="badge" style="{style}" title="{tooltip}">{title}</p>'
 
 def extractNodeData(node):
     path = f"{scriptDir}\\{node}\\{node}.gml"
@@ -74,11 +80,9 @@ def extractNodeData(node):
         if attr not in attributes:
             attributes.append(attr)
 
-    nodeData[node] = { "name": nodeName, "io": junctions, "parent": parent.lower(), "attributes": attributes } 
+    categories = []
 
-for script in os.listdir(scriptDir):
-    if script.strip("_").lower().startswith("node_"):
-        extractNodeData(script)
+    nodeData[node] = { "name": nodeName, "io": junctions, "parent": parent.lower(), "attributes": attributes, "categories": categories } 
 
 def writeNodeFile(cat, node, line):
     if node.lower() not in nodeData:
@@ -115,17 +119,15 @@ def writeNodeFile(cat, node, line):
     basicData += f'<tr><th colspan="2"><img {spr}></th></tr>'
 
     badges = ""
+    for c in _data["categories"]:
+        badges += badge(pathStrip(c), "", "9f9fb5")
+
     if "isdeprecated" in line.lower():
-        style = "color: #eb004b; background-color: #eb004b16; border-color: #eb004b60;"
-        badges += f'<p class="badge" style="{style}" title="Deprecated node, please avoid using it in your project">Deprecated</p>'
-
+        badges += badge("Deprecated", "Deprecated node, please avoid using it in your project", "eb004b")
     if "patreonextra" in line.lower():
-        style = "color: #88ffe9; background-color: #88ffe916; border-color: #88ffe960;"
-        badges += f'<p class="badge" style="{style}" title="Patreon supporter exclusive">Patreon</p>'
-
+        badges += badge("Patreon", "Patreon supporter exclusive", "88ffe9")
     if "node_processor" in parents:
-        style = "color: #ffe478; background-color: #ffe47816; border-color: #ffe47860;"
-        badges += f'<p class="badge" style="{style}" title="Array processor">Array</p>'
+        badges += badge("Array", "Array processor", "ffe478")
 
     if badges != "":
         basicData += '<tr style="height: 4px;"></tr>'
@@ -178,6 +180,9 @@ def writeNodeFile(cat, node, line):
     if os.path.exists(manFilePath):
         with open(manFilePath, "r") as file:
             content = file.read()
+            if content != "":
+                global node_write
+                node_write += 1
             
             nodeTags = re.findall(r'<node\s(.*?)>', content)
             for tag in nodeTags:
@@ -223,8 +228,44 @@ def writeNodeFile(cat, node, line):
 <html>
     <meta http-equiv="refresh" content="0; url=/nodes/{cat}/{fileName}.html"/>
 </html>''')
-        
+    
+    global node_count
+    node_count += 1
+
     return { "spr": spr }
+
+def generateNodeCatagory(cat):
+    
+    title = pathStrip(cat).title()
+    txt = f"""<h1>{title}</h1>
+<br><br>
+<div class=node-group>"""
+    
+    nodeNames = [ node for node, _ in nodes[cat] ]
+    nodeNames.sort()
+
+    for node in nodeNames:
+        if node.lower() not in nodeData:
+            print(f"Node {node.lower()} not found in nodeData")
+            continue
+
+        _data = nodeData[node.lower()]
+        spr   = _data["spr"]
+        name  = _data["name"]
+
+        txt += f'''<div>
+<a href="./{node.lower().replace("node_", "")}.html"><img {spr}>{name}</a>
+</div>\n'''
+
+    txt += "</div>"
+    
+    filePath = f"pregen/{dirname}/{catType[cat]}_{cat}/0_index.html"
+    with open(filePath, "w") as file:
+        file.write(txt)
+
+for script in os.listdir(scriptDir):
+    if script.strip("_").lower().startswith("node_"):
+        extractNodeData(script)
 
 content = ""
 with open(regPath, "r") as file:
@@ -278,33 +319,10 @@ for line in nodeListRaw.split("\n"):
         if cat not in nodes:
             nodes[cat] = []
 
-def generateNodeCatagory(cat):
-    
-    title = pathStrip(cat).title()
-    txt = f"""<h1>{title}</h1>
-<br><br>
-<div class=node-group>"""
-    
-    nodeNames = [ node for node, _ in nodes[cat] ]
-    nodeNames.sort()
-
-    for node in nodeNames:
-        if node.lower() not in nodeData:
-            print(f"Node {node.lower()} not found in nodeData")
-            continue
+for cat in nodes:
+    for node, line in nodes[cat]:
         _data = nodeData[node.lower()]
-        spr   = _data["spr"]
-        name  = _data["name"]
-
-        txt += f'''<div>
-<a href="./{node.lower().replace("node_", "")}.html"><img {spr}>{name}</a>
-</div>\n'''
-
-    txt += "</div>"
-    
-    filePath = f"pregen/{dirname}/{catType[cat]}_{cat}/0_index.html"
-    with open(filePath, "w") as file:
-        file.write(txt)
+        _data["categories"].append(cat)
 
 i = 0
 for cat in nodes:
@@ -326,3 +344,5 @@ for cat in nodes:
         writeNodeFile(cat, node, line)
 
     generateNodeCatagory(cat)
+
+print(f"==== Total nodes: {node_count}, Total written: {node_write} [{node_write/node_count*100:.2f}%] ====")

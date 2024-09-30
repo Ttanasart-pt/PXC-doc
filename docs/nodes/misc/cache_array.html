@@ -45,6 +45,12 @@
 <li class="sidebar-nav "><a class="" href="cache.html">Cache</a></li>
 <li class="sidebar-nav active "><a class="" href="cache_array.html">Cache Array</a></li>
 <ul class="submenu">
+<li class="sidebar-nav"><a href="#Properties">Properties</a></li>
+<ul class="submenu h3">
+<li class="sidebar-nav"><a href="#Start Frame">Start Frame</a></li>
+<li class="sidebar-nav"><a href="#Stop Frame">Stop Frame</a></li>
+<li class="sidebar-nav"><a href="#Step">Step</a></li>
+</ul>
 </ul>
 <li class="sidebar-nav "><a class="" href="condition.html">Condition</a></li>
 <li class="sidebar-nav "><a class="" href="display_image.html">Display Image</a></li>
@@ -679,13 +685,13 @@
 
 <div class="title">
                                                             <h1>Cache Array</h1>
-                                                            <div class="badges"><p class="version-banner" title="Writen before 1.18, some information might be outdated">pre 1.18</p></div>
+                                                            <div class="badges"><p class="version-banner" title="Updated for version 1.18.0">1.18.0</p></div>
                                                         </div>
 <p class="subtitle">Store current animation as array.  Cache persisted between save.</p>
 <br><br>
 
 <table class = "summary-table">
-    <tr><th class="head" colspan="2"><p>Node Data</p></th></tr><tr><th colspan="2"><img class="node-content" src="/src/nodeIcons/s_node_cache_array.png"></th></tr><tr><th colspan="2" class="summary-topic"><p>Display name</p></th></tr><tr><th colspan="2" class="summary-content"><p>Cache Array</p></th></tr><tr><th colspan="2" class="summary-topic"><p>Internal name</p></th></tr><tr><th colspan="2" class="summary-content"><p>Node_Cache_Array</p></th></tr><tr height="8px"></tr><tr><th class="head" colspan="2"><p>Inheritances</p></th></tr><tr><th colspan="2" class="inheritance-block"><a href="../index.html">node</a></th></tr><tr><th colspan="2" class="inheritance-block"><p>__node_cache</p></th></tr><tr><th colspan="2" class="inheritance-block current"><a href="../_index/cache_array.html">node_cache_array</a></th></tr><tr height="8px"></tr>
+    <tr><th class="head" colspan="2"><p>Node Data</p></th></tr><tr><th colspan="2"><img class="node-content" src="/src/nodeIcons/s_node_cache_array.png"></th></tr><tr style="height: 4px;"></tr><tr><th colspan="2"><p class="badge" style="color: #9f9fb5; background-color: #9f9fb516; border-color: #9f9fb560;" title="">misc</p></th></tr><tr style="height: 8px;"></tr><tr><th colspan="2" class="summary-topic"><p>Display name</p></th></tr><tr><th colspan="2" class="summary-content"><p>Cache Array</p></th></tr><tr><th colspan="2" class="summary-topic"><p>Internal name</p></th></tr><tr><th colspan="2" class="summary-content"><p>Node_Cache_Array</p></th></tr><tr height="8px"></tr><tr><th class="head" colspan="2"><p>Inheritances</p></th></tr><tr><th colspan="2" class="inheritance-block"><a href="../index.html">node</a></th></tr><tr><th colspan="2" class="inheritance-block"><p>__node_cache</p></th></tr><tr><th colspan="2" class="inheritance-block current"><a href="../_index/cache_array.html">node_cache_array</a></th></tr><tr height="8px"></tr>
 <tr><th class="head" colspan="2"><p>Inputs</p></th></tr>
 <tr><th colspan="2" class="summary-topic"><p>node_cache_array</p></th></tr><tr>
                 <td class="summary-topic" style="width: 60px"><p style="color: #ff6b97">surface</p></td>
@@ -707,7 +713,15 @@
                 <td><p>Cache Array</p></td>
             </tr>
 
-</table>
+</table><p>
+Cache animation as surface array. If the output is being used in other nodes, it is recommended to play the animation at least once to capture the full range of frames.</p><br>
+<br><h2><a id="Properties" class="anchor"></a>Properties</h2><br>
+<h3><a id="Start Frame" class="anchor"></a><span class="junction" style="border-color: #ff9166AA">Start Frame</span></h3><br>
+<p>The first frame to cache (set to -1 to cache from the first frame).</p><br>
+<h3><a id="Stop Frame" class="anchor"></a><span class="junction" style="border-color: #ff9166AA">Stop Frame</span></h3><br>
+<p>The last frame to cache (set to -1 to cache to the last frame).</p><br>
+<h3><a id="Step" class="anchor"></a><span class="junction" style="border-color: #ff9166AA">Step</span></h3><br>
+<p>The frame step, 1 means every frame, 2 means every other frame, etc.</p><br>
         </div>
     </div>
 

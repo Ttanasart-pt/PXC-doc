@@ -42,6 +42,12 @@
 <li class="sidebar-nav "><a class="" href="application_out.html">Application Out</a></li>
 <li class="sidebar-nav active "><a class="" href="argument.html">Argument</a></li>
 <ul class="submenu">
+<li class="sidebar-nav"><a href="#Properties">Properties</a></li>
+<ul class="submenu h3">
+<li class="sidebar-nav"><a href="#Tag">Tag</a></li>
+<li class="sidebar-nav"><a href="#Type">Type</a></li>
+<li class="sidebar-nav"><a href="#Default Value">Default Value</a></li>
+</ul>
 </ul>
 <li class="sidebar-nav "><a class="" href="array_pin.html">Array Pin</a></li>
 <li class="sidebar-nav "><a class="" href="cache.html">Cache</a></li>
@@ -679,13 +685,13 @@
 
 <div class="title">
                                                             <h1>Argument</h1>
-                                                            <div class="badges"><p class="version-banner" title="Writen before 1.18, some information might be outdated">pre 1.18</p></div>
+                                                            <div class="badges"><p class="version-banner" title="Updated for version 1.18.0">1.18.0</p></div>
                                                         </div>
 <p class="subtitle"></p>
 <br><br>
 
 <table class = "summary-table">
-    <tr><th class="head" colspan="2"><p>Node Data</p></th></tr><tr><th colspan="2"><img class="node-content" src="/src/nodeIcons/s_node_argument.png"></th></tr><tr><th colspan="2" class="summary-topic"><p>Display name</p></th></tr><tr><th colspan="2" class="summary-content"><p>Argument</p></th></tr><tr><th colspan="2" class="summary-topic"><p>Internal name</p></th></tr><tr><th colspan="2" class="summary-content"><p>Node_Argument</p></th></tr><tr height="8px"></tr><tr><th class="head" colspan="2"><p>Inheritances</p></th></tr><tr><th colspan="2" class="inheritance-block"><a href="../index.html">node</a></th></tr><tr><th colspan="2" class="inheritance-block current"><a href="../_index/argument.html">node_argument</a></th></tr><tr height="8px"></tr>
+    <tr><th class="head" colspan="2"><p>Node Data</p></th></tr><tr><th colspan="2"><img class="node-content" src="/src/nodeIcons/s_node_argument.png"></th></tr><tr style="height: 4px;"></tr><tr><th colspan="2"><p class="badge" style="color: #9f9fb5; background-color: #9f9fb516; border-color: #9f9fb560;" title="">misc</p></th></tr><tr style="height: 8px;"></tr><tr><th colspan="2" class="summary-topic"><p>Display name</p></th></tr><tr><th colspan="2" class="summary-content"><p>Argument</p></th></tr><tr><th colspan="2" class="summary-topic"><p>Internal name</p></th></tr><tr><th colspan="2" class="summary-content"><p>Node_Argument</p></th></tr><tr height="8px"></tr><tr><th class="head" colspan="2"><p>Inheritances</p></th></tr><tr><th colspan="2" class="inheritance-block"><a href="../index.html">node</a></th></tr><tr><th colspan="2" class="inheritance-block current"><a href="../_index/argument.html">node_argument</a></th></tr><tr height="8px"></tr>
 <tr><th class="head" colspan="2"><p>Inputs</p></th></tr>
 <tr><th colspan="2" class="summary-topic"><p>node_argument</p></th></tr><tr>
                 <td class="summary-topic" style="width: 60px"><p style="color: #66ffe3">text</p></td>
@@ -704,7 +710,18 @@
                 <td><p>Value</p></td>
             </tr>
 
-</table>
+</table><p>
+This nodes allow you to add custom <a href="/misc/command_line.html">command line</a> arguments to the project. This can be useful for passing additional data to the project.</p><br>
+<p>For example, in a project named "cli.pxc" if the <span class="junction" style="border-color: #66ffe3AA">Tag</span> value is set to "arg", then you can use the following command line arguments:</p><br>
+<p><code>./[pixelcomposer.exe] cli.pxc --arg 10</code></p><br>
+<p>This will set the value of the node output to 10.</p><br>
+<br><h2><a id="Properties" class="anchor"></a>Properties</h2><br>
+<h3><a id="Tag" class="anchor"></a><span class="junction" style="border-color: #66ffe3AA">Tag</span></h3><br>
+<p>Tag of the argument.</p><br>
+<h3><a id="Type" class="anchor"></a><span class="junction" style="border-color: #8fde5dAA">Type</span></h3><br>
+<p>Whether to interpret the argument as a string or a number.</p><br>
+<h3><a id="Default Value" class="anchor"></a><span class="junction" style="border-color: #66ffe3AA">Default Value</span></h3><br>
+<p>Default value of the argument.</p><br>
         </div>
     </div>
 
