@@ -8,6 +8,3 @@ Array to sort.
 
 ### <junc order>
 Sort order.
-
-## Outputs
-This node outputs both sort result and the sorted index.

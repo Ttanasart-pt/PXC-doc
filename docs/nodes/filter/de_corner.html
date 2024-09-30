@@ -74,7 +74,7 @@
 <ul class="submenu">
 <li class="sidebar-nav"><a href="#Properties">Properties</a></li>
 <ul class="submenu h3">
-<li class="sidebar-nav"><a href="#<junc type>"><junc type></a></li>
+<li class="sidebar-nav"><a href="#Type">Type</a></li>
 <li class="sidebar-nav"><a href="#Include">Include</a></li>
 <li class="sidebar-nav"><a href="#Tolerance">Tolerance</a></li>
 <li class="sidebar-nav"><a href="#Iteration">Iteration</a></li>
@@ -738,7 +738,7 @@
 <br><br>
 
 <table class = "summary-table">
-    <tr><th class="head" colspan="2"><p>Node Data</p></th></tr><tr><th colspan="2"><img class="node-content" src="/src/nodeIcons/s_node_decorner.png"></th></tr><tr style="height: 4px;"></tr><tr><th colspan="2"><p class="badge" style="color: #9f9fb5; background-color: #9f9fb516; border-color: #9f9fb560;" title="">filter</p><p class="badge" style="color: #ffe478; background-color: #ffe47816; border-color: #ffe47860;" title="Array processor">Array</p></th></tr><tr style="height: 8px;"></tr><tr><th colspan="2" class="summary-topic"><p>Display name</p></th></tr><tr><th colspan="2" class="summary-content"><p>De-Corner</p></th></tr><tr><th colspan="2" class="summary-topic"><p>Internal name</p></th></tr><tr><th colspan="2" class="summary-content"><p>Node_De_Corner</p></th></tr><tr height="8px"></tr><tr><th class="head" colspan="2"><p>Inheritances</p></th></tr><tr><th colspan="2" class="inheritance-block"><a href="../index.html">node</a></th></tr><tr><th colspan="2" class="inheritance-block"><a href="../array_processor.html">node_processor</a></th></tr><tr><th colspan="2" class="inheritance-block current"><a href="../_index/de_corner.html">node_de_corner</a></th></tr><tr height="8px"></tr>
+    <tr><th class="head" colspan="2"><p>Node Data</p></th></tr><tr><th colspan="2"><img class="node-content" src="/src/nodeIcons/s_node_decorner.png"></th></tr><tr style="height: 4px;"></tr><tr><th colspan="2"><p class="badge" style="color: #9f9fb5; background-color: #9f9fb516; border-color: #9f9fb560;" title="">Filter</p><p class="badge" style="color: #ffe478; background-color: #ffe47816; border-color: #ffe47860;" title="Array processor">Array</p></th></tr><tr style="height: 8px;"></tr><tr><th colspan="2" class="summary-topic"><p>Display name</p></th></tr><tr><th colspan="2" class="summary-content"><p>De-Corner</p></th></tr><tr><th colspan="2" class="summary-topic"><p>Internal name</p></th></tr><tr><th colspan="2" class="summary-content"><p>Node_De_Corner</p></th></tr><tr height="8px"></tr><tr><th class="head" colspan="2"><p>Inheritances</p></th></tr><tr><th colspan="2" class="inheritance-block"><a href="../index.html">node</a></th></tr><tr><th colspan="2" class="inheritance-block"><a href="../array_processor.html">node_processor</a></th></tr><tr><th colspan="2" class="inheritance-block current"><a href="../_index/de_corner.html">node_de_corner</a></th></tr><tr height="8px"></tr>
 <tr><th class="head" colspan="2"><p>Inputs</p></th></tr>
 <tr><th colspan="2" class="summary-topic"><p>node_de_corner</p></th></tr><tr>
                 <td class="summary-topic" style="width: 60px"><p style="color: #ff6b97">surface</p></td>
@@ -752,6 +752,9 @@
             </tr><tr>
                 <td class="summary-topic" style="width: 60px"><p style="color: #ff9166">int</p></td>
                 <td><p>Iteration</p></td>
+            </tr><tr>
+                <td class="summary-topic" style="width: 60px"><p style="color: #8fde5d">enum</p></td>
+                <td><p>Type</p></td>
             </tr><tr>
                 <td class="summary-topic" style="width: 60px"><p style="color: #ff6b97">surface</p></td>
                 <td><p>Mask</p></td>
@@ -770,9 +773,9 @@
             </tr>
 
 </table><p>
-A corner in pixel art refers to cluster of the same color arranged in L shape. It can be seen as non-preferable. This node is used to remove corners from the image by replacing it with a different color.</p><br>
+A corner in pixel art refers to cluster of the same color arranged in an L shape. Corner can be seen as non-preferable. This node is used to remove corners from the image by replacing it with a different color.</p><br>
 <br><h2><a id="Properties" class="anchor"></a>Properties</h2><br>
-<h3><a id="<junc type>" class="anchor"></a><junc type></h3><br>
+<h3><a id="Type" class="anchor"></a><span class="junction" style="border-color: #8fde5dAA">Type</span></h3><br>
 <p>Algorithm to use for corner removal.</p><br>
 <h3><a id="Include" class="anchor"></a><span class="junction" style="border-color: #ff9166AA">Include</span></h3><br>
 <p>Algorithm stricness level.</p><br>

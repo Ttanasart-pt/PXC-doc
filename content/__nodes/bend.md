@@ -12,10 +12,10 @@ Type of the bend
 ### Arc
 
 #### <junc axis>
-Axis of the bend
+Main axis of the arc
 
 #### <junc amount>
-Amount of the bend
+Arc curvature
 
 ### Wave
 
@@ -23,10 +23,10 @@ Amount of the bend
 Axis of the wave
 
 #### <junc amount>
-The amplitude of the wave
+The size/amplitude of the wave
 
 #### <junc scale>
-The scale, frequency of the wave
+The scale/frequency of the wave
 
 #### <junc shift>
-The offset of the wave
+The offset/phase of the wave

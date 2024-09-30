@@ -53,7 +53,7 @@ def extractNodeData(node):
     matchName = re.search(r"name\s*=\s*[\"](.*)[\"]", content)
     nodeName  = "" if not matchName else matchName.group(1)
 
-    junctionSrc = r"nodeValue.*\([\s\S]*?\);"
+    junctionSrc = r"nodeValue.*\([\s\S]*?\)"
 
     if "static createNewInput" in content:
         conSep = content.split("static createNewInput")
@@ -322,7 +322,7 @@ for line in nodeListRaw.split("\n"):
 for cat in nodes:
     for node, line in nodes[cat]:
         _data = nodeData[node.lower()]
-        _data["categories"].append(cat)
+        _data["categories"].append(cat.title())
 
 i = 0
 for cat in nodes:

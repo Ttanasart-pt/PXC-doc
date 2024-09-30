@@ -10,5 +10,5 @@ Equation node can be made directly from the add node search menu by typing "=" f
 ### <junc equation>
 Mathematical expression to evaluate.
 
-### <junc arguments>
+### <junc argument name> <junc argument value>
 Defines extra variables to be used in the expression.

@@ -22,8 +22,8 @@ The speed of the animation.
 ### <junc background>
 The background texture.
 
-### <junc use background dimensions>
-Whether to use the background texture dimensions instead of the <junc dimensions>.
+### <junc use background dimension>
+Whether to use the background texture dimensions instead of the <junc dimension>.
 
 ### <junc background alpha>
 The alpha of the background texture.

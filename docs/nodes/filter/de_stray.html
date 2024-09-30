@@ -75,7 +75,7 @@
 <ul class="submenu">
 <li class="sidebar-nav"><a href="#Properties">Properties</a></li>
 <ul class="submenu h3">
-<li class="sidebar-nav"><a href="#<junc strictness>"><junc strictness></a></li>
+<li class="sidebar-nav"><a href="#Strictness">Strictness</a></li>
 <li class="sidebar-nav"><a href="#Tolerance">Tolerance</a></li>
 <li class="sidebar-nav"><a href="#Iteration">Iteration</a></li>
 <li class="sidebar-nav"><a href="#Fill Empty">Fill Empty</a></li>
@@ -738,7 +738,7 @@
 <br><br>
 
 <table class = "summary-table">
-    <tr><th class="head" colspan="2"><p>Node Data</p></th></tr><tr><th colspan="2"><img class="node-content" src="/src/nodeIcons/s_node_destray.png"></th></tr><tr style="height: 4px;"></tr><tr><th colspan="2"><p class="badge" style="color: #9f9fb5; background-color: #9f9fb516; border-color: #9f9fb560;" title="">filter</p><p class="badge" style="color: #ffe478; background-color: #ffe47816; border-color: #ffe47860;" title="Array processor">Array</p></th></tr><tr style="height: 8px;"></tr><tr><th colspan="2" class="summary-topic"><p>Display name</p></th></tr><tr><th colspan="2" class="summary-content"><p>De-Stray</p></th></tr><tr><th colspan="2" class="summary-topic"><p>Internal name</p></th></tr><tr><th colspan="2" class="summary-content"><p>Node_De_Stray</p></th></tr><tr height="8px"></tr><tr><th class="head" colspan="2"><p>Inheritances</p></th></tr><tr><th colspan="2" class="inheritance-block"><a href="../index.html">node</a></th></tr><tr><th colspan="2" class="inheritance-block"><a href="../array_processor.html">node_processor</a></th></tr><tr><th colspan="2" class="inheritance-block current"><a href="../_index/de_stray.html">node_de_stray</a></th></tr><tr height="8px"></tr>
+    <tr><th class="head" colspan="2"><p>Node Data</p></th></tr><tr><th colspan="2"><img class="node-content" src="/src/nodeIcons/s_node_destray.png"></th></tr><tr style="height: 4px;"></tr><tr><th colspan="2"><p class="badge" style="color: #9f9fb5; background-color: #9f9fb516; border-color: #9f9fb560;" title="">Filter</p><p class="badge" style="color: #ffe478; background-color: #ffe47816; border-color: #ffe47860;" title="Array processor">Array</p></th></tr><tr style="height: 8px;"></tr><tr><th colspan="2" class="summary-topic"><p>Display name</p></th></tr><tr><th colspan="2" class="summary-content"><p>De-Stray</p></th></tr><tr><th colspan="2" class="summary-topic"><p>Internal name</p></th></tr><tr><th colspan="2" class="summary-content"><p>Node_De_Stray</p></th></tr><tr height="8px"></tr><tr><th class="head" colspan="2"><p>Inheritances</p></th></tr><tr><th colspan="2" class="inheritance-block"><a href="../index.html">node</a></th></tr><tr><th colspan="2" class="inheritance-block"><a href="../array_processor.html">node_processor</a></th></tr><tr><th colspan="2" class="inheritance-block current"><a href="../_index/de_stray.html">node_de_stray</a></th></tr><tr height="8px"></tr>
 <tr><th class="head" colspan="2"><p>Inputs</p></th></tr>
 <tr><th colspan="2" class="summary-topic"><p>node_de_stray</p></th></tr><tr>
                 <td class="summary-topic" style="width: 60px"><p style="color: #ff6b97">surface</p></td>
@@ -752,6 +752,9 @@
             </tr><tr>
                 <td class="summary-topic" style="width: 60px"><p style="color: #ff9166">int</p></td>
                 <td><p>Iteration</p></td>
+            </tr><tr>
+                <td class="summary-topic" style="width: 60px"><p style="color: #8fde5d">enum</p></td>
+                <td><p>Strictness</p></td>
             </tr><tr>
                 <td class="summary-topic" style="width: 60px"><p style="color: #ff6b97">surface</p></td>
                 <td><p>Mask</p></td>
@@ -772,7 +775,7 @@
 </table><p>
 Strays (some time called orphan) refers to a single pixel that is not connected to any other pixel. This node is used to remove strays from the image by replacing it with the surrounding color.</p><br>
 <br><h2><a id="Properties" class="anchor"></a>Properties</h2><br>
-<h3><a id="<junc strictness>" class="anchor"></a><junc strictness></h3><br>
+<h3><a id="Strictness" class="anchor"></a><span class="junction" style="border-color: #8fde5dAA">Strictness</span></h3><br>
 <p>Algorithm stricness level.</p><br>
 <h3><a id="Tolerance" class="anchor"></a><span class="junction" style="border-color: #ffe478AA">Tolerance</span></h3><br>
 <p>How different two colors can be to be considered the same.</p><br>
