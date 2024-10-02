@@ -21,11 +21,11 @@ if not os.path.exists("docs/nodes/_index/index.html"):
     with open("docs/nodes/_index/index.html", "w") as file:
         file.write(f'''<!DOCTYPE html><html></html>''')
 
-cat       = ""
-catType   = {}
-nodeData  = {}
-nodePages = {}
-nodes     = {}
+cat        = ""
+catType    = {}
+nodeData   = {}
+nodePages  = {}
+nodes      = {}
 node_count = 0
 node_write = 0
 

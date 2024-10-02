@@ -1,2 +1,2 @@
 <v 1.18.0/>
-Feedback loop feed output of one node back as a input of another node in the next frame.
+An inline version of the feedback system. This is a preferred way to create feedback system since 1.17.
