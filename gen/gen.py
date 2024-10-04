@@ -182,6 +182,9 @@ def generateFolder(dirIn, dirOut):
 
             sidebar.append((FileType.FILE, f, fs, title))
 
+        elif fullPath.endswith(".md"):
+            continue   
+        
         else :
             shutil.copy(fullPath, os.path.join(dirOut, f))
 

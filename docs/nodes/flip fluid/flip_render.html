@@ -45,7 +45,15 @@
 <ul class="submenu">
 <li class="sidebar-nav"><a href="#Properties">Properties</a></li>
 <ul class="submenu h3">
-<li class="sidebar-nav"><a href="#"></a></li>
+<li class="sidebar-nav"><a href="#Render Type">Render Type</a></li>
+<li class="sidebar-nav"><a href="#Particle Expansion">Particle Expansion</a></li>
+<li class="sidebar-nav"><a href="#Draw Obstracles">Draw Obstracles</a></li>
+<li class="sidebar-nav"><a href="#Alpha">Alpha</a></li>
+<li class="sidebar-nav"><a href="#Color Over Velocity">Color Over Velocity</a></li>
+<li class="sidebar-nav"><a href="#Velocity Map">Velocity Map</a></li>
+<li class="sidebar-nav"><a href="#Lifespan">Lifespan</a></li>
+<li class="sidebar-nav"><a href="#Additive">Additive</a></li>
+<li class="sidebar-nav"><a href="#Merge Threshold">Merge Threshold</a></li>
 </ul>
 </ul>
 <li class="sidebar-nav "><a class="" href="flip_repel.html">Flip Repel</a></li>
@@ -649,6 +657,7 @@
 <li class="search-result" style="display: none;"><a href="\scriptings\pcx.html">Pcx</a></li>
 <li class="search-result" style="display: none;"><a href="\scriptings\hlsl.html">Hlsl</a></li>
 <li class="search-result" style="display: none;"><a href="\scriptings\lua.html">Lua</a></li>
+<li class="search-result" style="display: none;"><a href="\misc\beta_branch.html">Beta Branch</a></li>
 <li class="search-result" style="display: none;"><a href="\misc\command_line.html">Command Line</a></li>
 <li class="search-result" style="display: none;"><a href="\misc\console_command.html">Console Command</a></li>
 
@@ -661,7 +670,7 @@
 
 <div class="title">
                                                             <h1>Render</h1>
-                                                            <div class="badges"><p class="version-banner" title="Writen before 1.18, some information might be outdated">pre 1.18</p></div>
+                                                            <div class="badges"><p class="version-banner" title="Updated for version 1.18.0">1.18.0</p></div>
                                                         </div>
 <p class="subtitle"></p>
 <br><br>
@@ -719,14 +728,27 @@
 <tr><th class="head" colspan="2"><p>Attributes</p></th></tr>
 <tr><th colspan="2" class="summary-topic"><p>node_flip_render</p></th></tr><tr><td colspan="2" class="summary-attribute"><p>Update domain</p></td></tr><tr><td colspan="2" class="summary-attribute"><p>Draw Fluid Particles</p></td></tr>
 
-</table><p>Render FLIP fluid domain to a surface.</p>
-<br><br>
-<h2><a id="Properties" class="anchor"></a>Properties</h2>
-<br>
-<h3><a id="" class="anchor"></a><junc /></h3>
-<br>
-<p></p>
-<br>
+</table><p>
+Render fluid domain to a texture.</p><br>
+<br><h2><a id="Properties" class="anchor"></a>Properties</h2><br>
+<h3><a id="Render Type" class="anchor"></a><span class="junction" style="border-color: #8fde5dAA">Render Type</span></h3><br>
+<p>Where to render the particle as fluid drop or line.</p><br>
+<h3><a id="Particle Expansion" class="anchor"></a><span class="junction" style="border-color: #ffe478AA">Particle Expansion</span></h3><br>
+<p>Adjust radius of the particle.</p><br>
+<h3><a id="Draw Obstracles" class="anchor"></a><span class="junction" style="border-color: #8c3f5dAA">Draw Obstracles</span></h3><br>
+<p>Whether to draw the obstracles.</p><br>
+<h3><a id="Alpha" class="anchor"></a><span class="junction" style="border-color: #8fde5dAA">Alpha</span></h3><br>
+<p>Transparency range of the fluid.</p><br>
+<h3><a id="Color Over Velocity" class="anchor"></a><span class="junction" style="border-color: #8fde5dAA">Color Over Velocity</span></h3><br>
+<p>Color the fluid based on its velocity.</p><br>
+<h3><a id="Velocity Map" class="anchor"></a><span class="junction" style="border-color: #ffe478AA">Velocity Map</span></h3><br>
+<p>Set the velocity map to color the fluid.</p><br>
+<h3><a id="Lifespan" class="anchor"></a><span class="junction" style="border-color: #ffe478AA">Lifespan</span></h3><br>
+<p>How long the fluid will be visible for.</p><br>
+<h3><a id="Additive" class="anchor"></a><span class="junction" style="border-color: #8c3f5dAA">Additive</span></h3><br>
+<p>Set particle blending mode to additive.</p><br>
+<h3><a id="Merge Threshold" class="anchor"></a><span class="junction" style="border-color: #ffe478AA">Merge Threshold</span></h3><br>
+<p>Merge particles that are close to each other.</p><br>
         </div>
     </div>
 

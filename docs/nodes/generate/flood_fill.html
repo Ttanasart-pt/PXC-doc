@@ -52,6 +52,7 @@
 <li class="sidebar-nav"><a href="#Threshold">Threshold</a></li>
 <li class="sidebar-nav"><a href="#Colors">Colors</a></li>
 <li class="sidebar-nav"><a href="#Diagonal">Diagonal</a></li>
+<li class="sidebar-nav"><a href="#Blend">Blend</a></li>
 </ul>
 </ul>
 <li class="sidebar-nav "><a class="" href="flow_noise.html">Flow Noise</a></li>
@@ -713,6 +714,7 @@
 <li class="search-result" style="display: none;"><a href="\scriptings\pcx.html">Pcx</a></li>
 <li class="search-result" style="display: none;"><a href="\scriptings\hlsl.html">Hlsl</a></li>
 <li class="search-result" style="display: none;"><a href="\scriptings\lua.html">Lua</a></li>
+<li class="search-result" style="display: none;"><a href="\misc\beta_branch.html">Beta Branch</a></li>
 <li class="search-result" style="display: none;"><a href="\misc\command_line.html">Command Line</a></li>
 <li class="search-result" style="display: none;"><a href="\misc\console_command.html">Console Command</a></li>
 
@@ -725,7 +727,7 @@
 
 <div class="title">
                                                             <h1>Flood Fill</h1>
-                                                            <div class="badges"><p class="version-banner" title="Writen before 1.18, some information might be outdated">pre 1.18</p></div>
+                                                            <div class="badges"><p class="version-banner" title="Updated for version 1.18.0">1.18.0</p></div>
                                                         </div>
 <p class="subtitle">Filled connected pixel given position and color.</p>
 <br><br>
@@ -771,29 +773,20 @@
 <tr><th class="head" colspan="2"><p>Attributes</p></th></tr>
 <tr><th colspan="2" class="summary-topic"><p>node_flood_fill</p></th></tr><tr><td colspan="2" class="summary-attribute"><p>Fill iteration</p></td></tr>
 
-</table><p>Flood fill node fill the region with the same color with a new color.</p>
-<br>
-<img class="node-content deco" src="/src/images/etc/flood_fill.png">
-<br><br>
-<h2><a id="Properties" class="anchor"></a>Properties</h2>
-<br>
-<h3><a id="Position" class="anchor"></a><span class="junction" style="border-color: #ffe478AA">Position</span></h3>
-<br>
-<p>Position of a pixel in the region to fill.</p>
-<br>
-<h3><a id="Threshold" class="anchor"></a><span class="junction" style="border-color: #ffe478AA">Threshold</span></h3>
-<br>
-<p>Threshold of the color difference to ber consider the same region.</p>
-<br>
-<h3><a id="Colors" class="anchor"></a><span class="junction" style="border-color: #8fde5dAA">Colors</span></h3>
-<br>
-<p>Color to fill to</p>
-<br>
-<h3><a id="Diagonal" class="anchor"></a><span class="junction" style="border-color: #8c3f5dAA">Diagonal</span></h3>
-<br>
-<p>Whether to fill diagonal pixel</p>
-<br>
-
+</table><p>
+Flood fill node fill a region with the same color with a new color. That region is based on a single points. If you want to map all regions with new colors, you can use <a class="node" href="../_index/region_fill.html">Region Fill</a> node.</p><br>
+<p><img class="node-content deco" src="/src/images/etc/flood_fill.png"></p><br>
+<br><h2><a id="Properties" class="anchor"></a>Properties</h2><br>
+<h3><a id="Position" class="anchor"></a><span class="junction" style="border-color: #ffe478AA">Position</span></h3><br>
+<p>Position of a pixel in the region to fill.</p><br>
+<h3><a id="Threshold" class="anchor"></a><span class="junction" style="border-color: #ffe478AA">Threshold</span></h3><br>
+<p>Threshold of the color difference to ber consider the same region.</p><br>
+<h3><a id="Colors" class="anchor"></a><span class="junction" style="border-color: #8fde5dAA">Colors</span></h3><br>
+<p>Color to fill to.</p><br>
+<h3><a id="Diagonal" class="anchor"></a><span class="junction" style="border-color: #8c3f5dAA">Diagonal</span></h3><br>
+<p>Whether to fill diagonal pixel.</p><br>
+<h3><a id="Blend" class="anchor"></a><span class="junction" style="border-color: #8fde5dAA">Blend</span></h3><br>
+<p>Blending mode between the original and the filled color.</p><br>
         </div>
     </div>
 
