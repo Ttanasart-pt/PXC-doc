@@ -118,6 +118,7 @@
 <li class="sidebar-nav "><a class="" href="struct.html">Struct</a></li>
 <li class="sidebar-nav "><a class="" href="struct_get.html">Struct Get</a></li>
 <li class="sidebar-nav "><a class="" href="struct_json_parse.html">Struct Json Parse</a></li>
+<li class="sidebar-nav "><a class="" href="struct_set.html">Struct Set</a></li>
 <li class="sidebar-nav "><a class="" href="surface_from_buffer.html">Surface From Buffer</a></li>
 <li class="sidebar-nav "><a class="" href="surface_to_buffer.html">Surface To Buffer</a></li>
 <li class="sidebar-nav "><a class="" href="to_number.html">To Number</a></li>
@@ -279,6 +280,7 @@
 <li class="search-result" style="display: none;"><a href="\nodes\filter\vignette.html">Vignette</a></li>
 <li class="search-result" style="display: none;"><a href="\nodes\3d\3d_camera.html">3D Camera</a></li>
 <li class="search-result" style="display: none;"><a href="\nodes\3d\3d_camera_set.html">3D Camera Set</a></li>
+<li class="search-result" style="display: none;"><a href="\nodes\3d\3d_displace.html">3D Displace</a></li>
 <li class="search-result" style="display: none;"><a href="\nodes\3d\3d_light_directional.html">3D Light Directional</a></li>
 <li class="search-result" style="display: none;"><a href="\nodes\3d\3d_light_point.html">3D Light Point</a></li>
 <li class="search-result" style="display: none;"><a href="\nodes\3d\3d_material.html">3D Material</a></li>
@@ -294,6 +296,8 @@
 <li class="search-result" style="display: none;"><a href="\nodes\3d\3d_mesh_sphere_uv.html">3D Mesh Sphere Uv</a></li>
 <li class="search-result" style="display: none;"><a href="\nodes\3d\3d_mesh_stack_slice.html">3D Mesh Stack Slice</a></li>
 <li class="search-result" style="display: none;"><a href="\nodes\3d\3d_mesh_terrain.html">3D Mesh Terrain</a></li>
+<li class="search-result" style="display: none;"><a href="\nodes\3d\3d_mesh_torus.html">3D Mesh Torus</a></li>
+<li class="search-result" style="display: none;"><a href="\nodes\3d\3d_mesh_wall_builder.html">3D Mesh Wall Builder</a></li>
 <li class="search-result" style="display: none;"><a href="\nodes\3d\3d_point_affector.html">3D Point Affector</a></li>
 <li class="search-result" style="display: none;"><a href="\nodes\3d\3d_repeat.html">3D Repeat</a></li>
 <li class="search-result" style="display: none;"><a href="\nodes\3d\3d_round_vertex.html">3D Round Vertex</a></li>
@@ -478,6 +482,7 @@
 <li class="search-result" style="display: none;"><a href="\nodes\values\struct.html">Struct</a></li>
 <li class="search-result" style="display: none;"><a href="\nodes\values\struct_get.html">Struct Get</a></li>
 <li class="search-result" style="display: none;"><a href="\nodes\values\struct_json_parse.html">Struct Json Parse</a></li>
+<li class="search-result" style="display: none;"><a href="\nodes\values\struct_set.html">Struct Set</a></li>
 <li class="search-result" style="display: none;"><a href="\nodes\values\surface_from_buffer.html">Surface From Buffer</a></li>
 <li class="search-result" style="display: none;"><a href="\nodes\values\surface_to_buffer.html">Surface To Buffer</a></li>
 <li class="search-result" style="display: none;"><a href="\nodes\values\to_number.html">To Number</a></li>
@@ -727,6 +732,7 @@
 <li class="search-result" style="display: none;"><a href="\nodes\hidden\smoke_group.html">Smoke Group</a></li>
 <li class="search-result" style="display: none;"><a href="\nodes\hidden\strand_group.html">Strand Group</a></li>
 <li class="search-result" style="display: none;"><a href="\nodes\hidden\vfx_group.html">Vfx Group</a></li>
+<li class="search-result" style="display: none;"><a href="\nodes\patreon.html">Patreon</a></li>
 <li class="search-result" style="display: none;"><a href="\animations\driver.html">Driver</a></li>
 <li class="search-result" style="display: none;"><a href="\animations\looping.html">Looping</a></li>
 <li class="search-result" style="display: none;"><a href="\exporting.html">Exporting</a></li>
@@ -748,11 +754,11 @@
                                                             <h1>Magnitude</h1>
                                                             <div class="badges"><p class="version-banner" title="Writen before 1.18, some information might be outdated">pre 1.18</p></div>
                                                         </div>
-<p class="subtitle"></p>
+<p class="subtitle">Calculate magnitude</p>
 <br><br>
 
 <table class = "summary-table">
-    <tr><th class="head" colspan="2"><p>Node Data</p></th></tr><tr><th colspan="2"><img class="node-content" src="/src/nodeIcons/s_node_magnitude.png"></th></tr><tr style="height: 4px;"></tr><tr><th colspan="2"><p class="badge" style="color: #9f9fb5; background-color: #9f9fb516; border-color: #9f9fb560;" title="">Values</p><p class="badge" style="color: #ffe478; background-color: #ffe47816; border-color: #ffe47860;" title="Array processor">Array</p></th></tr><tr style="height: 8px;"></tr><tr><th colspan="2" class="summary-topic"><p>Display name</p></th></tr><tr><th colspan="2" class="summary-content"><p>Magnitude</p></th></tr><tr><th colspan="2" class="summary-topic"><p>Internal name</p></th></tr><tr><th colspan="2" class="summary-content"><p>Node_Vector_Magnitude</p></th></tr><tr height="8px"></tr><tr><th class="head" colspan="2"><p>Inheritances</p></th></tr><tr><th colspan="2" class="inheritance-block"><a href="../index.html">node</a></th></tr><tr><th colspan="2" class="inheritance-block"><a href="../array_processor.html">node_processor</a></th></tr><tr><th colspan="2" class="inheritance-block current"><a href="../_index/vector_magnitude.html">node_vector_magnitude</a></th></tr><tr height="8px"></tr>
+    <tr><th class="head" colspan="2"><p>Node Data</p></th></tr><tr><th colspan="2"><img class="node-content" src="/src/nodeIcons/s_node_magnitude.png"></th></tr><tr style="height: 4px;"></tr><tr><th colspan="2"><a href="/nodes/values/index.html" class="badge" style="color: #9f9fb5; background-color: #9f9fb516; border-color: #9f9fb560;" title="">Values</a><a href="/nodes/array_processor.html" class="badge" style="color: #ffe478; background-color: #ffe47816; border-color: #ffe47860;" title="Array processor">Array</a></th></tr><tr style="height: 8px;"></tr><tr><th colspan="2" class="summary-topic"><p>Display name</p></th></tr><tr><th colspan="2" class="summary-content"><p>Magnitude</p></th></tr><tr><th colspan="2" class="summary-topic"><p>Internal name</p></th></tr><tr><th colspan="2" class="summary-content"><p>Node_Vector_Magnitude</p></th></tr><tr height="8px"></tr><tr><th class="head" colspan="2"><p>Inheritances</p></th></tr><tr><th colspan="2" class="inheritance-block"><a href="../index.html">node</a></th></tr><tr><th colspan="2" class="inheritance-block"><a href="../array_processor.html">node_processor</a></th></tr><tr><th colspan="2" class="inheritance-block current"><a href="../_index/vector_magnitude.html">node_vector_magnitude</a></th></tr><tr height="8px"></tr>
 <tr><th class="head" colspan="2"><p>Inputs</p></th></tr>
 <tr><th colspan="2" class="summary-topic"><p>node_vector_magnitude</p></th></tr><tr>
                 <td class="summary-topic" style="width: 60px"><p style="color: #ffe478">float</p></td>

@@ -6,6 +6,7 @@ import junc
 scriptDir = "D:\\Project\\MakhamDev\\LTS-PixelComposer\\PixelComposer\\scripts"
 regPath   = scriptDir + "\\node_registry\\node_registry.gml"
 dirname   = "3_nodes"
+version   = "<v 1.18.1/>\n"
 
 templatePath = "templates/node.html"
 with open(templatePath, "r") as f:
@@ -26,6 +27,7 @@ catType    = {}
 nodeData   = {}
 nodePages  = {}
 nodes      = {}
+nodeCat    = { "patron": [] }
 node_count = 0
 node_write = 0
 
@@ -34,9 +36,9 @@ def pathStrip(path): # Strip out the custom ordering n_ at the start of the file
         path = path[path.find('_') + 1:]
     return path
 
-def badge(title, tooltip, color):
+def badge(title, tooltip, color, page = ""):
     style = f"color: #{color}; background-color: #{color}16; border-color: #{color}60;"
-    return f'<p class="badge" style="{style}" title="{tooltip}">{title}</p>'
+    return f'<a href="{page}" class="badge" style="{style}" title="{tooltip}">{title}</a>'
 
 def extractNodeData(node):
     path = f"{scriptDir}\\{node}\\{node}.gml"
@@ -114,20 +116,16 @@ def writeNodeFile(cat, node, line):
         p = nodeData[p]["parent"]
 
     parents.insert(0, "node")
+    
+    if "node_processor" in parents:
+        _data["categories"].append(("Array", "Array processor", "ffe478", "/nodes/array_processor.html"))
 
     basicData = '<tr><th class="head" colspan="2"><p>Node Data</p></th></tr>'
     basicData += f'<tr><th colspan="2"><img {spr}></th></tr>'
 
     badges = ""
-    for c in _data["categories"]:
-        badges += badge(pathStrip(c), "", "9f9fb5")
-
-    if "isdeprecated" in line.lower():
-        badges += badge("Deprecated", "Deprecated node, please avoid using it in your project", "eb004b")
-    if "patreonextra" in line.lower():
-        badges += badge("Patreon", "Patreon supporter exclusive", "88ffe9")
-    if "node_processor" in parents:
-        badges += badge("Array", "Array processor", "ffe478")
+    for btitle, bdesp, bcolor, bpage in _data["categories"]:
+        badges += badge(btitle, bdesp, bcolor, bpage)
 
     if badges != "":
         basicData += '<tr style="height: 4px;"></tr>'
@@ -235,9 +233,8 @@ def writeNodeFile(cat, node, line):
     return { "spr": spr }
 
 def generateNodeCatagory(cat):
-    
     title = pathStrip(cat).title()
-    txt = f"""<h1>{title}</h1>
+    txt = version + f"""<h1>{title}</h1>
 <br><br>
 <div class=node-group>"""
     
@@ -261,6 +258,33 @@ def generateNodeCatagory(cat):
     
     filePath = f"pregen/{dirname}/{catType[cat]}_{cat}/0_index.html"
     with open(filePath, "w") as file:
+        file.write(txt)
+
+def generateNodeTag(url, title, nlist):
+    print(f"Generating {url} with {len(nlist)} nodes")
+    txt = version + f"""<h1>{title}</h1>
+<br><br>
+<div class=node-group>"""
+    
+    nodeNames = [ node for node, _ in nlist ]
+    nodeNames.sort()
+
+    for node in nodeNames:
+        if node.lower() not in nodeData:
+            print(f"Node {node.lower()} not found in nodeData")
+            continue
+        
+        _data = nodeData[node.lower()]
+        spr   = _data["spr"]
+        name  = _data["name"]
+
+        txt += f'''<div>
+<a href="./{node.lower().replace("node_", "")}.html"><img {spr}>{name}</a>
+</div>\n'''
+
+    txt += "</div>"
+    
+    with open(url, "w") as file:
         file.write(txt)
 
 for script in os.listdir(scriptDir):
@@ -320,9 +344,18 @@ for line in nodeListRaw.split("\n"):
             nodes[cat] = []
 
 for cat in nodes:
+    p = pathStrip(cat.title())
+
     for node, line in nodes[cat]:
         _data = nodeData[node.lower()]
-        _data["categories"].append(cat.title())
+        _data["categories"].append((p, "", "9f9fb5", f"/nodes/{cat}/index.html"))
+
+        if "isdeprecated" in line.lower():
+            _data["categories"].append(("Deprecated", "Deprecated node, please avoid using it in your project", "eb004b", ""))
+
+        if "patreonextra" in line.lower():
+            _data["categories"].append(("Patreon", "Patreon supporter exclusive", "88ffe9", "/nodes/patreon.html"))
+            nodeCat["patron"].append((node, line))
 
 i = 0
 for cat in nodes:
@@ -344,5 +377,7 @@ for cat in nodes:
         writeNodeFile(cat, node, line)
 
     generateNodeCatagory(cat)
+
+generateNodeTag(f"pregen/{dirname}/patreon.html", "Patreon exclusive nodes", nodeCat["patron"])
 
 print(f"==== Total nodes: {node_count}, Total written: {node_write} [{node_write/node_count*100:.2f}%] ====")
