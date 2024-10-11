@@ -261,7 +261,6 @@ def generateNodeCatagory(cat):
         file.write(txt)
 
 def generateNodeTag(url, title, nlist):
-    print(f"Generating {url} with {len(nlist)} nodes")
     txt = version + f"""<h1>{title}</h1>
 <br><br>
 <div class=node-group>"""

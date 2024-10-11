@@ -53,6 +53,12 @@
 <li class="sidebar-nav "><a class="" href="group.html">Group</a></li>
 <li class="sidebar-nav active "><a class="" href="hlsl.html">Hlsl</a></li>
 <ul class="submenu">
+<li class="sidebar-nav"><a href="#Properties">Properties</a></li>
+<ul class="submenu h3">
+<li class="sidebar-nav"><a href="#Base Texture">Base Texture</a></li>
+<li class="sidebar-nav"><a href="#Fragment">Fragment</a></li>
+<li class="sidebar-nav"><a href="#Arguments">Arguments</a></li>
+</ul>
 </ul>
 <li class="sidebar-nav "><a class="" href="iterate.html">Iterate</a></li>
 <li class="sidebar-nav "><a class="" href="iterate_each_inline.html">Iterate Each Inline</a></li>
@@ -685,7 +691,7 @@
 
 <div class="title">
                                                             <h1>HLSL</h1>
-                                                            <div class="badges"><p class="version-banner" title="Writen before 1.18, some information might be outdated">pre 1.18</p></div>
+                                                            <div class="badges"><p class="version-banner" title="Updated for version 1.18.0">1.18.0</p></div>
                                                         </div>
 <p class="subtitle">Execute HLSL shader on a surface.</p>
 <br><br>
@@ -723,7 +729,15 @@
                 <td><p>Surface</p></td>
             </tr>
 
-</table>
+</table><p>
+HLSL node allow to write HLSL code, compile it, and runs on a surface.</p><br>
+<br><h2><a id="Properties" class="anchor"></a>Properties</h2><br>
+<h3><a id="Base Texture" class="anchor"></a><span class="junction" style="border-color: #ff6b97AA">Base Texture</span></h3><br>
+<p>Base texture to use for the HLSL code.</p><br>
+<h3><a id="Fragment" class="anchor"></a><span class="junction" style="border-color: #66ffe3AA">Fragment</span></h3><br>
+<p>Fragment shader code to run on the surface.</p><br>
+<h3><a id="Arguments" class="anchor"></a>Arguments</h3><br>
+<p>Extra arguments to pass to the shader as uniforms.</p><br>
         </div>
     </div>
 
