@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PXC Documentation</title>
+
+    <link rel="stylesheet" href="/styles.css">
+    <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+    <div class = "header">
+        <div class="header-title">
+            <img src="/src/icon_48.png" alt="PXC Logo" class="logo">
+            <a href="/index.html">
+                <h2>PXC Documentation</h2>
+            </a>
+        </div>
+
+        <a href="https://pixel-composer.com">PXC Home</a>
+    </div>
+
+    <div class="main">
+        <div class="sidebar">
+            <ul>
+                <li class="search">
+                    <form action="search.html" method="get">
+                        <input type="text" name="search" placeholder="Search..." id="search" onkeyup="onSearch()">
+                    </form>
+                </li>
+                <div id="search_spacing" style="height: 48px;"></div>
+                <li class="sidebar-nav back "><a class="" href="../">Back</a></li>
+<li class="sidebar-nav icon "><?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 28.2.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 24 24" style="enable-background:new 0 0 24 24;" xml:space="preserve">
+<path class="st0" d="M4,21V9l8-6l8,6v12h-6v-6h-4v6H4z"/>
+</svg>
+<a class="" href="index.html">Compose</a></li>
+<li class="sidebar-nav "><a class="" href="armature.html">Armature</a></li>
+<li class="sidebar-nav "><a class="" href="armature_bind.html">Armature Bind</a></li>
+<li class="sidebar-nav "><a class="" href="armature_mesh_rig.html">Armature Mesh Rig</a></li>
+<li class="sidebar-nav "><a class="" href="armature_path.html">Armature Path</a></li>
+<li class="sidebar-nav "><a class="" href="armature_pose.html">Armature Pose</a></li>
+<li class="sidebar-nav "><a class="" href="armature_sample.html">Armature Sample</a></li>
+<li class="sidebar-nav "><a class="" href="blend.html">Blend</a></li>
+<li class="sidebar-nav "><a class="" href="camera.html">Camera</a></li>
+<li class="sidebar-nav "><a class="" href="composite.html">Composite</a></li>
+<li class="sidebar-nav "><a class="" href="composite_tag.html">Composite Tag</a></li>
+<li class="sidebar-nav "><a class="" href="image_grid.html">Image Grid</a></li>
+<li class="sidebar-nav "><a class="" href="pack_sprites.html">Pack Sprites</a></li>
+<li class="sidebar-nav "><a class="" href="render_sprite_sheet.html">Render Sprite Sheet</a></li>
+<li class="sidebar-nav "><a class="" href="stack.html">Stack</a></li>
+<li class="sidebar-nav active "><a class="" href="surface_tag.html">Surface Tag</a></li>
+<ul class="submenu">
+</ul>
+<li class="sidebar-nav "><a class="" href="xport.html">Xport</a></li>
+
+                {{search_results}}
+                <div style="height: 96px;"></div>
+            </ul>
+        </div>
+
+        <div class="content">
+            <link rel="stylesheet" href="../styles.css">
+
+<div class="title">
+                                                            <h1>Tag Surface</h1>
+                                                            <div class="badges"><p class="version-banner" title="This page is writen before 1.18, some information might be outdated">pre 1.18</p></div>
+                                                        </div>
+<p class="subtitle"></p>
+<br><br>
+
+<table class = "summary-table">
+    <tr><th class="head" colspan="2"><p>Node Data</p></th></tr><tr><th colspan="2"><img class="node-content" src="/../src/nodeIcons/s_node_surface_tag.png"></th></tr><tr><th colspan="2" class="summary-topic"><p>Display name</p></th></tr><tr><th colspan="2" class="summary-content"><p>Tag Surface</p></th></tr><tr><th colspan="2" class="summary-topic"><p>Internal name</p></th></tr><tr><th colspan="2" class="summary-content"><p>Node_Surface_Tag</p></th></tr><tr height="8px"></tr><tr><th class="head" colspan="2"><p>Inheritances</p></th></tr><tr><th colspan="2" class="inheritance-block current"><a href="../_index/Node_Surface_Tag.html">Node_Surface_Tag</a></th></tr><tr height="8px"></tr>
+<tr><th class="head" colspan="2"><p>Inputs</p></th></tr>
+<tr><th colspan="2" class="summary-topic"><p>Node_Surface_Tag</p></th></tr><tr>
+                <td class="summary-topic" style="width: 60px"><p style="color: #ff6b97">surface</p></td>
+                <td><p>Surface In</p></td>
+            </tr><tr>
+                <td class="summary-topic" style="width: 60px"><p style="color: #66ffe3">text</p></td>
+                <td><p>Tag</p></td>
+            </tr><tr>
+                <td class="summary-topic" style="width: 60px"><p style="color: #ffe478">vec2</p></td>
+                <td><p>Position</p></td>
+            </tr>
+<tr height="8px"></tr>
+<tr><th class="head" colspan="2"><p>Outputs</p></th></tr>
+<tr><th colspan="2" class="summary-topic"><p>Node_Surface_Tag</p></th></tr><tr>
+                <td class="summary-topic" style="width: 60px"><p style="color: #ff6b97">dynasurface</p></td>
+                <td><p>Tagged Surface</p></td>
+            </tr>
+
+</table>
+        </div>
+    </div>
+
+    <div style="height: 96px;"></div>
+    <div class="footer"> <p>2024 Pixel Composer</p> </div>
+</body>
+
+<script>
+    function onSearch() {
+        var input = document.getElementById('search').value
+        var space = document.getElementById('search_spacing');
+        var x     = document.getElementsByClassName('search-result');
+        var cnt   = document.getElementsByClassName('sidebar-nav');
+        input = input.toLowerCase();
+
+        if (input == "") {
+            for (i = 0; i < x.length; i++)
+                x[i].style.display="none";
+
+            for (i = 0; i < cnt.length; i++)
+                cnt[i].style.display="flex";
+            return;
+        }
+
+        for (i = 0; i < cnt.length; i++)
+            cnt[i].style.display="none";
+
+        for (i = 0; i < x.length; i++) {
+            if (!x[i].innerHTML.toLowerCase().includes(input))
+                x[i].style.display="none";
+            else
+                x[i].style.display="flex";
+        }
+    }
+
+    onSearch()
+</script>
+
+</html>

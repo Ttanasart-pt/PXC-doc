@@ -45,9 +45,9 @@ def generateBasicData(nodeData, metadata):
         pName = p["name"]
         link  = ""
 
-        if pName == "node":
+        if pName == "Node":
             link = "../index.html"
-        elif pName == "node_processor":
+        elif pName == "Node_Processor":
             link = "../array_processor.html"
         else:
             link = f"../_index/{pName}.html"

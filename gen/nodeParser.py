@@ -24,7 +24,7 @@ def readNodeScripts():
         if not os.path.isdir(os.path.join(scriptDir, _dir)):
             continue
         
-        if not _dir.strip("_").startswith("node_"):
+        if not _dir.lstrip("_").startswith("node_"):
             continue
         
         scriptFile = f"{scriptDir}/{_dir}/{_dir}.gml"
@@ -34,10 +34,10 @@ def readNodeScripts():
         with open(scriptFile, "r") as f:
             script = f.read()
         
-        baseNode = reFindFirst(r"function\s(\w*)\(.*constructor", script).strip()
+        baseNode = reFindFirst(r"function\s(Node\w*)\(.*?constructor", script).strip()
         if not baseNode:
             continue
-        if not baseNode.strip("_").lower().startswith("node_"):
+        if not baseNode.lstrip("_").lower().startswith("node_"):
             continue
 
         scripts[baseNode] = script

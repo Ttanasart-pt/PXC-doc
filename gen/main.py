@@ -1,7 +1,7 @@
 import os
 import shutil
 
-shutil.copytree("../content", "../pregen")
+shutil.copytree("../content", "../pregen", dirs_exist_ok=True)
 
 # Convert markdown to HTML
 print("Runing md.py...") 

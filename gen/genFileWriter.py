@@ -27,7 +27,7 @@ def generateFile(dirOut, pathIn, sidebar):
 
     pathIn    = pathRemoveOrder(pathIn)
     fileName  = os.path.basename(pathIn)
-    pathOut   = f"{dirOut}\\{fileName}"
+    pathOut   = f"{dirOut}/{fileName}"
     headers   = []
     badges    = ""
 

@@ -21,7 +21,7 @@ def getNodeMetadata(nodePath):
         nodeData = json.load(f)
     return nodeData
 
-# %% Generate contents (index.html, redirect.html)
+# %% Generate contents
 nodeContent  = {}
 nodeMetadata = {}
 
@@ -39,7 +39,7 @@ for nodePath in nodeList:
 
     content = nodeWriter.writeNode(nodeMeta, contentPath)
     if not content:
-        print(f"Node content for {nodeBase} not found.")
+        print(f"Cannot write content for {nodeBase}.")
         continue
 
     nodeContent[nodeBase]  = content
@@ -56,18 +56,18 @@ with open(nodeCategoryDir, 'r') as f:
 
 nodeCategory = {}
 for category in nodeCategoryData:
-    name  = category["name"]
-    nodes = category["nodes"]
-    nodeCategory[name] = nodes
+    cName  = category["name"]
+    cNodes = category["nodes"]
+    nodeCategory[cName] = cNodes
     
-    categoryDir = os.path.join(targetRoot, fileUtil.pathSanitize(name))
+    categoryDir = os.path.join(targetRoot, fileUtil.pathSanitize(cName))
     fileUtil.verifyFolder(categoryDir)
 
     categoryContent  = f'''<!DOCTYPE html><html></html>{VERSION}'''
     categoryContent += nodeWriter.writeCategory(category, nodeMetadata)
     fileUtil.writeFile(f"{categoryDir}/index.html", categoryContent)
 
-    for node in nodes:
+    for node in cNodes:
         if not isinstance(node, str):
             continue
 
@@ -81,8 +81,11 @@ for category in nodeCategoryData:
         targetPath = os.path.join(categoryDir, fname + ".html")
         fileUtil.writeFile(targetPath, nodeContent[node])
 
+        nodeMeta = nodeMetadata[node]
+        nodeName = nodeMeta["name"].lower().replace(" ", "_")
+
         redirectPath = f"../docs/nodes/_index/{node}.html"
         with open(redirectPath, "w") as file:
-            file.write(f'''<!DOCTYPE html><html><meta http-equiv="refresh" content="0; url=/nodes/{name}/{node}.html"/></html>''')
+            file.write(f'''<!DOCTYPE html><html><meta http-equiv="refresh" content="0; url=/nodes/{cName}/{nodeName}.html"/></html>''')
 
     
