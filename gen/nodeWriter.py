@@ -1,5 +1,6 @@
 # %%
 import os
+import re
 import fileUtil
 
 import nodeParser
@@ -88,6 +89,26 @@ def writeNode(metadata, contentPath):
 
     summary  = applySummaryTable(basicData, junctionText, attributeText)
     content  = applyTemplate(template, nodeName, tooltip, summary)
+
+    junctions = {}
+    for junc in nodeData["inputs"] + nodeData["outputs"]:
+        jName = junc["name"]
+        junctions[jName] = junc
+
+    juncTags = re.findall(r'<junc\s(.*?)>', content)
+    for tag in juncTags:
+        jName = tag.strip("/").lower()
+        
+        if jName == "": 
+            continue
+
+        if jName in junctions:
+            jColor  = juncWriter.getColor(junctions[jName]["type"])
+            content = content.replace(f'<junc {tag}>', f'<span class="junction" style="border-color: {jColor}AA">{jName.title()}</span>')
+
+    attrTags = re.findall(r'<attr\s(.*?)/>', content)
+    for tag in attrTags:
+        content = content.replace(f'<attr {tag}/>', f'<span class="inline-code">{tag}</span>')
 
     content += rawContent
     return content

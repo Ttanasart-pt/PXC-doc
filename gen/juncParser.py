@@ -34,15 +34,15 @@ def parseInput(inp):
     iName = reFindFirst(r'"(.*?)"', inp)
     iType = reFindFirst(r"^.*nodeValue(.*?)\(", inp).strip(" _").lower()
 
+    if iType in shortDict:
+        iType = shortDict[iType]
+
     if iType == "dimension":
         iName = "dimension"
         iType = "dimension"
 
     if "enum" in iType:
         iType = "enum"
-
-    if iType in shortDict:
-        iType = shortDict[iType]
 
     return {
         "name": iName,
