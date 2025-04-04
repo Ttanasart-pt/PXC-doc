@@ -1,15 +1,19 @@
 import os
 import shutil
 
-shutil.copytree("content", "pregen")
+shutil.copytree("../content", "../pregen")
 
-print("Runing md.py...")
-os.system("python gen/md.py")
+# Convert markdown to HTML
+print("Runing md.py...") 
+os.system("python md.py")
 
+# Generate node files
 print("Runing nodes.py...")
-os.system("python gen/node.py")
+os.system("python node.py")
 
+# Generate web contents
 print("Runing gen.py...")
-os.system("python gen/gen.py")
+os.system("python gen.py")
 
-shutil.rmtree("pregen")
+# Delete pregen folder
+shutil.rmtree("../pregen")

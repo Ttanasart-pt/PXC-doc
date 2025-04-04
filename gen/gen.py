@@ -1,3 +1,4 @@
+# %%
 import os
 import shutil
 import re
@@ -7,18 +8,6 @@ class FileType(Enum):
     FILE  = 0
     DIR   = 1
     BACK  = 2
-
-shutil.copytree("src", "docs/src", dirs_exist_ok = True)
-
-images = {}
-for root, dirs, files in os.walk("src"):
-    for file in files:
-        if file.endswith(".png"):
-            images[file[:-4]] = os.path.join(root, file).replace("\\", "/")
-
-templatePath = "templates/page.html"
-with open(templatePath, "r") as f:
-    template = f.read()
 
 def space(s): # Replace _ with space and capitalize the first letter in each word
     s = s.replace('_', ' ')
@@ -34,8 +23,25 @@ def loadFile(path):
     with open(path, "r") as f:
         return f.read()
     
-svg_home = loadFile("src/svg/home.svg")
-svg_dir = loadFile("src/svg/dir.svg")
+# %%
+nodeIconDir = "D:/Project/MakhamDev/LTS-PixelComposer/RESOURCE/nodeIcons"
+shutil.copytree(nodeIconDir, "../src/nodeIcons", dirs_exist_ok = True)
+shutil.copytree("../src", "../docs/src", dirs_exist_ok = True)
+
+images = {}
+for root, dirs, files in os.walk("../src"):
+    for file in files:
+        if not file.endswith(".png"):
+            continue
+
+        key = file[:-4].lower()
+        images[key] = os.path.join(root, file).replace("\\", "/")
+
+template = loadFile("../templates/page.html")
+
+# %%
+svg_home = loadFile("../src/svg/home.svg")
+svg_dir  = loadFile("../src/svg/dir.svg")
 pages = []
 
 def generateFile(dirOut, pathIn, sidebar):
@@ -44,7 +50,7 @@ def generateFile(dirOut, pathIn, sidebar):
 
     pathIn    = pathStrip(pathIn)
     fileName  = os.path.basename(pathIn)
-    outPath   = f"{dirOut}\\{fileName}"
+    pathOut   = f"{dirOut}\\{fileName}"
     headers   = []
     badges    = ""
 
@@ -87,8 +93,8 @@ def generateFile(dirOut, pathIn, sidebar):
 
         if imgraw in images:
             content = content.replace(f"<img {img}>", f'<img class="node-content" src="/{images[imgraw]}">')
-        elif '"' not in img: 
-            print(f"{pathIn} : Image {imgraw} not found")
+        elif "=" not in imgraw: 
+            print(f"{pathOut} : Image {imgraw} not found")
 
     imgs = re.findall(r"<img-deco (.*?)>", content)
     for img in imgs:
@@ -96,8 +102,8 @@ def generateFile(dirOut, pathIn, sidebar):
 
         if imgraw in images:
             content = content.replace(f"<img-deco {img}>", f'<img class="node-content deco" src="/{images[imgraw]}">')
-        elif '"' not in img: 
-            print(f"{pathIn} : Image {imgraw} not found")
+        elif "=" not in imgraw: 
+            print(f"{pathOut} : Image {imgraw} not found")
 
     nodeTags = re.findall(r'<node\s(.*?)>', content)
     for tag in nodeTags:
@@ -143,17 +149,17 @@ def generateFile(dirOut, pathIn, sidebar):
     data = template.replace("{{content}}", content)
     data = data.replace("{{sidebar}}", sideContent)
 
-    with open(outPath, "w") as f:
+    with open(pathOut, "w") as f:
         f.write(data)
 
     title = fileName.replace('.html', '').replace('_', ' ').title()
-    pages.append((title, outPath))
+    pages.append((title, pathOut))
 
 def generateFolder(dirIn, dirOut):
     files = sorted(os.listdir(dirIn))
     sidebar = []
 
-    if dirIn == "pregen":
+    if dirIn == "../pregen":
         groupTitle = "Home"
         sidebar.append((FileType.BACK, "", "", ""))
     else:
@@ -197,8 +203,8 @@ def generateFolder(dirIn, dirOut):
         elif t == FileType.FILE:
             generateFile(dirOut, fDirIn, sidebar)
 
-generateFolder("pregen", "docs")
-shutil.copy("./styles.css", "./docs/styles.css")
+generateFolder("../pregen", "../docs")
+shutil.copy("../styles.css", "../docs/styles.css")
 
 # search
 search_list_str = ""
@@ -206,7 +212,7 @@ for title, path in pages:
     if title == "Index":
         continue
 
-    real_path = path.replace("docs\\", "\\")
+    real_path = path.replace("../docs\\", "\\")
     search_list_str += f'<li class="search-result" style="display: none;"><a href="{real_path}">{title}</a></li>\n'
 
 for _, path in pages:
