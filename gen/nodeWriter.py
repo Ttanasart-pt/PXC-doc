@@ -65,7 +65,7 @@ def applyTemplate(template, nodeName, tooltip, summary):
                    .replace("{{tooltip}}",  tooltip)  \
                    .replace("{{summary}}",  summary)
 
-def writeNode(metadata, contentPath, targetPath):
+def writeNode(metadata, contentPath):
     with open(contentPath, "r") as f:
         rawContent = f.read()
 
@@ -88,5 +88,4 @@ def writeNode(metadata, contentPath, targetPath):
     content  = applyTemplate(template, nodeName, tooltip, summary)
 
     content += rawContent
-
-    fileUtil.writeFile(targetPath, content)
+    return content

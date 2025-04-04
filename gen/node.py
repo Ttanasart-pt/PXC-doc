@@ -5,11 +5,6 @@ import json5 as json
 
 import nodeWriter
 
-# %%  Read node category metadata
-nodeCategoryDir = "D:/Project/MakhamDev/LTS-PixelComposer/PixelComposer/datafiles/data/Nodes/display_data.json"
-with open(nodeCategoryDir, 'r') as f:
-    nodeCategoryData = json.load(f)
-
 # %% Read node metadata
 nodeDir  = "D:/Project/MakhamDev/LTS-PixelComposer/PixelComposer/datafiles/data/Nodes/Internal"
 nodeList = []
@@ -24,25 +19,55 @@ def getNodeMetadata(nodePath):
         nodeData = json.load(f)
     return nodeData
 
-# %% Generate base files (index.html, redirect.html)
-nodeMap   = {}
-targerDir = "../pregen/3_nodes"
-
-fileUtil.verifyFile("../docs/nodes/_index/index.html", f'''<!DOCTYPE html><html></html>''')
-fileUtil.verifyFolder(targerDir)
+# %% Generate contents (index.html, redirect.html)
+nodeContent = {}
 
 for nodePath in nodeList:
     nodeMetadata = getNodeMetadata(nodePath)
+    if not nodeMetadata:
+        print(f"Node data for {nodePath} not found.")
+        continue
     
     nodeBase = nodeMetadata["baseNode"]
     nodeName = nodeMetadata["name"]
-    nodeMap[nodeName] = nodeBase
     
     contentPath = f"../content/__nodes/{fileUtil.pathSanitize(nodeName)}.html"
     fileUtil.verifyFile(contentPath)
 
-    targetPath  = os.path.join(targerDir, fileUtil.pathSanitize(nodeBase) + ".html")
+    content = nodeWriter.writeNode(nodeMetadata, contentPath)
+    if not content:
+        print(f"Node content for {nodeBase} not found.")
+        continue
 
-    nodeWriter.writeNode(nodeMetadata, contentPath, targetPath)
+    nodeContent[nodeBase] = content
+    
+# %% Write content to file using category
+targetRoot = "../pregen/3_nodes"
+fileUtil.verifyFile("../docs/nodes/_index/index.html", f'''<!DOCTYPE html><html></html>''')
+fileUtil.verifyFolder(targetRoot)
 
-# %%
+nodeCategoryDir = "D:/Project/MakhamDev/LTS-PixelComposer/PixelComposer/datafiles/data/Nodes/display_data.json"
+with open(nodeCategoryDir, 'r') as f:
+    nodeCategoryData = json.load(f)
+
+nodeCategory = {}
+for category in nodeCategoryData:
+    name  = category["name"]
+    nodes = category["nodes"]
+    nodeCategory[name] = nodes
+    
+    categoryDir = os.path.join(targetRoot, fileUtil.pathSanitize(name))
+    fileUtil.verifyFile(f"{categoryDir}/index.html", f'''<!DOCTYPE html><html></html>''')
+
+    for node in nodes:
+        if not isinstance(node, str):
+            continue
+
+        if node not in nodeContent:
+            print(f"Node content for {node} not found.")
+            continue
+
+        targetPath = os.path.join(categoryDir, fileUtil.pathSanitize(node) + ".html")
+        fileUtil.writeFile(targetPath, nodeContent[node])
+
+    
