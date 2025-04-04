@@ -682,13 +682,14 @@ div.node-group {
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 16px;
+    gap: 8px 4px;
 
-    padding: 8px 0px;
+    padding-top: 16px;
+    padding-bottom: 16px;
 }
 
 div.node-group > div {
-    width: 128px;
+    width: 80px;
     height: auto;
 }
 
@@ -698,7 +699,7 @@ div.node-group > div > a {
     text-align: center;
     display: block;
 
-    padding: 8px;
+    padding: 8px 0px;
     border-radius: 4px;
 }
 

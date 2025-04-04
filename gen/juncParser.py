@@ -2,6 +2,26 @@
 import os
 import re
 
+shortDict = {
+    "a":  "area",
+    "c":  "color",
+    "b":  "bool",
+    "cu": "curve",
+    "es": "enum_scroll",
+    "eb": "enum_button",
+    "f":  "float",
+    "gr": "gradient",
+    "i":  "int",
+    "pl": "palette",
+    "pn": "pathnode",
+    "rn": "range",
+    "r":  "rotation",
+    "s":  "slider",
+    "sr": "surface",
+    "tr": "trigger",
+    "2":  "vec2",
+}
+
 # %%
 def reFindFirst(pattern, string):
     match = re.search(pattern, string)
@@ -20,6 +40,9 @@ def parseInput(inp):
 
     if "enum" in iType:
         iType = "enum"
+
+    if iType in shortDict:
+        iType = shortDict[iType]
 
     return {
         "name": iName,
