@@ -688,7 +688,7 @@ div.node-group {
 }
 
 div.node-group > div {
-    width: 96px;
+    width: 128px;
     height: auto;
 }
 
@@ -707,7 +707,7 @@ div.node-group > div > a:hover {
 }
 
 div.node-group > div > a > img {
-    width:   64px;
+    width:   48px;
     height:  auto;
     display: block;
 
