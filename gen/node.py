@@ -58,6 +58,9 @@ nodeCategory = {}
 for category in nodeCategoryData:
     cName  = category["name"]
     cNodes = category["nodes"]
+    if not cNodes:
+        continue
+
     nodeCategory[cName] = cNodes
     
     categoryDir = os.path.join(targetRoot, fileUtil.pathSanitize(cName))
@@ -76,7 +79,7 @@ for category in nodeCategoryData:
             continue
         
         fname = fileUtil.pathSanitize(node)
-        fname = fname.lstrip("node_")
+        fname = fname.replace("node_", "")
 
         targetPath = os.path.join(categoryDir, fname + ".html")
         fileUtil.writeFile(targetPath, nodeContent[node])

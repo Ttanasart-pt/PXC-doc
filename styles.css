@@ -1,11 +1,11 @@
 :root {
-    --main_dkblack:	#191925;
-    --main_mdblack:	#1e1e2c;
-    --main_black:	#272736;
-    --main_dkgrey:	#3b3b4e;
-    --main_grey:	#6d6d81;
-    --main_ltgrey:	#7e7e8f;
-    --main_white:	#d6d6e8;
+    --main_dkblack:	25,25,37;
+    --main_mdblack:	30,30,44;
+    --main_black:	39,39,54;
+    --main_dkgrey:	59,59,78;
+    --main_grey:	109,109,129;
+    --main_ltgrey:	126,126,143;
+    --main_white:	214,214,232;
 
     --accent: #ff9166;
 
@@ -683,6 +683,10 @@ div.node-group {
     flex-wrap: wrap;
     justify-content: center;
     gap: 16px;
+
+    padding: 8px 0px;
+    border-radius: 4px;
+    background-color: rgba(var(--main_dkblack), .5);
 }
 
 div.node-group > div {
