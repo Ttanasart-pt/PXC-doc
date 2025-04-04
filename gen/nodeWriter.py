@@ -89,3 +89,32 @@ def writeNode(metadata, contentPath):
 
     content += rawContent
     return content
+
+# %%
+def writeCategory(category, nodeMetadata):
+    name  = category["name"]
+    nodes = category["nodes"]
+
+    title   = name
+    content = f"""<h1>{title}</h1>
+<br><br>
+<div class=node-group>"""
+    
+    for node in nodes:
+        if not isinstance(node, str):
+            continue
+
+        if node not in nodeMetadata:
+            print(f"Node content for {node} not found.")
+            continue
+        
+        metadata = nodeMetadata[node]
+        name     = metadata["name"]
+        spr      = metadata["spr"]  if "spr" in metadata else f"s_{node.lower()}"
+
+        content += f'''<div>
+<a href="./{node.lower().replace("node_", "")}.html"><img {spr}>{name}</a>
+</div>\n'''
+
+    content += "</div>"
+    return content

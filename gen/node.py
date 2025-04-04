@@ -20,26 +20,28 @@ def getNodeMetadata(nodePath):
     return nodeData
 
 # %% Generate contents (index.html, redirect.html)
-nodeContent = {}
+nodeContent  = {}
+nodeMetadata = {}
 
 for nodePath in nodeList:
-    nodeMetadata = getNodeMetadata(nodePath)
-    if not nodeMetadata:
+    nodeMeta = getNodeMetadata(nodePath)
+    if not nodeMeta:
         print(f"Node data for {nodePath} not found.")
         continue
     
-    nodeBase = nodeMetadata["baseNode"]
-    nodeName = nodeMetadata["name"]
+    nodeBase = nodeMeta["baseNode"]
+    nodeName = nodeMeta["name"]
     
     contentPath = f"../content/__nodes/{fileUtil.pathSanitize(nodeName)}.html"
     fileUtil.verifyFile(contentPath)
 
-    content = nodeWriter.writeNode(nodeMetadata, contentPath)
+    content = nodeWriter.writeNode(nodeMeta, contentPath)
     if not content:
         print(f"Node content for {nodeBase} not found.")
         continue
 
-    nodeContent[nodeBase] = content
+    nodeContent[nodeBase]  = content
+    nodeMetadata[nodeBase] = nodeMeta
     
 # %% Write content to file using category
 targetRoot = "../pregen/3_nodes"
@@ -57,7 +59,10 @@ for category in nodeCategoryData:
     nodeCategory[name] = nodes
     
     categoryDir = os.path.join(targetRoot, fileUtil.pathSanitize(name))
-    fileUtil.verifyFile(f"{categoryDir}/index.html", f'''<!DOCTYPE html><html></html>''')
+
+    categoryContent  = f'''<!DOCTYPE html><html></html>'''
+    categoryContent += nodeWriter.writeCategory(category, nodeMetadata)
+    fileUtil.verifyFile(f"{categoryDir}/index.html", categoryContent)
 
     for node in nodes:
         if not isinstance(node, str):
@@ -66,8 +71,11 @@ for category in nodeCategoryData:
         if node not in nodeContent:
             print(f"Node content for {node} not found.")
             continue
+        
+        fname = fileUtil.pathSanitize(node)
+        fname = fname.strip("node_")
 
-        targetPath = os.path.join(categoryDir, fileUtil.pathSanitize(node) + ".html")
+        targetPath = os.path.join(categoryDir, fname + ".html")
         fileUtil.writeFile(targetPath, nodeContent[node])
 
     
