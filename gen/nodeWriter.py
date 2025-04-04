@@ -93,30 +93,43 @@ def writeNode(metadata, contentPath):
     return content
 
 # %%
+group_start = '''<div class="node-group">'''
+group_end   = '''</div>'''
+
 def writeCategory(category, nodeMetadata):
     name  = category["name"]
     nodes = category["nodes"]
 
     title   = name
-    content = f"""<h1>{title}</h1>
-<br><br>
-<div class=node-group>"""
+    content = f"""<h1>{title}</h1><br><br>"""
+    nl = True
     
     for node in nodes:
         if not isinstance(node, str):
+            subGroup = node["label"]
+            sgName   = subGroup.strip("/")
+            sgLevel  = "h4" if subGroup.startswith("/") else "h3"
+
+            if not nl:
+                content += group_end
+            content += f'<{sgLevel}>{sgName}</{sgLevel}>'
+            nl = True
             continue
 
         if node not in nodeMetadata:
             print(f"Node content for {node} not found.")
             continue
         
+        if nl:
+            content += '<br>' + group_start
+            nl = False
+
         metadata = nodeMetadata[node]
         name     = metadata["name"]
         spr      = metadata["spr"]  if "spr" in metadata else f"s_{node.lower()}"
 
-        content += f'''<div>
-<a href="./{node.lower().replace("node_", "")}.html"><img {spr}>{name}</a>
-</div>\n'''
+        content += f'''<div><a href="./{node.lower().replace("node_", "")}.html"><img {spr}>{name}</a></div>\n'''
 
-    content += "</div>"
+    if not nl:
+        content += group_end
     return content
