@@ -2,10 +2,13 @@ import re
 
 dispIndex = {
     "dimension"       : "integer",
+    "enum"            : "integer",
     "enum_button"     : "integer",
     "enum_scroll"     : "integer",
     "int"             : "integer",
     "toggle"          : "integer",
+    "islider"         : "float",
+
     "area"            : "float",
     "corner"          : "float",
     "padding"         : "float",
@@ -24,6 +27,8 @@ dispIndex = {
     "vec3_range"      : "float",
     "vec4"            : "float",
     "vector"          : "float",
+    "slider"          : "float",
+
     "bool"            : "boolean",
 }
 
@@ -59,60 +64,65 @@ typeIndex = {
 	"armature"    : 23,
 	"buffer"      : 24,
 	
-	"pbbox"       : 25,
+	"pbBox"       : 25,
 	
-	"d3mesh"      : 26,
-	"d3light"     : 27,
-	"d3camera"    : 28,
-	"d3scene"     : 29,
-	"d3material"  : 30,
+	"d3Mesh"      : 26,
+	"d3Light"     : 27,
+	"d3Camera"    : 28,
+	"d3Scene"     : 29,
+	"d3Material"  : 30,
 	
-	"dynasurface" : 31,
-	"pcxnode"     : 32,
-	"audiobit"    : 33,
+	"dynaSurface" : 31,
+	"PCXnode"     : 32,
+	"audioBit"    : 33,
 	"fdomain"     : 34,
 	"sdf"         : 35,
+	
+	"tileset"     : 36,
+	"font"        : 37,
 	
 	"action"      : 99,
 }
 
 typeColor = [
-    "#ff9166",
-    "#ffe478",
-    "#8c3f5d",
-    "#8fde5d",
-    "#ff6b97",
-    "#eb004b",
-    "#c2c2d1",
-    "#66ffe3",
-    "#ffb5b5",
-    "#4da6ff",
-    "#c1007c",
-    "#808080",
-    "#ffb5b5",
-    "#8fde5d",
-    "#88ffe9",
-    "#6d6e71",
-    "#8c3f5d",
-    "#ff9166",
-    "#c2c2d1",
-    "#8fde5d",
-    "#ff6b97",
-    "#c1007c",
-    "#8fde5d",
-    "#ff9166",
-    "#808080",
-    "#ff6b97",
-    "#4da6ff",
-    "#4da6ff",
-    "#4da6ff",
-    "#4da6ff",
-    "#ff6b97",
-    "#ff6b97",
-    "#c2c2d1",
-    "#8fde5d",
-    "#4da6ff",
-    "#c1007c",
+    "#ff9166", # int 
+    "#ffe478", # float
+    "#8c3f5d", # bool
+    "#8fde5d", # color
+    "#ff6b97", # surface
+    "#eb004b", # path
+    "#c2c2d1", # curve
+    "#66ffe3", # text
+    "#ffb5b5", # object
+    "#4da6ff", # node
+    "#c1007c", # 3D
+    "#808080", # any
+    "#ffb5b5", # path
+    "#8fde5d", # particle
+    "#88ffe9", # rigid
+    "#6d6e71", # sdomain
+    "#8c3f5d", # struct
+    "#ff9166", # strand
+    "#c2c2d1", # mesh
+    "#8fde5d", # trigger
+    "#ff6b97", # atlas
+    "#c1007c", # d3vertex
+    "#8fde5d", # gradient
+    "#ff9166", # armature
+    "#808080", # buffer
+    "#ff6b97", # pbBox
+    "#4da6ff", # d3Mesh	
+    "#4da6ff", # d3Light	
+    "#4da6ff", # d3Camera
+    "#4da6ff", # d3Scene	
+    "#ff6b97", # d3Material
+    "#ff6b97", # dynaSurf
+    "#c2c2d1", # PCX
+    "#8fde5d", # audiobit
+    "#4da6ff", # flipfluid
+    "#c1007c", # 3D SDF
+    "#ff6b97", # tileset
+    "#eb004b", # font
 ]
 
 def getColor(dataType):
@@ -130,12 +140,12 @@ def getColor(dataType):
     return typeColor[ind]
 
 def IOTable(nodeData):
-    parents    = nodeData["parents"]
+    inheritances = nodeData["inheritances"]
     inputRows  = ""
     outputRows = ""
     allio      = {}
     
-    for node in parents:
+    for node in inheritances:
         _name    = node["name"]
         _inputs  = node["inputs"]
         _outputs = node["outputs"]
@@ -178,7 +188,7 @@ def IOTable(nodeData):
         #     inputRows += f"""<tr><td colspan="2">{dynamicTable}</td></tr>"""
 
         if _outputs:
-            outputRows += f'<tr><th colspan="2" class="summary-topic"><p>{node}</p></th></tr>'
+            outputRows += f'<tr><th colspan="2" class="summary-topic"><p>{_name}</p></th></tr>'
 
         for _junc in _outputs:
             jName  = _junc["name"]

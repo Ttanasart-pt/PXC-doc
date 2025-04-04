@@ -965,25 +965,46 @@
 <br><br>
 
 <table class = "summary-table">
-    <tr><th class="head" colspan="2"><p>Node Data</p></th></tr><tr><th colspan="2"><img class="node-content" src="/../src/nodeIcons/s_node_3d_mesh_extrude_mesh.png"></th></tr><tr><th colspan="2" class="summary-topic"><p>Display name</p></th></tr><tr><th colspan="2" class="summary-content"><p>Mesh Extrude</p></th></tr><tr><th colspan="2" class="summary-topic"><p>Internal name</p></th></tr><tr><th colspan="2" class="summary-content"><p>Node_3D_Mesh_Extrude_Mesh</p></th></tr><tr height="8px"></tr><tr><th class="head" colspan="2"><p>Inheritances</p></th></tr><tr><th colspan="2" class="inheritance-block"><a href="">Node_3D_Mesh</a></th></tr><tr><th colspan="2" class="inheritance-block"><a href="">Node_3D_Object</a></th></tr><tr><th colspan="2" class="inheritance-block"><a href="">Node_3D</a></th></tr><tr><th colspan="2" class="inheritance-block current"><a href="">Node_Processor</a></th></tr><tr height="8px"></tr>
+    <tr><th class="head" colspan="2"><p>Node Data</p></th></tr><tr><th colspan="2"><img class="node-content" src="/../src/nodeIcons/s_node_3d_mesh_extrude_mesh.png"></th></tr><tr><th colspan="2" class="summary-topic"><p>Display name</p></th></tr><tr><th colspan="2" class="summary-content"><p>Mesh Extrude</p></th></tr><tr><th colspan="2" class="summary-topic"><p>Internal name</p></th></tr><tr><th colspan="2" class="summary-content"><p>Node_3D_Mesh_Extrude_Mesh</p></th></tr><tr height="8px"></tr><tr><th class="head" colspan="2"><p>Inheritances</p></th></tr><tr><th colspan="2" class="inheritance-block"><a href="">Node_Processor</a></th></tr><tr><th colspan="2" class="inheritance-block"><a href="">Node_3D</a></th></tr><tr><th colspan="2" class="inheritance-block"><a href="">Node_3D_Object</a></th></tr><tr><th colspan="2" class="inheritance-block"><a href="">Node_3D_Mesh</a></th></tr><tr><th colspan="2" class="inheritance-block current"><a href="">Node_3D_Mesh_Extrude_Mesh</a></th></tr><tr height="8px"></tr>
 <tr><th class="head" colspan="2"><p>Inputs</p></th></tr>
 <tr><th colspan="2" class="summary-topic"><p>Node_3D_Object</p></th></tr><tr>
-                <td class="summary-topic" style="width: 60px"><p style="color: #8fde5d">Vec3</p></td>
+                <td class="summary-topic" style="width: 60px"><p style="color: #ffe478">vec3</p></td>
                 <td><p>Position</p></td>
             </tr><tr>
-                <td class="summary-topic" style="width: 60px"><p style="color: #8fde5d">Quaternion</p></td>
+                <td class="summary-topic" style="width: 60px"><p style="color: #ffe478">quaternion</p></td>
                 <td><p>Rotation</p></td>
             </tr><tr>
-                <td class="summary-topic" style="width: 60px"><p style="color: #8fde5d">Vec3</p></td>
+                <td class="summary-topic" style="width: 60px"><p style="color: #ffe478">vec3</p></td>
                 <td><p>Scale</p></td>
             </tr><tr>
-                <td class="summary-topic" style="width: 60px"><p style="color: #8fde5d">Vec3</p></td>
+                <td class="summary-topic" style="width: 60px"><p style="color: #ffe478">vec3</p></td>
                 <td><p>Anchor</p></td>
+            </tr><tr><th colspan="2" class="summary-topic"><p>Node_3D_Mesh_Extrude_Mesh</p></th></tr><tr>
+                <td class="summary-topic" style="width: 60px"><p style="color: #8fde5d"></p></td>
+                <td><p>Mesh</p></td>
+            </tr><tr>
+                <td class="summary-topic" style="width: 60px"><p style="color: #ffe478">float</p></td>
+                <td><p>Thickness</p></td>
+            </tr><tr>
+                <td class="summary-topic" style="width: 60px"><p style="color: #8c3f5d">bool</p></td>
+                <td><p>Smooth</p></td>
+            </tr><tr>
+                <td class="summary-topic" style="width: 60px"><p style="color: #8c3f5d">bool</p></td>
+                <td><p>Always Update</p></td>
+            </tr><tr>
+                <td class="summary-topic" style="width: 60px"><p style="color: #8fde5d">d3material</p></td>
+                <td><p>Face Texture</p></td>
+            </tr><tr>
+                <td class="summary-topic" style="width: 60px"><p style="color: #8fde5d">d3material</p></td>
+                <td><p>Side Texture</p></td>
+            </tr><tr>
+                <td class="summary-topic" style="width: 60px"><p style="color: #8fde5d">d3material</p></td>
+                <td><p>Back Texture</p></td>
             </tr>
 <tr height="8px"></tr>
 <tr><th class="head" colspan="2"><p>Outputs</p></th></tr>
-<tr><th colspan="2" class="summary-topic"><p>{'name': 'Node_3D_Mesh', 'classParent': 'Node_3D_Object', 'parents': [{'name': 'Node_3D_Object', 'classParent': 'Node_3D', 'parents': [{'name': 'Node_3D', 'classParent': 'Node_Processor', 'parents': [{'name': 'Node_Processor', 'classParent': 'Node', 'parents': [], 'inputs': [], 'outputs': [], 'categories': [], 'attributes': []}], 'inputs': [], 'outputs': [], 'categories': [], 'attributes': []}, {'name': 'Node_Processor', 'classParent': 'Node', 'parents': [], 'inputs': [], 'outputs': [], 'categories': [], 'attributes': []}], 'inputs': [{'name': 'Position', 'type': 'Vec3'}, {'name': 'Rotation', 'type': 'Quaternion'}, {'name': 'Scale', 'type': 'Vec3'}, {'name': 'Anchor', 'type': 'Vec3'}], 'outputs': [], 'categories': [], 'attributes': []}, {'name': 'Node_3D', 'classParent': 'Node_Processor', 'parents': [{'name': 'Node_Processor', 'classParent': 'Node', 'parents': [], 'inputs': [], 'outputs': [], 'categories': [], 'attributes': []}], 'inputs': [], 'outputs': [], 'categories': [], 'attributes': []}, {'name': 'Node_Processor', 'classParent': 'Node', 'parents': [], 'inputs': [], 'outputs': [], 'categories': [], 'attributes': []}], 'inputs': [], 'outputs': [{'name': 'Mesh', 'type': 'd3Mesh'}], 'categories': [], 'attributes': []}</p></th></tr><tr>
-                <td class="summary-topic" style="width: 60px"><p style="color: #8fde5d">d3Mesh</p></td>
+<tr><th colspan="2" class="summary-topic"><p>Node_3D_Mesh</p></th></tr><tr>
+                <td class="summary-topic" style="width: 60px"><p style="color: #8fde5d">d3mesh</p></td>
                 <td><p>Mesh</p></td>
             </tr>
 

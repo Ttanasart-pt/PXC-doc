@@ -66,7 +66,7 @@ def readNodeFile(baseNode):
     data = {
         "name":        baseNode,
         "classParent": classParent,
-        "parents":     [],
+        "inheritances":[],
 
         "inputs":      inputs,
         "outputs":     outputs,
@@ -80,14 +80,14 @@ for baseNode in nodeLists:
     nodeData[baseNode] = readNodeFile(baseNode)
 
 # %% 
-def parentIterate(baseNode):
+def inheritancesIterate(baseNode):
     if baseNode not in nodeData:
         print(f"Node data for {baseNode} not found.")
         return None
     
     print(f"Iterating parents for {baseNode}")
-    parents     = []
-    currentNode = baseNode
+    inheritances = [nodeData[baseNode]]
+    currentNode  = baseNode
 
     while True:
         data    = nodeData[currentNode]
@@ -96,17 +96,17 @@ def parentIterate(baseNode):
         if cparent == "" or cparent not in nodeData:
             break
 
-        parents.append(nodeData[cparent])
+        inheritances.insert(0, nodeData[cparent])
 
         if data["classParent"] == "node":
             break
         
         currentNode = data["classParent"]
     
-    nodeData[baseNode]["parents"] = parents
+    nodeData[baseNode]["inheritances"] = inheritances
 
 for baseNode in nodeLists:
-    parentIterate(baseNode)
+    inheritancesIterate(baseNode)
 
 # %%
 def getNodeData(baseNode):

@@ -11,8 +11,15 @@ def reFindFirst(pattern, string):
 
 def parseInput(inp):
     inp   = inp.strip()
-    iType = reFindFirst(r"^.*nodeValue(.*?)\(", inp).strip(" _")
     iName = reFindFirst(r'"(.*?)"', inp)
+    iType = reFindFirst(r"^.*nodeValue(.*?)\(", inp).strip(" _").lower()
+
+    if iType == "dimension":
+        iName = "dimension"
+        iType = "dimension"
+
+    if "enum" in iType:
+        iType = "enum"
 
     return {
         "name": iName,
@@ -25,8 +32,8 @@ def parseInputs(inputs):
 
 def parseOutput(out):
     out   = out.strip()
-    oType = reFindFirst(r"^.*VALUE_TYPE\.(.*?)\,", out).strip(" _")
     oName = reFindFirst(r'"(.*?)"', out)
+    oType = reFindFirst(r"^.*VALUE_TYPE\.(.*?)\,", out).strip(" _").lower()
 
     return {
         "name": oName,

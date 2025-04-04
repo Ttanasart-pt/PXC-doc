@@ -18,7 +18,7 @@ def generateBasicData(nodeData, metadata):
     spr        = metadata["spr"]     if "spr" in metadata else f"s_{node.lower()}"
 
     categories = nodeData["categories"]
-    parents    = nodeData["parents"]
+    parents    = nodeData["inheritances"]
 
     basicData = '<tr><th class="head" colspan="2"><p>Node Data</p></th></tr>'
     basicData += f'<tr><th colspan="2"><img {spr}></th></tr>'
