@@ -4,26 +4,23 @@ import shutil
 import re
 from enum import Enum
 
+import fileUtil
+
 class FileType(Enum):
     FILE  = 0
     DIR   = 1
     BACK  = 2
 
-def space(s): # Replace _ with space and capitalize the first letter in each word
-    s = s.replace('_', ' ')
-    return s.title()
+def title(s): # Replace _ with space and capitalize the first letter in each word
+    return s.replace('_', ' ').title()
 
 def pathStrip(path): # Strip out the custom ordering n_ at the start of the file
     name = os.path.basename(path)
     if name.split("_")[0].isdigit():
         name = name[name.find('_') + 1:]
     return os.path.join(os.path.dirname(path), name)
-
-def loadFile(path):
-    with open(path, "r") as f:
-        return f.read()
     
-# %%
+# %% Copy image files
 nodeIconDir = "D:/Project/MakhamDev/LTS-PixelComposer/RESOURCE/nodeIcons"
 shutil.copytree(nodeIconDir, "../src/nodeIcons", dirs_exist_ok = True)
 shutil.copytree("../src", "../docs/src", dirs_exist_ok = True)
@@ -37,12 +34,12 @@ for root, dirs, files in os.walk("../src"):
         key = file[:-4].lower()
         images[key] = os.path.join(root, file).replace("\\", "/")
 
-template = loadFile("../templates/page.html")
+template = fileUtil.readFile("../templates/page.html")
 
 # %%
-svg_home = loadFile("../src/svg/home.svg")
-svg_dir  = loadFile("../src/svg/dir.svg")
-pages = []
+svg_home = fileUtil.readFile("../src/svg/home.svg")
+svg_dir  = fileUtil.readFile("../src/svg/dir.svg")
+pages    = []
 
 def generateFile(dirOut, pathIn, sidebar):
     with open(pathIn, "r") as f:
@@ -156,7 +153,7 @@ def generateFile(dirOut, pathIn, sidebar):
     pages.append((title, pathOut))
 
 def generateFolder(dirIn, dirOut):
-    files = sorted(os.listdir(dirIn))
+    files   = sorted(os.listdir(dirIn))
     sidebar = []
 
     if dirIn == "../pregen":
@@ -164,49 +161,50 @@ def generateFolder(dirIn, dirOut):
         sidebar.append((FileType.BACK, "", "", ""))
     else:
         groupTitle = os.path.basename(dirIn)
-        groupTitle = space(pathStrip(groupTitle))
+        groupTitle = title(pathStrip(groupTitle))
         sidebar.append((FileType.BACK, "../", "../", "Back"))
     
     if not os.path.exists(dirOut):
         os.mkdir(dirOut)
 
-    for f in files:
-        if f.startswith("_"):
+    for fName in files:
+        if fName.startswith("_"):
             continue
         
-        fullPath = os.path.join(dirIn, f)
-        fs = pathStrip(f)
-        title = space(fs)
+        fullPath = os.path.join(dirIn, fName)
+        fNameS   = pathStrip(fName)
+        pTitle   = title(fNameS)
         
         if os.path.isdir(fullPath):
-            sidebar.append((FileType.DIR, f, fs, title))
+            sidebar.append((FileType.DIR, fName, fNameS, pTitle))
 
         elif fullPath.endswith(".html"):
-            title = title.replace('.Html', '')
-            if title == "Index":
-                title = groupTitle
-
-            sidebar.append((FileType.FILE, f, fs, title))
+            pTitle = pTitle.replace('.Html', '')
+            if pTitle == "Index":
+                pTitle = groupTitle
+                sidebar.insert(0, (FileType.FILE, fName, fNameS, pTitle))
+            else:
+                sidebar.append((FileType.FILE, fName, fNameS, pTitle))
 
         elif fullPath.endswith(".md"):
             continue   
         
         else :
-            shutil.copy(fullPath, os.path.join(dirOut, f))
+            shutil.copy(fullPath, os.path.join(dirOut, fName))
 
-    for t, f, fs, _ in sidebar[1:]:
-        fDirIn = os.path.join(dirIn, f)
-        fDirOut = os.path.join(dirOut, fs)
+    for fType, fName, fNameS, _ in sidebar[1:]:
+        fDirIn  = os.path.join(dirIn,  fName)
+        fDirOut = os.path.join(dirOut, fNameS)
 
-        if t == FileType.DIR:
+        if fType == FileType.DIR:
             generateFolder(fDirIn, fDirOut)
-        elif t == FileType.FILE:
+        elif fType == FileType.FILE:
             generateFile(dirOut, fDirIn, sidebar)
 
 generateFolder("../pregen", "../docs")
 shutil.copy("../styles.css", "../docs/styles.css")
 
-# search
+# %% generate static search
 search_list_str = ""
 for title, path in pages:
     if title == "Index":

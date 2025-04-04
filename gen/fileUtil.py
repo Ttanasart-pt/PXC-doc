@@ -40,3 +40,8 @@ def verifyFile(path, content = ""):
 def writeFile(path, content):
     with open(path, "w") as file:
         file.write(content)
+
+#%%
+def readFile(path):
+    with open(path, "r") as file:
+        return file.read()

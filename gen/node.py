@@ -5,7 +5,7 @@ import json5 as json
 
 import nodeWriter
 
-VERSION = "<v 1.18.0/>"
+VERSION = "<v 1.19.0/>"
 
 # %% Read node metadata
 nodeDir  = "D:/Project/MakhamDev/LTS-PixelComposer/PixelComposer/datafiles/data/Nodes/Internal"
