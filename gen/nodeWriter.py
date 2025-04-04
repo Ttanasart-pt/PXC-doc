@@ -94,7 +94,7 @@ def writeNode(metadata, contentPath):
 
 # %%
 group_start = '''<div class="node-group">'''
-group_end   = '''</div>'''
+group_end   = '''</div><br>'''
 
 def writeCategory(category, nodeMetadata):
     name  = category["name"]
