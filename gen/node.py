@@ -81,4 +81,8 @@ for category in nodeCategoryData:
         targetPath = os.path.join(categoryDir, fname + ".html")
         fileUtil.writeFile(targetPath, nodeContent[node])
 
+        redirectPath = f"../docs/nodes/_index/{node}.html"
+        with open(redirectPath, "w") as file:
+            file.write(f'''<!DOCTYPE html><html><meta http-equiv="refresh" content="0; url=/nodes/{name}/{node}.html"/></html>''')
+
     
