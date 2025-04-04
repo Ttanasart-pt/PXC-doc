@@ -1,4 +1,16 @@
 import os
+from enum import Enum
+
+class FileType(Enum):
+    FILE  = 0
+    DIR   = 1
+    BACK  = 2
+
+def pathRemoveOrder(path):
+    name = os.path.basename(path)
+    if name.split("_")[0].isdigit():
+        name = name[name.find('_') + 1:]
+    return os.path.join(os.path.dirname(path), name)
 
 def pathStrip(path): # Strip out the custom ordering n_ at the start of the file
     if path.split("_")[0].isdigit():
