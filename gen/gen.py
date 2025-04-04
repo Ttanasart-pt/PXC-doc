@@ -18,7 +18,7 @@ shutil.copytree("../src", "../docs/src", dirs_exist_ok = True)
 pages = []
 
 def generateFolder(dirIn, dirOut):
-    print(f"Generating {dirIn} -> {dirOut}")
+    # print(f"Generating {dirIn} -> {dirOut}")
     verifyFolder(dirOut)
     files   = sorted(os.listdir(dirIn))
     sidebar = []
@@ -71,17 +71,17 @@ generateFolder("../pregen", "../docs")
 shutil.copy("../styles.css", "../docs/styles.css")
 
 # %% generate static search
-# search_list_str = ""
-# for title, path in pages:
-#     if title == "Index":
-#         continue
+search_list_str = ""
+for title, path in pages:
+    if title == "Index":
+        continue
 
-#     real_path = path.replace("../docs\\", "\\")
-#     search_list_str += f'<li class="search-result" style="display: none;"><a href="{real_path}">{title}</a></li>\n'
+    real_path = path.replace("../docs\\", "\\")
+    search_list_str += f'<li class="search-result" style="display: none;"><a href="{real_path}">{title}</a></li>\n'
 
-# for _, path in pages:
-#     with open(path, "r") as f:
-#         content = f.read()
-#     content  = content.replace("{{search_results}}", search_list_str)
-#     with open(path, "w") as f:
-#         f.write(content)
+for _, path in pages:
+    with open(path, "r") as f:
+        content = f.read()
+    content  = content.replace("{{search_results}}", search_list_str)
+    with open(path, "w") as f:
+        f.write(content)
