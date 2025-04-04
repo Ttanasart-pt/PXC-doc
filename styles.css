@@ -40,7 +40,7 @@ h2 {
     color: var(--accent);
     margin: 0;
 
-    padding-left: 1rem;
+    padding-left: 0rem;
 }
 
 h3 {
@@ -50,7 +50,7 @@ h3 {
     color: var(--main_ltgrey);
     margin: 0;
 
-    padding-left: 2rem;
+    padding-left: 1rem;
 }
 
 h4 {
@@ -60,7 +60,7 @@ h4 {
     color: var(--main_ltgrey);
     margin: 0;
 
-    padding-left: 2rem;
+    padding-left: 1rem;
 }
 
 p, li {

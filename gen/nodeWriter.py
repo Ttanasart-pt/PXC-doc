@@ -92,10 +92,10 @@ def writeNode(metadata, contentPath):
 
     junctions = {}
     for junc in nodeData["inputs"] + nodeData["outputs"]:
-        jName = junc["name"]
+        jName = junc["name"].lower()
         junctions[jName] = junc
 
-    juncTags = re.findall(r'<junc\s(.*?)>', content)
+    juncTags = re.findall(r'<junc\s(.*?)>', rawContent)
     for tag in juncTags:
         jName = tag.strip("/").lower()
         
@@ -104,11 +104,11 @@ def writeNode(metadata, contentPath):
 
         if jName in junctions:
             jColor  = juncWriter.getColor(junctions[jName]["type"])
-            content = content.replace(f'<junc {tag}>', f'<span class="junction" style="border-color: {jColor}AA">{jName.title()}</span>')
+            rawContent = rawContent.replace(f'<junc {tag}>', f'<span class="junction" style="border-color: {jColor}AA">{jName.title()}</span>')
 
-    attrTags = re.findall(r'<attr\s(.*?)/>', content)
+    attrTags = re.findall(r'<attr\s(.*?)/>', rawContent)
     for tag in attrTags:
-        content = content.replace(f'<attr {tag}/>', f'<span class="inline-code">{tag}</span>')
+        rawContent = rawContent.replace(f'<attr {tag}/>', f'<span class="inline-code">{tag}</span>')
 
     content += rawContent
     return content
