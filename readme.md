@@ -1,4 +1,4 @@
-# Pixel Composer Documentations
+# Pixel Composer Doc
 
 A documentation page for [Pixel Composer](https://github.com/Ttanasart-pt/Pixel-Composer).
 

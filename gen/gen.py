@@ -91,8 +91,8 @@ def generateFile(dirOut, pathIn, sidebar):
     for img in imgs:
         imgraw = img.strip("/")
 
-        if imgraw in images:
-            content = content.replace(f"<img {img}>", f'<img class="node-content" src="/{images[imgraw]}">')
+        if imgraw.lower() in images:
+            content = content.replace(f"<img {img}>", f'<img class="node-content" src="/{images[imgraw.lower()]}">')
         elif "=" not in imgraw: 
             print(f"{pathOut} : Image {imgraw} not found")
 
@@ -100,8 +100,8 @@ def generateFile(dirOut, pathIn, sidebar):
     for img in imgs:
         imgraw = img.strip("/")
 
-        if imgraw in images:
-            content = content.replace(f"<img-deco {img}>", f'<img class="node-content deco" src="/{images[imgraw]}">')
+        if imgraw.lower() in images:
+            content = content.replace(f"<img-deco {img}>", f'<img class="node-content deco" src="/{images[imgraw.lower()]}">')
         elif "=" not in imgraw: 
             print(f"{pathOut} : Image {imgraw} not found")
 

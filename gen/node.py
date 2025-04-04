@@ -5,6 +5,8 @@ import json5 as json
 
 import nodeWriter
 
+VERSION = "<v 1.18.0/>"
+
 # %% Read node metadata
 nodeDir  = "D:/Project/MakhamDev/LTS-PixelComposer/PixelComposer/datafiles/data/Nodes/Internal"
 nodeList = []
@@ -59,10 +61,11 @@ for category in nodeCategoryData:
     nodeCategory[name] = nodes
     
     categoryDir = os.path.join(targetRoot, fileUtil.pathSanitize(name))
+    fileUtil.verifyFolder(categoryDir)
 
-    categoryContent  = f'''<!DOCTYPE html><html></html>'''
+    categoryContent  = f'''<!DOCTYPE html><html></html>{VERSION}'''
     categoryContent += nodeWriter.writeCategory(category, nodeMetadata)
-    fileUtil.verifyFile(f"{categoryDir}/index.html", categoryContent)
+    fileUtil.writeFile(f"{categoryDir}/index.html", categoryContent)
 
     for node in nodes:
         if not isinstance(node, str):
@@ -73,7 +76,7 @@ for category in nodeCategoryData:
             continue
         
         fname = fileUtil.pathSanitize(node)
-        fname = fname.strip("node_")
+        fname = fname.lstrip("node_")
 
         targetPath = os.path.join(categoryDir, fname + ".html")
         fileUtil.writeFile(targetPath, nodeContent[node])
