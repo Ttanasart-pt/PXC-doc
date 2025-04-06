@@ -1,6 +1,7 @@
 # %% 
 import os
 import re
+from tqdm import tqdm
 
 import juncParser
 
@@ -57,8 +58,11 @@ def readNodeFile(baseNode):
     
     classParent = reFindFirst(r"function.*:\s(\w*)", script).strip()
 
-    inputs = re.findall(r"^\s*newInput.*$", script, re.MULTILINE)
+    inputs = re.findall(r"^\s*newInput\((?!index).*$", script, re.MULTILINE)
     inputs = juncParser.parseInputs(inputs)
+
+    inputDynamic = re.findall(r"^\s*newInput\(index.*$", script, re.MULTILINE)
+    inputDynamic = juncParser.parseInputs(inputDynamic)
 
     outputs = re.findall(r"^\s*newOutput.*$", script, re.MULTILINE)
     outputs = juncParser.parseOutputs(outputs)
@@ -69,6 +73,7 @@ def readNodeFile(baseNode):
         "inheritances":[],
 
         "inputs":      inputs,
+        "inputDynamic":inputDynamic,
         "outputs":     outputs,
         "categories":  [],
         "attributes":  [],
@@ -76,7 +81,7 @@ def readNodeFile(baseNode):
 
     return data
 
-for baseNode in nodeLists:
+for baseNode in tqdm(nodeLists, desc="Reading node files"):
     nodeData[baseNode] = readNodeFile(baseNode)
 
 # %% 
@@ -85,7 +90,6 @@ def inheritancesIterate(baseNode):
         print(f"Node data for {baseNode} not found.")
         return None
     
-    print(f"Iterating parents for {baseNode}")
     inheritances = [nodeData[baseNode]]
     currentNode  = baseNode
 
@@ -105,7 +109,7 @@ def inheritancesIterate(baseNode):
     
     nodeData[baseNode]["inheritances"] = inheritances
 
-for baseNode in nodeLists:
+for baseNode in tqdm(nodeLists, desc="Iterating inheritances"):
     inheritancesIterate(baseNode)
 
 # %%

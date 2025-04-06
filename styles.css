@@ -63,6 +63,16 @@ h4 {
     padding-left: 1rem;
 }
 
+h5 {
+    font-family: 'Noto Sans', sans-serif;
+    font-weight: 500;
+    font-size: 1rem;
+    color: var(--main_ltgrey);
+    margin: 0;
+
+    padding-left: 1rem;
+}
+
 p, li {
     font-family: 'Noto Sans', sans-serif;
     font-weight: 400;
@@ -366,12 +376,12 @@ table.summary-table table.dynamic {
     margin: 0px;
     padding: 0px 4px;
 
-    border-color: var(--positive_50);
+    border-color: var(--main_dkgrey);
 }
 
 table.summary-table table.dynamic tr th p {
     font-size: 0.8rem;
-    color: var(--positive);
+    color: var(--main_grey);
     background: var(--main_black);
 }
 

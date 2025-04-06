@@ -81,8 +81,6 @@ def writeNode(metadata, contentPath):
         print(f"Node data for {nodeBase} not found.")
         return None
     
-    print(f"Generating node file for {nodeName}")
-
     basicData     = generateBasicData(nodeData, metadata)
     junctionText  = juncWriter.IOTable(nodeData)
     attributeText = juncWriter.AttributeTable(nodeData)
@@ -105,6 +103,8 @@ def writeNode(metadata, contentPath):
         if jName in junctions:
             jColor  = juncWriter.getColor(junctions[jName]["type"])
             rawContent = rawContent.replace(f'<junc {tag}>', f'<span class="junction" style="border-color: {jColor}AA">{jName.title()}</span>')
+        else:
+            rawContent = rawContent.replace(f'<junc {tag}>', f'<span class="junction">{jName.title()}</span>')
 
     attrTags = re.findall(r'<attr\s(.*?)/>', rawContent)
     for tag in attrTags:
@@ -129,7 +129,7 @@ def writeCategory(category, nodeMetadata):
         if not isinstance(node, str):
             subGroup = node["label"]
             sgName   = subGroup.strip("/")
-            sgLevel  = "h4" if subGroup.startswith("/") else "h3"
+            sgLevel  = "h5" if subGroup.startswith("/") else "h3"
 
             if not nl:
                 content += group_end

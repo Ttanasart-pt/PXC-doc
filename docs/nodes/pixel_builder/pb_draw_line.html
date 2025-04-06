@@ -61,8 +61,8 @@
 </ul>
 <li class="sidebar-nav"><a href="#Line Width">Line Width</a></li>
 <ul class="submenu h3">
-<li class="sidebar-nav"><a href="#"></a></li>
-<li class="sidebar-nav"><a href="#"></a></li>
+<li class="sidebar-nav"><a href="#1Px Mode">1Px Mode</a></li>
+<li class="sidebar-nav"><a href="#Width Over Length">Width Over Length</a></li>
 </ul>
 </ul>
 <li class="sidebar-nav "><a class="" href="pb_draw_pie.html">Pb Draw Pie</a></li>
@@ -760,85 +760,89 @@
             </tr><tr>
                 <td class="summary-topic" style="width: 60px"><p style="color: #ffe478">float</p></td>
                 <td><p>Pbbox Height</p></td>
+            </tr><tr><td colspan="2"><table class="summary-table dynamic" style="margin-top: 8px;"><tr>
+                <th colspan="2" class="summary-topic">
+                    <p style="margin: -0.85rem auto -4px auto;width: fit-content;padding: 0px 8px;">Dynamic Inputs</p>
+                </th>
             </tr><tr>
-                <td class="summary-topic" style="width: 60px"><p style="color: #ff9166">enum</p></td>
-                <td><p>Effect Type</p></td>
-            </tr><tr>
-                <td class="summary-topic" style="width: 60px"><p style="color: #8fde5d">color</p></td>
-                <td><p>Color</p></td>
-            </tr><tr>
-                <td class="summary-topic" style="width: 60px"><p style="color: #ffe478">slider</p></td>
-                <td><p>Intensity</p></td>
-            </tr><tr>
-                <td class="summary-topic" style="width: 60px"><p style="color: #ff9166">enum</p></td>
-                <td><p>Pattern</p></td>
-            </tr><tr>
-                <td class="summary-topic" style="width: 60px"><p style="color: #8fde5d">color</p></td>
-                <td><p>Color</p></td>
-            </tr><tr>
-                <td class="summary-topic" style="width: 60px"><p style="color: #ffe478">slider</p></td>
-                <td><p>Intensity</p></td>
-            </tr><tr>
-                <td class="summary-topic" style="width: 60px"><p style="color: #ffe478">vec2</p></td>
-                <td><p>Scale</p></td>
-            </tr><tr>
-                <td class="summary-topic" style="width: 60px"><p style="color: #ffe478">vec2</p></td>
-                <td><p>Position</p></td>
-            </tr><tr>
-                <td class="summary-topic" style="width: 60px"><p style="color: #8c3f5d">bool</p></td>
-                <td><p>Map Bbox</p></td>
-            </tr><tr>
-                <td class="summary-topic" style="width: 60px"><p style="color: #ff9166">int</p></td>
-                <td><p>Thickness</p></td>
-            </tr><tr>
-                <td class="summary-topic" style="width: 60px"><p style="color: #ff9166">enum</p></td>
-                <td><p>Position</p></td>
-            </tr><tr>
-                <td class="summary-topic" style="width: 60px"><p style="color: #ff9166">enum</p></td>
-                <td><p>Corner</p></td>
-            </tr><tr>
-                <td class="summary-topic" style="width: 60px"><p style="color: #ff9166">int</p></td>
-                <td><p>Radius</p></td>
-            </tr><tr>
-                <td class="summary-topic" style="width: 60px"><p style="color: #ff9166">int</p></td>
-                <td><p>Widths</p></td>
-            </tr><tr>
-                <td class="summary-topic" style="width: 60px"><p style="color: #8fde5d">color</p></td>
-                <td><p>Color Left</p></td>
-            </tr><tr>
-                <td class="summary-topic" style="width: 60px"><p style="color: #8fde5d">color</p></td>
-                <td><p>Color Right</p></td>
-            </tr><tr>
-                <td class="summary-topic" style="width: 60px"><p style="color: #8fde5d">color</p></td>
-                <td><p>Color Top</p></td>
-            </tr><tr>
-                <td class="summary-topic" style="width: 60px"><p style="color: #8fde5d">color</p></td>
-                <td><p>Color Bottom</p></td>
-            </tr><tr>
-                <td class="summary-topic" style="width: 60px"><p style="color: #ffe478">float</p></td>
-                <td><p>Modify</p></td>
-            </tr><tr>
-                <td class="summary-topic" style="width: 60px"><p style="color: #8c3f5d">bool</p></td>
-                <td><p>Subtract</p></td>
-            </tr><tr>
-                <td class="summary-topic" style="width: 60px"><p style="color: #ffe478">rotation</p></td>
-                <td><p>Direction</p></td>
-            </tr><tr>
-                <td class="summary-topic" style="width: 60px"><p style="color: #ffe478">float</p></td>
-                <td><p>Shines</p></td>
-            </tr><tr>
-                <td class="summary-topic" style="width: 60px"><p style="color: #ffe478">slider</p></td>
-                <td><p>Progress</p></td>
-            </tr><tr>
-                <td class="summary-topic" style="width: 60px"><p style="color: #ffe478">float</p></td>
-                <td><p>Slope</p></td>
-            </tr><tr>
-                <td class="summary-topic" style="width: 60px"><p style="color: #ff9166">enum</p></td>
-                <td><p>Axis</p></td>
-            </tr><tr>
-                <td class="summary-topic" style="width: 60px"><p style="color: #ffe478">float</p></td>
-                <td><p>Seed</p></td>
-            </tr><tr><th colspan="2" class="summary-topic"><p>Node_PB_Draw_Line</p></th></tr><tr>
+                    <td class="summary-topic" style="width: 60px"><p style="color: #ff9166" >enum</p></td>
+                    <td><p>Effect Type</p></td>
+                </tr><tr>
+                    <td class="summary-topic" style="width: 60px"><p style="color: #8fde5d" >color</p></td>
+                    <td><p>Color</p></td>
+                </tr><tr>
+                    <td class="summary-topic" style="width: 60px"><p style="color: #ffe478" >slider</p></td>
+                    <td><p>Intensity</p></td>
+                </tr><tr>
+                    <td class="summary-topic" style="width: 60px"><p style="color: #ff9166" >enum</p></td>
+                    <td><p>Pattern</p></td>
+                </tr><tr>
+                    <td class="summary-topic" style="width: 60px"><p style="color: #8fde5d" >color</p></td>
+                    <td><p>Color</p></td>
+                </tr><tr>
+                    <td class="summary-topic" style="width: 60px"><p style="color: #ffe478" >slider</p></td>
+                    <td><p>Intensity</p></td>
+                </tr><tr>
+                    <td class="summary-topic" style="width: 60px"><p style="color: #ffe478" >vec2</p></td>
+                    <td><p>Scale</p></td>
+                </tr><tr>
+                    <td class="summary-topic" style="width: 60px"><p style="color: #ffe478" >vec2</p></td>
+                    <td><p>Position</p></td>
+                </tr><tr>
+                    <td class="summary-topic" style="width: 60px"><p style="color: #8c3f5d" >bool</p></td>
+                    <td><p>Map Bbox</p></td>
+                </tr><tr>
+                    <td class="summary-topic" style="width: 60px"><p style="color: #ff9166" >int</p></td>
+                    <td><p>Thickness</p></td>
+                </tr><tr>
+                    <td class="summary-topic" style="width: 60px"><p style="color: #ff9166" >enum</p></td>
+                    <td><p>Position</p></td>
+                </tr><tr>
+                    <td class="summary-topic" style="width: 60px"><p style="color: #ff9166" >enum</p></td>
+                    <td><p>Corner</p></td>
+                </tr><tr>
+                    <td class="summary-topic" style="width: 60px"><p style="color: #ff9166" >int</p></td>
+                    <td><p>Radius</p></td>
+                </tr><tr>
+                    <td class="summary-topic" style="width: 60px"><p style="color: #ff9166" >int</p></td>
+                    <td><p>Widths</p></td>
+                </tr><tr>
+                    <td class="summary-topic" style="width: 60px"><p style="color: #8fde5d" >color</p></td>
+                    <td><p>Color Left</p></td>
+                </tr><tr>
+                    <td class="summary-topic" style="width: 60px"><p style="color: #8fde5d" >color</p></td>
+                    <td><p>Color Right</p></td>
+                </tr><tr>
+                    <td class="summary-topic" style="width: 60px"><p style="color: #8fde5d" >color</p></td>
+                    <td><p>Color Top</p></td>
+                </tr><tr>
+                    <td class="summary-topic" style="width: 60px"><p style="color: #8fde5d" >color</p></td>
+                    <td><p>Color Bottom</p></td>
+                </tr><tr>
+                    <td class="summary-topic" style="width: 60px"><p style="color: #ffe478" >float</p></td>
+                    <td><p>Modify</p></td>
+                </tr><tr>
+                    <td class="summary-topic" style="width: 60px"><p style="color: #8c3f5d" >bool</p></td>
+                    <td><p>Subtract</p></td>
+                </tr><tr>
+                    <td class="summary-topic" style="width: 60px"><p style="color: #ffe478" >rotation</p></td>
+                    <td><p>Direction</p></td>
+                </tr><tr>
+                    <td class="summary-topic" style="width: 60px"><p style="color: #ffe478" >float</p></td>
+                    <td><p>Shines</p></td>
+                </tr><tr>
+                    <td class="summary-topic" style="width: 60px"><p style="color: #ffe478" >slider</p></td>
+                    <td><p>Progress</p></td>
+                </tr><tr>
+                    <td class="summary-topic" style="width: 60px"><p style="color: #ffe478" >float</p></td>
+                    <td><p>Slope</p></td>
+                </tr><tr>
+                    <td class="summary-topic" style="width: 60px"><p style="color: #ff9166" >enum</p></td>
+                    <td><p>Axis</p></td>
+                </tr><tr>
+                    <td class="summary-topic" style="width: 60px"><p style="color: #ffe478" >float</p></td>
+                    <td><p>Seed</p></td>
+                </tr></table></td></tr><tr><th colspan="2" class="summary-topic"><p>Node_PB_Draw_Line</p></th></tr><tr>
                 <td class="summary-topic" style="width: 60px"><p style="color: #ff9166">enum</p></td>
                 <td><p>Type</p></td>
             </tr><tr>
@@ -866,8 +870,8 @@
 <h2><a id="Path Data" class="anchor"></a>Path Data</h2>
 <br>
 <p>Line node takes path data to define the path to draw. Without it, it will draw a single straight line across 
-the middle of the surface with the <junc rotation/> value control the angle.<br><br>
-The path data can be provided through <junc path/>.</p>
+the middle of the surface with the <span class="junction">Rotation</span> value control the angle.<br><br>
+The path data can be provided through <span class="junction">Path</span>.</p>
 <br>
 <img class="node-content" src="/../src/images/etc/line_path_data.png">
 <br><br>
@@ -875,39 +879,39 @@ The path data can be provided through <junc path/>.</p>
 <br>
 <p>When drawing a path, line node generate segment of straight lines and combine them together. The more 
 segment it generated the more accurate the path will be. There're 2 types of segment generation controlled by 
-the <junc fix length/> property.</p>
+the <span class="junction">Fix Length</span> property.</p>
 <br>
 <h3><a id="Fix amount" class="anchor"></a>Fix amount</h3>
 <br>
-<p>By default, <junc fix length/> is set to false. This mean the amount of the segment is being controlled 
-directly through the <junc segment/> property./p>
+<p>By default, <span class="junction">Fix Length</span> is set to false. This mean the amount of the segment is being controlled 
+directly through the <span class="junction">Segment</span> property./p>
 <br>
 <img-deco line_fix_amount/>
 <br>
 <h3><a id="Fix length" class="anchor"></a>Fix length</h3>
 <br>
-<p>When <junc fix length/> is set to true, the segment length is being controlled instead. The <junc segment length/>
+<p>When <span class="junction">Fix Length</span> is set to true, the segment length is being controlled instead. The <span class="junction">Segment Length</span>
 property will determine the maximum length of each segment in pixel.</p>
 <br>
 <img-deco line_fix_length/>
 <br><br>
 <h2><a id="Line Width" class="anchor"></a>Line Width</h2>
 <br>
-<p>Line width can be controlled through the <junc width/> property. This width is a vector containing 2 values, 
+<p>Line width can be controlled through the <span class="junction">Width</span> property. This width is a vector containing 2 values, 
 the width of each segment will be random bewteen these 2 values. You can set it to the same value to fix the 
 length.</p>
 <br>
-<h3><a id="" class="anchor"></a><junc 1px mode/></h3>
+<h3><a id="1Px Mode" class="anchor"></a><span class="junction">1Px Mode</span></h3>
 <br>
-<p>The <junc 1px mode/> toggle will fix the line width to 1 pixel, and use a more pixel perfect algorithm to 
+<p>The <span class="junction">1Px Mode</span> toggle will fix the line width to 1 pixel, and use a more pixel perfect algorithm to 
 draw the lines.</p>
 <br>
 <img-deco line_width_1px/>
 <br>
-<h3><a id="" class="anchor"></a><junc width over length/></h3>
+<h3><a id="Width Over Length" class="anchor"></a><span class="junction">Width Over Length</span></h3>
 <br>
-<p>You can modulate the width of the line over it's length using the <junc width over length/> curve. This curve 
-will be multiplied with the <junc width/> value to determine the final width.</p>
+<p>You can modulate the width of the line over it's length using the <span class="junction">Width Over Length</span> curve. This curve 
+will be multiplied with the <span class="junction">Width</span> value to determine the final width.</p>
 <br><br>
 
         </div>

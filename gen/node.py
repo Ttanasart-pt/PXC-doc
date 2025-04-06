@@ -2,6 +2,7 @@
 import os
 import fileUtil
 import json5 as json
+from tqdm import tqdm
 
 import nodeWriter
 
@@ -25,7 +26,7 @@ def getNodeMetadata(nodePath):
 nodeContent  = {}
 nodeMetadata = {}
 
-for nodePath in nodeList:
+for nodePath in tqdm(nodeList, desc="Generating node content"):
     nodeMeta = getNodeMetadata(nodePath)
     if not nodeMeta:
         print(f"Node data for {nodePath} not found.")
@@ -85,10 +86,11 @@ for category in nodeCategoryData:
         fileUtil.writeFile(targetPath, nodeContent[node])
 
         nodeMeta = nodeMetadata[node]
-        nodeName = nodeMeta["name"].lower().replace(" ", "_")
+        nodeName = nodeMeta["name"]
+        nodeName = fileUtil.pathSanitize(nodeName)
 
-        redirectPath = f"../docs/nodes/_index/{node}.html"
+        redirectPath = f"../docs/nodes/_index/{nodeName}.html"
         with open(redirectPath, "w") as file:
-            file.write(f'''<!DOCTYPE html><html><meta http-equiv="refresh" content="0; url=/nodes/{cName}/{nodeName}.html"/></html>''')
+            file.write(f'''<!DOCTYPE html><html><meta http-equiv="refresh" content="0; url=/nodes/{cName.lower()}/{nodeName}.html"/></html>''')
 
     

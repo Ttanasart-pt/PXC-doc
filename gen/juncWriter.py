@@ -91,6 +91,7 @@ def IOTable(nodeData):
     for node in inheritances:
         _name    = node["name"]
         _inputs  = node["inputs"]
+        _inputDy = node["inputDynamic"]
         _outputs = node["outputs"]
         
         for _junc in _inputs:
@@ -113,22 +114,24 @@ def IOTable(nodeData):
                 <td><p>{jName.title()}{mapStr}</p></td>
             </tr>"""
 
-        # if _inputDy:
-        #     dynamicTable = f'''<table class="summary-table dynamic" style="margin-top: 8px;"><tr>
-        #         <th colspan="2" class="summary-topic">
-        #             <p style="margin: -0.85rem auto -4px auto;width: fit-content;padding: 0px 8px;">Dynamic Inputs</p>
-        #         </th>
-        #     </tr>'''
+        if _inputDy:
+            dynamicTable = f'''<table class="summary-table dynamic" style="margin-top: 8px;"><tr>
+                <th colspan="2" class="summary-topic">
+                    <p style="margin: -0.85rem auto -4px auto;width: fit-content;padding: 0px 8px;">Dynamic Inputs</p>
+                </th>
+            </tr>'''
 
-        #     for _name, _dataty, _mappable in _inputDy:
-        #         dynamicTable += f"""<tr>
-        #             <td class="summary-topic" style="width: 60px"><p style="color: {getColor(_dataty)}" >{_dataty}</p></td>
-        #             <td><p>{_name.title()}</p></td>
-        #         </tr>"""
+            for _junc in _inputDy:
+                jName  = _junc["name"]
+                jType  = _junc["type"]
 
-        #     dynamicTable += "</table>"
+                dynamicTable += f"""<tr>
+                    <td class="summary-topic" style="width: 60px"><p style="color: {getColor(jType)}" >{jType}</p></td>
+                    <td><p>{jName.title()}</p></td>
+                </tr>"""
 
-        #     inputRows += f"""<tr><td colspan="2">{dynamicTable}</td></tr>"""
+            dynamicTable += "</table>"
+            inputRows    += f"""<tr><td colspan="2">{dynamicTable}</td></tr>"""
 
         if _outputs:
             outputRows += f'<tr><th colspan="2" class="summary-topic"><p>{_name}</p></th></tr>'
